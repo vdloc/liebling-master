@@ -236,7 +236,8 @@ into the {body} of the default.hbs template --}}
     </div>
   </article>
 </main>
-
+{{!-- Pinterest --}}
+<script async defer data-pin-hover="true" data-pin-tall="true" data-pin-lang="vi" src="//assets.pinterest.com/js/pinit.js"></script>
 {{!-- The #contentFor helper here will send everything inside it up to the matching #block helper found in default.hbs --}}
 {{#contentFor "scripts"}}
   <script defer src="{{asset "js/post.js"}}"></script>
