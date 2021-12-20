@@ -211,8 +211,9 @@ $(() => {
   });
 
   $inputSearch.on('keyup', () => {
-    if ($inputSearch.val().length > 0 && fuse) {
-      const results = fuse.search($inputSearch.val());
+    let inputValue = $inputSearch.val();
+    if (inputValue.length > 0 && fuse) {
+      const results = fuse.search(inputValue);
       const bestResults = results.filter(result => {
         if (result.score <= 0.5) {
           return result;
