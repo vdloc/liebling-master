@@ -1,4 +1,4 @@
-(window["webpackJsonp"] = window["webpackJsonp"] || []).push([["/js/page"],{
+(window["webpackJsonp"] = window["webpackJsonp"] || []).push([["/js/images"],{
 
 /***/ "./js/helpers.js":
 /*!***********************!*\
@@ -89,10 +89,10 @@ function scrollTop() {
 
 /***/ }),
 
-/***/ "./js/page.js":
-/*!********************!*\
-  !*** ./js/page.js ***!
-  \********************/
+/***/ "./js/images.js":
+/*!**********************!*\
+  !*** ./js/images.js ***!
+  \**********************/
 /*! no exports provided */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -100,33 +100,99 @@ function scrollTop() {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js");
 /* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(jquery__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var fitvids__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! fitvids */ "./node_modules/fitvids/index.js");
-/* harmony import */ var fitvids__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(fitvids__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var medium_zoom__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! medium-zoom */ "./node_modules/medium-zoom/dist/medium-zoom.esm.js");
-/* harmony import */ var _helpers__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./helpers */ "./js/helpers.js");
+/* harmony import */ var medium_zoom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! medium-zoom */ "./node_modules/medium-zoom/dist/medium-zoom.esm.js");
+/* harmony import */ var _helpers__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./helpers */ "./js/helpers.js");
 
 
 
+
+function generateImages(imgs) {
+  var $imagesContainer = jquery__WEBPACK_IMPORTED_MODULE_0___default()('#js-post-images-container');
+  var imgsHTML = imgs.map(createImageTemplate).reduce(function (html, template) {
+    return html.concat(template);
+  }, '');
+  unbindImagesOnLoadEvents();
+  $imagesContainer.html(imgsHTML);
+  bindImagesOnLoadEvents();
+  Object(_helpers__WEBPACK_IMPORTED_MODULE_2__["makeImagesZoomable"])(jquery__WEBPACK_IMPORTED_MODULE_0___default.a, medium_zoom__WEBPACK_IMPORTED_MODULE_1__["default"]);
+}
+
+function bindImagesOnLoadEvents() {
+  jquery__WEBPACK_IMPORTED_MODULE_0___default()(".st-image").each(function (i) {
+    var $this = jquery__WEBPACK_IMPORTED_MODULE_0___default()(this);
+    $this.on('load', function () {
+      $this.addClass('visible');
+    });
+  });
+}
+
+function unbindImagesOnLoadEvents() {
+  jquery__WEBPACK_IMPORTED_MODULE_0___default()(".st-image").each(function (i) {
+    var $this = jquery__WEBPACK_IMPORTED_MODULE_0___default()(this);
+    $this.off('load');
+  });
+}
+
+function createImageTemplate() {
+  var _ref = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {},
+      url = _ref.url,
+      alt = _ref.alt,
+      ratio = _ref.ratio;
+
+  var replaceExtension = function replaceExtension(url) {
+    return url.replace('jpg', 'webp');
+  };
+
+  return "\n  <figure class=\"st-figure\" style=\"aspect-ratio:".concat(ratio, "\">\n    <img src=\"").concat(replaceExtension(url), "\" alt=\"").concat(alt, "\" class=\"st-image js-zoomable\" loading=\"lazy\"\n    />\n  </figure>");
+}
+
+function setupImagesPagination() {
+  var postImages = window.postImages;
+
+  if (!postImages || !postImages.length) {
+    Object(_helpers__WEBPACK_IMPORTED_MODULE_2__["makeImagesZoomable"])(jquery__WEBPACK_IMPORTED_MODULE_0___default.a, medium_zoom__WEBPACK_IMPORTED_MODULE_1__["default"]);
+    return;
+  }
+
+  var $paginationContainer = jquery__WEBPACK_IMPORTED_MODULE_0___default()('#js-post-pagination-container');
+  var paginationIndexes = Array.from({
+    length: postImages.length
+  }, function (_, id) {
+    return id + 1;
+  });
+  $paginationContainer.pagination({
+    dataSource: paginationIndexes,
+    pageSize: 10,
+    showPrevious: false,
+    showNext: false,
+    pageRange: null,
+    callback: function callback(currentIndexes) {
+      var imgs = currentIndexes.map(function (id) {
+        return postImages[id - 1];
+      });
+      generateImages(imgs);
+    },
+    afterPageOnClick: _helpers__WEBPACK_IMPORTED_MODULE_2__["scrollTop"]
+  });
+}
 
 jquery__WEBPACK_IMPORTED_MODULE_0___default()(function () {
-  fitvids__WEBPACK_IMPORTED_MODULE_1___default()('.js-post-content');
-  Object(_helpers__WEBPACK_IMPORTED_MODULE_3__["adjustImageGallery"])();
-  Object(_helpers__WEBPACK_IMPORTED_MODULE_3__["managePostImages"])(jquery__WEBPACK_IMPORTED_MODULE_0___default.a);
-  Object(_helpers__WEBPACK_IMPORTED_MODULE_3__["makeImagesZoomable"])(jquery__WEBPACK_IMPORTED_MODULE_0___default.a, medium_zoom__WEBPACK_IMPORTED_MODULE_2__["default"]);
+  Object(_helpers__WEBPACK_IMPORTED_MODULE_2__["managePostImages"])(jquery__WEBPACK_IMPORTED_MODULE_0___default.a);
+  setupImagesPagination();
 });
 
 /***/ }),
 
-/***/ 4:
-/*!**************************!*\
-  !*** multi ./js/page.js ***!
-  \**************************/
+/***/ 5:
+/*!****************************!*\
+  !*** multi ./js/images.js ***!
+  \****************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\Users\Me\Documents\liebling-master\liebling-master\src\js\page.js */"./js/page.js");
+module.exports = __webpack_require__(/*! C:\Users\Me\Documents\liebling-master\liebling-master\src\js\images.js */"./js/images.js");
 
 
 /***/ })
 
-},[[4,"/js/manifest","/js/vendor"]]]);
+},[[5,"/js/manifest","/js/vendor"]]]);

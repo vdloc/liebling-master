@@ -390,7 +390,7 @@ window.jQuery = jquery__WEBPACK_IMPORTED_MODULE_0___default.a;
 /*!***********************!*\
   !*** ./js/helpers.js ***!
   \***********************/
-/*! exports provided: isRTL, isMobile, isDarkMode, formatDate, getParameterByName, adjustImageGallery, managePostImages, makeImagesZoomable */
+/*! exports provided: isRTL, isMobile, isDarkMode, formatDate, getParameterByName, adjustImageGallery, managePostImages, makeImagesZoomable, scrollTop */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -403,19 +403,20 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "adjustImageGallery", function() { return adjustImageGallery; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "managePostImages", function() { return managePostImages; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "makeImagesZoomable", function() { return makeImagesZoomable; });
-var isRTL = function isRTL() {
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "scrollTop", function() { return scrollTop; });
+function isRTL() {
   var $html = document.querySelector('html');
   return ['ar', 'he', 'fa'].includes($html.getAttribute('lang'));
-};
-var isMobile = function isMobile() {
+}
+function isMobile() {
   var width = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : '768px';
   return window.matchMedia("(max-width: ".concat(width, ")")).matches;
-};
-var isDarkMode = function isDarkMode() {
+}
+function isDarkMode() {
   var darkModeMatcher = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)');
   return darkModeMatcher && darkModeMatcher.matches;
-};
-var formatDate = function formatDate(date) {
+}
+function formatDate(date) {
   if (date) {
     return new Date(date).toLocaleDateString(document.documentElement.lang, {
       year: 'numeric',
@@ -425,8 +426,8 @@ var formatDate = function formatDate(date) {
   }
 
   return '';
-};
-var getParameterByName = function getParameterByName(name, url) {
+}
+function getParameterByName(name, url) {
   if (!url) url = window.location.href;
   name = name.replace(/[\[\]]/g, '\\$&');
   var regex = new RegExp("[?&]".concat(name, "(=([^&#]*)|&|#|$)"));
@@ -434,8 +435,8 @@ var getParameterByName = function getParameterByName(name, url) {
   if (!results) return null;
   if (!results[2]) return '';
   return decodeURIComponent(results[2].replace(/\+/g, ' '));
-};
-var adjustImageGallery = function adjustImageGallery() {
+}
+function adjustImageGallery() {
   var images = document.querySelectorAll('.kg-gallery-image img');
 
   for (var i = 0, len = images.length; i < len; i++) {
@@ -445,15 +446,15 @@ var adjustImageGallery = function adjustImageGallery() {
     var ratio = width / height;
     container.style.flex = "".concat(ratio, " 1 0%");
   }
-};
-var managePostImages = function managePostImages($) {
+}
+function managePostImages($) {
   $('.js-post-content').find('img').each(function () {
     if (!$(this).closest('figure').hasClass('kg-bookmark-card') && !$(this).parent().is('a')) {
       $(this).addClass('js-zoomable');
     }
   });
-};
-var makeImagesZoomable = function makeImagesZoomable($, mediumZoom) {
+}
+function makeImagesZoomable($, mediumZoom) {
   var zoom = mediumZoom('.js-zoomable');
   zoom.on('opened', function () {
     setTimeout(function () {
@@ -464,7 +465,13 @@ var makeImagesZoomable = function makeImagesZoomable($, mediumZoom) {
       }
     }, 10);
   });
-};
+}
+function scrollTop() {
+  window.scrollTo({
+    top: 0,
+    behavior: 'smooth'
+  });
+}
 
 /***/ }),
 
