@@ -2,7 +2,7 @@ let mix = require('laravel-mix');
 
 mix.options({
   terser: {
-    extractComments: false,
+    extractComments: false
   }
 });
 
@@ -22,11 +22,13 @@ mix.webpackConfig({
   }
 });
 
-mix.js('js/helpers.js', 'js/')
+mix
+  .js('js/helpers.js', 'js/')
   .js('js/app.js', 'js/')
   .js('js/home.js', 'js/')
   .js('js/post.js', 'js/')
   .js('js/page.js', 'js/')
+  .js('js/images.js', 'js/')
   .extract()
   .setResourceRoot('/assets')
   .setPublicPath('../assets')
@@ -41,13 +43,12 @@ mix.js('js/helpers.js', 'js/')
     processCssUrls: false
   })
   .copy('sass/fonts/icomoon/*.*', '../assets/fonts/icomoon/')
-  .copyDirectory('sass/fonts/source-sans-pro/', '../assets/fonts/source-sans-pro/')
+  .copyDirectory(
+    'sass/fonts/source-sans-pro/',
+    '../assets/fonts/source-sans-pro/'
+  )
   .copy('js/vendor/content-api.min.js', '../assets/js/vendor/')
   .browserSync({
-    proxy: "localhost:2368",
-    files: [
-      'js/**/*.js',
-      'sass/**/*.scss',
-      '../**/*.hbs'
-    ]
+    proxy: 'localhost:2368',
+    files: ['js/**/*.js', 'sass/**/*.scss', '../**/*.hbs']
   });

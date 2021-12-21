@@ -1,5 +1,4 @@
 import $ from 'jquery';
-import mediumZoom from 'medium-zoom';
 import fitvids from 'fitvids';
 import shave from 'shave';
 import 'paginationjs';
@@ -8,13 +7,7 @@ import Glide, {
   Swipe,
   Breakpoints
 } from '@glidejs/glide/dist/glide.modular.esm';
-import {
-  isRTL,
-  isMobile,
-  adjustImageGallery,
-  managePostImages,
-  makeImagesZoomable
-} from './helpers';
+import { isRTL, isMobile, adjustImageGallery, scrollTop } from './helpers';
 
 let $aosWrapper = null;
 let $progressCircle = null;
@@ -110,53 +103,6 @@ function prepareProgressCircle() {
   }, 300);
 }
 
-function generateImages(imgs) {
-  const $imagesContainer = $('#js-post-images-container');
-  const imgsHTML = imgs
-    .map(({ url, alt }) => createImageTemplate(url, alt))
-    .reduce((html, template) => html.concat(template), '');
-
-  $imagesContainer.html(imgsHTML);
-  makeImagesZoomable($, mediumZoom);
-}
-
-function createImageTemplate(url, alt) {
-  const CSS_CLASS = 'st-image js-zoomable';
-  return `<img src="${url}" alt="${alt}" class="${CSS_CLASS}"/>`;
-}
-
-function setupImagesPagination() {
-  const postImages = window.postImages;
-
-  if (!postImages || !postImages.length) {
-    makeImagesZoomable($, mediumZoom);
-    return;
-  }
-
-  const $paginationContainer = $('#js-post-pagination-container');
-  const paginationIndexes = Array.from(
-    { length: postImages.length },
-    (_, id) => id + 1
-  );
-
-  $paginationContainer.pagination({
-    dataSource: paginationIndexes,
-    pageSize: 10,
-    showPrevious: false,
-    showNext: false,
-    pageRange: null,
-    callback: function(currentIndexes) {
-      const imgs = currentIndexes.map(id => postImages[id - 1]);
-      generateImages(imgs);
-    },
-    afterPageOnClick: scrollTop
-  });
-}
-
-function scrollTop() {
-  window.scrollTo({ top: 0, behavior: 'smooth' });
-}
-
 $(() => {
   $aosWrapper = $('.js-aos-wrapper');
   const $scrollButton = $('.js-scrolltop');
@@ -225,9 +171,6 @@ $(() => {
   shave('.js-article-card-title-no-image', 250);
 
   $scrollButton.on('click', scrollTop);
-
-  managePostImages($);
-  setupImagesPagination();
 
   window.addEventListener('scroll', onScrolling, { passive: true });
   window.addEventListener('resize', onResizing, { passive: true });

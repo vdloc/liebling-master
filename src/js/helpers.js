@@ -1,20 +1,20 @@
-export const isRTL = () => {
+export function isRTL() {
   const $html = document.querySelector('html');
   return ['ar', 'he', 'fa'].includes($html.getAttribute('lang'));
-};
+}
 
-export const isMobile = (width = '768px') => {
+export function isMobile(width = '768px') {
   return window.matchMedia(`(max-width: ${width})`).matches;
-};
+}
 
-export const isDarkMode = () => {
+export function isDarkMode() {
   const darkModeMatcher =
     window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)');
 
   return darkModeMatcher && darkModeMatcher.matches;
-};
+}
 
-export const formatDate = date => {
+export function formatDate(date) {
   if (date) {
     return new Date(date).toLocaleDateString(document.documentElement.lang, {
       year: 'numeric',
@@ -24,9 +24,9 @@ export const formatDate = date => {
   }
 
   return '';
-};
+}
 
-export const getParameterByName = (name, url) => {
+export function getParameterByName(name, url) {
   if (!url) url = window.location.href;
 
   name = name.replace(/[\[\]]/g, '\\$&');
@@ -39,9 +39,9 @@ export const getParameterByName = (name, url) => {
   if (!results[2]) return '';
 
   return decodeURIComponent(results[2].replace(/\+/g, ' '));
-};
+}
 
-export const adjustImageGallery = () => {
+export function adjustImageGallery() {
   const images = document.querySelectorAll('.kg-gallery-image img');
 
   for (var i = 0, len = images.length; i < len; i++) {
@@ -51,9 +51,9 @@ export const adjustImageGallery = () => {
     const ratio = width / height;
     container.style.flex = `${ratio} 1 0%`;
   }
-};
+}
 
-export const managePostImages = $ => {
+export function managePostImages($) {
   $('.js-post-content')
     .find('img')
     .each(function() {
@@ -68,9 +68,9 @@ export const managePostImages = $ => {
         $(this).addClass('js-zoomable');
       }
     });
-};
+}
 
-export const makeImagesZoomable = ($, mediumZoom) => {
+export function makeImagesZoomable($, mediumZoom) {
   const zoom = mediumZoom('.js-zoomable');
 
   zoom.on('opened', () => {
@@ -81,4 +81,8 @@ export const makeImagesZoomable = ($, mediumZoom) => {
       }
     }, 10);
   });
-};
+}
+
+export function scrollTop() {
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
