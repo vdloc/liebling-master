@@ -143,7 +143,7 @@ function createImageTemplate() {
     return url.replace('jpg', 'webp');
   };
 
-  return "\n  <figure class=\"st-figure\" style=\"aspect-ratio:".concat(ratio, "\">\n    <img src=\"").concat(replaceExtension(url), "\" alt=\"").concat(alt, "\" class=\"st-image js-zoomable\" loading=\"lazy\"\n    />\n  </figure>");
+  return "\n  <figure class=\"st-figure\" style=\"aspect-ratio:".concat(ratio, "\">\n    <img src=\"").concat(replaceExtension(url), "\" alt=\"").concat(alt, "\" class=\"st-image js-zoomable\" \n    />\n  </figure>");
 }
 
 function setupImagesPagination() {

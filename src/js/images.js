@@ -39,7 +39,7 @@ function createImageTemplate({ url, alt, ratio } = {}) {
   <figure class="st-figure" style="aspect-ratio:${ratio}">
     <img src="${replaceExtension(
       url
-    )}" alt="${alt}" class="st-image js-zoomable" loading="lazy"
+    )}" alt="${alt}" class="st-image js-zoomable" 
     />
   </figure>`;
 }
