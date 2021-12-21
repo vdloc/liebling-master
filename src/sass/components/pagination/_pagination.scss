@@ -2,13 +2,13 @@
   ul {
     list-style-type: none;
     display: flex;
+    padding-left: 0;
   }
 
   .paginationjs-page {
     width: 30px;
     height: 30px;
-    margin-left: 4px;
-    margin-right: 4px;
+    margin: 0 4px;
     border-radius: 4px;
     border: 1px solid var(--primary-border-color);
     box-shadow: 0 0 1px 1px var(--button-shadow-color-normal);
@@ -38,4 +38,8 @@
       box-shadow: 0 0 2px 2px var(--button-shadow-color-hover);
     }
   }
+}
+
+.post-pagination-container {
+  margin-top: 20px;
 }
