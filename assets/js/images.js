@@ -118,7 +118,7 @@ function generateImages(imgs) {
 }
 
 function bindImagesOnLoadEvents() {
-  jquery__WEBPACK_IMPORTED_MODULE_0___default()(".st-image").each(function (i) {
+  jquery__WEBPACK_IMPORTED_MODULE_0___default()(".m-post-image").each(function (i) {
     var $this = jquery__WEBPACK_IMPORTED_MODULE_0___default()(this);
     $this.on('load', function () {
       $this.addClass('visible');
@@ -127,7 +127,7 @@ function bindImagesOnLoadEvents() {
 }
 
 function unbindImagesOnLoadEvents() {
-  jquery__WEBPACK_IMPORTED_MODULE_0___default()(".st-image").each(function (i) {
+  jquery__WEBPACK_IMPORTED_MODULE_0___default()(".m-post-image").each(function (i) {
     var $this = jquery__WEBPACK_IMPORTED_MODULE_0___default()(this);
     $this.off('load');
   });
@@ -144,7 +144,7 @@ function createImageTemplate() {
     return url.replace('jpg', 'webp');
   };
 
-  return "<img src=\"".concat(replaceExtension(url), "\" alt=\"").concat(alt, "\" class=\"st-image js-zoomable\" width=\"").concat(width, "\" height=\"").concat(height, "\"\n    />");
+  return "<img src=\"".concat(replaceExtension(url), "\" alt=\"").concat(alt, "\" class=\"m-post-image js-zoomable\" width=\"").concat(width, "\" height=\"").concat(height, "\"\n    />");
 }
 
 function setupImagesPagination() {

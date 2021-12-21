@@ -15,7 +15,7 @@ function generateImages(imgs) {
 }
 
 function bindImagesOnLoadEvents() {
-  $(`.st-image`).each(function(i) {
+  $(`.m-post-image`).each(function(i) {
     let $this = $(this);
 
     $this.on('load', () => {
@@ -25,7 +25,7 @@ function bindImagesOnLoadEvents() {
 }
 
 function unbindImagesOnLoadEvents() {
-  $(`.st-image`).each(function(i) {
+  $(`.m-post-image`).each(function(i) {
     let $this = $(this);
 
     $this.off('load');
@@ -37,7 +37,7 @@ function createImageTemplate({ url, alt, width, height } = {}) {
 
   return `<img src="${replaceExtension(
     url
-  )}" alt="${alt}" class="st-image js-zoomable" width="${width}" height="${height}"
+  )}" alt="${alt}" class="m-post-image js-zoomable" width="${width}" height="${height}"
     />`;
 }
 
