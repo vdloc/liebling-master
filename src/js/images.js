@@ -32,16 +32,13 @@ function unbindImagesOnLoadEvents() {
   });
 }
 
-function createImageTemplate({ url, alt, ratio } = {}) {
+function createImageTemplate({ url, alt, width, height } = {}) {
   const replaceExtension = url => url.replace('jpg', 'webp');
 
-  return `
-  <figure class="st-figure" style="aspect-ratio:${ratio}">
-    <img src="${replaceExtension(
-      url
-    )}" alt="${alt}" class="st-image js-zoomable" 
-    />
-  </figure>`;
+  return `<img src="${replaceExtension(
+    url
+  )}" alt="${alt}" class="st-image js-zoomable" width="${width}" height="${height}"
+    />`;
 }
 
 function setupImagesPagination() {
