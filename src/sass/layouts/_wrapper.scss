@@ -39,7 +39,7 @@
   &.in-recommended {
     @include respond-to("large") {
       padding: 0;
-      max-width: calc(100% - #{rem(60px)});
+      max-width: calc(100% - 60px);
     }
 
     @include respond-to("largest") {

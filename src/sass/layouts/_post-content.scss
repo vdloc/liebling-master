@@ -333,7 +333,7 @@
   table {
     color: var(--titles-color);
     font-size: 0.875rem;
-    width: calc(100% + #{rem(40px)});
+    width: calc(100% + 40px);
     margin: 0 -#{$mobile-space} rem(25px);
 
     @include respond-to("medium") {
@@ -453,7 +453,7 @@
     position: relative;
     padding-right: rem(40px) !important;
     background-repeat: no-repeat;
-    background-position: calc(100% #{rem(-15px)}) center;
+    background-position: calc(100% - 15px) center;
     background-size: rem(15px) rem(8px);
     background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI5IiBoZWlnaHQ9IjUiIHZpZXdCb3g9IjAgMCA5IDUiPgogICAgPHBhdGggZmlsbD0iIzU2NWU2MCIgZmlsbC1ydWxlPSJldmVub2RkIiBkPSJNOC4zMi41N2EuMjQ3LjI0NyAwIDAgMSAwIC4zNkw0LjY4IDQuNTdhLjI0Ny4yNDcgMCAwIDEtLjM2IDBMLjY4LjkzYS4yNDcuMjQ3IDAgMCAxIDAtLjM2bC4zOS0uMzlhLjI0Ny4yNDcgMCAwIDEgLjM2IDBMNC41IDMuMjUgNy41Ny4xOGEuMjQ3LjI0NyAwIDAgMSAuMzYgMGwuMzkuMzl6Ii8+Cjwvc3ZnPgo=");
   }
