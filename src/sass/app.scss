@@ -1,3 +1,4 @@
+@import "common/functions";
 @import "common/reset";
 @import "common/mixins";
 @import "common/variables";
@@ -5,7 +6,6 @@
 @import "common/helpers";
 @import "common/icons";
 @import "common/global";
-@import "common/functions";
 
 @import "layouts/wrapper";
 @import "layouts/content";
