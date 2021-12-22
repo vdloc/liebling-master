@@ -34,7 +34,7 @@
 }
 
 .m-menu__main {
-  padding: 50px 0 5px;
+  padding: rem(50px) 0 rem(5px);
   min-height: 100%;
 
   @include respond-to('medium') {
@@ -45,7 +45,7 @@
 
 .rtl {
   .m-menu__main {
-    padding-top: 75px;
+    padding-top: rem(75px);
 
     @include respond-to('medium') {
       padding: 0;

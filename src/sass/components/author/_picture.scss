@@ -1,11 +1,11 @@
 .m-author-picture {
   display: block;
-  width: 90px;
-  height: 90px;
+  width: rem(90px);
+  height: rem(90px);
 
   @include respond-to('medium') {
-    width: 100px;
-    height: 100px;
+    width: rem(100px);
+    height: rem(100px);
   }
 
   div {

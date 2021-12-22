@@ -7,7 +7,7 @@ body {
   min-height: 100vh;
   color: var(--primary-foreground-color);
   font-size: 1rem;
-  font-family: 'Source Sans Pro', Helvetica, Arial, sans-serif;
+  font-family: "Source Sans Pro", Helvetica, Arial, sans-serif;
   font-display: swap;
   overflow-x: hidden;
   background-color: var(--background-color);
@@ -15,9 +15,9 @@ body {
   -moz-osx-font-smoothing: grayscale;
 
   &.share-menu-displayed {
-    padding-bottom: 45px;
+    padding-bottom: rem(45px);
 
-    @include respond-to('medium') {
+    @include respond-to("medium") {
       padding-bottom: 0;
     }
   }

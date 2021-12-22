@@ -1,9 +1,9 @@
 .m-toggle-darkmode {
   position: fixed;
   right: $mobile-space;
-  bottom: 45px;
-  width: 28px;
-  height: 28px;
+  bottom: rem(45px);
+  width: rem(28px);
+  height: rem(28px);
   border-radius: 50%;
   overflow: hidden;
   z-index: 2;
@@ -12,7 +12,7 @@
     position: relative;
     right: auto;
     bottom: auto;
-    margin-left: 20px;
+    margin-left: rem(20px);
     z-index: auto;
   }
 

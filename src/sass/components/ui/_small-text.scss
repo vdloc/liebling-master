@@ -3,12 +3,12 @@
   font-size: 0.875rem;
 
   &.in-subscribe-page {
-    padding-top: 30px;
+    padding-top: rem(30px);
     font-weight: 600;
   }
 
   &.in-author-along-with {
-    margin-bottom: 20px;
+    margin-bottom: rem(20px);
 
     a {
       text-decoration: underline;

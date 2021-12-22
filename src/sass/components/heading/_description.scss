@@ -10,7 +10,7 @@
 
   &.in-subscribe-page {
     @include respond-to('medium') {
-      max-width: 420px;
+      max-width: rem(420px);
       font-size: 1rem;
     }
   }
@@ -20,7 +20,7 @@
     max-width: 80%;
 
     @include respond-to('medium') {
-      max-width: 420px;
+      max-width: rem(420px);
     }
   }
 }

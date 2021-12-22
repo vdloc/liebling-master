@@ -6,17 +6,17 @@
   }
 
   .paginationjs-page {
-    width: 30px;
-    height: 30px;
-    margin: 0 4px;
-    border-radius: 4px;
-    border: 1px solid var(--primary-border-color);
-    box-shadow: 0 0 1px 1px var(--button-shadow-color-normal);
+    width: rem(30px);
+    height: rem(30px);
+    margin: 0 rem(4px);
+    border-radius: rem(4px);
+    border: rem(1px) solid var(--primary-border-color);
+    box-shadow: 0 0 rem(1px) rem(1px) var(--button-shadow-color-normal);
 
     a {
       text-decoration: none;
       font-size: 1rem;
-      text-shadow: 1px 1px 1px var(--button-shadow-color-normal);
+      text-shadow: rem(1px) rem(1px) rem(1px) var(--button-shadow-color-normal);
       display: block;
       height: 100%;
       display: flex;
@@ -30,16 +30,16 @@
 
       a {
         color: var(--secondary-subtle-color);
-        text-shadow: 1px 1px 1px var(--button-shadow-color-normal);
+        text-shadow: rem(1px) rem(1px) rem(1px) var(--button-shadow-color-normal);
       }
     }
 
     &:hover {
-      box-shadow: 0 0 2px 2px var(--button-shadow-color-hover);
+      box-shadow: 0 0 rem(2px) rem(2px) var(--button-shadow-color-hover);
     }
   }
 }
 
 .post-pagination-container {
-  margin-top: 20px;
+  margin-top: rem(20px);
 }

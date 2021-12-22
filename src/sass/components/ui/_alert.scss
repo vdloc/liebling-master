@@ -1,7 +1,7 @@
 .m-alert {
   color: $white;
   text-align: center;
-  letter-spacing: 1px;
+  letter-spacing: rem(1px);
   line-height: 1.4;
   font-size: 0.875rem;
   visibility: hidden;
@@ -9,14 +9,14 @@
   top: 0;
   left: 0;
   width: 100%;
-  padding: 16px 45px 14px;
+  padding: rem(16px) rem(45px) rem(14px);
   z-index: 11;
   @include transform(translateY(-100%));
   @include transition(transform 0.2s ease);
 
   @include respond-to('medium') {
     font-size: 1rem;
-    padding: 24px 75px 22px;
+    padding: rem(24px) rem(75px) rem(22px);
   }
 
   &.success {
@@ -36,8 +36,8 @@
   position: absolute;
   top: 50%;
   right: $mobile-space;
-  width: 20px;
-  height: 20px;
+  width: rem(20px);
+  height: rem(20px);
   cursor: pointer;
   outline: 0;
   border: 0;
@@ -47,9 +47,9 @@
   @include transform(translateY(-50%));
 
   @include respond-to('medium') {
-    right: 40px;
-    width: 25px;
-    height: 25px;
+    right: rem(40px);
+    width: rem(25px);
+    height: rem(25px);
   }
 
   span {
@@ -69,7 +69,7 @@
 
     @include respond-to('medium') {
       right: auto;
-      left: 40px;
+      left: rem(40px);
     }
   }
 }

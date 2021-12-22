@@ -7,18 +7,42 @@ $break-extra-large: 80rem; // >= 1280px @ 16px
 $break-largest: 90rem; // >= 1440px @ 16px
 
 // @include respond-to( );
-@mixin respond-to( $condition ) {
-  @if $condition == 'initialize' { @media only screen and (min-width: 1px) { @content; } }
+@mixin respond-to($condition) {
+  @if $condition == "initialize" {
+    @media only screen and (min-width: 1px) {
+      @content;
+    }
+  }
 
-  @if $condition == 'small' { @media only screen and (min-width: $break-small) { @content; } }
+  @if $condition == "small" {
+    @media only screen and (min-width: $break-small) {
+      @content;
+    }
+  }
 
-  @if $condition == 'medium' { @media only screen and (min-width: $break-medium) { @content; } }
+  @if $condition == "medium" {
+    @media only screen and (min-width: $break-medium) {
+      @content;
+    }
+  }
 
-  @if $condition == 'large' { @media only screen and (min-width: $break-large) { @content; } }
+  @if $condition == "large" {
+    @media only screen and (min-width: $break-large) {
+      @content;
+    }
+  }
 
-  @if $condition == 'extra-large' { @media only screen and (min-width: $break-extra-large) { @content; } }
+  @if $condition == "extra-large" {
+    @media only screen and (min-width: $break-extra-large) {
+      @content;
+    }
+  }
 
-  @if $condition == 'largest' { @media only screen and (min-width: $break-largest) { @content; } }
+  @if $condition == "largest" {
+    @media only screen and (min-width: $break-largest) {
+      @content;
+    }
+  }
 }
 
 // Text shadow
@@ -58,7 +82,7 @@ $break-largest: 90rem; // >= 1440px @ 16px
 
 @mixin animation($animate...) {
   $max: length($animate);
-  $animations: '';
+  $animations: "";
 
   @for $i from 1 through $max {
     $animations: #{$animations + nth($animate, $i)};
@@ -95,8 +119,8 @@ $break-largest: 90rem; // >= 1440px @ 16px
 @mixin strip($lines: 1, $font-size: 16px, $line-height: 1.3, $width: 100%) {
   display: block;
   width: $width;
-  min-height: ($font-size*$line-height*$lines) + 2;
-  max-height: ($font-size*$line-height*$lines) + 2; /* Fallback for non-webkit */
+  min-height: ($font-size * $line-height * $lines) + 2;
+  max-height: ($font-size * $line-height * $lines) + 2; /* Fallback for non-webkit */
   font-size: $font-size;
   line-height: $line-height;
   white-space: nowrap;
@@ -136,4 +160,3 @@ $break-largest: 90rem; // >= 1440px @ 16px
     clear: both;
   }
 }
-

@@ -3,12 +3,12 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    height: 37px;
+    height: rem(37px);
     overflow-y: hidden;
   }
 
   @include respond-to('largest') {
-    margin: 0 -5px;
+    margin: 0 rem(-5px);
   }
 
   &.toggle-overflow {
@@ -19,7 +19,7 @@
 }
 
 .m-nav__left {
-  margin-bottom: 30px;
+  margin-bottom: rem(30px);
 
   @include respond-to('medium') {
     display: flex;
@@ -28,9 +28,9 @@
     overflow-x: auto;
     overflow-y: hidden;
     white-space: nowrap;
-    padding-top: 40px;
-    padding-bottom: 40px;
-    padding-left: 5px;
+    padding-top: rem(40px);
+    padding-bottom: rem(40px);
+    padding-left: rem(5px);
     margin-bottom: 0;
     -webkit-overflow-scrolling: touch;
   }
@@ -55,11 +55,11 @@
     color: var(--titles-color);
     letter-spacing: 0.3px;
     font-size: 1.125rem;
-    margin-bottom: 15px;
+    margin-bottom: rem(15px);
 
     @include respond-to('medium') {
       margin-bottom: 0;
-      margin-right: 35px;
+      margin-right: rem(35px);
       position: relative;
     }
 
@@ -88,7 +88,7 @@
           display: inline-block;
           color: inherit;
           font-size: 1rem;
-          margin-left: 8px;
+          margin-left: rem(8px);
           @include transform(translateY(1px));
         }
       }
@@ -110,8 +110,8 @@
   @include respond-to('medium') {
     flex-shrink: 0;
     position: relative;
-    padding-left: 20px;
-    padding-right: 5px;
+    padding-left: rem(20px);
+    padding-right: rem(5px);
   }
 
   &:before {
@@ -120,8 +120,8 @@
       position: absolute;
       pointer-events: none;
       top: 0;
-      left: -20px;
-      width: 20px;
+      left: rem(-20px);
+      width: rem(20px);
       height: 100%;
       z-index: 2;
       background: linear-gradient(90deg, var(--header-menu-gradient-first-color) 0, var(--header-menu-gradient-second-color));
@@ -133,27 +133,27 @@
   .m-nav__left {
     @include respond-to('medium') {
       padding-left: 0;
-      padding-right: 5px;
+      padding-right: rem(5px);
     }
 
     li {
       @include respond-to('medium') {
         margin-right: 0;
-        margin-left: 35px;
+        margin-left: rem(35px);
       }
     }
   }
 
   .m-nav__right {
     @include respond-to('medium') {
-      padding-left: 5px;
-      padding-right: 20px;
+      padding-left: rem(5px);
+      padding-right: rem(20px);
     }
 
     &:before {
       @include respond-to('medium') {
         left: auto;
-        right: -20px;
+        right: rem(-20px);
         @include transform(rotate(180deg));
       }
     }

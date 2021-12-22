@@ -6,8 +6,8 @@
   line-height: 1;
   font-size: 1rem;
   font-weight: 600;
-  border-radius: 5px;
-  padding: 13px 25px;
+  border-radius: rem(5px);
+  padding: rem(13px) rem(25px);
   cursor: pointer;
   outline: 0;
   border: 0;
@@ -19,21 +19,21 @@
 
   &.outlined {
     color: var(--titles-color);
-    border: 1px solid var(--primary-foreground-color);
+    border: rem(1px) solid var(--primary-foreground-color);
   }
 
   &.filled,
   &.primary {
-    @include bs(0 2px 4px var(--button-shadow-color-normal));
+    @include bs(0 rem(2px) rem(4px) var(--button-shadow-color-normal));
 
     &:hover {
       @include transform(translateY(-2px));
-      @include bs(0 4px 8px var(--button-shadow-color-hover));
+      @include bs(0 rem(4px) rem(8px) var(--button-shadow-color-hover));
     }
   }
 
   &.filled {
-    border-radius: 5px;
+    border-radius: rem(5px);
     background-color: $white;
   }
 
@@ -57,7 +57,7 @@
       left: 0;
       bottom: 0;
       width: 25%;
-      height: 2px;
+      height: rem(2px);
       background-color: $white;
       @include animation('loading 1s infinite');
       @include keyframes(loading) {

@@ -1,15 +1,15 @@
 .m-hero {
   position: relative;
   flex-direction: column;
-  min-height: 365px;
+  min-height: rem(365px);
   overflow: hidden;
-  padding: 100px 0 75px;
+  padding: rem(100px) 0 rem(75px);
   background-color: var(--secondary-subtle-color);
   @extend .content-centered;
 
   @include respond-to('medium') {
-    min-height: 400px;
-    padding: 150px 0 75px;
+    min-height: rem(400px);
+    padding: rem(150px) 0 rem(75px);
   }
 
   &.with-picture {
@@ -17,11 +17,11 @@
     background-color: $black;
 
     @include respond-to('medium') {
-      min-height: 450px;
+      min-height: rem(450px);
     }
 
     @include respond-to('extra-large') {
-      min-height: 565px;
+      min-height: rem(565px);
     }
 
     .m-hero-title {
@@ -65,7 +65,7 @@
   z-index: 2;
 
   @include respond-to('medium') {
-    max-width: 700px;
+    max-width: rem(700px);
   }
 
   @include respond-to('extra-large') {

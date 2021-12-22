@@ -4,7 +4,7 @@
   line-height: 1;
   font-size: 1.250rem;
   font-weight: 600;
-  margin-bottom: 20px;
+  margin-bottom: rem(20px);
 
   @include respond-to('medium') {
     letter-spacing: 0.5px;

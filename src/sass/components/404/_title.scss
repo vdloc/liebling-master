@@ -1,14 +1,14 @@
 .m-404-title {
   color: var(--primary-foreground-color);
-  letter-spacing: 3px;
+  letter-spacing: rem(3px);
   line-height: 1;
   font-size: 9.000rem;
   font-weight: 700;
-  margin: 0 0 10px;
+  margin: 0 0 rem(10px);
 
   @include respond-to('medium') {
-    letter-spacing: 4px;
+    letter-spacing: rem(4px);
     font-size: 12rem;
-    margin-bottom: 5px;
+    margin-bottom: rem(5px);
   }
 }

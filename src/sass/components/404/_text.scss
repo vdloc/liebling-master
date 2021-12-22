@@ -3,11 +3,11 @@
   line-height: 1.4;
   font-size: 0.875em;
   padding: 0 $mobile-space;
-  margin-bottom: 25px;
+  margin-bottom: rem(25px);
 
   @include respond-to('medium') {
     font-size: 1rem;
     padding: 0;
-    margin-bottom: 30px;
+    margin-bottom: rem(30px);
   }
 }

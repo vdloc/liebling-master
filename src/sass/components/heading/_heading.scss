@@ -1,18 +1,25 @@
 .m-heading {
   text-align: center;
-  margin: 0 auto 40px;
+  margin: 0 auto rem(40px);
 
-  @include respond-to('medium') {
-    margin-bottom: 60px;
+  @include respond-to("medium") {
+    margin-bottom: rem(60px);
   }
 
   &.in-subscribe-page {
-    @include respond-to('medium') {
-      margin-bottom: 50px;
+    @include respond-to("medium") {
+      margin-bottom: rem(50px);
     }
   }
 
   &.no-margin {
     margin-bottom: 0 !important;
+  }
+}
+
+.m-section-title {
+  text-transform: capitalize;
+  @include respond-to("medium") {
+    margin-bottom: rem(40px);
   }
 }

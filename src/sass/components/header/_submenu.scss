@@ -1,21 +1,21 @@
 .m-submenu {
-  padding-top: 25px;
+  padding-top: rem(25px);
 
   @include respond-to('medium') {
     visibility: hidden;
     position: fixed;
-    top: 45px;
+    top: rem(45px);
     left: 0;
     width: 100%;
-    padding: 30px 0 20px 0;
+    padding: rem(30px) 0 rem(20px) 0;
     background-color: var(--background-color);
     border-top: 1px solid var(--secondary-border-color);
     z-index: 5;
-    @include bs(0 60px 60px rgba(0,0,0,var(--submenu-shadow-color-opacity)));
+    @include bs(0 rem(60px) rem(60px) rgba(0,0,0,var(--submenu-shadow-color-opacity)));
   }
 
   @include respond-to('extra-large') {
-    padding: 32px 0 23px 0;
+    padding: rem(32px) 0 rem(23px) 0;
   }
 
   &.opened {
@@ -58,6 +58,6 @@
 
 _:-ms-fullscreen, :root .m-submenu {
   @include respond-to('medium') {
-    top: 65px;
+    top: rem(65px);
   }
 }

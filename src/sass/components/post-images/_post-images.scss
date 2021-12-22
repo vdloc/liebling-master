@@ -3,7 +3,7 @@
     padding: 0;
 
     &:not(:first-child) {
-      margin-top: 20px;
+      margin-top: rem(20px);
     }
   }
 
@@ -14,7 +14,7 @@
     visibility: hidden;
 
     &:not(:first-child) {
-      margin-top: 20px;
+      margin-top: rem(20px);
     }
 
     &.visible {

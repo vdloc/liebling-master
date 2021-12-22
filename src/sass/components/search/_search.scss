@@ -22,13 +22,13 @@
 }
 
 .m-search__content {
-  padding: 80px $mobile-space 40px;
+  padding: rem(80px) $mobile-space rem(40px);
   margin: 0 auto;
 
   @include respond-to('medium') {
-    padding-top: 100px;
-    padding-bottom: 50px;
-    max-width: 700px;
+    padding-top: rem(100px);
+    padding-bottom: rem(50px);
+    max-width: rem(700px);
   }
 
   @include respond-to('extra-large') {
@@ -37,15 +37,15 @@
   }
 
   @include respond-to('largest') {
-    max-width: 800px;
+    max-width: rem(800px);
   }
 }
 
 .m-search__form {
-  margin-bottom: 30px;
+  margin-bottom: rem(30px);
 
   @include respond-to('medium') {
-    max-width: 500px;
-    margin: 0 auto 45px;
+    max-width: rem(500px);
+    margin: 0 auto rem(45px);
   }
 }
