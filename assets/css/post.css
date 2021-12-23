@@ -1229,30 +1229,3 @@
 .post-pagination-container {
   margin-top: 1.25rem;
 }
-
-.l-post-content .m-post-figure {
-  padding: 0;
-}
-.l-post-content .m-post-figure:not(:first-child) {
-  margin-top: 1.25rem;
-}
-.l-post-content .m-post-image {
-  width: 100%;
-  height: auto;
-  opacity: 0;
-  visibility: hidden;
-}
-.l-post-content .m-post-image:not(:first-child) {
-  margin-top: 1.25rem;
-}
-.l-post-content .m-post-image.visible {
-  opacity: 1;
-  visibility: visible;
-}
-.l-post-content .m-post-image.medium-zoom-image {
-  transition: all 0.5s cubic-bezier(0.55, 0.085, 0.68, 0.53) !important;
-}
-
-body.medium-zoom--opened span[class^=PIN_] {
-  display: none;
-}
