@@ -1,11 +1,10 @@
 {{!-- The template below includes the markup for each post --}}
-
-{{#foreach posts limit="4"}}
+{{#foreach posts }}
   {{#is "post"}}
     <div class="m-recommended-slider__item glide__slide">
   {{/is}}
   {{#unless featured}}
-    {{#has tag="photo"}}
+    {{#has tag=../sectionTag}}
       <article class="m-article-card {{#unless feature_image}}no-picture{{/unless}} {{post_class}}">
       <div class="m-article-card__picture">
         <a href="{{url}}" class="m-article-card__picture-link" aria-hidden="true" tabindex="-1"></a>
@@ -34,7 +33,7 @@
         
       {{/if}} --}}
       <div class="m-article-card__info">
-        <a href="{{primary_tag.url}}" class="m-article-card__tag">{{primary_tag.name}}</a>
+        <a href="{{primary_tag.url}}" class="m-article-card__tag capitalize">{{primary_tag.name}}</a>
         <a href="{{url}}" class="m-article-card__info-link" aria-label="{{title}}">
           <div>
             <h2 class="m-article-card__title js-article-card-title {{#unless feature_image}}js-article-card-title-no-image{{/unless}}" title="{{title}}">
