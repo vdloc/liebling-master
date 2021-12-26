@@ -36,7 +36,7 @@
 }
 
 .no-margin {
-  margin: 0
+  margin: 0;
 }
 
 .no-scroll-y {
@@ -75,6 +75,10 @@
   text-transform: uppercase;
 }
 
+.capitalize {
+  text-transform: capitalize;
+}
+
 .pointer {
   cursor: pointer;
 }
@@ -82,7 +86,7 @@
 .only-desktop {
   display: none;
 
-  @include respond-to('medium') {
+  @include respond-to("medium") {
     display: block;
   }
 }

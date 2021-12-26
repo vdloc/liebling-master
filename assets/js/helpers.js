@@ -197,4 +197,4 @@ module.exports = __webpack_require__(/*! /var/www/sinhton/content/themes/lieblin
 
 /***/ })
 
-},[[0,"/js/manifest"]]]);
+},[[0,"/js/manifest","/js/vendor"]]]);

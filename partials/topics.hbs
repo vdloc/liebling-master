@@ -1,0 +1,15 @@
+<div class="m-topics">
+  <header class="m-topics__header">
+    <h4 class="m-topics__title">{{title}}</h4>
+  </header>
+  <ul class="m-topics__list">
+    {{#foreach data as |topic|}}
+      <li class="m-topics__item">
+        <img src="{{topic.feature_image}}" alt="{{topic.description}}" />
+        <div class="m-topics-item-content">
+          <h6 class="m-topics__item-title">{{topic.name}}</h6>
+        </div>
+      </li>
+    {{/foreach}}
+  </ul>
+</div>

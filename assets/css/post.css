@@ -80,6 +80,10 @@
   text-transform: uppercase;
 }
 
+.capitalize {
+  text-transform: capitalize;
+}
+
 .pointer {
   cursor: pointer;
 }
@@ -777,6 +781,66 @@
   margin-bottom: 0.9375rem;
 }
 
+.m-pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 2.5rem;
+}
+
+.m-pagination__text {
+  display: inline-block;
+  color: var(--titles-color);
+  letter-spacing: 0.2px;
+  text-align: center;
+  font-size: 0.875rem;
+}
+@media only screen and (min-width: 48rem) {
+  .m-pagination__text {
+    letter-spacing: 0.3px;
+    font-size: 1rem;
+  }
+}
+
+.paginationjs-pages ul {
+  list-style-type: none;
+  display: flex;
+  padding-left: 0;
+}
+.paginationjs-pages .paginationjs-page {
+  width: 1.875rem;
+  height: 1.875rem;
+  margin: 0 0.25rem;
+  border-radius: 0.25rem;
+  border: 0.0625rem solid var(--primary-border-color);
+  box-shadow: 0 0 0.0625rem 0.0625rem var(--button-shadow-color-normal);
+}
+.paginationjs-pages .paginationjs-page a {
+  text-decoration: none;
+  font-size: 1rem;
+  text-shadow: 0.0625rem 0.0625rem 0.0625rem var(--button-shadow-color-normal);
+  display: block;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.paginationjs-pages .paginationjs-page.active {
+  background-color: var(--primary-subtle-color);
+  border-color: var(--primary-subtle-color);
+}
+.paginationjs-pages .paginationjs-page.active a {
+  color: var(--secondary-subtle-color);
+  text-shadow: 0.0625rem 0.0625rem 0.0625rem var(--button-shadow-color-normal);
+}
+.paginationjs-pages .paginationjs-page:hover {
+  box-shadow: 0 0 0.125rem 0.125rem var(--button-shadow-color-hover);
+}
+
+.post-pagination-container {
+  margin-top: 1.25rem;
+}
+
 .m-share {
   position: fixed;
   left: 0;
@@ -1189,43 +1253,4 @@
 
 .m-recommended-slider__item {
   padding: 0 1.25rem;
-}
-
-.paginationjs-pages ul {
-  list-style-type: none;
-  display: flex;
-  padding-left: 0;
-}
-.paginationjs-pages .paginationjs-page {
-  width: 1.875rem;
-  height: 1.875rem;
-  margin: 0 0.25rem;
-  border-radius: 0.25rem;
-  border: 0.0625rem solid var(--primary-border-color);
-  box-shadow: 0 0 0.0625rem 0.0625rem var(--button-shadow-color-normal);
-}
-.paginationjs-pages .paginationjs-page a {
-  text-decoration: none;
-  font-size: 1rem;
-  text-shadow: 0.0625rem 0.0625rem 0.0625rem var(--button-shadow-color-normal);
-  display: block;
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.paginationjs-pages .paginationjs-page.active {
-  background-color: var(--primary-subtle-color);
-  border-color: var(--primary-subtle-color);
-}
-.paginationjs-pages .paginationjs-page.active a {
-  color: var(--secondary-subtle-color);
-  text-shadow: 0.0625rem 0.0625rem 0.0625rem var(--button-shadow-color-normal);
-}
-.paginationjs-pages .paginationjs-page:hover {
-  box-shadow: 0 0 0.125rem 0.125rem var(--button-shadow-color-hover);
-}
-
-.post-pagination-container {
-  margin-top: 1.25rem;
 }

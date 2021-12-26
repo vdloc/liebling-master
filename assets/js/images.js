@@ -184,7 +184,7 @@ jquery__WEBPACK_IMPORTED_MODULE_0___default()(function () {
 
 /***/ }),
 
-/***/ 5:
+/***/ 6:
 /*!****************************!*\
   !*** multi ./js/images.js ***!
   \****************************/
@@ -196,4 +196,4 @@ module.exports = __webpack_require__(/*! /var/www/sinhton/content/themes/lieblin
 
 /***/ })
 
-},[[5,"/js/manifest","/js/vendor"]]]);
+},[[6,"/js/manifest","/js/vendor"]]]);

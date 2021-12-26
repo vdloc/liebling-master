@@ -7,7 +7,7 @@ It can be used also as the home page or the default page.
 {{#contentFor "preload"}}
   <link rel="preload" href="{{asset "css/home.css"}}" as="style" />
   <link rel="preload" href="{{asset "css/listing.css"}}" as="style" />
-  <link rel="preload" href="{{asset "js/home.js"}}" as="script" />
+  <link rel="preload" href="{{asset "js/category.js"}}" as="script" />
 {{/contentFor}}
 
 {{!-- This block loads specific styles for the index page --}}
@@ -26,14 +26,18 @@ into the {body} of the default.hbs template --}}
 <main class="main-wrap">
   <div class="l-content">
     <div class="l-wrapper" data-aos="fade-up" data-aos-delay="300">
-      {{> home/section title="Phim" tag="phim" slugifiedTag="phim"}}
-      {{!-- Ảnh --}}
-      {{> home/section title="Ảnh" tag="ảnh" slugifiedTag="anh" page="photo"}}
+      {{#get tags filter=""}}
+        {{> topics data=tags title="Các chủ đề"}}
+      {{/get}}
+      {{> page/section title="Ảnh" tag="ảnh" slugifiedTag="anh"}}
     </div>
   </div>
 </main>
 
 {{!-- The #contentFor helper here will send everything inside it up to the matching #block helper found in default.hbs --}}
 {{#contentFor "scripts"}}
-  <script nonce="jlsy6dbILj" defer src="{{asset "js/home.js"}}"></script>
+  <script nonce="jlsy6dbILj">
+    var categoryTag = "anh";
+  </script>
+  <script nonce="jlsy6dbILj" defer src="{{asset "js/category.js"}}"></script>
 {{/contentFor}}
