@@ -284,7 +284,7 @@ jquery__WEBPACK_IMPORTED_MODULE_0___default()(window).on('load', function () {
 
 /***/ }),
 
-/***/ 3:
+/***/ 4:
 /*!**************************!*\
   !*** multi ./js/post.js ***!
   \**************************/
@@ -296,4 +296,4 @@ module.exports = __webpack_require__(/*! /var/www/sinhton/content/themes/lieblin
 
 /***/ })
 
-},[[3,"/js/manifest","/js/vendor"]]]);
+},[[4,"/js/manifest","/js/vendor"]]]);

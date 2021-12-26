@@ -1,9 +1,4 @@
-<div class="l-section">
-  <header class="l-section__header">
-    <h4 class="l-section__title">{{title}}</h4>
-  </header>
-    <div class="l-grid">
-    {{#get "posts" filter="featured:true+tag:{{slugifiedTag}}" include="authors,tags" limit="5" as |featured|}}
+{{#get "posts" filter="featured:true+tag:{{slugifiedTag}}" include="authors,tags" limit="5" as |featured|}}
       {{#if featured}}
         <div class="m-featured-slider glide js-featured-slider">
           <div class="glide__track" data-glide-el="track">
@@ -53,7 +48,8 @@
                         <span>{{reading_time minute=(t "1 min read") minutes=(t "% min read")}}</span> --}}
                       </div>
                     </a>
-                  </article>
+                  </
+                  >
                 </div>
               {{/foreach}}
             </div>
@@ -69,10 +65,3 @@
         </div>
       {{/if}}
     {{/get}}
-    {{!-- The tag below iterates over all the posts --}}
-    {{> loop sectionTag=tag}}
-    <div class="l-section__view-more">
-      <a href="{{@site.url}}/{{tag}}" class="m-button primary">Xem thêm</a>
-    </div>
-  </div>
-</div>

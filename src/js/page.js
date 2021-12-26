@@ -9,7 +9,6 @@ import {
 
 $(() => {
   fitvids('.js-post-content')
-
   adjustImageGallery()
   managePostImages($)
   makeImagesZoomable($, mediumZoom)

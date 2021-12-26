@@ -1,0 +1,13 @@
+<div class="l-section">
+  <header class="l-section__header">
+    <h4 class="l-section__title">{{title}}</h4>
+  </header>
+    <div class="l-grid">
+    {{> common/featured-slide}}
+    {{!-- The tag below iterates over all the posts --}}
+    {{> common/post-list limit="4"}}
+    <div class="l-section__view-more">
+      <a href="{{@site.url}}/{{page}}" class="m-button primary">Xem thêm</a>
+    </div>
+  </div>
+</div>

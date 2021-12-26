@@ -22,6 +22,12 @@
     }
   }
 
+  &.hide {
+    display: none;
+    visibility: hidden;
+    opacity: 0;
+  }
+
   @include respond-to("medium") {
     width: calc((100% / 2) - 20px);
     height: rem(420px);
