@@ -11,7 +11,10 @@ This template is used for the post page.
 {{!-- This block loads specific styles for the post page --}}
 {{#contentFor "styles"}}
   <link rel="stylesheet" type="text/css" href="{{asset "css/post.css"}}" media="screen" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@1.8.3/dist/css/lightgallery.min.css">
 {{/contentFor}}
+
+
 
 {{!-- The tag below means: insert everything in this file
 into the {body} of the default.hbs template --}}
@@ -49,10 +52,10 @@ into the {body} of the default.hbs template --}}
             <header class="m-heading">
               <h1 class="m-heading__title in-post">{{title}}</h1>
               <div class="m-heading__meta">
-                {{#if primary_tag}}
-                  <a href="{{primary_tag.url}}" class="m-heading__meta__tag">{{primary_tag.name}}</a>
+               {{#foreach tags}} 
+                   <a href="{{url}}" class="m-heading__meta__tag capitalize">{{name}}</a>
                   <span class="m-heading__meta__divider" aria-hidden="true">&bull;</span>
-                {{/if}}
+               {{/foreach}}
                 <span class="m-heading__meta__time">{{date published_at}}</span>
               </div>
             </header>
@@ -75,15 +78,17 @@ into the {body} of the default.hbs template --}}
                   </button>
                 </div>
               </div>
-              {{content}}        
+              <div id="post-content">
+                {{content}} 
+              </div>       
               {{!-- List of tags  --}}
               {{#if tags}}
                 <section class="m-tags in-post">
-                  <h3 class="m-submenu-title">{{t "Tags"}}</h3>
+                  <h3 class="m-submenu-title">{{t "Thẻ"}}</h3>
                   <ul>
                     {{#foreach tags}}
                       <li>
-                        <a href="{{url}}" title="{{name}}">{{name}}</a>
+                        <a href="{{url}}" title="{{name}}" class="capitalize">{{name}}</a>
                       </li>
                     {{/foreach}}
                   </ul>
@@ -94,23 +99,9 @@ into the {body} of the default.hbs template --}}
         </div>
         {{!-- Email subscribe form at the bottom of the page --}}
         {{#if @labs.members}}
-          <section class="m-subscribe-section js-newsletter">
-            <div class="l-wrapper in-post">
-              <div class="m-subscribe-section__content">
-                <div class="m-subscribe-section__text">
-                  <h4 class="m-subscribe-section__title">{{t "Subscribe to our newsletter"}}</h4>
-                  <p class="m-subscribe-section__description">
-                    {{t "Get the latest posts delivered right to your inbox."}}
-                  </p>
-                </div>
-                <div class="m-subscribe-section__form">
-                  {{> "newsletter-form"}}
-                </div>
-              </div>
-            </div>
-          </section>
+          {{> common/newsletter}}
         {{/if}}
-        <section class="m-author">
+        {{!-- <section class="m-author">
           <div class="m-author__content">
             <div class="m-author__picture">
               <a href="{{primary_author.url}}" class="m-author-picture" aria-label="{{primary_author.name}}">
@@ -158,7 +149,7 @@ into the {body} of the default.hbs template --}}
               </ul>
             </div>
           </div>
-        </section>
+        </section> --}}
         {{!-- If you want to embed comments, this is a good place to do it! --}}
         {{!--
           <section class="m-comments">
@@ -237,4 +228,5 @@ into the {body} of the default.hbs template --}}
 {{!-- The #contentFor helper here will send everything inside it up to the matching #block helper found in default.hbs --}}
 {{#contentFor "scripts"}}
   <script nonce="jlsy6dbILj" defer src="{{asset "js/post.js"}}"></script>
+  <script nonce="jlsy6dbILj" defer src="{{asset "js/vendor/lightgallery-all.min.js"}}"></script>
 {{/contentFor}}
