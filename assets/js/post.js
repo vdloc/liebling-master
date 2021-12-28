@@ -103,11 +103,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var fitvids__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! fitvids */ "./node_modules/fitvids/index.js");
 /* harmony import */ var fitvids__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(fitvids__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var shave__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! shave */ "./node_modules/shave/dist/shave.es.js");
-/* harmony import */ var paginationjs__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! paginationjs */ "./node_modules/paginationjs/dist/pagination.js");
-/* harmony import */ var paginationjs__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(paginationjs__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var _glidejs_glide_dist_glide_modular_esm__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @glidejs/glide/dist/glide.modular.esm */ "./node_modules/@glidejs/glide/dist/glide.modular.esm.js");
-/* harmony import */ var _helpers__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./helpers */ "./js/helpers.js");
-
+/* harmony import */ var _glidejs_glide_dist_glide_modular_esm__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @glidejs/glide/dist/glide.modular.esm */ "./node_modules/@glidejs/glide/dist/glide.modular.esm.js");
+/* harmony import */ var _helpers__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./helpers */ "./js/helpers.js");
 
 
 
@@ -127,7 +124,7 @@ function onScrolling() {
 }
 
 function adjustShare(timeout) {
-  if (!Object(_helpers__WEBPACK_IMPORTED_MODULE_5__["isMobile"])('1023px')) {
+  if (!Object(_helpers__WEBPACK_IMPORTED_MODULE_4__["isMobile"])('1023px')) {
     jquery__WEBPACK_IMPORTED_MODULE_0___default()('body').removeClass('share-menu-displayed');
   } else {
     jquery__WEBPACK_IMPORTED_MODULE_0___default()('body').addClass('share-menu-displayed');
@@ -173,7 +170,7 @@ function setHeights() {
 function setCircleStyles() {
   var svgWidth = $progressCircle.parent().width();
   var radiusCircle = svgWidth / 2;
-  var borderWidth = Object(_helpers__WEBPACK_IMPORTED_MODULE_5__["isMobile"])() ? 2 : 3;
+  var borderWidth = Object(_helpers__WEBPACK_IMPORTED_MODULE_4__["isMobile"])() ? 2 : 3;
   $progressCircle.parent().attr('viewBox', "0 0 ".concat(svgWidth, " ").concat(svgWidth));
   $progressCircle.attr('stroke-width', borderWidth);
   $progressCircle.attr('r', radiusCircle - (borderWidth - 1));
@@ -201,23 +198,38 @@ function prepareProgressCircle() {
   }, 300);
 }
 
+function setupImagesGallery() {
+  jquery__WEBPACK_IMPORTED_MODULE_0___default()('.kg-image-card').each(function () {
+    var $this = jquery__WEBPACK_IMPORTED_MODULE_0___default()(this);
+    var $image = $this.find('.kg-image');
+    $this.attr('data-src', $image.attr('src'));
+    $image.attr('data-src', $image.attr('src'));
+  });
+  jquery__WEBPACK_IMPORTED_MODULE_0___default()('.js-post-content').lightGallery({
+    selector: '.kg-image-card',
+    thumbnail: true,
+    fullScreen: true,
+    share: true
+  });
+}
+
 jquery__WEBPACK_IMPORTED_MODULE_0___default()(function () {
   $aosWrapper = jquery__WEBPACK_IMPORTED_MODULE_0___default()('.js-aos-wrapper');
   var $scrollButton = jquery__WEBPACK_IMPORTED_MODULE_0___default()('.js-scrolltop');
   var $recommendedSlider = jquery__WEBPACK_IMPORTED_MODULE_0___default()('.js-recommended-slider');
   fitvids__WEBPACK_IMPORTED_MODULE_1___default()('.js-post-content');
-  Object(_helpers__WEBPACK_IMPORTED_MODULE_5__["adjustImageGallery"])();
+  setupImagesGallery();
   adjustShare(1000);
 
   if ($recommendedSlider.length > 0) {
-    var recommendedSlider = new _glidejs_glide_dist_glide_modular_esm__WEBPACK_IMPORTED_MODULE_4__["default"]('.js-recommended-slider', {
+    var recommendedSlider = new _glidejs_glide_dist_glide_modular_esm__WEBPACK_IMPORTED_MODULE_3__["default"]('.js-recommended-slider', {
       type: 'slider',
       rewind: false,
       perView: 3,
       swipeThreshold: false,
       dragThreshold: false,
       gap: 0,
-      direction: Object(_helpers__WEBPACK_IMPORTED_MODULE_5__["isRTL"])() ? 'rtl' : 'ltr',
+      direction: Object(_helpers__WEBPACK_IMPORTED_MODULE_4__["isRTL"])() ? 'rtl' : 'ltr',
       breakpoints: {
         1023: {
           type: 'carousel',
@@ -261,16 +273,16 @@ jquery__WEBPACK_IMPORTED_MODULE_0___default()(function () {
       }
     });
     recommendedSlider.mount({
-      Controls: _glidejs_glide_dist_glide_modular_esm__WEBPACK_IMPORTED_MODULE_4__["Controls"],
-      Swipe: _glidejs_glide_dist_glide_modular_esm__WEBPACK_IMPORTED_MODULE_4__["Swipe"],
-      Breakpoints: _glidejs_glide_dist_glide_modular_esm__WEBPACK_IMPORTED_MODULE_4__["Breakpoints"],
+      Controls: _glidejs_glide_dist_glide_modular_esm__WEBPACK_IMPORTED_MODULE_3__["Controls"],
+      Swipe: _glidejs_glide_dist_glide_modular_esm__WEBPACK_IMPORTED_MODULE_3__["Swipe"],
+      Breakpoints: _glidejs_glide_dist_glide_modular_esm__WEBPACK_IMPORTED_MODULE_3__["Breakpoints"],
       Length: Length
     });
   }
 
   Object(shave__WEBPACK_IMPORTED_MODULE_2__["default"])('.js-article-card-title', 100);
   Object(shave__WEBPACK_IMPORTED_MODULE_2__["default"])('.js-article-card-title-no-image', 250);
-  $scrollButton.on('click', _helpers__WEBPACK_IMPORTED_MODULE_5__["scrollTop"]);
+  $scrollButton.on('click', _helpers__WEBPACK_IMPORTED_MODULE_4__["scrollTop"]);
   window.addEventListener('scroll', onScrolling, {
     passive: true
   });

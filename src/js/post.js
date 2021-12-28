@@ -1,13 +1,12 @@
 import $ from 'jquery';
 import fitvids from 'fitvids';
 import shave from 'shave';
-import 'paginationjs';
 import Glide, {
   Controls,
   Swipe,
   Breakpoints
 } from '@glidejs/glide/dist/glide.modular.esm';
-import { isRTL, isMobile, adjustImageGallery, scrollTop } from './helpers';
+import { isRTL, isMobile, scrollTop } from './helpers';
 
 let $aosWrapper = null;
 let $progressCircle = null;
@@ -103,6 +102,23 @@ function prepareProgressCircle() {
   }, 300);
 }
 
+function setupImagesGallery() {
+  $('.kg-image-card').each(function() {
+    let $this = $(this);
+    let $image = $this.find('.kg-image');
+
+    $this.attr('data-src', $image.attr('src'));
+    $image.attr('data-src', $image.attr('src'));
+  });
+
+  $('.js-post-content').lightGallery({
+    selector: '.kg-image-card',
+    thumbnail: true,
+    fullScreen: true,
+    share: true
+  });
+}
+
 $(() => {
   $aosWrapper = $('.js-aos-wrapper');
   const $scrollButton = $('.js-scrolltop');
@@ -110,7 +126,7 @@ $(() => {
 
   fitvids('.js-post-content');
 
-  adjustImageGallery();
+  setupImagesGallery();
   adjustShare(1000);
 
   if ($recommendedSlider.length > 0) {

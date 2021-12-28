@@ -260,13 +260,11 @@
   }
 }
 .l-post-content figure, .l-post-content.kg-image-card {
-  padding: 1.25rem 0 2.5rem;
   margin: 0 -20px;
 }
 @media only screen and (min-width: 48rem) {
-  .l-post-content figure, .l-post-content.kg-image-card {
-    padding: 1.25rem 0 3.125rem;
-    margin: 0;
+  .l-post-content figure:not(:first-child), .l-post-content.kg-image-card:not(:first-child) {
+    margin-top: 1.25rem;
   }
 }
 .l-post-content figure.kg-embed-card, .l-post-content.kg-image-card.kg-embed-card {
@@ -299,7 +297,7 @@
 .l-post-content figure .kg-image, .l-post-content.kg-image-card img,
 .l-post-content.kg-image-card .kg-image {
   display: block;
-  width: auto;
+  width: 100%;
   max-width: 100%;
   height: auto;
   margin: 0 auto;

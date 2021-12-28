@@ -160,12 +160,12 @@
 
   figure,
   &.kg-image-card {
-    padding: rem(20px) 0 rem(40px);
     margin: 0 -#{$mobile-space};
 
     @include respond-to("medium") {
-      padding: rem(20px) 0 rem(50px);
-      margin: 0;
+      &:not(:first-child) {
+        margin-top: rem(20px);
+      }
     }
 
     &.kg-embed-card {
@@ -206,7 +206,7 @@
     img,
     .kg-image {
       display: block;
-      width: auto;
+      width: 100%;
       max-width: 100%;
       height: auto;
       margin: 0 auto;
