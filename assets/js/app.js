@@ -482,7 +482,7 @@ function scrollTop() {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /var/www/sinhton/content/themes/liebling-master/src/js/app.js */"./js/app.js");
+module.exports = __webpack_require__(/*! /home/nomad/netwalker-dev/content/themes/liebling/src/js/app.js */"./js/app.js");
 
 
 /***/ })
