@@ -3,7 +3,7 @@ import $ from 'jquery';
 import moment from 'moment-timezone';
 
 const api = new GhostContentAPI({
-  url: ghostHost,
+  url: ghostHost.includes('http') ? ghostHost: `http:${ghostHost}`,
   key: ghostSearchApiKey,
   version: 'v4'
 });
@@ -22,9 +22,7 @@ function getPublicTime(date) {
     dateMoment = timeNow;
   }
 
-  // i18n: Making dates, including month names, translatable to any language.
-  // Documentation: http://momentjs.com/docs/#/i18n/
-  // Locales: https://github.com/moment/moment/tree/develop/locale
+
   dateMoment.locale('vi');
 
   return dateMoment.tz(timezone).from(timeNow);

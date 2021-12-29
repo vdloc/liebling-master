@@ -303,7 +303,7 @@ jquery__WEBPACK_IMPORTED_MODULE_0___default()(window).on('load', function () {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! /var/www/sinhton/content/themes/liebling-master/src/js/post.js */"./js/post.js");
+module.exports = __webpack_require__(/*! /home/nomad/netwalker-dev/content/themes/liebling/src/js/post.js */"./js/post.js");
 
 
 /***/ })
