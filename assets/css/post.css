@@ -661,6 +661,9 @@
     transform: translateX(50%);
   }
 }
+.rtl .kg-callout-card + .kg-callout-card {
+  margin-top: 1.8em;
+}
 
 .m-button, .l-post-content button:not(.m-icon-button) {
   display: inline-block;
@@ -837,6 +840,10 @@
 
 .post-pagination-container {
   margin-top: 1.25rem;
+}
+
+.kg-callout-text {
+  width: 100%;
 }
 
 .m-share {
