@@ -18,7 +18,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var api = new GhostContentAPI({
-  url: ghostHost,
+  url: ghostHost.includes('http') ? ghostHost : "http:".concat(ghostHost),
   key: ghostSearchApiKey,
   version: 'v4'
 });
@@ -34,10 +34,7 @@ function getPublicTime(date) {
     dateMoment = moment_timezone__WEBPACK_IMPORTED_MODULE_2___default.a.parseZone(date);
   } else {
     dateMoment = timeNow;
-  } // i18n: Making dates, including month names, translatable to any language.
-  // Documentation: http://momentjs.com/docs/#/i18n/
-  // Locales: https://github.com/moment/moment/tree/develop/locale
-
+  }
 
   dateMoment.locale('vi');
   return dateMoment.tz(timezone).from(timeNow);

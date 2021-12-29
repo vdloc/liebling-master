@@ -75,7 +75,7 @@ $(() => {
 
   const trySearchFeature = () => {
     if (typeof ghostSearchApiKey !== 'undefined') {
-      getAllPosts(ghostHost, ghostSearchApiKey);
+      getAllPosts(ghostHost.includes('http') ? ghostHost: `http:${ghostHost}`, ghostSearchApiKey);
     } else {
       $openSearch.css('visibility', 'hidden');
       $closeSearch.remove();
