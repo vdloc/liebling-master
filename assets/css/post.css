@@ -839,6 +839,10 @@
   margin-top: 1.25rem;
 }
 
+.kg-callout-text {
+  width: 100%;
+}
+
 .m-share {
   position: fixed;
   left: 0;
