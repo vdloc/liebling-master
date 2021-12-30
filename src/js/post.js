@@ -1,6 +1,7 @@
 import $ from 'jquery';
 import fitvids from 'fitvids';
 import shave from 'shave';
+import ClipboardJS from 'clipboard';
 import Glide, {
   Controls,
   Swipe,
@@ -119,6 +120,18 @@ function setupImagesGallery() {
   });
 }
 
+function setupClipboardButtons() {
+  const clipboard = new ClipboardJS('.m-clipboard-button');
+
+  clipboard.on('success', function(e) {
+    e.trigger.textContent = 'Đã copy';
+
+    setTimeout(() => {
+      e.trigger.textContent = 'Copy';
+    }, 3000);
+  });
+}
+
 $(() => {
   $aosWrapper = $('.js-aos-wrapper');
   const $scrollButton = $('.js-scrolltop');
@@ -127,6 +140,7 @@ $(() => {
   fitvids('.js-post-content');
 
   setupImagesGallery();
+  setupClipboardButtons();
   adjustShare(1000);
 
   if ($recommendedSlider.length > 0) {
