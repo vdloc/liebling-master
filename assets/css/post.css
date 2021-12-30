@@ -863,7 +863,7 @@
   font-size: 0.95em;
   line-height: 1.5em;
 }
-.l-post-content .kg-callout-card + .l-post-content .kg-callout-card {
+.l-post-content .kg-callout-card:not(:first-of-type) {
   margin-top: 1.7rem !important;
 }
 
