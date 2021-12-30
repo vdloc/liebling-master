@@ -15,7 +15,7 @@
   background-color: transparent;
   @extend .no-appearance;
   @extend .focusable;
-  @include transition(all .25s cubic-bezier(.02,.01,.47,1));
+  @include transition(all 0.25s cubic-bezier(0.02, 0.01, 0.47, 1));
 
   &.outlined {
     color: var(--titles-color);
@@ -52,14 +52,14 @@
     overflow: hidden;
 
     &:after {
-      content: '';
+      content: "";
       position: absolute;
       left: 0;
       bottom: 0;
       width: 25%;
       height: rem(2px);
       background-color: $white;
-      @include animation('loading 1s infinite');
+      @include animation("loading 1s infinite");
       @include keyframes(loading) {
         0% {
           @include transform(translatex(0));
@@ -72,5 +72,18 @@
         }
       }
     }
+  }
+}
+
+.m-clipboard-button {
+  font-size: 0.6em;
+  display: inline-block;
+  border: 1px solid var(--primary-border-color);
+  background-color: var(--transparent-background-color);
+  border-radius: rem(4px);
+  padding: 0 0.2rem;
+
+  &:focus {
+    box-shadow: none !important;
   }
 }

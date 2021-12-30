@@ -743,6 +743,18 @@
   }
 }
 
+.m-clipboard-button {
+  font-size: 0.6em;
+  display: inline-block;
+  border: 1px solid var(--primary-border-color);
+  background-color: var(--transparent-background-color);
+  border-radius: 0.25rem;
+  padding: 0 0.2rem;
+}
+.m-clipboard-button:focus {
+  box-shadow: none !important;
+}
+
 .m-input, .l-post-content input,
 .l-post-content textarea,
 .l-post-content select {
