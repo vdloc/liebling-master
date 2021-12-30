@@ -662,7 +662,7 @@
   }
 }
 .rtl .kg-callout-card + .kg-callout-card {
-  margin-top: 1.8em;
+  margin-top: 1.7rem !important;
 }
 
 .m-button, .l-post-content button:not(.m-icon-button) {
@@ -744,12 +744,14 @@
 }
 
 .m-clipboard-button {
-  font-size: 0.6em;
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  font-size: 0.7em;
   border: 1px solid var(--primary-border-color);
   background-color: var(--transparent-background-color);
   border-radius: 0.25rem;
-  padding: 0 0.2rem;
+  padding: 0 0.6rem;
+  height: 1.3rem;
 }
 .m-clipboard-button:focus {
   box-shadow: none !important;
