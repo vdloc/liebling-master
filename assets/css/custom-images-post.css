@@ -662,7 +662,7 @@
   }
 }
 .rtl .kg-callout-card + .kg-callout-card {
-  margin-top: 1.8em;
+  margin-top: 1.7rem !important;
 }
 
 .m-button, .l-post-content button:not(.m-icon-button) {
