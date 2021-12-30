@@ -3,7 +3,7 @@
     &-text {
       width: 100%;
 
-      *:first-child {
+      & > :first-child {
         font-weight: bold;
       }
 
