@@ -76,12 +76,14 @@
 }
 
 .m-clipboard-button {
-  font-size: 0.6em;
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  font-size: 0.7em;
   border: 1px solid var(--primary-border-color);
   background-color: var(--transparent-background-color);
   border-radius: rem(4px);
-  padding: 0 0.2rem;
+  padding: 0 0.6rem;
+  height: 1.3rem;
 
   &:focus {
     box-shadow: none !important;
