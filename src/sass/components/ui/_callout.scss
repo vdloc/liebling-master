@@ -1,5 +1,20 @@
-.kg-callout {
-  &-text {
-    width: 100%;
+.l-post-content {
+  .kg-callout {
+    &-text {
+      width: 100%;
+
+      *:first-child {
+        font-weight: bold;
+      }
+
+      p {
+        font-size: 0.95em;
+        line-height: 1.5em;
+      }
+    }
+
+    &-card + &-card {
+      margin-top: 1.7rem !important;
+    }
   }
 }
