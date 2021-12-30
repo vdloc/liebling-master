@@ -856,14 +856,12 @@
 .l-post-content .kg-callout-text {
   width: 100%;
 }
-.l-post-content .kg-callout-text *:first-child {
-  font-weight: bold;
-}
 .l-post-content .kg-callout-text p {
   font-size: 0.95em;
   line-height: 1.5em;
+  margin-bottom: 0;
 }
-.l-post-content .kg-callout-card + .l-post-content .kg-callout-card {
+.l-post-content .kg-callout-card:not(:first-of-type) {
   margin-top: 1.7rem !important;
 }
 
