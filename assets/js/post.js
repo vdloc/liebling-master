@@ -217,6 +217,8 @@ function setupImagesGallery() {
 }
 
 function setupClipboardButtons() {
+  jquery__WEBPACK_IMPORTED_MODULE_0___default()('.m-clipboard-button').attr('data-clipboard-text', window.RAR_PASS);
+  jquery__WEBPACK_IMPORTED_MODULE_0___default()('#rar-pass').text(window.RAR_PASS);
   var clipboard = new clipboard__WEBPACK_IMPORTED_MODULE_3___default.a('.m-clipboard-button');
   clipboard.on('success', function (e) {
     e.trigger.textContent = 'Đã copy';
