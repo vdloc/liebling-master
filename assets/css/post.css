@@ -662,6 +662,10 @@
   }
 }
 
+.gh-post-upgrade-cta {
+  margin-top: 1.25rem;
+}
+
 .m-button, .l-post-content button:not(.m-icon-button) {
   display: inline-block;
   color: #333;
@@ -742,6 +746,7 @@
 
 .m-clipboard-button {
   display: inline-flex;
+  margin-left: 0.5rem;
   align-items: center;
   font-size: 0.7em;
   border: 1px solid var(--primary-border-color);
