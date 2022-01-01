@@ -121,6 +121,9 @@ function setupImagesGallery() {
 }
 
 function setupClipboardButtons() {
+  $('.m-clipboard-button').attr('data-clipboard-text', window.RAR_PASS);
+  $('#rar-pass').text(window.RAR_PASS);
+
   const clipboard = new ClipboardJS('.m-clipboard-button');
 
   clipboard.on('success', function(e) {
