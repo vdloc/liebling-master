@@ -148,11 +148,10 @@ jquery__WEBPACK_IMPORTED_MODULE_0___default()(function () {
 
     if (action === 'subscribe') {
       showNotification('subscribe');
-    }
+    } // if (action === 'signup') {
+    //   window.location = `${ghostHost}/signup/?action=checkout`;
+    // }
 
-    if (action === 'signup') {
-      window.location = "".concat(ghostHost, "/signup/?action=checkout");
-    }
 
     if (action === 'checkout') {
       showNotification('signup');
