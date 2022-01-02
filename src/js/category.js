@@ -75,7 +75,7 @@ $(() => {
     $loadMoreButton.hide();
 
     try {
-      const { posts } = await api.posts.browse({
+      const posts = await api.posts.browse({
         limit: postsCount,
         include: 'tags',
         fields: 'id, title, url, published_at, feature_image, primary_tag',
