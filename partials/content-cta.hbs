@@ -1,0 +1,25 @@
+{{{html}}}
+<aside>
+  <div class="kg-card kg-callout-card kg-callout-card-red">
+    <div class="kg-callout-emoji">⚠️</div>
+    <div class="kg-callout-text">
+      <p class="bold">Xì tốp!!!</p>
+      {{#has visibility="paid"}}
+        <p>Chỉ thành viên của Net Walker mới có thể tải được nội dung này.</p>
+      {{/has}}
+      {{#has visibility="members"}}
+        <p>Chỉ thành viên của Net Walker mới có thể tải được nội dung này.</p>
+      {{/has}}
+      {{#has visibility="filter"}}
+        <p>This post is for subscribers on the {{products}} only </p>
+      {{/has}}
+      {{#if @member}}
+        <a data-portal="account/plans">Nâng cấp VIP</a>
+      {{else}}
+        <a data-portal="signup">Đăng kí</a>
+        <p><small>Đã là thành viên của Net Walker ?
+            <a data-portal="signin">Đăng nhập</a></small></p>
+      {{/if}}
+    </div>
+  </div>
+</aside>

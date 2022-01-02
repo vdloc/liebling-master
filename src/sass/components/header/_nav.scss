@@ -52,7 +52,6 @@
   }
 
   li {
-    font-family: "Bungee", sans-serif;
     color: var(--titles-color);
     letter-spacing: 0.3px;
     font-size: 1.125rem;
@@ -74,6 +73,10 @@
 
     a {
       color: inherit;
+    }
+
+    & > a {
+      font-family: "Bungee", sans-serif;
     }
 
     &.more {
