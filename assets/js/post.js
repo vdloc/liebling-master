@@ -202,13 +202,15 @@ function prepareProgressCircle() {
 }
 
 function setupImagesGallery() {
+  var _$;
+
   jquery__WEBPACK_IMPORTED_MODULE_0___default()('.kg-image-card').each(function () {
     var $this = jquery__WEBPACK_IMPORTED_MODULE_0___default()(this);
     var $image = $this.find('.kg-image');
     $this.attr('data-src', $image.attr('src'));
     $image.attr('data-src', $image.attr('src'));
   });
-  jquery__WEBPACK_IMPORTED_MODULE_0___default()('.js-post-content').lightGallery({
+  (_$ = jquery__WEBPACK_IMPORTED_MODULE_0___default()('.js-post-content')) === null || _$ === void 0 ? void 0 : _$.lightGallery({
     selector: '.kg-image-card',
     thumbnail: true,
     fullScreen: true,
@@ -233,9 +235,9 @@ jquery__WEBPACK_IMPORTED_MODULE_0___default()(function () {
   var $scrollButton = jquery__WEBPACK_IMPORTED_MODULE_0___default()('.js-scrolltop');
   var $recommendedSlider = jquery__WEBPACK_IMPORTED_MODULE_0___default()('.js-recommended-slider');
   fitvids__WEBPACK_IMPORTED_MODULE_1___default()('.js-post-content');
-  setupImagesGallery();
   setupClipboardButtons();
   adjustShare(1000);
+  setupImagesGallery();
 
   if ($recommendedSlider.length > 0) {
     var recommendedSlider = new _glidejs_glide_dist_glide_modular_esm__WEBPACK_IMPORTED_MODULE_4__["default"]('.js-recommended-slider', {
