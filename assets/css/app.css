@@ -1720,6 +1720,9 @@ fieldset {
   letter-spacing: 0.3px;
   font-size: 1.125rem;
 }
+.m-nav__right li > a {
+  font-family: "Bungee", sans-serif;
+}
 .m-nav__right ul {
   padding: 0;
   margin: 0;
