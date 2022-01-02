@@ -907,7 +907,7 @@ body {
   min-height: 100vh;
   color: var(--primary-foreground-color);
   font-size: 1rem;
-  font-family: "Source Sans Pro", Helvetica, Arial, sans-serif;
+  font-family: "Nunito", Helvetica, Arial, sans-serif;
   font-display: swap;
   overflow-x: hidden;
   background-color: var(--background-color);
@@ -1654,6 +1654,7 @@ fieldset {
   }
 }
 .m-nav__left li {
+  font-family: "Bungee", sans-serif;
   color: var(--titles-color);
   letter-spacing: 0.3px;
   font-size: 1.125rem;
