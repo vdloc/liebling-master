@@ -46,7 +46,7 @@ function createPostArticle(post) {
       published_at = post.published_at,
       feature_image = post.feature_image,
       primary_tag = post.primary_tag;
-  var template = "<article class=\"m-article-card ".concat(feature_image ? '' : 'no-picture', " ").concat(categoryTag, " post\">\n      <div class=\"m-article-card__picture\">\n        <a href=\"").concat(url, "\" class=\"m-article-card__picture-link\" aria-hidden=\"true\" tabindex=\"-1\"></a>\n        ").concat(feature_image && "<img class=\"m-article-card__picture-background\" src=\"".concat(feature_image, "\" loading=\"lazy\">"), "\n      </div>\n      <div class=\"m-article-card__info\">\n        <a href=\"").concat(primary_tag === null || primary_tag === void 0 ? void 0 : primary_tag.url, "\" class=\"m-article-card__tag capitalize\">").concat(primary_tag === null || primary_tag === void 0 ? void 0 : primary_tag.name, "</a>\n        <a href=\"").concat(url, "\" class=\"m-article-card__info-link\" aria-label=\"").concat(title, "\">\n          <div>\n            <h2 class=\"m-article-card__title js-article-card-title ").concat(feature_image ? '' : 'js-article-card-title-no-image', "\" title=\"{{title}}\">\n              ").concat(title, "\n            </h2>\n          </div>\n          <div class=\"m-article-card__timestamp\">\n            <span>").concat(getPublicTime(published_at), "</span>\n          </div>\n        </a>\n      </div>\n</article>");
+  var template = "<article class=\"m-article-card ".concat(feature_image ? '' : 'no-picture', " ").concat(categoryTag, " post\" data-aos=\"fade-up\" data-aos-delay=\"300\">\n      <div class=\"m-article-card__picture\">\n        <a href=\"").concat(url, "\" class=\"m-article-card__picture-link\" aria-hidden=\"true\" tabindex=\"-1\"></a>\n        ").concat(feature_image && "<img class=\"m-article-card__picture-background\" src=\"".concat(feature_image, "\" loading=\"lazy\">"), "\n      </div>\n      <div class=\"m-article-card__info\">\n        <a href=\"").concat(primary_tag === null || primary_tag === void 0 ? void 0 : primary_tag.url, "\" class=\"m-article-card__tag capitalize\">").concat(primary_tag === null || primary_tag === void 0 ? void 0 : primary_tag.name, "</a>\n        <a href=\"").concat(url, "\" class=\"m-article-card__info-link\" aria-label=\"").concat(title, "\">\n          <div>\n            <h2 class=\"m-article-card__title js-article-card-title ").concat(feature_image ? '' : 'js-article-card-title-no-image', "\" title=\"{{title}}\">\n              ").concat(title, "\n            </h2>\n          </div>\n          <div class=\"m-article-card__timestamp\">\n            <span>").concat(getPublicTime(published_at), "</span>\n          </div>\n        </a>\n      </div>\n</article>");
   return jquery__WEBPACK_IMPORTED_MODULE_1___default()(template);
 }
 
@@ -66,7 +66,9 @@ jquery__WEBPACK_IMPORTED_MODULE_1___default()(function () {
     }).then(function (posts) {
       if (!totalPosts) {
         totalPosts = posts.meta.pagination.total;
-      } else if (postsCount >= totalPosts) {
+      }
+
+      if (postsCount >= totalPosts) {
         $loadMoreButton.hide();
       }
 
