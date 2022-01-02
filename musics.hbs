@@ -36,8 +36,8 @@ into the {body} of the default.hbs template --}}
 
 {{!-- The #contentFor helper here will send everything inside it up to the matching #block helper found in default.hbs --}}
 {{#contentFor "scripts"}}
-  <script nonce="jlsy6dbILj">
+  <script>
     var categoryTag = "nhac";
   </script>
-  <script nonce="jlsy6dbILj" defer src="{{asset "js/category.js"}}"></script>
+  <script defer src="{{asset "js/category.js"}}"></script>
 {{/contentFor}}

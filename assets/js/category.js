@@ -9,11 +9,51 @@
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _components_featured_slider__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./components/featured-slider */ "./js/components/featured-slider.js");
-/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js");
-/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(jquery__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var moment_timezone__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! moment-timezone */ "./node_modules/moment-timezone/index.js");
-/* harmony import */ var moment_timezone__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(moment_timezone__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/regenerator */ "./node_modules/@babel/runtime/regenerator/index.js");
+/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _components_featured_slider__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./components/featured-slider */ "./js/components/featured-slider.js");
+/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js");
+/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(jquery__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var moment_timezone__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! moment-timezone */ "./node_modules/moment-timezone/index.js");
+/* harmony import */ var moment_timezone__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(moment_timezone__WEBPACK_IMPORTED_MODULE_3__);
+
+
+function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) {
+  try {
+    var info = gen[key](arg);
+    var value = info.value;
+  } catch (error) {
+    reject(error);
+    return;
+  }
+
+  if (info.done) {
+    resolve(value);
+  } else {
+    Promise.resolve(value).then(_next, _throw);
+  }
+}
+
+function _asyncToGenerator(fn) {
+  return function () {
+    var self = this,
+        args = arguments;
+    return new Promise(function (resolve, reject) {
+      var gen = fn.apply(self, args);
+
+      function _next(value) {
+        asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value);
+      }
+
+      function _throw(err) {
+        asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err);
+      }
+
+      _next(undefined);
+    });
+  };
+}
+
 
 
 
@@ -26,12 +66,12 @@ var postsPerEachLoad = 6;
 
 function getPublicTime(date) {
   var timezone = 'Asia/Ho_Chi_Minh';
-  var timeNow = moment_timezone__WEBPACK_IMPORTED_MODULE_2___default()().tz(timezone);
+  var timeNow = moment_timezone__WEBPACK_IMPORTED_MODULE_3___default()().tz(timezone);
   var testDateInput = Date.parse(date);
   var dateMoment;
 
   if (isNaN(testDateInput) === false) {
-    dateMoment = moment_timezone__WEBPACK_IMPORTED_MODULE_2___default.a.parseZone(date);
+    dateMoment = moment_timezone__WEBPACK_IMPORTED_MODULE_3___default.a.parseZone(date);
   } else {
     dateMoment = timeNow;
   }
@@ -47,38 +87,72 @@ function createPostArticle(post) {
       feature_image = post.feature_image,
       primary_tag = post.primary_tag;
   var template = "<article class=\"m-article-card ".concat(feature_image ? '' : 'no-picture', " ").concat(categoryTag, " post\" data-aos=\"fade-up\" data-aos-delay=\"300\">\n      <div class=\"m-article-card__picture\">\n        <a href=\"").concat(url, "\" class=\"m-article-card__picture-link\" aria-hidden=\"true\" tabindex=\"-1\"></a>\n        ").concat(feature_image && "<img class=\"m-article-card__picture-background\" src=\"".concat(feature_image, "\" loading=\"lazy\">"), "\n      </div>\n      <div class=\"m-article-card__info\">\n        <a href=\"").concat(primary_tag === null || primary_tag === void 0 ? void 0 : primary_tag.url, "\" class=\"m-article-card__tag capitalize\">").concat(primary_tag === null || primary_tag === void 0 ? void 0 : primary_tag.name, "</a>\n        <a href=\"").concat(url, "\" class=\"m-article-card__info-link\" aria-label=\"").concat(title, "\">\n          <div>\n            <h2 class=\"m-article-card__title js-article-card-title ").concat(feature_image ? '' : 'js-article-card-title-no-image', "\" title=\"{{title}}\">\n              ").concat(title, "\n            </h2>\n          </div>\n          <div class=\"m-article-card__timestamp\">\n            <span>").concat(getPublicTime(published_at), "</span>\n          </div>\n        </a>\n      </div>\n</article>");
-  return jquery__WEBPACK_IMPORTED_MODULE_1___default()(template);
+  return jquery__WEBPACK_IMPORTED_MODULE_2___default()(template);
 }
 
-jquery__WEBPACK_IMPORTED_MODULE_1___default()(function () {
-  Object(_components_featured_slider__WEBPACK_IMPORTED_MODULE_0__["setupFeaturedSlider"])();
-  if (jquery__WEBPACK_IMPORTED_MODULE_1___default()('.post').length < 4) return;
-  var $loadMoreButton = jquery__WEBPACK_IMPORTED_MODULE_1___default()('#js-load-more-btn');
-  var $postsContainer = jquery__WEBPACK_IMPORTED_MODULE_1___default()('#js-posts-container');
+jquery__WEBPACK_IMPORTED_MODULE_2___default()(function () {
+  Object(_components_featured_slider__WEBPACK_IMPORTED_MODULE_1__["setupFeaturedSlider"])();
+  if (jquery__WEBPACK_IMPORTED_MODULE_2___default()('.post').length < 4) return;
+  var $loader = jquery__WEBPACK_IMPORTED_MODULE_2___default()('#js-loader');
+  var $loadMoreButton = jquery__WEBPACK_IMPORTED_MODULE_2___default()('#js-load-more-btn');
+  var $postsContainer = jquery__WEBPACK_IMPORTED_MODULE_2___default()('#js-posts-container');
   var totalPosts = null;
-  $loadMoreButton.on('click', function () {
-    var postsCount = jquery__WEBPACK_IMPORTED_MODULE_1___default()('.post').length + postsPerEachLoad;
-    api.posts.browse({
-      limit: postsCount,
-      include: 'tags',
-      fields: 'id, title, url, published_at, feature_image, primary_tag',
-      filter: "tag:".concat(categoryTag, "+featured:false")
-    }).then(function (posts) {
-      if (!totalPosts) {
-        totalPosts = posts.meta.pagination.total;
-      }
+  $loadMoreButton.on('click', /*#__PURE__*/_asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee() {
+    var postsCount, _yield$api$posts$brow, posts, postsSlice;
 
-      if (postsCount >= totalPosts) {
-        $loadMoreButton.hide();
-      }
+    return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee$(_context) {
+      while (1) {
+        switch (_context.prev = _context.next) {
+          case 0:
+            postsCount = jquery__WEBPACK_IMPORTED_MODULE_2___default()('.post').length + postsPerEachLoad;
+            $loader.removeClass('hide');
+            $loadMoreButton.hide();
+            _context.prev = 3;
+            _context.next = 6;
+            return api.posts.browse({
+              limit: postsCount,
+              include: 'tags',
+              fields: 'id, title, url, published_at, feature_image, primary_tag',
+              filter: "tag:".concat(categoryTag, "+featured:false")
+            });
 
-      var postsSlice = totalPosts >= postsCount ? -postsPerEachLoad : jquery__WEBPACK_IMPORTED_MODULE_1___default()('.post').length - totalPosts;
-      posts.slice(postsSlice).forEach(function (post) {
-        var $post = createPostArticle(post);
-        $postsContainer.append($post);
-      });
-    });
-  });
+          case 6:
+            _yield$api$posts$brow = _context.sent;
+            posts = _yield$api$posts$brow.posts;
+
+            if (!totalPosts) {
+              totalPosts = posts.meta.pagination.total;
+            }
+
+            if (postsCount >= totalPosts) {
+              $loadMoreButton.hide();
+            }
+
+            postsSlice = totalPosts >= postsCount ? -postsPerEachLoad : jquery__WEBPACK_IMPORTED_MODULE_2___default()('.post').length - totalPosts;
+            posts.slice(postsSlice).forEach(function (post) {
+              var $post = createPostArticle(post);
+              $postsContainer.append($post);
+            });
+            _context.next = 17;
+            break;
+
+          case 14:
+            _context.prev = 14;
+            _context.t0 = _context["catch"](3);
+            $loadMoreButton.show();
+
+          case 17:
+            _context.prev = 17;
+            $loader.addClass('hide');
+            return _context.finish(17);
+
+          case 20:
+          case "end":
+            return _context.stop();
+        }
+      }
+    }, _callee, null, [[3, 14, 17, 20]]);
+  })));
 });
 
 /***/ }),
