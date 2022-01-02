@@ -112,7 +112,7 @@ function setupImagesGallery() {
     $image.attr('data-src', $image.attr('src'));
   });
 
-  $('.js-post-content').lightGallery({
+  $('.js-post-content')?.lightGallery({
     selector: '.kg-image-card',
     thumbnail: true,
     fullScreen: true,
@@ -141,10 +141,9 @@ $(() => {
   const $recommendedSlider = $('.js-recommended-slider');
 
   fitvids('.js-post-content');
-
-  setupImagesGallery();
   setupClipboardButtons();
   adjustShare(1000);
+  setupImagesGallery();
 
   if ($recommendedSlider.length > 0) {
     const recommendedSlider = new Glide('.js-recommended-slider', {
