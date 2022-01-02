@@ -145,9 +145,9 @@ $(() => {
       showNotification('subscribe');
     }
 
-    if (action === 'signup') {
-      window.location = `${ghostHost}/signup/?action=checkout`;
-    }
+    // if (action === 'signup') {
+    //   window.location = `${ghostHost}/signup/?action=checkout`;
+    // }
 
     if (action === 'checkout') {
       showNotification('signup');
