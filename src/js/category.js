@@ -63,37 +63,46 @@ $(() => {
 
   if ($('.post').length < 4) return;
 
+  const $loader = $('#js-loader');
   const $loadMoreButton = $('#js-load-more-btn');
   const $postsContainer = $('#js-posts-container');
   let totalPosts = null;
 
-  $loadMoreButton.on('click', function() {
+  $loadMoreButton.on('click', async function() {
     let postsCount = $('.post').length + postsPerEachLoad;
-    api.posts
-      .browse({
+
+    $loader.removeClass('hide');
+    $loadMoreButton.hide();
+
+    try {
+      const { posts } = await api.posts.browse({
         limit: postsCount,
         include: 'tags',
         fields: 'id, title, url, published_at, feature_image, primary_tag',
         filter: `tag:${categoryTag}+featured:false`
-      })
-      .then(posts => {
-        if (!totalPosts) {
-          totalPosts = posts.meta.pagination.total;
-        }
-
-        if (postsCount >= totalPosts) {
-          $loadMoreButton.hide();
-        }
-
-        let postsSlice =
-          totalPosts >= postsCount
-            ? -postsPerEachLoad
-            : $('.post').length - totalPosts;
-
-        posts.slice(postsSlice).forEach(post => {
-          let $post = createPostArticle(post);
-          $postsContainer.append($post);
-        });
       });
+
+      if (!totalPosts) {
+        totalPosts = posts.meta.pagination.total;
+      }
+
+      if (postsCount >= totalPosts) {
+        $loadMoreButton.hide();
+      }
+
+      let postsSlice =
+        totalPosts >= postsCount
+          ? -postsPerEachLoad
+          : $('.post').length - totalPosts;
+
+      posts.slice(postsSlice).forEach(post => {
+        let $post = createPostArticle(post);
+        $postsContainer.append($post);
+      });
+    } catch (err) {
+      $loadMoreButton.show();
+    } finally {
+      $loader.addClass('hide');
+    }
   });
 });
