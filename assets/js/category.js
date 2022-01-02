@@ -98,8 +98,7 @@ jquery__WEBPACK_IMPORTED_MODULE_2___default()(function () {
   var $postsContainer = jquery__WEBPACK_IMPORTED_MODULE_2___default()('#js-posts-container');
   var totalPosts = null;
   $loadMoreButton.on('click', /*#__PURE__*/_asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee() {
-    var postsCount, _yield$api$posts$brow, posts, postsSlice;
-
+    var postsCount, posts, postsSlice;
     return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee$(_context) {
       while (1) {
         switch (_context.prev = _context.next) {
@@ -117,8 +116,7 @@ jquery__WEBPACK_IMPORTED_MODULE_2___default()(function () {
             });
 
           case 6:
-            _yield$api$posts$brow = _context.sent;
-            posts = _yield$api$posts$brow.posts;
+            posts = _context.sent;
 
             if (!totalPosts) {
               totalPosts = posts.meta.pagination.total;
@@ -133,25 +131,25 @@ jquery__WEBPACK_IMPORTED_MODULE_2___default()(function () {
               var $post = createPostArticle(post);
               $postsContainer.append($post);
             });
-            _context.next = 17;
+            _context.next = 16;
             break;
 
-          case 14:
-            _context.prev = 14;
+          case 13:
+            _context.prev = 13;
             _context.t0 = _context["catch"](3);
             $loadMoreButton.show();
 
-          case 17:
-            _context.prev = 17;
+          case 16:
+            _context.prev = 16;
             $loader.addClass('hide');
-            return _context.finish(17);
+            return _context.finish(16);
 
-          case 20:
+          case 19:
           case "end":
             return _context.stop();
         }
       }
-    }, _callee, null, [[3, 14, 17, 20]]);
+    }, _callee, null, [[3, 13, 16, 19]]);
   })));
 });
 
