@@ -3,7 +3,7 @@ import $ from 'jquery';
 import moment from 'moment-timezone';
 
 const api = new GhostContentAPI({
-  url: ghostHost.includes('http') ? ghostHost: `http:${ghostHost}`,
+  url: ghostHost.includes('http') ? ghostHost : `http:${ghostHost}`,
   key: ghostSearchApiKey,
   version: 'v4'
 });
@@ -22,7 +22,6 @@ function getPublicTime(date) {
     dateMoment = timeNow;
   }
 
-
   dateMoment.locale('vi');
 
   return dateMoment.tz(timezone).from(timeNow);
@@ -32,7 +31,7 @@ function createPostArticle(post) {
   const { title, url, published_at, feature_image, primary_tag } = post;
   let template = `<article class="m-article-card ${
     feature_image ? '' : 'no-picture'
-  } ${categoryTag} post">
+  } ${categoryTag} post" data-aos="fade-up" data-aos-delay="300">
       <div class="m-article-card__picture">
         <a href="${url}" class="m-article-card__picture-link" aria-hidden="true" tabindex="-1"></a>
         ${feature_image &&
@@ -80,9 +79,12 @@ $(() => {
       .then(posts => {
         if (!totalPosts) {
           totalPosts = posts.meta.pagination.total;
-        } else if (postsCount >= totalPosts) {
+        }
+
+        if (postsCount >= totalPosts) {
           $loadMoreButton.hide();
         }
+
         let postsSlice =
           totalPosts >= postsCount
             ? -postsPerEachLoad
