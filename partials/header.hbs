@@ -114,17 +114,23 @@ This header template is shared across all the pages.
             </ul>
           </nav>
           <nav class="m-nav__right">
-            {{!-- <ul>
-              <li>
-                <a  data-portal="signup" href="javascript:" rel="nofollow ugc">Đăng nhập</a>
-              </li>
-              <li>
-                &nbsp;/&nbsp;
-              </li>
-              <li>
-                <a  data-portal="signin" href="javascript:" rel="nofollow ugc">Đăng kí</a>
-              </li>
-            </ul> --}}
+             <ul>
+                {{#if @member}}
+                  <li>
+                    <a href="" rel="nofollow ugc">Tài khoản</a>
+                  </li>
+                {{else}}
+                  <li>
+                    <a href="#/portal/signin" rel="nofollow ugc">Đ.nhập</a>
+                  </li>
+                  <li>
+                    &nbsp;/&nbsp;
+                  </li>
+                  <li>
+                    <a href="#/portal/signup" rel="nofollow ugc">Đ.kí</a>
+                  </li>
+                {{/if}}
+              </ul>
             <button class="m-icon-button in-menu-main js-open-search" aria-label="{{t "Open search"}}">
               <span class="icon-search" aria-hidden="true"></span>
             </button>
