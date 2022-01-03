@@ -152,7 +152,9 @@ This header template is shared across all the pages.
 
   {{#if @site.secondary_navigation}}
     <div id="secondary-navigation-template" style="display: none;">
-      {{navigation type="secondary"}}
+      <ul class="m-secondary-menu">
+        {{navigation type="secondary"}}
+      </ul>
     </div>
   {{/if}}
 </header>
