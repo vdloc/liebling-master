@@ -1,88 +1,49 @@
 .m-footer {
   flex-shrink: 0;
-  background-color: var(--footer-background-color);
-}
-
-.m-footer__content {
+  font-family: "Bungee", sans-serif;
   color: $white;
-  text-align: center;
-  padding: rem(50px) $mobile-space;
+  background-color: var(--footer-background-color);
+  padding: 3rem 0;
 
-  @include respond-to('medium') {
-    padding: rem(75px) 0;
-    max-width: rem(680px);
-    margin: 0 auto;
+  ul {
+    list-style-type: none;
   }
-}
 
-.m-footer__nav-secondary {
-  margin-bottom: rem(25px);
+  &__content {
+    margin-top: 6rem;
+  }
 
-  .m-secondary-menu {
+  &__logo {
+    font-weight: 700;
+    letter-spacing: 0.3px;
+    font-size: 4rem;
+    margin: 0;
+    text-align: center;
+
+    &:hover {
+      text-shadow: 0 0 4px rgba(255, 255, 255, 0.6);
+    }
+  }
+
+  &__nav-list {
     display: flex;
     justify-content: center;
-    flex-wrap: wrap;
+    align-items: center;
+    padding-left: 0;
+    margin: 0;
 
-    li {
-      @include respond-to('medium') {
-        margin: 0 rem(5px);
+    &:not(:first-child) {
+      margin-top: 2rem;
+    }
+
+    & > li[class^="nav"] {
+      :hover {
+        text-shadow: 0 0 4px rgba(255, 255, 255, 0.6);
+      }
+
+      &:not(:first-child) {
+        margin-left: 2rem;
       }
     }
-  }
-}
-
-.m-footer-copyright {
-  font-size: 0.875rem;
-  letter-spacing: 0.3px;
-  line-height: 1.7;
-  margin-bottom: $mobile-space;
-
-  span {
-    display: block;
-
-    @include respond-to('medium') {
-      display: inline;
-    }
-
-    &:nth-child(2) {
-      display: none;
-
-      @include respond-to('medium') {
-        display: inline;
-      }
-    }
-  }
-
-  a {
-    text-decoration: underline;
-  }
-
-  &.jslicense {
-    opacity: 0.7;
-    margin-bottom: 0;
-  }
-}
-
-.m-footer-social {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: rem(20px);
-
-  a {
-    display: inline-block;
-    color: $white;
-    margin: 0 rem(15px);
-
-    span {
-      color: inherit;
-      font-size: 1rem;
-    }
-  }
-}
-
-.rtl {
-  .m-footer-social {
-    direction: ltr;
   }
 }

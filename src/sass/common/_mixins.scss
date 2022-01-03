@@ -160,3 +160,11 @@ $break-largest: 90rem; // >= 1440px @ 16px
     clear: both;
   }
 }
+
+@mixin flex($max) {
+  @for $i from 1 through $max {
+    .flex-#{$i} {
+      flex: $i;
+    }
+  }
+}

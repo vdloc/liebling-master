@@ -1,21 +1,19 @@
-{{!--
-This footer template is shared across all the pages.
---}}
-
 <footer class="m-footer">
-  <div class="m-footer__content">  
-    {{!-- <nav class="m-footer-social">
-      {{#if @site.facebook}}
-        <a href="{{facebook_url @site.facebook}}" target="_blank" rel="noopener" aria-label="Facebook">
-          <span class="icon-facebook" aria-hidden="true"></span>
+  <div class="l-wrapper">
+    <header class="m-footer__header">
+      <h2 class="m-footer__logo">
+        <a href="{{@site.url}}">
+          {{@site.title}}
         </a>
-      {{/if}}
-      <a href="{{@site.url}}/rss" aria-label="RSS">
-        <span class="icon-rss" aria-hidden="true"></span>
-      </a>
-    </nav> --}}
-    <p class="m-footer-copyright">
-      <span>{{@site.title}} &copy; {{date format="YYYY"}}</span>
-    </p>
+      </h2>
+    </header>
+    <div class="m-footer__content">
+      <ul class="m-footer__nav-list" role="menu">
+        {{navigation}}
+      </ul>
+      <ul class="m-footer__nav-list" role="menu">
+        {{navigation type="secondary"}}
+      </ul>
+    </div>
   </div>
 </footer>
