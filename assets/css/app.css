@@ -2949,13 +2949,16 @@ _:-ms-fullscreen, :root .m-toggle-darkmode {
   font-family: "Bungee", sans-serif;
   color: #fff;
   background-color: var(--footer-background-color);
-  padding: 3rem 0;
+  padding: 4rem 0;
 }
 .m-footer ul {
   list-style-type: none;
 }
 .m-footer__content {
-  margin-top: 6rem;
+  margin-top: 4rem;
+}
+.m-footer__header {
+  margin-top: 2rem;
 }
 .m-footer__logo {
   font-weight: 700;

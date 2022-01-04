@@ -3,14 +3,18 @@
   font-family: "Bungee", sans-serif;
   color: $white;
   background-color: var(--footer-background-color);
-  padding: 3rem 0;
+  padding: 4rem 0;
 
   ul {
     list-style-type: none;
   }
 
   &__content {
-    margin-top: 6rem;
+    margin-top: 4rem;
+  }
+
+  &__header {
+    margin-top: 2rem;
   }
 
   &__logo {
