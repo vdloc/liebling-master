@@ -5,9 +5,14 @@
   margin-top: 2.5rem;
 }
 .l-section__header {
-  margin-bottom: 2rem;
+  margin-bottom: 4rem;
   padding-left: 0.625rem;
   padding-right: 0.625rem;
+}
+@media only screen and (min-width: 48rem) {
+  .l-section__header {
+    margin-bottom: 2rem;
+  }
 }
 .l-section__title {
   font-family: "Paytone One", sans-serif;
