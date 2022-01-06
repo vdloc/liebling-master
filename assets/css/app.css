@@ -695,6 +695,10 @@ textarea,
   cursor: pointer;
 }
 
+.h-full {
+  height: 100%;
+}
+
 .only-desktop {
   display: none;
 }
@@ -1557,7 +1561,7 @@ fieldset {
 }
 @media only screen and (min-width: 48rem) {
   .m-header {
-    padding: 0.9375rem 0;
+    height: 4rem;
   }
 }
 .m-header.mobile-menu-opened {
@@ -1631,7 +1635,7 @@ fieldset {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    height: 2.3125rem;
+    height: 100%;
     overflow-y: hidden;
   }
 }
@@ -1653,12 +1657,11 @@ fieldset {
   .m-nav__left {
     display: flex;
     flex: 1 1 auto;
+    height: 100%;
     align-items: center;
     overflow-x: auto;
     overflow-y: hidden;
     white-space: nowrap;
-    padding-top: 2.5rem;
-    padding-bottom: 2.5rem;
     padding-left: 0.3125rem;
     margin-bottom: 0;
     -webkit-overflow-scrolling: touch;
@@ -1676,7 +1679,7 @@ fieldset {
 @media only screen and (min-width: 48rem) {
   .m-nav__left ul:not(.m-secondary-menu) {
     display: flex;
-    align-items: center;
+    height: 100%;
   }
 }
 .m-nav__left li {
@@ -1684,12 +1687,21 @@ fieldset {
   letter-spacing: 0.3px;
   font-size: 1.125rem;
   margin-bottom: 0.9375rem;
+  height: 100%;
+  display: flex;
+  align-items: center;
 }
 @media only screen and (min-width: 48rem) {
   .m-nav__left li {
     margin-bottom: 0;
-    margin-right: 2.1875rem;
+    margin-right: 0.5rem;
     position: relative;
+  }
+  .m-nav__left li:not(:first-child) {
+    padding: 0 1rem;
+  }
+  .m-nav__left li:first-child {
+    margin-right: 2rem;
   }
 }
 .m-nav__left li:last-of-type {
@@ -1737,8 +1749,6 @@ fieldset {
     position: relative;
     padding-left: 1.25rem;
     padding-right: 0.3125rem;
-    padding-top: 2.5rem;
-    padding-bottom: 2.5rem;
   }
 }
 .m-nav__right li {
@@ -1827,7 +1837,7 @@ fieldset {
     position: relative;
     top: auto;
     left: auto;
-    height: auto;
+    height: 100%;
     opacity: 1 !important;
     overflow: initial;
     background-color: transparent;
@@ -1904,7 +1914,7 @@ fieldset {
   .m-submenu {
     visibility: hidden;
     position: fixed;
-    top: 2.8125rem;
+    top: 4rem;
     left: 0;
     width: 100%;
     padding: 1.875rem 0 1.25rem 0;
@@ -1982,7 +1992,8 @@ fieldset {
 }
 
 @media only screen and (min-width: 48rem) {
-  _:-ms-fullscreen, :root .m-submenu {
+  _:-ms-fullscreen,
+:root .m-submenu {
     top: 4.0625rem;
   }
 }

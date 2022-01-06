@@ -30,8 +30,6 @@ $(() => {
   const $closeMenu = $('.js-close-menu');
   const $menu = $('.js-menu');
   const $toggleSubmenu = $('.js-toggle-submenu');
-  const $submenuOption = $('.js-submenu-option')[0];
-  const $submenu = $('.js-submenu');
   const $recentSlider = $('.js-recent-slider');
   const $openSecondaryMenu = $('.js-open-secondary-menu');
   const $openSearch = $('.js-open-search');
@@ -51,16 +49,26 @@ $(() => {
   let submenuIsOpen = false;
   let secondaryMenuTippy = null;
 
-  const showSubmenu = () => {
+  const showSubmenu = $menuItem => {
     $header.addClass('submenu-is-active');
-    $toggleSubmenu.addClass('active');
-    $submenu.removeClass('closed').addClass('opened');
+
+    const $subMenu = $menuItem.find('.js-submenu');
+
+    if ($subMenu.length) {
+      $toggleSubmenu.addClass('active');
+      $subMenu.removeClass('closed').addClass('opened');
+    }
   };
 
-  const hideSubmenu = () => {
+  const hideSubmenu = $menuItem => {
     $header.removeClass('submenu-is-active');
-    $toggleSubmenu.removeClass('active');
-    $submenu.removeClass('opened').addClass('closed');
+
+    const $subMenu = $menuItem.find('.js-submenu');
+
+    if ($subMenu.length) {
+      $toggleSubmenu.removeClass('active');
+      $subMenu.removeClass('opened').addClass('closed');
+    }
   };
 
   const toggleScrollVertical = () => {
@@ -75,7 +83,10 @@ $(() => {
 
   const trySearchFeature = () => {
     if (typeof ghostSearchApiKey !== 'undefined') {
-      getAllPosts(ghostHost.includes('http') ? ghostHost: `http:${ghostHost}`, ghostSearchApiKey);
+      getAllPosts(
+        ghostHost.includes('http') ? ghostHost : `http:${ghostHost}`,
+        ghostSearchApiKey
+      );
     } else {
       $openSearch.css('visibility', 'hidden');
       $closeSearch.remove();
@@ -186,14 +197,16 @@ $(() => {
     toggleScrollVertical();
   });
 
-  $toggleSubmenu.on('click', () => {
-    submenuIsOpen = !submenuIsOpen;
-
-    if (submenuIsOpen) {
-      showSubmenu();
-    } else {
-      hideSubmenu();
+  $('.js-nav-item').on('mouseenter', function(e) {
+    if (!submenuIsOpen) {
+      submenuIsOpen = true;
+      showSubmenu($(this));
     }
+  });
+
+  $('.js-nav-item').on('mouseleave', function() {
+    submenuIsOpen = false;
+    hideSubmenu($(this));
   });
 
   $openSearch.on('click', () => {
@@ -271,15 +284,6 @@ $(() => {
     closeNotification($(this).parent());
   });
 
-  $(window).on('click', e => {
-    if (submenuIsOpen) {
-      if ($submenuOption && !$submenuOption.contains(e.target)) {
-        submenuIsOpen = false;
-        hideSubmenu();
-      }
-    }
-  });
-
   $(document).on('keyup', e => {
     if (e.key === 'Escape' && $search.hasClass('opened')) {
       $closeSearch.trigger('click');
@@ -322,40 +326,42 @@ $(() => {
   }
 
   if ($recentSlider.length > 0) {
-    const recentSlider = new Glide('.js-recent-slider', {
-      type: 'slider',
-      rewind: false,
-      perView: 4,
-      swipeThreshold: false,
-      dragThreshold: false,
-      gap: 0,
-      direction: isRTL() ? 'rtl' : 'ltr',
-      breakpoints: {
-        1024: {
-          perView: 3,
-          swipeThreshold: 80,
-          dragThreshold: 120
-        },
-        768: {
-          perView: 2,
-          swipeThreshold: 80,
-          dragThreshold: 120,
-          peek: { before: 0, after: 115 }
-        },
-        568: {
-          perView: 1,
-          swipeThreshold: 80,
-          dragThreshold: 120,
-          peek: { before: 0, after: 115 }
+    $recentSlider.each(function() {
+      const recentSlider = new Glide(this, {
+        type: 'slider',
+        rewind: false,
+        perView: 4,
+        swipeThreshold: false,
+        dragThreshold: false,
+        gap: 0,
+        direction: isRTL() ? 'rtl' : 'ltr',
+        breakpoints: {
+          1024: {
+            perView: 3,
+            swipeThreshold: 80,
+            dragThreshold: 120
+          },
+          768: {
+            perView: 2,
+            swipeThreshold: 80,
+            dragThreshold: 120,
+            peek: { before: 0, after: 115 }
+          },
+          568: {
+            perView: 1,
+            swipeThreshold: 80,
+            dragThreshold: 120,
+            peek: { before: 0, after: 115 }
+          }
         }
-      }
-    });
+      });
 
-    recentSlider.on('mount.after', () => {
-      shave('.js-recent-article-title', 50);
-    });
+      recentSlider.on('mount.after', () => {
+        shave('.js-recent-article-title', 50);
+      });
 
-    recentSlider.mount({ Swipe, Breakpoints });
+      recentSlider.mount({ Swipe, Breakpoints });
+    });
   }
 
   if (typeof disableFadeAnimation === 'undefined' || !disableFadeAnimation) {

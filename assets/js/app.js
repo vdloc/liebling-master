@@ -42,8 +42,6 @@ jquery__WEBPACK_IMPORTED_MODULE_0___default()(function () {
   var $closeMenu = jquery__WEBPACK_IMPORTED_MODULE_0___default()('.js-close-menu');
   var $menu = jquery__WEBPACK_IMPORTED_MODULE_0___default()('.js-menu');
   var $toggleSubmenu = jquery__WEBPACK_IMPORTED_MODULE_0___default()('.js-toggle-submenu');
-  var $submenuOption = jquery__WEBPACK_IMPORTED_MODULE_0___default()('.js-submenu-option')[0];
-  var $submenu = jquery__WEBPACK_IMPORTED_MODULE_0___default()('.js-submenu');
   var $recentSlider = jquery__WEBPACK_IMPORTED_MODULE_0___default()('.js-recent-slider');
   var $openSecondaryMenu = jquery__WEBPACK_IMPORTED_MODULE_0___default()('.js-open-secondary-menu');
   var $openSearch = jquery__WEBPACK_IMPORTED_MODULE_0___default()('.js-open-search');
@@ -62,16 +60,24 @@ jquery__WEBPACK_IMPORTED_MODULE_0___default()(function () {
   var submenuIsOpen = false;
   var secondaryMenuTippy = null;
 
-  var showSubmenu = function showSubmenu() {
+  var showSubmenu = function showSubmenu($menuItem) {
     $header.addClass('submenu-is-active');
-    $toggleSubmenu.addClass('active');
-    $submenu.removeClass('closed').addClass('opened');
+    var $subMenu = $menuItem.find('.js-submenu');
+
+    if ($subMenu.length) {
+      $toggleSubmenu.addClass('active');
+      $subMenu.removeClass('closed').addClass('opened');
+    }
   };
 
-  var hideSubmenu = function hideSubmenu() {
+  var hideSubmenu = function hideSubmenu($menuItem) {
     $header.removeClass('submenu-is-active');
-    $toggleSubmenu.removeClass('active');
-    $submenu.removeClass('opened').addClass('closed');
+    var $subMenu = $menuItem.find('.js-submenu');
+
+    if ($subMenu.length) {
+      $toggleSubmenu.removeClass('active');
+      $subMenu.removeClass('opened').addClass('closed');
+    }
   };
 
   var toggleScrollVertical = function toggleScrollVertical() {
@@ -188,14 +194,15 @@ jquery__WEBPACK_IMPORTED_MODULE_0___default()(function () {
     $menu.removeClass('opened');
     toggleScrollVertical();
   });
-  $toggleSubmenu.on('click', function () {
-    submenuIsOpen = !submenuIsOpen;
-
-    if (submenuIsOpen) {
-      showSubmenu();
-    } else {
-      hideSubmenu();
+  jquery__WEBPACK_IMPORTED_MODULE_0___default()('.js-nav-item').on('mouseenter', function (e) {
+    if (!submenuIsOpen) {
+      submenuIsOpen = true;
+      showSubmenu(jquery__WEBPACK_IMPORTED_MODULE_0___default()(this));
     }
+  });
+  jquery__WEBPACK_IMPORTED_MODULE_0___default()('.js-nav-item').on('mouseleave', function () {
+    submenuIsOpen = false;
+    hideSubmenu(jquery__WEBPACK_IMPORTED_MODULE_0___default()(this));
   });
   $openSearch.on('click', function () {
     $search.addClass('opened');
@@ -256,14 +263,6 @@ jquery__WEBPACK_IMPORTED_MODULE_0___default()(function () {
   $closeNotification.on('click', function () {
     closeNotification(jquery__WEBPACK_IMPORTED_MODULE_0___default()(this).parent());
   });
-  jquery__WEBPACK_IMPORTED_MODULE_0___default()(window).on('click', function (e) {
-    if (submenuIsOpen) {
-      if ($submenuOption && !$submenuOption.contains(e.target)) {
-        submenuIsOpen = false;
-        hideSubmenu();
-      }
-    }
-  });
   jquery__WEBPACK_IMPORTED_MODULE_0___default()(document).on('keyup', function (e) {
     if (e.key === 'Escape' && $search.hasClass('opened')) {
       $closeSearch.trigger('click');
@@ -303,46 +302,48 @@ jquery__WEBPACK_IMPORTED_MODULE_0___default()(function () {
   }
 
   if ($recentSlider.length > 0) {
-    var recentSlider = new _glidejs_glide_dist_glide_modular_esm__WEBPACK_IMPORTED_MODULE_2__["default"]('.js-recent-slider', {
-      type: 'slider',
-      rewind: false,
-      perView: 4,
-      swipeThreshold: false,
-      dragThreshold: false,
-      gap: 0,
-      direction: Object(_helpers__WEBPACK_IMPORTED_MODULE_8__["isRTL"])() ? 'rtl' : 'ltr',
-      breakpoints: {
-        1024: {
-          perView: 3,
-          swipeThreshold: 80,
-          dragThreshold: 120
-        },
-        768: {
-          perView: 2,
-          swipeThreshold: 80,
-          dragThreshold: 120,
-          peek: {
-            before: 0,
-            after: 115
-          }
-        },
-        568: {
-          perView: 1,
-          swipeThreshold: 80,
-          dragThreshold: 120,
-          peek: {
-            before: 0,
-            after: 115
+    $recentSlider.each(function () {
+      var recentSlider = new _glidejs_glide_dist_glide_modular_esm__WEBPACK_IMPORTED_MODULE_2__["default"](this, {
+        type: 'slider',
+        rewind: false,
+        perView: 4,
+        swipeThreshold: false,
+        dragThreshold: false,
+        gap: 0,
+        direction: Object(_helpers__WEBPACK_IMPORTED_MODULE_8__["isRTL"])() ? 'rtl' : 'ltr',
+        breakpoints: {
+          1024: {
+            perView: 3,
+            swipeThreshold: 80,
+            dragThreshold: 120
+          },
+          768: {
+            perView: 2,
+            swipeThreshold: 80,
+            dragThreshold: 120,
+            peek: {
+              before: 0,
+              after: 115
+            }
+          },
+          568: {
+            perView: 1,
+            swipeThreshold: 80,
+            dragThreshold: 120,
+            peek: {
+              before: 0,
+              after: 115
+            }
           }
         }
-      }
-    });
-    recentSlider.on('mount.after', function () {
-      Object(shave__WEBPACK_IMPORTED_MODULE_5__["default"])('.js-recent-article-title', 50);
-    });
-    recentSlider.mount({
-      Swipe: _glidejs_glide_dist_glide_modular_esm__WEBPACK_IMPORTED_MODULE_2__["Swipe"],
-      Breakpoints: _glidejs_glide_dist_glide_modular_esm__WEBPACK_IMPORTED_MODULE_2__["Breakpoints"]
+      });
+      recentSlider.on('mount.after', function () {
+        Object(shave__WEBPACK_IMPORTED_MODULE_5__["default"])('.js-recent-article-title', 50);
+      });
+      recentSlider.mount({
+        Swipe: _glidejs_glide_dist_glide_modular_esm__WEBPACK_IMPORTED_MODULE_2__["Swipe"],
+        Breakpoints: _glidejs_glide_dist_glide_modular_esm__WEBPACK_IMPORTED_MODULE_2__["Breakpoints"]
+      });
     });
   }
 

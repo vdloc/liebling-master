@@ -3,7 +3,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    height: rem(37px);
+    height: 100%;
     overflow-y: hidden;
   }
 
@@ -24,12 +24,11 @@
   @include respond-to("medium") {
     display: flex;
     flex: 1 1 auto;
+    height: 100%;
     align-items: center;
     overflow-x: auto;
     overflow-y: hidden;
     white-space: nowrap;
-    padding-top: rem(40px);
-    padding-bottom: rem(40px);
     padding-left: rem(5px);
     margin-bottom: 0;
     -webkit-overflow-scrolling: touch;
@@ -47,7 +46,7 @@
 
     @include respond-to("medium") {
       display: flex;
-      align-items: center;
+      height: 100%;
     }
   }
 
@@ -56,11 +55,22 @@
     letter-spacing: 0.3px;
     font-size: 1.125rem;
     margin-bottom: rem(15px);
+    height: 100%;
+    display: flex;
+    align-items: center;
 
     @include respond-to("medium") {
       margin-bottom: 0;
-      margin-right: rem(35px);
+      margin-right: 0.5rem;
       position: relative;
+
+      &:not(:first-child) {
+        padding: 0 1rem;
+      }
+
+      &:first-child {
+        margin-right: 2rem;
+      }
     }
 
     &:last-of-type {
@@ -116,8 +126,6 @@
     position: relative;
     padding-left: rem(20px);
     padding-right: rem(5px);
-    padding-top: rem(40px);
-    padding-bottom: rem(40px);
   }
 
   li {

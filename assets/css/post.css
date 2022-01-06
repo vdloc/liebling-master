@@ -88,6 +88,10 @@
   cursor: pointer;
 }
 
+.h-full {
+  height: 100%;
+}
+
 .only-desktop {
   display: none;
 }
