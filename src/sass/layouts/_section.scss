@@ -2,9 +2,13 @@
   margin-top: 2.5rem;
 
   &__header {
-    margin-bottom: 2rem;
+    margin-bottom: 4rem;
     padding-left: rem(10px);
     padding-right: rem(10px);
+
+    @include respond-to("medium") {
+      margin-bottom: 2rem;
+    }
   }
 
   &__title {
