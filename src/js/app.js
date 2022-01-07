@@ -197,14 +197,14 @@ $(() => {
     toggleScrollVertical();
   });
 
-  $('js-header .js-nav-item').on('mouseenter', function(e) {
+  $('.js-header .js-nav-item').on('mouseenter', function(e) {
     if (!submenuIsOpen) {
       submenuIsOpen = true;
       showSubmenu($(this));
     }
   });
 
-  $('js-header .js-nav-item').on('mouseleave', function() {
+  $('.js-header .js-nav-item').on('mouseleave', function() {
     submenuIsOpen = false;
     hideSubmenu($(this));
   });
