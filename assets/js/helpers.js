@@ -197,4 +197,4 @@ module.exports = __webpack_require__(/*! /home/nomad/netwalker-dev/content/theme
 
 /***/ })
 
-},[[0,"/js/manifest"]]]);
+},[[0,"/js/manifest","/js/vendor"]]]);
