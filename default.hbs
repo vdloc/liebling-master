@@ -28,7 +28,11 @@
     <link rel="preload" href="{{asset "js/vendor/content-api.min.js"}}" as="script" />
     <link rel="preload" href="{{asset "js/vendor.js"}}" as="script" />
     <link rel="preload" href="{{asset "js/app.js"}}" as="script" />
-    <link rel="preload" href="{{asset "fonts/bungee/Bungee-Regular.ttf"}}" as="font" />
+    <link rel="preload" href="{{asset "fonts/bungee/Bungee-Regular.ttf"}}" as="font" type="font/ttf" crossorigin/>
+    <link rel="preload" href="{{asset "fonts/nunito/Nunito-Regular.ttf"}}" as="font" type="font/ttf" crossorigin/>
+    <link rel="preload" href="{{asset "fonts/nunito/Nunito-Bold.ttf"}}" as="font" type="font/ttf" crossorigin/>
+    <link rel="preload" href="{{asset "fonts/nunito/Nunito-SemiBold.ttf"}}" as="font" type="font/ttf" crossorigin/>
+    
 
 
     {{!-- This #block helper will try to preload page-specific assets --}}
@@ -81,7 +85,7 @@
         font-family: 'Bungee';
         font-style: normal;
         font-weight: 400;
-        font-display: swap;
+        font-display: block;
         src: local('Bungee-Regular'),
             url("{{asset 'fonts/bungee/Bungee-Regular.ttf'}}");
       }

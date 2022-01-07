@@ -197,17 +197,19 @@ $(() => {
     toggleScrollVertical();
   });
 
-  $('.js-nav-item').on('mouseenter', function(e) {
+  $('js-header .js-nav-item').on('mouseenter', function(e) {
     if (!submenuIsOpen) {
       submenuIsOpen = true;
       showSubmenu($(this));
     }
   });
 
-  $('.js-nav-item').on('mouseleave', function() {
+  $('js-header .js-nav-item').on('mouseleave', function() {
     submenuIsOpen = false;
     hideSubmenu($(this));
   });
+
+  $('.js-footer .js-submenu').remove();
 
   $openSearch.on('click', () => {
     $search.addClass('opened');
