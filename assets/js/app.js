@@ -194,16 +194,17 @@ jquery__WEBPACK_IMPORTED_MODULE_0___default()(function () {
     $menu.removeClass('opened');
     toggleScrollVertical();
   });
-  jquery__WEBPACK_IMPORTED_MODULE_0___default()('.js-nav-item').on('mouseenter', function (e) {
+  jquery__WEBPACK_IMPORTED_MODULE_0___default()('js-header .js-nav-item').on('mouseenter', function (e) {
     if (!submenuIsOpen) {
       submenuIsOpen = true;
       showSubmenu(jquery__WEBPACK_IMPORTED_MODULE_0___default()(this));
     }
   });
-  jquery__WEBPACK_IMPORTED_MODULE_0___default()('.js-nav-item').on('mouseleave', function () {
+  jquery__WEBPACK_IMPORTED_MODULE_0___default()('js-header .js-nav-item').on('mouseleave', function () {
     submenuIsOpen = false;
     hideSubmenu(jquery__WEBPACK_IMPORTED_MODULE_0___default()(this));
   });
+  jquery__WEBPACK_IMPORTED_MODULE_0___default()('.js-footer .js-submenu').remove();
   $openSearch.on('click', function () {
     $search.addClass('opened');
     setTimeout(function () {
