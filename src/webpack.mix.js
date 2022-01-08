@@ -41,6 +41,7 @@ mix
   .sass('sass/newsletter.scss', 'css/')
   .sass('sass/tags.scss', 'css/')
   .sass('sass/404.scss', 'css/')
+  .sass('sass/contact.scss', 'css/')
   .options({
     processCssUrls: false
   })

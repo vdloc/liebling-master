@@ -11,7 +11,6 @@ Also it includes the big submenu.
     {{/foreach}}
 {{else}}
   {{#foreach navigation}}
-    <h1>{{name}}</h1>
     <li class="nav-{{slug}}{{#if current}} nav-current{{/if}} m-nav__item js-nav-item">
       <a href="{{url absolute="true"}}">{{label}}</a>
       {{!-- Submenu --}}

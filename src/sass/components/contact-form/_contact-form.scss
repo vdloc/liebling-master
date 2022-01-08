@@ -1,0 +1,38 @@
+.m-contact {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem 1rem;
+
+  &__left,
+  &__right {
+    flex: 0 0 40%;
+    padding: 1rem;
+  }
+
+  &__right {
+    margin-left: 3rem;
+  }
+
+  &__title {
+    font-size: 2.5rem;
+  }
+
+  &__form {
+    margin-top: 3rem;
+
+    label {
+      font-size: 1.2rem;
+      font-weight: 500;
+    }
+
+    textarea {
+      resize: none;
+    }
+
+    .m-input {
+      margin-top: 1rem;
+      margin-bottom: 1rem;
+    }
+  }
+}
