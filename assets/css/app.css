@@ -1649,6 +1649,9 @@ fieldset {
     overflow-y: initial;
   }
 }
+.m-nav__link {
+  font-family: "Bungee", sans-serif;
+}
 
 .m-nav__left {
   margin-bottom: 1.875rem;
@@ -1712,9 +1715,6 @@ fieldset {
 }
 .m-nav__left li a {
   color: inherit;
-}
-.m-nav__left li > a {
-  font-family: "Bungee", sans-serif;
 }
 .m-nav__left li.more a {
   display: inline-flex;
@@ -2002,7 +2002,7 @@ fieldset {
   letter-spacing: 0.3px;
   line-height: 1.3;
   font-size: 1.125rem;
-  font-weight: 400;
+  font-weight: 700;
   margin: 0 0 1.5625rem;
 }
 .m-submenu-title.in-recent-articles {

@@ -2,13 +2,13 @@
   letter-spacing: 0.3px;
   line-height: 1.3;
   font-size: 1.125rem;
-  font-weight: 400;
+  font-weight: 700;
   margin: 0 0 rem(25px);
 
   &.in-recent-articles {
     padding: 0 $mobile-space;
 
-    @include respond-to('medium') {
+    @include respond-to("medium") {
       padding: 0;
     }
   }

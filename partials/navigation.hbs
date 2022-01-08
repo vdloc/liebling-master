@@ -12,7 +12,7 @@ Also it includes the big submenu.
 {{else}}
   {{#foreach navigation}}
     <li class="nav-{{slug}}{{#if current}} nav-current{{/if}} m-nav__item js-nav-item">
-      <a href="{{url absolute="true"}}">{{label}}</a>
+      <a class="m-nav__link" href="{{url absolute="true"}}">{{label}}</a>
       {{!-- Submenu --}}
       <div class="m-submenu js-submenu">
         <div class="l-wrapper in-submenu">
@@ -54,7 +54,7 @@ Also it includes the big submenu.
               <ul>
                 {{#foreach tags}}
                   <li>
-                    <a href="{{url}}">{{name}}</a>
+                    <a class="m-submenu__tag-link" href="{{url}}">{{name}}</a>
                   </li>
                   {{else}}
                     <li class="m-not-found">{{t "No tags found :("}}</li>

@@ -16,6 +16,10 @@
       overflow-y: initial;
     }
   }
+
+  &__link {
+    font-family: "Bungee", sans-serif;
+  }
 }
 
 .m-nav__left {
@@ -83,10 +87,6 @@
 
     a {
       color: inherit;
-    }
-
-    & > a {
-      font-family: "Bungee", sans-serif;
     }
 
     &.more {
