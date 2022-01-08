@@ -64,7 +64,7 @@
       margin-right: 0.5rem;
       position: relative;
 
-      &:not(:first-child) {
+      &:not(:first-child):not(:last-child) {
         padding: 0 1rem;
       }
 
