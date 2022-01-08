@@ -133,6 +133,17 @@ function scrollTop() {
 
 /***/ }),
 
+/***/ "./sass/disclaimer.scss":
+/*!******************************!*\
+  !*** ./sass/disclaimer.scss ***!
+  \******************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+
 /***/ "./sass/home.scss":
 /*!************************!*\
   !*** ./sass/home.scss ***!
@@ -177,6 +188,17 @@ function scrollTop() {
 
 /***/ }),
 
+/***/ "./sass/privacy.scss":
+/*!***************************!*\
+  !*** ./sass/privacy.scss ***!
+  \***************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+
 /***/ "./sass/tags.scss":
 /*!************************!*\
   !*** ./sass/tags.scss ***!
@@ -189,9 +211,9 @@ function scrollTop() {
 /***/ }),
 
 /***/ 0:
-/*!**************************************************************************************************************************************************************************************************************!*\
-  !*** multi ./js/helpers.js ./sass/app.scss ./sass/home.scss ./sass/listing.scss ./sass/post.scss ./sass/custom-images-post.scss ./sass/newsletter.scss ./sass/tags.scss ./sass/404.scss ./sass/contact.scss ***!
-  \**************************************************************************************************************************************************************************************************************/
+/*!*********************************************************************************************************************************************************************************************************************************************************!*\
+  !*** multi ./js/helpers.js ./sass/app.scss ./sass/home.scss ./sass/listing.scss ./sass/post.scss ./sass/custom-images-post.scss ./sass/newsletter.scss ./sass/tags.scss ./sass/404.scss ./sass/contact.scss ./sass/disclaimer.scss ./sass/privacy.scss ***!
+  \*********************************************************************************************************************************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -204,9 +226,11 @@ __webpack_require__(/*! /home/nomad/netwalker-dev/content/themes/liebling/src/sa
 __webpack_require__(/*! /home/nomad/netwalker-dev/content/themes/liebling/src/sass/newsletter.scss */"./sass/newsletter.scss");
 __webpack_require__(/*! /home/nomad/netwalker-dev/content/themes/liebling/src/sass/tags.scss */"./sass/tags.scss");
 __webpack_require__(/*! /home/nomad/netwalker-dev/content/themes/liebling/src/sass/404.scss */"./sass/404.scss");
-module.exports = __webpack_require__(/*! /home/nomad/netwalker-dev/content/themes/liebling/src/sass/contact.scss */"./sass/contact.scss");
+__webpack_require__(/*! /home/nomad/netwalker-dev/content/themes/liebling/src/sass/contact.scss */"./sass/contact.scss");
+__webpack_require__(/*! /home/nomad/netwalker-dev/content/themes/liebling/src/sass/disclaimer.scss */"./sass/disclaimer.scss");
+module.exports = __webpack_require__(/*! /home/nomad/netwalker-dev/content/themes/liebling/src/sass/privacy.scss */"./sass/privacy.scss");
 
 
 /***/ })
 
-},[[0,"/js/manifest"]]]);
+},[[0,"/js/manifest","/js/vendor"]]]);
