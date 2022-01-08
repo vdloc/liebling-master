@@ -1,0 +1,30 @@
+.m-contact {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem 1rem;
+}
+.m-contact__left, .m-contact__right {
+  flex: 0 0 40%;
+  padding: 1rem;
+}
+.m-contact__right {
+  margin-left: 3rem;
+}
+.m-contact__title {
+  font-size: 2.5rem;
+}
+.m-contact__form {
+  margin-top: 3rem;
+}
+.m-contact__form label {
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+.m-contact__form textarea {
+  resize: none;
+}
+.m-contact__form .m-input {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}

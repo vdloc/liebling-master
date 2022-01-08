@@ -111,6 +111,17 @@ function scrollTop() {
 
 /***/ }),
 
+/***/ "./sass/contact.scss":
+/*!***************************!*\
+  !*** ./sass/contact.scss ***!
+  \***************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+
 /***/ "./sass/custom-images-post.scss":
 /*!**************************************!*\
   !*** ./sass/custom-images-post.scss ***!
@@ -178,9 +189,9 @@ function scrollTop() {
 /***/ }),
 
 /***/ 0:
-/*!******************************************************************************************************************************************************************************************!*\
-  !*** multi ./js/helpers.js ./sass/app.scss ./sass/home.scss ./sass/listing.scss ./sass/post.scss ./sass/custom-images-post.scss ./sass/newsletter.scss ./sass/tags.scss ./sass/404.scss ***!
-  \******************************************************************************************************************************************************************************************/
+/*!**************************************************************************************************************************************************************************************************************!*\
+  !*** multi ./js/helpers.js ./sass/app.scss ./sass/home.scss ./sass/listing.scss ./sass/post.scss ./sass/custom-images-post.scss ./sass/newsletter.scss ./sass/tags.scss ./sass/404.scss ./sass/contact.scss ***!
+  \**************************************************************************************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -192,9 +203,10 @@ __webpack_require__(/*! /home/nomad/netwalker-dev/content/themes/liebling/src/sa
 __webpack_require__(/*! /home/nomad/netwalker-dev/content/themes/liebling/src/sass/custom-images-post.scss */"./sass/custom-images-post.scss");
 __webpack_require__(/*! /home/nomad/netwalker-dev/content/themes/liebling/src/sass/newsletter.scss */"./sass/newsletter.scss");
 __webpack_require__(/*! /home/nomad/netwalker-dev/content/themes/liebling/src/sass/tags.scss */"./sass/tags.scss");
-module.exports = __webpack_require__(/*! /home/nomad/netwalker-dev/content/themes/liebling/src/sass/404.scss */"./sass/404.scss");
+__webpack_require__(/*! /home/nomad/netwalker-dev/content/themes/liebling/src/sass/404.scss */"./sass/404.scss");
+module.exports = __webpack_require__(/*! /home/nomad/netwalker-dev/content/themes/liebling/src/sass/contact.scss */"./sass/contact.scss");
 
 
 /***/ })
 
-},[[0,"/js/manifest","/js/vendor"]]]);
+},[[0,"/js/manifest"]]]);
