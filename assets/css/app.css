@@ -1622,6 +1622,9 @@ fieldset {
   margin: 0 20px;
 }
 
+.m-site-name {
+  font-family: "Bungee", sans-serif;
+}
 .m-site-name.in-mobile-topbar {
   color: var(--titles-color);
   font-weight: 600;
