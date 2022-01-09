@@ -56,8 +56,7 @@ into the {body} of the default.hbs template --}}
                  {{#foreach tags}} 
                    <li class="m-heading__meta-tag-item">
                      <a href="{{url}}" class="m-heading__meta-tag-link capitalize js-heading-meta-tag" data-color="{{accent_color}}">
-                     <span class="m-heading__meta-tag-desc js-heading-meta-tag-desc">{{description}}</span>
-                     {{name}}</a>  
+                     <span class="m-heading__meta-tag-desc js-heading-meta-tag-desc">{{description}}</span>{{name}}</a>  
                    </li>                
                   {{/foreach}}
                </ul>
