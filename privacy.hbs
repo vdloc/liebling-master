@@ -5,12 +5,12 @@ You must first create a page called Tags in the dashboard to enable it.
 
 {{!-- This block preloads specific assets for the tags page --}}
 {{#contentFor "preload"}}
-  <link rel="preload" href="{{asset "css/disclaimer.css"}}" as="style" />
+  <link rel="preload" href="{{asset "css/info-page.css"}}" as="style" />
 {{/contentFor}}
 
 {{!-- This block loads specific styles for the tags page --}}
 {{#contentFor "styles"}}
-  <link rel="stylesheet" type="text/css" href="{{asset "css/privacy.css"}}" media="screen" />
+  <link rel="stylesheet" type="text/css" href="{{asset "css/info-page.css"}}" media="screen" />
 {{/contentFor}}
 
 {{!-- The tag below means: insert everything in this file
@@ -23,12 +23,12 @@ into the {body} of the default.hbs template --}}
 <div class="main-wrap">
   <div class="l-content">
     <div class="l-wrapper" data-aos="fade-up" data-aos-delay="300">
-      <div class="m-privacy">
-        <div class="m-privacy__banner">
+      <div class="m-info-page">
+        <div class="m-info-page__banner">
           <img src="{{asset "images/privacy.svg"}}" alt="Privacy">
         </div>
         <div>
-        <h1 class="m-privacy__title"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Chính sách bảo mật</font></font></h1>
+        <h1 class="m-info-page__title"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Chính sách bảo mật</font></font></h1>
         <p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Cập nhật lần cuối: ngày 08 tháng 1 năm 2022</font></font></p>
         <p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Chính sách Bảo mật này mô tả các chính sách và thủ tục của Chúng tôi về việc thu thập, sử dụng và tiết lộ thông tin của Bạn khi Bạn sử dụng Dịch vụ và cho Bạn biết về các quyền riêng tư của Bạn và cách luật pháp bảo vệ Bạn.</font></font></p>
         <p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Chúng tôi sử dụng dữ liệu Cá nhân của Bạn để cung cấp và cải thiện Dịch vụ. </font><font style="vertical-align: inherit;">Bằng việc sử dụng Dịch vụ, Bạn đồng ý với việc thu thập và sử dụng thông tin theo Chính sách Bảo mật này. </font><font style="vertical-align: inherit;">Chính sách Bảo mật này đã được tạo với sự trợ giúp của </font></font><a href="https://www.privacypolicies.com/blog/privacy-policy-template/" target="_blank"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Mẫu Chính sách Bảo mật</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"> .</font></font></p>

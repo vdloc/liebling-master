@@ -87,12 +87,6 @@
   height: 100%;
 }
 
-.only-desktop {
-  display: none;
 
-  @include respond-to("medium") {
-    display: block;
-  }
-}
 
 @include flex(6);

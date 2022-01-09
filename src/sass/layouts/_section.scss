@@ -3,7 +3,6 @@
 
   &__header {
     margin-bottom: 4rem;
-    padding-left: rem(10px);
     padding-right: rem(10px);
 
     @include respond-to("medium") {

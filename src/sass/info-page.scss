@@ -1,12 +1,17 @@
-.m-disclaimer {
+@import "common/mixins";
+
+.m-info-page {
   padding: 3rem 1rem;
 
   &__banner {
-    height: 25rem;
+    @include respond-to("medium") {
+      height: 20rem;
+    }
 
     img {
       display: block;
       max-height: 100%;
+      max-width: 100%;
     }
   }
 

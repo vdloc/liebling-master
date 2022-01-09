@@ -1,1 +1,764 @@
-(window.webpackJsonp=window.webpackJsonp||[]).push([[3],{161:function(e,t,n){e.exports=n(162)},162:function(e,t,n){"use strict";n.r(t);var s=n(8),r=n.n(s),a=n(6),i=n(1),o=n.n(i),c=n(9),l=n.n(c);function u(e,t,n,s,r,a,i){try{var o=e[a](i),c=o.value}catch(e){return void n(e)}o.done?t(c):Promise.resolve(c).then(s,r)}function d(e){return function(){var t=this,n=arguments;return new Promise((function(s,r){var a=e.apply(t,n);function i(e){u(a,s,r,i,o,"next",e)}function o(e){u(a,s,r,i,o,"throw",e)}i(void 0)}))}}var j=new GhostContentAPI({url:ghostHost.includes("http")?ghostHost:"http:".concat(ghostHost),key:ghostSearchApiKey,version:"v4"});function f(e){var t,n,s,r,a=e.title,i=e.url,c=e.published_at,u=e.feature_image,d=e.primary_tag,j='<article class="m-article-card '.concat(u?"":"no-picture"," ").concat(categoryTag,' post" data-aos="fade-up" data-aos-delay="300">\n      <div class="m-article-card__picture">\n        <a href="').concat(i,'" class="m-article-card__picture-link" aria-hidden="true" tabindex="-1"></a>\n        ').concat(u&&'<img class="m-article-card__picture-background" src="'.concat(u,'" loading="lazy">'),'\n      </div>\n      <div class="m-article-card__info">\n        <a href="').concat(null==d?void 0:d.url,'" class="m-article-card__tag capitalize">').concat(null==d?void 0:d.name,'</a>\n        <a href="').concat(i,'" class="m-article-card__info-link" aria-label="').concat(a,'">\n          <div>\n            <h2 class="m-article-card__title js-article-card-title ').concat(u?"":"js-article-card-title-no-image",'" title="{{title}}">\n              ').concat(a,'\n            </h2>\n          </div>\n          <div class="m-article-card__timestamp">\n            <span>').concat((t=c,s=l()().tz("Asia/Ho_Chi_Minh"),r=Date.parse(t),(n=!1===isNaN(r)?l.a.parseZone(t):s).locale("vi"),n.tz("Asia/Ho_Chi_Minh").from(s)),"</span>\n          </div>\n        </a>\n      </div>\n</article>");return o()(j)}o()((function(){if(Object(a.a)(),!(o()(".post").length<4)){var e=o()("#js-loader"),t=o()("#js-load-more-btn"),n=o()("#js-posts-container"),s=null;t.on("click",d(r.a.mark((function a(){var i,c,l;return r.a.wrap((function(r){for(;;)switch(r.prev=r.next){case 0:return i=o()(".post").length+6,e.removeClass("hide"),t.hide(),r.prev=3,r.next=6,j.posts.browse({limit:i,include:"tags",fields:"id, title, url, published_at, feature_image, primary_tag",filter:"tag:".concat(categoryTag,"+featured:false")});case 6:c=r.sent,s||(s=c.meta.pagination.total),i>=s&&t.hide(),l=s>=i?-6:o()(".post").length-s,c.slice(l).forEach((function(e){var t=f(e);n.append(t)})),r.next=16;break;case 13:r.prev=13,r.t0=r.catch(3),t.show();case 16:return r.prev=16,e.addClass("hide"),r.finish(16);case 19:case"end":return r.stop()}}),a,null,[[3,13,16,19]])}))))}}))},165:function(e,t,n){var s={"./af":10,"./af.js":10,"./ar":11,"./ar-dz":12,"./ar-dz.js":12,"./ar-kw":13,"./ar-kw.js":13,"./ar-ly":14,"./ar-ly.js":14,"./ar-ma":15,"./ar-ma.js":15,"./ar-sa":16,"./ar-sa.js":16,"./ar-tn":17,"./ar-tn.js":17,"./ar.js":11,"./az":18,"./az.js":18,"./be":19,"./be.js":19,"./bg":20,"./bg.js":20,"./bm":21,"./bm.js":21,"./bn":22,"./bn.js":22,"./bo":23,"./bo.js":23,"./br":24,"./br.js":24,"./bs":25,"./bs.js":25,"./ca":26,"./ca.js":26,"./cs":27,"./cs.js":27,"./cv":28,"./cv.js":28,"./cy":29,"./cy.js":29,"./da":30,"./da.js":30,"./de":31,"./de-at":32,"./de-at.js":32,"./de-ch":33,"./de-ch.js":33,"./de.js":31,"./dv":34,"./dv.js":34,"./el":35,"./el.js":35,"./en-au":36,"./en-au.js":36,"./en-ca":37,"./en-ca.js":37,"./en-gb":38,"./en-gb.js":38,"./en-ie":39,"./en-ie.js":39,"./en-il":40,"./en-il.js":40,"./en-in":41,"./en-in.js":41,"./en-nz":42,"./en-nz.js":42,"./en-sg":43,"./en-sg.js":43,"./eo":44,"./eo.js":44,"./es":45,"./es-do":46,"./es-do.js":46,"./es-us":47,"./es-us.js":47,"./es.js":45,"./et":48,"./et.js":48,"./eu":49,"./eu.js":49,"./fa":50,"./fa.js":50,"./fi":51,"./fi.js":51,"./fil":52,"./fil.js":52,"./fo":53,"./fo.js":53,"./fr":54,"./fr-ca":55,"./fr-ca.js":55,"./fr-ch":56,"./fr-ch.js":56,"./fr.js":54,"./fy":57,"./fy.js":57,"./ga":58,"./ga.js":58,"./gd":59,"./gd.js":59,"./gl":60,"./gl.js":60,"./gom-deva":61,"./gom-deva.js":61,"./gom-latn":62,"./gom-latn.js":62,"./gu":63,"./gu.js":63,"./he":64,"./he.js":64,"./hi":65,"./hi.js":65,"./hr":66,"./hr.js":66,"./hu":67,"./hu.js":67,"./hy-am":68,"./hy-am.js":68,"./id":69,"./id.js":69,"./is":70,"./is.js":70,"./it":71,"./it-ch":72,"./it-ch.js":72,"./it.js":71,"./ja":73,"./ja.js":73,"./jv":74,"./jv.js":74,"./ka":75,"./ka.js":75,"./kk":76,"./kk.js":76,"./km":77,"./km.js":77,"./kn":78,"./kn.js":78,"./ko":79,"./ko.js":79,"./ku":80,"./ku.js":80,"./ky":81,"./ky.js":81,"./lb":82,"./lb.js":82,"./lo":83,"./lo.js":83,"./lt":84,"./lt.js":84,"./lv":85,"./lv.js":85,"./me":86,"./me.js":86,"./mi":87,"./mi.js":87,"./mk":88,"./mk.js":88,"./ml":89,"./ml.js":89,"./mn":90,"./mn.js":90,"./mr":91,"./mr.js":91,"./ms":92,"./ms-my":93,"./ms-my.js":93,"./ms.js":92,"./mt":94,"./mt.js":94,"./my":95,"./my.js":95,"./nb":96,"./nb.js":96,"./ne":97,"./ne.js":97,"./nl":98,"./nl-be":99,"./nl-be.js":99,"./nl.js":98,"./nn":100,"./nn.js":100,"./oc-lnc":101,"./oc-lnc.js":101,"./pa-in":102,"./pa-in.js":102,"./pl":103,"./pl.js":103,"./pt":104,"./pt-br":105,"./pt-br.js":105,"./pt.js":104,"./ro":106,"./ro.js":106,"./ru":107,"./ru.js":107,"./sd":108,"./sd.js":108,"./se":109,"./se.js":109,"./si":110,"./si.js":110,"./sk":111,"./sk.js":111,"./sl":112,"./sl.js":112,"./sq":113,"./sq.js":113,"./sr":114,"./sr-cyrl":115,"./sr-cyrl.js":115,"./sr.js":114,"./ss":116,"./ss.js":116,"./sv":117,"./sv.js":117,"./sw":118,"./sw.js":118,"./ta":119,"./ta.js":119,"./te":120,"./te.js":120,"./tet":121,"./tet.js":121,"./tg":122,"./tg.js":122,"./th":123,"./th.js":123,"./tk":124,"./tk.js":124,"./tl-ph":125,"./tl-ph.js":125,"./tlh":126,"./tlh.js":126,"./tr":127,"./tr.js":127,"./tzl":128,"./tzl.js":128,"./tzm":129,"./tzm-latn":130,"./tzm-latn.js":130,"./tzm.js":129,"./ug-cn":131,"./ug-cn.js":131,"./uk":132,"./uk.js":132,"./ur":133,"./ur.js":133,"./uz":134,"./uz-latn":135,"./uz-latn.js":135,"./uz.js":134,"./vi":136,"./vi.js":136,"./x-pseudo":137,"./x-pseudo.js":137,"./yo":138,"./yo.js":138,"./zh-cn":139,"./zh-cn.js":139,"./zh-hk":140,"./zh-hk.js":140,"./zh-mo":141,"./zh-mo.js":141,"./zh-tw":142,"./zh-tw.js":142};function r(e){var t=a(e);return n(t)}function a(e){if(!n.o(s,e)){var t=new Error("Cannot find module '"+e+"'");throw t.code="MODULE_NOT_FOUND",t}return s[e]}r.keys=function(){return Object.keys(s)},r.resolve=a,e.exports=r,r.id=165},2:function(e,t,n){"use strict";function s(){var e=document.querySelector("html");return["ar","he","fa"].includes(e.getAttribute("lang"))}function r(){var e=arguments.length>0&&void 0!==arguments[0]?arguments[0]:"768px";return window.matchMedia("(max-width: ".concat(e,")")).matches}function a(){var e=window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)");return e&&e.matches}function i(e){return e?new Date(e).toLocaleDateString(document.documentElement.lang,{year:"numeric",month:"long",day:"numeric"}):""}function o(e,t){t||(t=window.location.href),e=e.replace(/[\[\]]/g,"\\$&");var n=new RegExp("[?&]".concat(e,"(=([^&#]*)|&|#|$)")).exec(t);return n?n[2]?decodeURIComponent(n[2].replace(/\+/g," ")):"":null}function c(){for(var e=document.querySelectorAll(".kg-gallery-image img"),t=0,n=e.length;t<n;t++){var s=e[t].closest(".kg-gallery-image"),r=e[t].attributes.width.value/e[t].attributes.height.value;s.style.flex="".concat(r," 1 0%")}}function l(e){e(".js-post-content").find("img").each((function(){e(this).closest("figure").hasClass("kg-bookmark-card")||e(this).parent().is("a")||e(this).addClass("js-zoomable")}))}function u(e,t){t(".js-zoomable").on("opened",(function(){setTimeout((function(){var t=e(".medium-zoom-image--opened");t.length>1&&t.last().hide()}),10)}))}function d(){window.scrollTo({top:0,behavior:"smooth"})}n.r(t),n.d(t,"isRTL",(function(){return s})),n.d(t,"isMobile",(function(){return r})),n.d(t,"isDarkMode",(function(){return a})),n.d(t,"formatDate",(function(){return i})),n.d(t,"getParameterByName",(function(){return o})),n.d(t,"adjustImageGallery",(function(){return c})),n.d(t,"managePostImages",(function(){return l})),n.d(t,"makeImagesZoomable",(function(){return u})),n.d(t,"scrollTop",(function(){return d}))},6:function(e,t,n){"use strict";n.d(t,"a",(function(){return u}));var s=n(1),r=n.n(s),a=n(4),i=n(3),o=n(2);function c(e,t){var n;if("undefined"==typeof Symbol||null==e[Symbol.iterator]){if(Array.isArray(e)||(n=function(e,t){if(!e)return;if("string"==typeof e)return l(e,t);var n=Object.prototype.toString.call(e).slice(8,-1);"Object"===n&&e.constructor&&(n=e.constructor.name);if("Map"===n||"Set"===n)return Array.from(e);if("Arguments"===n||/^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n))return l(e,t)}(e))||t&&e&&"number"==typeof e.length){n&&(e=n);var s=0,r=function(){};return{s:r,n:function(){return s>=e.length?{done:!0}:{done:!1,value:e[s++]}},e:function(e){throw e},f:r}}throw new TypeError("Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.")}var a,i=!0,o=!1;return{s:function(){n=e[Symbol.iterator]()},n:function(){var e=n.next();return i=e.done,e},e:function(e){o=!0,a=e},f:function(){try{i||null==n.return||n.return()}finally{if(o)throw a}}}}function l(e,t){(null==t||t>e.length)&&(t=e.length);for(var n=0,s=new Array(t);n<t;n++)s[n]=e[n];return s}function u(){var e=document.querySelectorAll(".js-featured-slider");e.length>0&&e.forEach((function(e){var t=r()(e).find(".js-featured-slide").length,n=new i.d(e,{type:"slider",rewind:!1,gap:0,swipeThreshold:!1,dragThreshold:!1,direction:Object(o.isRTL)()?"rtl":"ltr",breakpoints:{768:{swipeThreshold:1!==t&&80,dragThreshold:1!==t&&120}}});1===t&&r()(e).find(".js-featured-slider-controls").remove(),n.on("mount.after",(function(){Object(a.a)(".js-featured-article-title",200)})),n.mount({Controls:i.b,Swipe:i.c,Breakpoints:i.a,ArrowDisabler:function(e,n){var s="js-featured-slider-controls",r="js-featured-slider-previous",a="js-featured-slider-next";return{mount:function(){e.settings.rewind||1===t||e.on(["mount.after","run"],(function(){var t,i=c(n.Controls.items);try{for(i.s();!(t=i.n()).done;){var o=t.value;if(o.className.includes(s)){var l=o.querySelector(".".concat(r));l&&(0===e.index?l.setAttribute("disabled",""):l.removeAttribute("disabled"));var u=o.querySelector(".".concat(a));if(u)(e.settings.bound?e.index+(e.settings.perView-1):e.index)===n.Sizes.length-1?u.setAttribute("disabled",""):u.removeAttribute("disabled")}}}catch(e){i.e(e)}finally{i.f()}}))}}}}),setTimeout((function(){window.dispatchEvent(new Event("resize"))}),350)})),Object(a.a)(".js-featured-article-title",200)}}},[[161,0,1]]]);
+(window["webpackJsonp"] = window["webpackJsonp"] || []).push([["/js/category"],{
+
+/***/ "./js/category.js":
+/*!************************!*\
+  !*** ./js/category.js ***!
+  \************************/
+/*! no exports provided */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/regenerator */ "./node_modules/@babel/runtime/regenerator/index.js");
+/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _components_featured_slider__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./components/featured-slider */ "./js/components/featured-slider.js");
+/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js");
+/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(jquery__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var moment_timezone__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! moment-timezone */ "./node_modules/moment-timezone/index.js");
+/* harmony import */ var moment_timezone__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(moment_timezone__WEBPACK_IMPORTED_MODULE_3__);
+
+
+function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) {
+  try {
+    var info = gen[key](arg);
+    var value = info.value;
+  } catch (error) {
+    reject(error);
+    return;
+  }
+
+  if (info.done) {
+    resolve(value);
+  } else {
+    Promise.resolve(value).then(_next, _throw);
+  }
+}
+
+function _asyncToGenerator(fn) {
+  return function () {
+    var self = this,
+        args = arguments;
+    return new Promise(function (resolve, reject) {
+      var gen = fn.apply(self, args);
+
+      function _next(value) {
+        asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value);
+      }
+
+      function _throw(err) {
+        asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err);
+      }
+
+      _next(undefined);
+    });
+  };
+}
+
+
+
+
+var api = new GhostContentAPI({
+  url: ghostHost.includes('http') ? ghostHost : "http:".concat(ghostHost),
+  key: ghostSearchApiKey,
+  version: 'v4'
+});
+var postsPerEachLoad = 6;
+var defaultPostsCount = 7;
+
+function getPublicTime(date) {
+  var timezone = 'Asia/Ho_Chi_Minh';
+  var timeNow = moment_timezone__WEBPACK_IMPORTED_MODULE_3___default()().tz(timezone);
+  var testDateInput = Date.parse(date);
+  var dateMoment;
+
+  if (isNaN(testDateInput) === false) {
+    dateMoment = moment_timezone__WEBPACK_IMPORTED_MODULE_3___default.a.parseZone(date);
+  } else {
+    dateMoment = timeNow;
+  }
+
+  dateMoment.locale('vi');
+  return dateMoment.tz(timezone).from(timeNow);
+}
+
+function createPostArticle(post) {
+  var title = post.title,
+      url = post.url,
+      published_at = post.published_at,
+      feature_image = post.feature_image,
+      primary_tag = post.primary_tag;
+  var template = "<article class=\"m-article-card ".concat(feature_image ? '' : 'no-picture', " ").concat(categoryTag, " post\" data-aos=\"fade-up\" data-aos-delay=\"300\">\n      <div class=\"m-article-card__picture\">\n        <a href=\"").concat(url, "\" class=\"m-article-card__picture-link\" aria-hidden=\"true\" tabindex=\"-1\"></a>\n        ").concat(feature_image && "<img class=\"m-article-card__picture-background\" src=\"".concat(feature_image, "\" loading=\"lazy\">"), "\n      </div>\n      <div class=\"m-article-card__info\">\n        <a href=\"").concat(primary_tag === null || primary_tag === void 0 ? void 0 : primary_tag.url, "\" class=\"m-article-card__tag capitalize\">").concat(primary_tag === null || primary_tag === void 0 ? void 0 : primary_tag.name, "</a>\n        <a href=\"").concat(url, "\" class=\"m-article-card__info-link\" aria-label=\"").concat(title, "\">\n          <div>\n            <h2 class=\"m-article-card__title js-article-card-title ").concat(feature_image ? '' : 'js-article-card-title-no-image', "\" title=\"{{title}}\">\n              ").concat(title, "\n            </h2>\n          </div>\n          <div class=\"m-article-card__timestamp\">\n            <span>").concat(getPublicTime(published_at), "</span>\n          </div>\n        </a>\n      </div>\n</article>");
+  return jquery__WEBPACK_IMPORTED_MODULE_2___default()(template);
+}
+
+function getCurrentPostsCount() {
+  return jquery__WEBPACK_IMPORTED_MODULE_2___default()('.post').length;
+}
+
+jquery__WEBPACK_IMPORTED_MODULE_2___default()(function () {
+  var $loader = jquery__WEBPACK_IMPORTED_MODULE_2___default()('#js-loader');
+  var $loadMoreButton = jquery__WEBPACK_IMPORTED_MODULE_2___default()('#js-load-more-btn');
+  var $postsContainer = jquery__WEBPACK_IMPORTED_MODULE_2___default()('#js-posts-container');
+  var totalPosts = null;
+  Object(_components_featured_slider__WEBPACK_IMPORTED_MODULE_1__["setupFeaturedSlider"])();
+
+  if (getCurrentPostsCount() < defaultPostsCount) {
+    $loadMoreButton.hide();
+    return;
+  }
+
+  $loadMoreButton.on('click', /*#__PURE__*/_asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee() {
+    var postsCount, posts, postsSlice;
+    return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee$(_context) {
+      while (1) {
+        switch (_context.prev = _context.next) {
+          case 0:
+            postsCount = getCurrentPostsCount() + postsPerEachLoad;
+            $loader.removeClass('hide');
+            $loadMoreButton.hide();
+            _context.prev = 3;
+            _context.next = 6;
+            return api.posts.browse({
+              limit: postsCount,
+              include: 'tags',
+              fields: 'id, title, url, published_at, feature_image, primary_tag',
+              filter: "tag:".concat(categoryTag, "+featured:false")
+            });
+
+          case 6:
+            posts = _context.sent;
+
+            if (!totalPosts) {
+              totalPosts = posts.meta.pagination.total;
+            }
+
+            if (postsCount >= totalPosts) {
+              $loadMoreButton.hide();
+            }
+
+            postsSlice = totalPosts >= postsCount ? -postsPerEachLoad : getCurrentPostsCount() - totalPosts;
+            posts.slice(postsSlice).forEach(function (post) {
+              var $post = createPostArticle(post);
+              $postsContainer.append($post);
+            });
+            _context.next = 16;
+            break;
+
+          case 13:
+            _context.prev = 13;
+            _context.t0 = _context["catch"](3);
+            $loadMoreButton.show();
+
+          case 16:
+            _context.prev = 16;
+            $loader.addClass('hide');
+            return _context.finish(16);
+
+          case 19:
+          case "end":
+            return _context.stop();
+        }
+      }
+    }, _callee, null, [[3, 13, 16, 19]]);
+  })));
+});
+
+/***/ }),
+
+/***/ "./js/components/featured-slider.js":
+/*!******************************************!*\
+  !*** ./js/components/featured-slider.js ***!
+  \******************************************/
+/*! exports provided: setupFeaturedSlider */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "setupFeaturedSlider", function() { return setupFeaturedSlider; });
+/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js");
+/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(jquery__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var shave__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! shave */ "./node_modules/shave/dist/shave.es.js");
+/* harmony import */ var _glidejs_glide_dist_glide_modular_esm__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @glidejs/glide/dist/glide.modular.esm */ "./node_modules/@glidejs/glide/dist/glide.modular.esm.js");
+/* harmony import */ var _helpers__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../helpers */ "./js/helpers.js");
+function _createForOfIteratorHelper(o, allowArrayLike) {
+  var it;
+
+  if (typeof Symbol === "undefined" || o[Symbol.iterator] == null) {
+    if (Array.isArray(o) || (it = _unsupportedIterableToArray(o)) || allowArrayLike && o && typeof o.length === "number") {
+      if (it) o = it;
+      var i = 0;
+
+      var F = function F() {};
+
+      return {
+        s: F,
+        n: function n() {
+          if (i >= o.length) return {
+            done: true
+          };
+          return {
+            done: false,
+            value: o[i++]
+          };
+        },
+        e: function e(_e) {
+          throw _e;
+        },
+        f: F
+      };
+    }
+
+    throw new TypeError("Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.");
+  }
+
+  var normalCompletion = true,
+      didErr = false,
+      err;
+  return {
+    s: function s() {
+      it = o[Symbol.iterator]();
+    },
+    n: function n() {
+      var step = it.next();
+      normalCompletion = step.done;
+      return step;
+    },
+    e: function e(_e2) {
+      didErr = true;
+      err = _e2;
+    },
+    f: function f() {
+      try {
+        if (!normalCompletion && it["return"] != null) it["return"]();
+      } finally {
+        if (didErr) throw err;
+      }
+    }
+  };
+}
+
+function _unsupportedIterableToArray(o, minLen) {
+  if (!o) return;
+  if (typeof o === "string") return _arrayLikeToArray(o, minLen);
+  var n = Object.prototype.toString.call(o).slice(8, -1);
+  if (n === "Object" && o.constructor) n = o.constructor.name;
+  if (n === "Map" || n === "Set") return Array.from(o);
+  if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen);
+}
+
+function _arrayLikeToArray(arr, len) {
+  if (len == null || len > arr.length) len = arr.length;
+
+  for (var i = 0, arr2 = new Array(len); i < len; i++) {
+    arr2[i] = arr[i];
+  }
+
+  return arr2;
+}
+
+
+
+
+
+function setupFeaturedSlider() {
+  var featuredSliderElements = document.querySelectorAll('.js-featured-slider');
+
+  if (featuredSliderElements.length > 0) {
+    featuredSliderElements.forEach(function (elem) {
+      var $elem = jquery__WEBPACK_IMPORTED_MODULE_0___default()(elem);
+      var numSlides = $elem.find('.js-featured-slide').length;
+      var featuredSlider = new _glidejs_glide_dist_glide_modular_esm__WEBPACK_IMPORTED_MODULE_2__["default"](elem, {
+        type: 'slider',
+        rewind: false,
+        gap: 0,
+        swipeThreshold: false,
+        dragThreshold: false,
+        direction: Object(_helpers__WEBPACK_IMPORTED_MODULE_3__["isRTL"])() ? 'rtl' : 'ltr',
+        breakpoints: {
+          768: {
+            swipeThreshold: numSlides === 1 ? false : 80,
+            dragThreshold: numSlides === 1 ? false : 120
+          }
+        }
+      });
+
+      var ArrowDisabler = function ArrowDisabler(Glide, Components) {
+        var controlClasses = {
+          controls: 'js-featured-slider-controls',
+          backArrow: 'js-featured-slider-previous',
+          nextArrow: 'js-featured-slider-next'
+        };
+        return {
+          mount: function mount() {
+            if (Glide.settings.rewind || numSlides === 1) {
+              return;
+            }
+
+            Glide.on(['mount.after', 'run'], function () {
+              var _iterator = _createForOfIteratorHelper(Components.Controls.items),
+                  _step;
+
+              try {
+                for (_iterator.s(); !(_step = _iterator.n()).done;) {
+                  var controlItem = _step.value;
+
+                  if (!controlItem.className.includes(controlClasses.controls)) {
+                    continue;
+                  }
+
+                  var left = controlItem.querySelector(".".concat(controlClasses.backArrow));
+
+                  if (left) {
+                    if (Glide.index === 0) {
+                      left.setAttribute('disabled', '');
+                    } else {
+                      left.removeAttribute('disabled');
+                    }
+                  }
+
+                  var right = controlItem.querySelector(".".concat(controlClasses.nextArrow));
+
+                  if (right) {
+                    var lastSlideIndex = Glide.settings.bound ? Glide.index + (Glide.settings.perView - 1) : Glide.index;
+
+                    if (lastSlideIndex === Components.Sizes.length - 1) {
+                      right.setAttribute('disabled', '');
+                    } else {
+                      right.removeAttribute('disabled');
+                    }
+                  }
+                }
+              } catch (err) {
+                _iterator.e(err);
+              } finally {
+                _iterator.f();
+              }
+            });
+          }
+        };
+      };
+
+      if (numSlides === 1) {
+        jquery__WEBPACK_IMPORTED_MODULE_0___default()(elem).find('.js-featured-slider-controls').remove();
+      }
+
+      featuredSlider.on('mount.after', function () {
+        Object(shave__WEBPACK_IMPORTED_MODULE_1__["default"])('.js-featured-article-title', 200);
+      });
+      featuredSlider.mount({
+        Controls: _glidejs_glide_dist_glide_modular_esm__WEBPACK_IMPORTED_MODULE_2__["Controls"],
+        Swipe: _glidejs_glide_dist_glide_modular_esm__WEBPACK_IMPORTED_MODULE_2__["Swipe"],
+        Breakpoints: _glidejs_glide_dist_glide_modular_esm__WEBPACK_IMPORTED_MODULE_2__["Breakpoints"],
+        ArrowDisabler: ArrowDisabler
+      });
+      setTimeout(function () {
+        window.dispatchEvent(new Event('resize'));
+      }, 350);
+    });
+  }
+
+  Object(shave__WEBPACK_IMPORTED_MODULE_1__["default"])('.js-featured-article-title', 200);
+}
+
+/***/ }),
+
+/***/ "./js/helpers.js":
+/*!***********************!*\
+  !*** ./js/helpers.js ***!
+  \***********************/
+/*! exports provided: isRTL, isMobile, isDarkMode, formatDate, getParameterByName, adjustImageGallery, managePostImages, makeImagesZoomable, scrollTop */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "isRTL", function() { return isRTL; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "isMobile", function() { return isMobile; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "isDarkMode", function() { return isDarkMode; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "formatDate", function() { return formatDate; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getParameterByName", function() { return getParameterByName; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "adjustImageGallery", function() { return adjustImageGallery; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "managePostImages", function() { return managePostImages; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "makeImagesZoomable", function() { return makeImagesZoomable; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "scrollTop", function() { return scrollTop; });
+function isRTL() {
+  var $html = document.querySelector('html');
+  return ['ar', 'he', 'fa'].includes($html.getAttribute('lang'));
+}
+function isMobile() {
+  var width = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : '768px';
+  return window.matchMedia("(max-width: ".concat(width, ")")).matches;
+}
+function isDarkMode() {
+  var darkModeMatcher = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)');
+  return darkModeMatcher && darkModeMatcher.matches;
+}
+function formatDate(date) {
+  if (date) {
+    return new Date(date).toLocaleDateString(document.documentElement.lang, {
+      year: 'numeric',
+      month: 'long',
+      day: 'numeric'
+    });
+  }
+
+  return '';
+}
+function getParameterByName(name, url) {
+  if (!url) url = window.location.href;
+  name = name.replace(/[\[\]]/g, '\\$&');
+  var regex = new RegExp("[?&]".concat(name, "(=([^&#]*)|&|#|$)"));
+  var results = regex.exec(url);
+  if (!results) return null;
+  if (!results[2]) return '';
+  return decodeURIComponent(results[2].replace(/\+/g, ' '));
+}
+function adjustImageGallery() {
+  var images = document.querySelectorAll('.kg-gallery-image img');
+
+  for (var i = 0, len = images.length; i < len; i++) {
+    var container = images[i].closest('.kg-gallery-image');
+    var width = images[i].attributes.width.value;
+    var height = images[i].attributes.height.value;
+    var ratio = width / height;
+    container.style.flex = "".concat(ratio, " 1 0%");
+  }
+}
+function managePostImages($) {
+  $('.js-post-content').find('img').each(function () {
+    if (!$(this).closest('figure').hasClass('kg-bookmark-card') && !$(this).parent().is('a')) {
+      $(this).addClass('js-zoomable');
+    }
+  });
+}
+function makeImagesZoomable($, mediumZoom) {
+  var zoom = mediumZoom('.js-zoomable');
+  zoom.on('opened', function () {
+    setTimeout(function () {
+      var $mediumZoomImages = $('.medium-zoom-image--opened');
+
+      if ($mediumZoomImages.length > 1) {
+        $mediumZoomImages.last().hide();
+      }
+    }, 10);
+  });
+}
+function scrollTop() {
+  window.scrollTo({
+    top: 0,
+    behavior: 'smooth'
+  });
+}
+
+/***/ }),
+
+/***/ "./node_modules/moment/locale sync recursive ^\\.\\/.*$":
+/*!**************************************************!*\
+  !*** ./node_modules/moment/locale sync ^\.\/.*$ ***!
+  \**************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+var map = {
+	"./af": "./node_modules/moment/locale/af.js",
+	"./af.js": "./node_modules/moment/locale/af.js",
+	"./ar": "./node_modules/moment/locale/ar.js",
+	"./ar-dz": "./node_modules/moment/locale/ar-dz.js",
+	"./ar-dz.js": "./node_modules/moment/locale/ar-dz.js",
+	"./ar-kw": "./node_modules/moment/locale/ar-kw.js",
+	"./ar-kw.js": "./node_modules/moment/locale/ar-kw.js",
+	"./ar-ly": "./node_modules/moment/locale/ar-ly.js",
+	"./ar-ly.js": "./node_modules/moment/locale/ar-ly.js",
+	"./ar-ma": "./node_modules/moment/locale/ar-ma.js",
+	"./ar-ma.js": "./node_modules/moment/locale/ar-ma.js",
+	"./ar-sa": "./node_modules/moment/locale/ar-sa.js",
+	"./ar-sa.js": "./node_modules/moment/locale/ar-sa.js",
+	"./ar-tn": "./node_modules/moment/locale/ar-tn.js",
+	"./ar-tn.js": "./node_modules/moment/locale/ar-tn.js",
+	"./ar.js": "./node_modules/moment/locale/ar.js",
+	"./az": "./node_modules/moment/locale/az.js",
+	"./az.js": "./node_modules/moment/locale/az.js",
+	"./be": "./node_modules/moment/locale/be.js",
+	"./be.js": "./node_modules/moment/locale/be.js",
+	"./bg": "./node_modules/moment/locale/bg.js",
+	"./bg.js": "./node_modules/moment/locale/bg.js",
+	"./bm": "./node_modules/moment/locale/bm.js",
+	"./bm.js": "./node_modules/moment/locale/bm.js",
+	"./bn": "./node_modules/moment/locale/bn.js",
+	"./bn.js": "./node_modules/moment/locale/bn.js",
+	"./bo": "./node_modules/moment/locale/bo.js",
+	"./bo.js": "./node_modules/moment/locale/bo.js",
+	"./br": "./node_modules/moment/locale/br.js",
+	"./br.js": "./node_modules/moment/locale/br.js",
+	"./bs": "./node_modules/moment/locale/bs.js",
+	"./bs.js": "./node_modules/moment/locale/bs.js",
+	"./ca": "./node_modules/moment/locale/ca.js",
+	"./ca.js": "./node_modules/moment/locale/ca.js",
+	"./cs": "./node_modules/moment/locale/cs.js",
+	"./cs.js": "./node_modules/moment/locale/cs.js",
+	"./cv": "./node_modules/moment/locale/cv.js",
+	"./cv.js": "./node_modules/moment/locale/cv.js",
+	"./cy": "./node_modules/moment/locale/cy.js",
+	"./cy.js": "./node_modules/moment/locale/cy.js",
+	"./da": "./node_modules/moment/locale/da.js",
+	"./da.js": "./node_modules/moment/locale/da.js",
+	"./de": "./node_modules/moment/locale/de.js",
+	"./de-at": "./node_modules/moment/locale/de-at.js",
+	"./de-at.js": "./node_modules/moment/locale/de-at.js",
+	"./de-ch": "./node_modules/moment/locale/de-ch.js",
+	"./de-ch.js": "./node_modules/moment/locale/de-ch.js",
+	"./de.js": "./node_modules/moment/locale/de.js",
+	"./dv": "./node_modules/moment/locale/dv.js",
+	"./dv.js": "./node_modules/moment/locale/dv.js",
+	"./el": "./node_modules/moment/locale/el.js",
+	"./el.js": "./node_modules/moment/locale/el.js",
+	"./en-au": "./node_modules/moment/locale/en-au.js",
+	"./en-au.js": "./node_modules/moment/locale/en-au.js",
+	"./en-ca": "./node_modules/moment/locale/en-ca.js",
+	"./en-ca.js": "./node_modules/moment/locale/en-ca.js",
+	"./en-gb": "./node_modules/moment/locale/en-gb.js",
+	"./en-gb.js": "./node_modules/moment/locale/en-gb.js",
+	"./en-ie": "./node_modules/moment/locale/en-ie.js",
+	"./en-ie.js": "./node_modules/moment/locale/en-ie.js",
+	"./en-il": "./node_modules/moment/locale/en-il.js",
+	"./en-il.js": "./node_modules/moment/locale/en-il.js",
+	"./en-in": "./node_modules/moment/locale/en-in.js",
+	"./en-in.js": "./node_modules/moment/locale/en-in.js",
+	"./en-nz": "./node_modules/moment/locale/en-nz.js",
+	"./en-nz.js": "./node_modules/moment/locale/en-nz.js",
+	"./en-sg": "./node_modules/moment/locale/en-sg.js",
+	"./en-sg.js": "./node_modules/moment/locale/en-sg.js",
+	"./eo": "./node_modules/moment/locale/eo.js",
+	"./eo.js": "./node_modules/moment/locale/eo.js",
+	"./es": "./node_modules/moment/locale/es.js",
+	"./es-do": "./node_modules/moment/locale/es-do.js",
+	"./es-do.js": "./node_modules/moment/locale/es-do.js",
+	"./es-us": "./node_modules/moment/locale/es-us.js",
+	"./es-us.js": "./node_modules/moment/locale/es-us.js",
+	"./es.js": "./node_modules/moment/locale/es.js",
+	"./et": "./node_modules/moment/locale/et.js",
+	"./et.js": "./node_modules/moment/locale/et.js",
+	"./eu": "./node_modules/moment/locale/eu.js",
+	"./eu.js": "./node_modules/moment/locale/eu.js",
+	"./fa": "./node_modules/moment/locale/fa.js",
+	"./fa.js": "./node_modules/moment/locale/fa.js",
+	"./fi": "./node_modules/moment/locale/fi.js",
+	"./fi.js": "./node_modules/moment/locale/fi.js",
+	"./fil": "./node_modules/moment/locale/fil.js",
+	"./fil.js": "./node_modules/moment/locale/fil.js",
+	"./fo": "./node_modules/moment/locale/fo.js",
+	"./fo.js": "./node_modules/moment/locale/fo.js",
+	"./fr": "./node_modules/moment/locale/fr.js",
+	"./fr-ca": "./node_modules/moment/locale/fr-ca.js",
+	"./fr-ca.js": "./node_modules/moment/locale/fr-ca.js",
+	"./fr-ch": "./node_modules/moment/locale/fr-ch.js",
+	"./fr-ch.js": "./node_modules/moment/locale/fr-ch.js",
+	"./fr.js": "./node_modules/moment/locale/fr.js",
+	"./fy": "./node_modules/moment/locale/fy.js",
+	"./fy.js": "./node_modules/moment/locale/fy.js",
+	"./ga": "./node_modules/moment/locale/ga.js",
+	"./ga.js": "./node_modules/moment/locale/ga.js",
+	"./gd": "./node_modules/moment/locale/gd.js",
+	"./gd.js": "./node_modules/moment/locale/gd.js",
+	"./gl": "./node_modules/moment/locale/gl.js",
+	"./gl.js": "./node_modules/moment/locale/gl.js",
+	"./gom-deva": "./node_modules/moment/locale/gom-deva.js",
+	"./gom-deva.js": "./node_modules/moment/locale/gom-deva.js",
+	"./gom-latn": "./node_modules/moment/locale/gom-latn.js",
+	"./gom-latn.js": "./node_modules/moment/locale/gom-latn.js",
+	"./gu": "./node_modules/moment/locale/gu.js",
+	"./gu.js": "./node_modules/moment/locale/gu.js",
+	"./he": "./node_modules/moment/locale/he.js",
+	"./he.js": "./node_modules/moment/locale/he.js",
+	"./hi": "./node_modules/moment/locale/hi.js",
+	"./hi.js": "./node_modules/moment/locale/hi.js",
+	"./hr": "./node_modules/moment/locale/hr.js",
+	"./hr.js": "./node_modules/moment/locale/hr.js",
+	"./hu": "./node_modules/moment/locale/hu.js",
+	"./hu.js": "./node_modules/moment/locale/hu.js",
+	"./hy-am": "./node_modules/moment/locale/hy-am.js",
+	"./hy-am.js": "./node_modules/moment/locale/hy-am.js",
+	"./id": "./node_modules/moment/locale/id.js",
+	"./id.js": "./node_modules/moment/locale/id.js",
+	"./is": "./node_modules/moment/locale/is.js",
+	"./is.js": "./node_modules/moment/locale/is.js",
+	"./it": "./node_modules/moment/locale/it.js",
+	"./it-ch": "./node_modules/moment/locale/it-ch.js",
+	"./it-ch.js": "./node_modules/moment/locale/it-ch.js",
+	"./it.js": "./node_modules/moment/locale/it.js",
+	"./ja": "./node_modules/moment/locale/ja.js",
+	"./ja.js": "./node_modules/moment/locale/ja.js",
+	"./jv": "./node_modules/moment/locale/jv.js",
+	"./jv.js": "./node_modules/moment/locale/jv.js",
+	"./ka": "./node_modules/moment/locale/ka.js",
+	"./ka.js": "./node_modules/moment/locale/ka.js",
+	"./kk": "./node_modules/moment/locale/kk.js",
+	"./kk.js": "./node_modules/moment/locale/kk.js",
+	"./km": "./node_modules/moment/locale/km.js",
+	"./km.js": "./node_modules/moment/locale/km.js",
+	"./kn": "./node_modules/moment/locale/kn.js",
+	"./kn.js": "./node_modules/moment/locale/kn.js",
+	"./ko": "./node_modules/moment/locale/ko.js",
+	"./ko.js": "./node_modules/moment/locale/ko.js",
+	"./ku": "./node_modules/moment/locale/ku.js",
+	"./ku.js": "./node_modules/moment/locale/ku.js",
+	"./ky": "./node_modules/moment/locale/ky.js",
+	"./ky.js": "./node_modules/moment/locale/ky.js",
+	"./lb": "./node_modules/moment/locale/lb.js",
+	"./lb.js": "./node_modules/moment/locale/lb.js",
+	"./lo": "./node_modules/moment/locale/lo.js",
+	"./lo.js": "./node_modules/moment/locale/lo.js",
+	"./lt": "./node_modules/moment/locale/lt.js",
+	"./lt.js": "./node_modules/moment/locale/lt.js",
+	"./lv": "./node_modules/moment/locale/lv.js",
+	"./lv.js": "./node_modules/moment/locale/lv.js",
+	"./me": "./node_modules/moment/locale/me.js",
+	"./me.js": "./node_modules/moment/locale/me.js",
+	"./mi": "./node_modules/moment/locale/mi.js",
+	"./mi.js": "./node_modules/moment/locale/mi.js",
+	"./mk": "./node_modules/moment/locale/mk.js",
+	"./mk.js": "./node_modules/moment/locale/mk.js",
+	"./ml": "./node_modules/moment/locale/ml.js",
+	"./ml.js": "./node_modules/moment/locale/ml.js",
+	"./mn": "./node_modules/moment/locale/mn.js",
+	"./mn.js": "./node_modules/moment/locale/mn.js",
+	"./mr": "./node_modules/moment/locale/mr.js",
+	"./mr.js": "./node_modules/moment/locale/mr.js",
+	"./ms": "./node_modules/moment/locale/ms.js",
+	"./ms-my": "./node_modules/moment/locale/ms-my.js",
+	"./ms-my.js": "./node_modules/moment/locale/ms-my.js",
+	"./ms.js": "./node_modules/moment/locale/ms.js",
+	"./mt": "./node_modules/moment/locale/mt.js",
+	"./mt.js": "./node_modules/moment/locale/mt.js",
+	"./my": "./node_modules/moment/locale/my.js",
+	"./my.js": "./node_modules/moment/locale/my.js",
+	"./nb": "./node_modules/moment/locale/nb.js",
+	"./nb.js": "./node_modules/moment/locale/nb.js",
+	"./ne": "./node_modules/moment/locale/ne.js",
+	"./ne.js": "./node_modules/moment/locale/ne.js",
+	"./nl": "./node_modules/moment/locale/nl.js",
+	"./nl-be": "./node_modules/moment/locale/nl-be.js",
+	"./nl-be.js": "./node_modules/moment/locale/nl-be.js",
+	"./nl.js": "./node_modules/moment/locale/nl.js",
+	"./nn": "./node_modules/moment/locale/nn.js",
+	"./nn.js": "./node_modules/moment/locale/nn.js",
+	"./oc-lnc": "./node_modules/moment/locale/oc-lnc.js",
+	"./oc-lnc.js": "./node_modules/moment/locale/oc-lnc.js",
+	"./pa-in": "./node_modules/moment/locale/pa-in.js",
+	"./pa-in.js": "./node_modules/moment/locale/pa-in.js",
+	"./pl": "./node_modules/moment/locale/pl.js",
+	"./pl.js": "./node_modules/moment/locale/pl.js",
+	"./pt": "./node_modules/moment/locale/pt.js",
+	"./pt-br": "./node_modules/moment/locale/pt-br.js",
+	"./pt-br.js": "./node_modules/moment/locale/pt-br.js",
+	"./pt.js": "./node_modules/moment/locale/pt.js",
+	"./ro": "./node_modules/moment/locale/ro.js",
+	"./ro.js": "./node_modules/moment/locale/ro.js",
+	"./ru": "./node_modules/moment/locale/ru.js",
+	"./ru.js": "./node_modules/moment/locale/ru.js",
+	"./sd": "./node_modules/moment/locale/sd.js",
+	"./sd.js": "./node_modules/moment/locale/sd.js",
+	"./se": "./node_modules/moment/locale/se.js",
+	"./se.js": "./node_modules/moment/locale/se.js",
+	"./si": "./node_modules/moment/locale/si.js",
+	"./si.js": "./node_modules/moment/locale/si.js",
+	"./sk": "./node_modules/moment/locale/sk.js",
+	"./sk.js": "./node_modules/moment/locale/sk.js",
+	"./sl": "./node_modules/moment/locale/sl.js",
+	"./sl.js": "./node_modules/moment/locale/sl.js",
+	"./sq": "./node_modules/moment/locale/sq.js",
+	"./sq.js": "./node_modules/moment/locale/sq.js",
+	"./sr": "./node_modules/moment/locale/sr.js",
+	"./sr-cyrl": "./node_modules/moment/locale/sr-cyrl.js",
+	"./sr-cyrl.js": "./node_modules/moment/locale/sr-cyrl.js",
+	"./sr.js": "./node_modules/moment/locale/sr.js",
+	"./ss": "./node_modules/moment/locale/ss.js",
+	"./ss.js": "./node_modules/moment/locale/ss.js",
+	"./sv": "./node_modules/moment/locale/sv.js",
+	"./sv.js": "./node_modules/moment/locale/sv.js",
+	"./sw": "./node_modules/moment/locale/sw.js",
+	"./sw.js": "./node_modules/moment/locale/sw.js",
+	"./ta": "./node_modules/moment/locale/ta.js",
+	"./ta.js": "./node_modules/moment/locale/ta.js",
+	"./te": "./node_modules/moment/locale/te.js",
+	"./te.js": "./node_modules/moment/locale/te.js",
+	"./tet": "./node_modules/moment/locale/tet.js",
+	"./tet.js": "./node_modules/moment/locale/tet.js",
+	"./tg": "./node_modules/moment/locale/tg.js",
+	"./tg.js": "./node_modules/moment/locale/tg.js",
+	"./th": "./node_modules/moment/locale/th.js",
+	"./th.js": "./node_modules/moment/locale/th.js",
+	"./tk": "./node_modules/moment/locale/tk.js",
+	"./tk.js": "./node_modules/moment/locale/tk.js",
+	"./tl-ph": "./node_modules/moment/locale/tl-ph.js",
+	"./tl-ph.js": "./node_modules/moment/locale/tl-ph.js",
+	"./tlh": "./node_modules/moment/locale/tlh.js",
+	"./tlh.js": "./node_modules/moment/locale/tlh.js",
+	"./tr": "./node_modules/moment/locale/tr.js",
+	"./tr.js": "./node_modules/moment/locale/tr.js",
+	"./tzl": "./node_modules/moment/locale/tzl.js",
+	"./tzl.js": "./node_modules/moment/locale/tzl.js",
+	"./tzm": "./node_modules/moment/locale/tzm.js",
+	"./tzm-latn": "./node_modules/moment/locale/tzm-latn.js",
+	"./tzm-latn.js": "./node_modules/moment/locale/tzm-latn.js",
+	"./tzm.js": "./node_modules/moment/locale/tzm.js",
+	"./ug-cn": "./node_modules/moment/locale/ug-cn.js",
+	"./ug-cn.js": "./node_modules/moment/locale/ug-cn.js",
+	"./uk": "./node_modules/moment/locale/uk.js",
+	"./uk.js": "./node_modules/moment/locale/uk.js",
+	"./ur": "./node_modules/moment/locale/ur.js",
+	"./ur.js": "./node_modules/moment/locale/ur.js",
+	"./uz": "./node_modules/moment/locale/uz.js",
+	"./uz-latn": "./node_modules/moment/locale/uz-latn.js",
+	"./uz-latn.js": "./node_modules/moment/locale/uz-latn.js",
+	"./uz.js": "./node_modules/moment/locale/uz.js",
+	"./vi": "./node_modules/moment/locale/vi.js",
+	"./vi.js": "./node_modules/moment/locale/vi.js",
+	"./x-pseudo": "./node_modules/moment/locale/x-pseudo.js",
+	"./x-pseudo.js": "./node_modules/moment/locale/x-pseudo.js",
+	"./yo": "./node_modules/moment/locale/yo.js",
+	"./yo.js": "./node_modules/moment/locale/yo.js",
+	"./zh-cn": "./node_modules/moment/locale/zh-cn.js",
+	"./zh-cn.js": "./node_modules/moment/locale/zh-cn.js",
+	"./zh-hk": "./node_modules/moment/locale/zh-hk.js",
+	"./zh-hk.js": "./node_modules/moment/locale/zh-hk.js",
+	"./zh-mo": "./node_modules/moment/locale/zh-mo.js",
+	"./zh-mo.js": "./node_modules/moment/locale/zh-mo.js",
+	"./zh-tw": "./node_modules/moment/locale/zh-tw.js",
+	"./zh-tw.js": "./node_modules/moment/locale/zh-tw.js"
+};
+
+
+function webpackContext(req) {
+	var id = webpackContextResolve(req);
+	return __webpack_require__(id);
+}
+function webpackContextResolve(req) {
+	if(!__webpack_require__.o(map, req)) {
+		var e = new Error("Cannot find module '" + req + "'");
+		e.code = 'MODULE_NOT_FOUND';
+		throw e;
+	}
+	return map[req];
+}
+webpackContext.keys = function webpackContextKeys() {
+	return Object.keys(map);
+};
+webpackContext.resolve = webpackContextResolve;
+module.exports = webpackContext;
+webpackContext.id = "./node_modules/moment/locale sync recursive ^\\.\\/.*$";
+
+/***/ }),
+
+/***/ 3:
+/*!******************************!*\
+  !*** multi ./js/category.js ***!
+  \******************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__(/*! /home/nomad/netwalker-dev/content/themes/liebling/src/js/category.js */"./js/category.js");
+
+
+/***/ })
+
+},[[3,"/js/manifest","/js/vendor"]]]);

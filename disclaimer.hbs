@@ -5,12 +5,12 @@ You must first create a page called Tags in the dashboard to enable it.
 
 {{!-- This block preloads specific assets for the tags page --}}
 {{#contentFor "preload"}}
-  <link rel="preload" href="{{asset "css/disclaimer.css"}}" as="style" />
+  <link rel="preload" href="{{asset "css/info-page.css"}}" as="style" />
 {{/contentFor}}
 
 {{!-- This block loads specific styles for the tags page --}}
 {{#contentFor "styles"}}
-  <link rel="stylesheet" type="text/css" href="{{asset "css/disclaimer.css"}}" media="screen" />
+  <link rel="stylesheet" type="text/css" href="{{asset "css/info-page.css"}}" media="screen" />
 {{/contentFor}}
 
 {{!-- The tag below means: insert everything in this file
@@ -23,11 +23,11 @@ into the {body} of the default.hbs template --}}
 <div class="main-wrap">
   <div class="l-content">
     <div class="l-wrapper" data-aos="fade-up" data-aos-delay="300">
-      <div class="m-disclaimer">
-        <div class="m-disclaimer__banner">
+      <div class="m-info-page">
+        <div class="m-info-page__banner">
           <img src="{{asset "images/disclaimer.svg"}}" alt="Disclaimer">
         </div>
-        <h1 class="m-disclaimer__title"><font style="vertical-align: inherit;"><font
+        <h1 class="m-info-page__title"><font style="vertical-align: inherit;"><font
               style="vertical-align: inherit;"
             >Tuyên bố từ chối trách nhiệm</font></font></h1>
         <p><font style="vertical-align: inherit;"><font

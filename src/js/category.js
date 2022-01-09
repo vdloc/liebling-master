@@ -8,6 +8,7 @@ const api = new GhostContentAPI({
   version: 'v4'
 });
 const postsPerEachLoad = 6;
+const defaultPostsCount = 7;
 
 function getPublicTime(date) {
   const timezone = 'Asia/Ho_Chi_Minh';
@@ -58,18 +59,27 @@ function createPostArticle(post) {
 
   return $(template);
 }
+
+function getCurrentPostsCount() {
+  return $('.post').length;
+}
+
 $(() => {
-  setupFeaturedSlider();
-
-  if ($('.post').length < 4) return;
-
   const $loader = $('#js-loader');
   const $loadMoreButton = $('#js-load-more-btn');
   const $postsContainer = $('#js-posts-container');
   let totalPosts = null;
 
+  setupFeaturedSlider();
+
+  if (getCurrentPostsCount() < defaultPostsCount) {
+    $loadMoreButton.hide();
+
+    return;
+  }
+
   $loadMoreButton.on('click', async function() {
-    let postsCount = $('.post').length + postsPerEachLoad;
+    let postsCount = getCurrentPostsCount() + postsPerEachLoad;
 
     $loader.removeClass('hide');
     $loadMoreButton.hide();
@@ -93,7 +103,7 @@ $(() => {
       let postsSlice =
         totalPosts >= postsCount
           ? -postsPerEachLoad
-          : $('.post').length - totalPosts;
+          : getCurrentPostsCount() - totalPosts;
 
       posts.slice(postsSlice).forEach(post => {
         let $post = createPostArticle(post);

@@ -1,7 +1,9 @@
 .m-submenu {
   padding-top: rem(25px);
+  display: none;
 
   @include respond-to("medium") {
+    display: block;
     visibility: hidden;
     position: fixed;
     top: $header-height;

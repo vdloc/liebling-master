@@ -1,1 +1,26 @@
-.m-privacy{padding:3rem 1rem}.m-privacy__banner{height:25rem}.m-privacy__banner img{display:block;max-height:100%}.m-privacy__title{font-size:2.5rem;margin-top:3rem}.m-privacy li,.m-privacy p{line-height:1.8;font-size:1.2rem}.m-privacy a{color:var(--link-color)}.m-privacy ul{list-style:none}
+.m-privacy {
+  padding: 3rem 1rem;
+}
+.m-privacy__banner {
+  height: 25rem;
+}
+.m-privacy__banner img {
+  display: block;
+  max-height: 100%;
+  max-width: 100%;
+}
+.m-privacy__title {
+  font-size: 2.5rem;
+  margin-top: 3rem;
+}
+.m-privacy p,
+.m-privacy li {
+  line-height: 1.8;
+  font-size: 1.2rem;
+}
+.m-privacy a {
+  color: var(--link-color);
+}
+.m-privacy ul {
+  list-style: none;
+}

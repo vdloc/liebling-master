@@ -42,8 +42,7 @@ mix
   .sass('sass/tags.scss', 'css/')
   .sass('sass/404.scss', 'css/')
   .sass('sass/contact.scss', 'css/')
-  .sass('sass/disclaimer.scss', 'css/')
-  .sass('sass/privacy.scss', 'css/')
+  .sass('sass/info-page.scss', 'css/')
   .options({
     processCssUrls: false
   })

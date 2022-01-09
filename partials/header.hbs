@@ -26,18 +26,23 @@ This header template is shared across all the pages.
       <span class="icon-close"></span>
     </button>
     <div class="m-menu__main h-full" data-aos="fade-down">
-      <div class="l-wrapper h-full">
+      <div class="l-wrapper">
         <div class="m-nav js-main-nav">
+          <div class="m-nav__mobile-logo">
+            <a href="{{@site.url}}" class="m-nav__link">
+             {{@site.title}}
+            </a>
+          </div>
           <nav class="m-nav__left js-main-nav-left" role="navigation" aria-label="{{t "Main menu"}}">
             <ul>
               {{#if @site.logo}}
-                <li class="only-desktop">
+                <li class="m-nav__site-logo">
                   <a href="{{@site.url}}" class="m-logo">
                     <img src="{{@site.logo}}" alt="{{@site.title}}">
                   </a>
                 </li>
                 {{else}}
-                <li class="only-desktop">
+                <li class="m-nav__site-logo">
                   <a href="{{@site.url}}" class="m-site-name in-desktop-menu">
                     {{@site.title}}
                   </a>
