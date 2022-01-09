@@ -132,7 +132,7 @@ function setupTagIcons() {
     if (!$desc.length) return;
 
     let desc = $desc.html();
-    let tagIcon = desc.split(/\s+/)[1];
+    let tagIcon = desc.split(/\n/)[1];
 
     if (tagIcon) {
       $desc.html(tagIcon);

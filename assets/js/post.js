@@ -226,7 +226,7 @@ function setupTagIcons() {
     var $desc = $this.find('span.js-heading-meta-tag-desc');
     if (!$desc.length) return;
     var desc = $desc.html();
-    var tagIcon = desc.split(/\s+/)[1];
+    var tagIcon = desc.split(/\n/)[1];
 
     if (tagIcon) {
       $desc.html(tagIcon);
