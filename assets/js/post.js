@@ -222,11 +222,13 @@ function setupTagIcons() {
   var $tags = jquery__WEBPACK_IMPORTED_MODULE_0___default()('.js-heading-meta-tag');
   if (!$tags.length) return;
   $tags.each(function () {
+    var _desc$split, _desc$split$;
+
     var $this = jquery__WEBPACK_IMPORTED_MODULE_0___default()(this);
     var $desc = $this.find('span.js-heading-meta-tag-desc');
     if (!$desc.length) return;
     var desc = $desc.html();
-    var tagIcon = desc.split(/\n/)[1];
+    var tagIcon = (_desc$split = desc.split(/\n/)) === null || _desc$split === void 0 ? void 0 : (_desc$split$ = _desc$split[1]) === null || _desc$split$ === void 0 ? void 0 : _desc$split$.trim();
 
     if (tagIcon) {
       $desc.html(tagIcon);
