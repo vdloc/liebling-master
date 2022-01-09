@@ -120,6 +120,24 @@ function setupImagesGallery() {
   });
 }
 
+function setupTagIcons() {
+  const $tags = $('.js-heading-meta-tag');
+
+  if (!$tags.length) return;
+
+  $tags.each(function() {
+    let $this = $(this);
+    let $desc = $this.find('span.js-heading-meta-tag-desc');
+
+    if (!$desc.length) return;
+
+    let desc = $desc.html();
+    let tagIcon = desc.split(/\s+/)[1];
+
+    tagIcon && $desc.html(tagIcon);
+  });
+}
+
 function setupClipboardButtons() {
   $('.m-clipboard-button').attr('data-clipboard-text', window.RAR_PASS);
   $('#rar-pass').text(window.RAR_PASS);
@@ -142,6 +160,7 @@ $(() => {
 
   fitvids('.js-post-content');
   setupClipboardButtons();
+  setupTagIcons();
   adjustShare(1000);
   setupImagesGallery();
 
