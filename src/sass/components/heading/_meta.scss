@@ -1,12 +1,13 @@
 .m-heading__meta {
   display: flex;
   align-items: center;
+  flex-wrap: wrap;
   justify-content: center;
   letter-spacing: 0.2px;
   font-size: 0.875rem;
   font-weight: 600;
 
-  @include respond-to('medium') {
+  @include respond-to("medium") {
     font-size: 1rem;
   }
 }

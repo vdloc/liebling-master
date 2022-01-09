@@ -84,6 +84,31 @@ into the {body} of the default.hbs template --}}
               </div>
               <div id="post-content">
                 {{content}} 
+                {{!-- File name --}}
+                <div class="kg-card kg-callout-card kg-callout-card-grey" id="js-file-name-block">
+                  <div class="kg-callout-emoji">📂</div>
+                  <div class="kg-callout-text">
+                    <p class="bold">Tên file</p>
+                    <p id="js-file-name"></p>
+                  </div>
+                </div>
+                {{!-- Password --}}
+                <div class="kg-card kg-callout-card kg-callout-card-grey">
+                  <div class="kg-callout-emoji">🔑</div>
+                  <div class="kg-callout-text">
+                    <p class="bold">Pass giải nén</p>
+                    <span id="rar-pass">netwalker</span>
+                    <button type="button" class="m-clipboard-button m-icon-button" data-clipboard-text="netwalker">Copy</button>
+                  </div>
+                </div>
+                 {{!-- Warning --}}
+                <div class="kg-card kg-callout-card kg-callout-card-red">
+                  <div class="kg-callout-emoji ">⚠️</div>
+                  <div class="kg-callout-text">
+                    <p class="bold">Lưu ý</p>
+                    Mọi người khi bấm nút "<span class="bold">Tải về</span>" sẽ mở trang rút gọn link có chứa quảng cáo. Các bạn bấm nút "<span class="bold">Click hero to continue</span>" và tắt mọi popup cho đến khi hiện ra thông báo đếm ngược rồi bấm vào nút "<span class="bold">Get link</span>". <br><p></p>
+                  </div>
+                </div>
               </div>       
               {{!-- List of tags  --}}
               {{#if tags}}
