@@ -43,6 +43,7 @@ mix
   .sass('sass/404.scss', 'css/')
   .sass('sass/contact.scss', 'css/')
   .sass('sass/info-page.scss', 'css/')
+  .sass('sass/talk.scss', 'css/')
   .options({
     processCssUrls: false
   })

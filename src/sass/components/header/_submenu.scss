@@ -68,16 +68,7 @@
 
   &__tag-item {
     margin-right: 0 !important;
-    text-decoration: none !isudo certbot certonly \
-  --test-cert \
-  --register \
-  --agree-tos \
-  --email yourmail@yourmail \
-  --preferred-challenges dns-01 \
-  --dns-cloudflare \
-  --dns-cloudflare-credentials /etc/letsencrypt/cloudflare-credentials.ini \
-  --dns-cloudflare-propagation-seconds 30 \
-  -d test.example.commportant;
+    text-decoration: none !important;
     display: inline-flex;
     align-items: center;
     padding: 0.1rem 0.25rem !important;
