@@ -1,5 +1,10 @@
-import { setupFeaturedSlider } from './components/featured-slider';
+import Slider from './components/Slider';
+import { selectAll, onFullLoad } from './utils/dom';
 
-$(() => {
-  setupFeaturedSlider();
+onFullLoad(() => {
+  const featuredSliders = selectAll('.js-featured-slider');
+
+  featuredSliders.forEach(slider => {
+    new Slider(slider);
+  });
 });

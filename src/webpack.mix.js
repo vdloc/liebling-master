@@ -23,13 +23,11 @@ mix.webpackConfig({
 });
 
 mix
-  .js('js/helpers.js', 'js/')
   .js('js/app.js', 'js/')
   .js('js/home.js', 'js/')
   .js('js/category.js', 'js/')
   .js('js/post.js', 'js/')
   .js('js/page.js', 'js/')
-  .js('js/images.js', 'js/')
   .extract()
   .setResourceRoot('/assets')
   .setPublicPath('../assets')

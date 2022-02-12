@@ -149,7 +149,9 @@ $(() => {
   };
 
   const checkForActionParameter = () => {
-    const action = getParameterByName('action');
+    const action =
+      
+      ('action');
     const stripe = getParameterByName('stripe');
 
     if (action === 'subscribe') {

@@ -1,5 +1,449 @@
 (window["webpackJsonp"] = window["webpackJsonp"] || []).push([["/js/vendor"],{
 
+/***/ "./js/components/Slider.js":
+/*!*********************************!*\
+  !*** ./js/components/Slider.js ***!
+  \*********************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return Slider; });
+/* harmony import */ var shave__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! shave */ "./node_modules/shave/dist/shave.es.js");
+/* harmony import */ var _glidejs_glide_dist_glide_modular_esm__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @glidejs/glide/dist/glide.modular.esm */ "./node_modules/@glidejs/glide/dist/glide.modular.esm.js");
+/* harmony import */ var _utils_helpers__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../utils/helpers */ "./js/utils/helpers.js");
+/* harmony import */ var _utils_dom__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../utils/dom */ "./js/utils/dom.js");
+function _createForOfIteratorHelper(o, allowArrayLike) {
+  var it;
+
+  if (typeof Symbol === "undefined" || o[Symbol.iterator] == null) {
+    if (Array.isArray(o) || (it = _unsupportedIterableToArray(o)) || allowArrayLike && o && typeof o.length === "number") {
+      if (it) o = it;
+      var i = 0;
+
+      var F = function F() {};
+
+      return {
+        s: F,
+        n: function n() {
+          if (i >= o.length) return {
+            done: true
+          };
+          return {
+            done: false,
+            value: o[i++]
+          };
+        },
+        e: function e(_e) {
+          throw _e;
+        },
+        f: F
+      };
+    }
+
+    throw new TypeError("Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.");
+  }
+
+  var normalCompletion = true,
+      didErr = false,
+      err;
+  return {
+    s: function s() {
+      it = o[Symbol.iterator]();
+    },
+    n: function n() {
+      var step = it.next();
+      normalCompletion = step.done;
+      return step;
+    },
+    e: function e(_e2) {
+      didErr = true;
+      err = _e2;
+    },
+    f: function f() {
+      try {
+        if (!normalCompletion && it["return"] != null) it["return"]();
+      } finally {
+        if (didErr) throw err;
+      }
+    }
+  };
+}
+
+function _unsupportedIterableToArray(o, minLen) {
+  if (!o) return;
+  if (typeof o === "string") return _arrayLikeToArray(o, minLen);
+  var n = Object.prototype.toString.call(o).slice(8, -1);
+  if (n === "Object" && o.constructor) n = o.constructor.name;
+  if (n === "Map" || n === "Set") return Array.from(o);
+  if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen);
+}
+
+function _arrayLikeToArray(arr, len) {
+  if (len == null || len > arr.length) len = arr.length;
+
+  for (var i = 0, arr2 = new Array(len); i < len; i++) {
+    arr2[i] = arr[i];
+  }
+
+  return arr2;
+}
+
+function _classCallCheck(instance, Constructor) {
+  if (!(instance instanceof Constructor)) {
+    throw new TypeError("Cannot call a class as a function");
+  }
+}
+
+function _defineProperties(target, props) {
+  for (var i = 0; i < props.length; i++) {
+    var descriptor = props[i];
+    descriptor.enumerable = descriptor.enumerable || false;
+    descriptor.configurable = true;
+    if ("value" in descriptor) descriptor.writable = true;
+    Object.defineProperty(target, descriptor.key, descriptor);
+  }
+}
+
+function _createClass(Constructor, protoProps, staticProps) {
+  if (protoProps) _defineProperties(Constructor.prototype, protoProps);
+  if (staticProps) _defineProperties(Constructor, staticProps);
+  return Constructor;
+}
+
+
+
+
+
+
+var Slider = /*#__PURE__*/function () {
+  function Slider(container) {
+    _classCallCheck(this, Slider);
+
+    this.container = container;
+    this.items = Object(_utils_dom__WEBPACK_IMPORTED_MODULE_3__["selectAll"])('.js-featured-slide', this.container);
+    this.itemsCount = this.items.length;
+    this.slider = new _glidejs_glide_dist_glide_modular_esm__WEBPACK_IMPORTED_MODULE_1__["default"](this.container, {
+      type: 'slider',
+      rewind: false,
+      gap: 0,
+      swipeThreshold: false,
+      dragThreshold: false,
+      direction: Object(_utils_helpers__WEBPACK_IMPORTED_MODULE_2__["isRTL"])() ? 'rtl' : 'ltr',
+      breakpoints: {
+        768: {
+          swipeThreshold: this.itemsCount === 1 ? false : 80,
+          dragThreshold: this.itemsCount === 1 ? false : 120
+        }
+      }
+    });
+    this.arrowDisable = this.arrowDisable.bind(this);
+    this.init();
+  }
+
+  _createClass(Slider, [{
+    key: "init",
+    value: function init() {
+      if (this.itemsCount === 1) {
+        var controls = Object(_utils_dom__WEBPACK_IMPORTED_MODULE_3__["selectAll"])('.js-featured-slider-controls', this.container);
+        controls.forEach(function (control) {
+          Object(_utils_dom__WEBPACK_IMPORTED_MODULE_3__["remove"])(control);
+        });
+      }
+
+      this.slider.on('mount.after', function () {
+        Object(shave__WEBPACK_IMPORTED_MODULE_0__["default"])('.js-featured-article-title', 200);
+      });
+      this.slider.mount({
+        Controls: _glidejs_glide_dist_glide_modular_esm__WEBPACK_IMPORTED_MODULE_1__["Controls"],
+        Swipe: _glidejs_glide_dist_glide_modular_esm__WEBPACK_IMPORTED_MODULE_1__["Swipe"],
+        Breakpoints: _glidejs_glide_dist_glide_modular_esm__WEBPACK_IMPORTED_MODULE_1__["Breakpoints"],
+        ArrowDisabler: this.arrowDisable
+      });
+      setTimeout(function () {
+        window.dispatchEvent(new Event('resize'));
+      }, 350);
+      Object(shave__WEBPACK_IMPORTED_MODULE_0__["default"])('.js-featured-article-title', 200);
+    }
+  }, {
+    key: "arrowDisable",
+    value: function arrowDisable(Glide, Components) {
+      var controlClasses = {
+        controls: 'js-featured-slider-controls',
+        backArrow: 'js-featured-slider-previous',
+        nextArrow: 'js-featured-slider-next'
+      };
+      return {
+        mount: function mount() {
+          if (Glide.settings.rewind || this.itemsCount === 1) {
+            return;
+          }
+
+          Glide.on(['mount.after', 'run'], function () {
+            var _iterator = _createForOfIteratorHelper(Components.Controls.items),
+                _step;
+
+            try {
+              for (_iterator.s(); !(_step = _iterator.n()).done;) {
+                var controlItem = _step.value;
+
+                if (!controlItem.className.includes(controlClasses.controls)) {
+                  continue;
+                }
+
+                var left = controlItem.querySelector(".".concat(controlClasses.backArrow));
+
+                if (left) {
+                  if (Glide.index === 0) {
+                    left.setAttribute('disabled', '');
+                  } else {
+                    left.removeAttribute('disabled');
+                  }
+                }
+
+                var right = controlItem.querySelector(".".concat(controlClasses.nextArrow));
+
+                if (right) {
+                  var lastSlideIndex = Glide.settings.bound ? Glide.index + (Glide.settings.perView - 1) : Glide.index;
+
+                  if (lastSlideIndex === Components.Sizes.length - 1) {
+                    right.setAttribute('disabled', '');
+                  } else {
+                    right.removeAttribute('disabled');
+                  }
+                }
+              }
+            } catch (err) {
+              _iterator.e(err);
+            } finally {
+              _iterator.f();
+            }
+          });
+        }
+      };
+    }
+  }]);
+
+  return Slider;
+}();
+
+
+
+/***/ }),
+
+/***/ "./js/utils/dom.js":
+/*!*************************!*\
+  !*** ./js/utils/dom.js ***!
+  \*************************/
+/*! exports provided: select, selectAll, setAttr, getAttr, setText, onFullLoad, onReady, getWidth, getParent, remove */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "select", function() { return select; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "selectAll", function() { return selectAll; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "setAttr", function() { return setAttr; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getAttr", function() { return getAttr; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "setText", function() { return setText; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "onFullLoad", function() { return onFullLoad; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "onReady", function() { return onReady; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getWidth", function() { return getWidth; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getParent", function() { return getParent; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "remove", function() { return remove; });
+function _toConsumableArray(arr) {
+  return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _unsupportedIterableToArray(arr) || _nonIterableSpread();
+}
+
+function _nonIterableSpread() {
+  throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.");
+}
+
+function _unsupportedIterableToArray(o, minLen) {
+  if (!o) return;
+  if (typeof o === "string") return _arrayLikeToArray(o, minLen);
+  var n = Object.prototype.toString.call(o).slice(8, -1);
+  if (n === "Object" && o.constructor) n = o.constructor.name;
+  if (n === "Map" || n === "Set") return Array.from(o);
+  if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen);
+}
+
+function _iterableToArray(iter) {
+  if (typeof Symbol !== "undefined" && Symbol.iterator in Object(iter)) return Array.from(iter);
+}
+
+function _arrayWithoutHoles(arr) {
+  if (Array.isArray(arr)) return _arrayLikeToArray(arr);
+}
+
+function _arrayLikeToArray(arr, len) {
+  if (len == null || len > arr.length) len = arr.length;
+
+  for (var i = 0, arr2 = new Array(len); i < len; i++) {
+    arr2[i] = arr[i];
+  }
+
+  return arr2;
+}
+
+function select() {
+  var target = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : '';
+  var container = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : document;
+  return container.querySelector(target);
+}
+function selectAll() {
+  var target = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : '';
+  var container = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : document;
+  return _toConsumableArray(container.querySelectorAll(target));
+}
+function setAttr(elem) {
+  var name = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : '';
+  var value = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : '';
+
+  if (elem) {
+    elem.setAttribute(name, value);
+  } else {
+    throw new Error("Can't set attribute on \"".concat(elem, "\" element."));
+  }
+}
+function getAttr(elem) {
+  var name = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : '';
+
+  if (elem) {
+    return elem.getAttribute(name);
+  }
+
+  throw new Error("Can't get attribute on \"".concat(elem, "\" element."));
+}
+function setText(elem) {
+  var text = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : '';
+
+  if (elem) {
+    elem.textContent = text;
+  } else {
+    throw new Error("Can't set text content on \"".concat(elem, "\" element."));
+  }
+}
+function onFullLoad() {
+  var callback = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : console.log;
+  window.addEventListener('load', callback);
+}
+function onReady(callback) {
+  if (document.readyState != 'loading') {
+    callback();
+  } else {
+    document.addEventListener('DOMContentLoaded', callback);
+  }
+}
+function getWidth(elem) {
+  if (elem) {
+    return parseFloat(getComputedStyle(elem, null).width.replace('px', ''));
+  } else {
+    throw new Error("Can't get width of \"".concat(elem, "\" element."));
+  }
+}
+function getParent(elem) {
+  return elem.parentNode;
+}
+function remove(elem) {
+  var parent = getParent(elem);
+
+  if (parent) {
+    parent.removeChild(elem);
+  }
+}
+
+/***/ }),
+
+/***/ "./js/utils/helpers.js":
+/*!*****************************!*\
+  !*** ./js/utils/helpers.js ***!
+  \*****************************/
+/*! exports provided: isRTL, isMobile, isDarkMode, formatDate, getParameterByName, adjustImageGallery, managePostImages, makeImagesZoomable, scrollTop */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "isRTL", function() { return isRTL; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "isMobile", function() { return isMobile; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "isDarkMode", function() { return isDarkMode; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "formatDate", function() { return formatDate; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getParameterByName", function() { return getParameterByName; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "adjustImageGallery", function() { return adjustImageGallery; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "managePostImages", function() { return managePostImages; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "makeImagesZoomable", function() { return makeImagesZoomable; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "scrollTop", function() { return scrollTop; });
+function isRTL() {
+  var $html = document.querySelector('html');
+  return ['ar', 'he', 'fa'].includes($html.getAttribute('lang'));
+}
+function isMobile() {
+  var width = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : '768px';
+  return window.matchMedia("(max-width: ".concat(width, ")")).matches;
+}
+function isDarkMode() {
+  var darkModeMatcher = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)');
+  return darkModeMatcher && darkModeMatcher.matches;
+}
+function formatDate(date) {
+  if (date) {
+    return new Date(date).toLocaleDateString(document.documentElement.lang, {
+      year: 'numeric',
+      month: 'long',
+      day: 'numeric'
+    });
+  }
+
+  return '';
+}
+function getParameterByName(name, url) {
+  if (!url) url = window.location.href;
+  name = name.replace(/[\[\]]/g, '\\$&');
+  var regex = new RegExp("[?&]".concat(name, "(=([^&#]*)|&|#|$)"));
+  var results = regex.exec(url);
+  if (!results) return null;
+  if (!results[2]) return '';
+  return decodeURIComponent(results[2].replace(/\+/g, ' '));
+}
+function adjustImageGallery() {
+  var images = document.querySelectorAll('.kg-gallery-image img');
+
+  for (var i = 0, len = images.length; i < len; i++) {
+    var container = images[i].closest('.kg-gallery-image');
+    var width = images[i].attributes.width.value;
+    var height = images[i].attributes.height.value;
+    var ratio = width / height;
+    container.style.flex = "".concat(ratio, " 1 0%");
+  }
+}
+function managePostImages($) {
+  $('.js-post-content').find('img').each(function () {
+    if (!$(this).closest('figure').hasClass('kg-bookmark-card') && !$(this).parent().is('a')) {
+      $(this).addClass('js-zoomable');
+    }
+  });
+}
+function makeImagesZoomable($, mediumZoom) {
+  var zoom = mediumZoom('.js-zoomable');
+  zoom.on('opened', function () {
+    setTimeout(function () {
+      var $mediumZoomImages = $('.medium-zoom-image--opened');
+
+      if ($mediumZoomImages.length > 1) {
+        $mediumZoomImages.last().hide();
+      }
+    }, 10);
+  });
+}
+function scrollTop() {
+  window.scrollTo({
+    top: 0,
+    behavior: 'smooth'
+  });
+}
+
+/***/ }),
+
 /***/ "./node_modules/@babel/runtime/regenerator/index.js":
 /*!**********************************************************!*\
   !*** ./node_modules/@babel/runtime/regenerator/index.js ***!

@@ -1,10 +1,12 @@
-import { isMobile } from '../helpers';
+import { isMobile } from '../utils/helpers';
+import { getParent, getWidth, select, setAttr } from '../utils/dom';
 
 const CIRCLE_SELECTOR = '.js-progress';
 
 export default class ProgressCircle {
   constructor() {
-    this.circle = $(CIRCLE_SELECTOR);
+    this.circle = select(CIRCLE_SELECTOR);
+    this.parent = getParent(this.circle);
     this.lastScrollingY = window.scrollY;
     this.lastWindowHeight = 0;
     this.lastDocumentHeight = 0;
@@ -21,7 +23,7 @@ export default class ProgressCircle {
     this.updating();
 
     setTimeout(() => {
-      this.circle.parent().css('opacity', 1);
+      this.parent.style.opacity = 1;
     }, 300);
 
     window.addEventListener('scroll', this.onScrolling, { passive: true });
@@ -71,24 +73,23 @@ export default class ProgressCircle {
   setProgress(percent) {
     if (percent <= 100) {
       const offset = this.circumference - (percent / 100) * this.circumference;
-      this.circle[0].style.strokeDashoffset = offset;
+      this.circle.style.strokeDashoffset = offset;
     }
   }
 
   setCircleStyles() {
-    const svgWidth = this.circle.parent().width();
+    const svgWidth = getWidth(this.parent);
     const radiusCircle = svgWidth / 2;
     const borderWidth = isMobile() ? 2 : 3;
 
-    this.circle.parent().attr('viewBox', `0 0 ${svgWidth} ${svgWidth}`);
-    this.circle.attr('stroke-width', borderWidth);
-    this.circle.attr('r', radiusCircle - (borderWidth - 1));
-    this.circle.attr('cx', radiusCircle);
-    this.circle.attr('cy', radiusCircle);
+    setAttr(this.parent, 'viewBox', `0 0 ${svgWidth} ${svgWidth}`);
+    setAttr(this.circle, 'stroke-width', borderWidth);
+    setAttr(this.circle, 'r', radiusCircle - (borderWidth - 1));
+    setAttr(this.circle, 'cx', radiusCircle);
+    setAttr(this.circle, 'cy', radiusCircle);
 
     this.circumference = radiusCircle * 2 * Math.PI;
-
-    this.circle[0].style.strokeDasharray = `${this.circumference} ${this.circumference}`;
-    this.circle[0].style.strokeDashoffset = this.circumference;
+    this.circle.style.strokeDasharray = `${this.circumference} ${this.circumference}`;
+    this.circle.style.strokeDashoffset = this.circumference;
   }
 }

@@ -1,6 +1,7 @@
-import { setupFeaturedSlider } from './components/featured-slider';
+import Slider from './components/Slider';
 import $ from 'jquery';
 import moment from 'moment-timezone';
+import { select } from './utils/dom';
 
 const api = new GhostContentAPI({
   url: ghostHost.includes('http') ? ghostHost : `http:${ghostHost}`,
@@ -69,8 +70,9 @@ $(() => {
   const $loadMoreButton = $('#js-load-more-btn');
   const $postsContainer = $('#js-posts-container');
   let totalPosts = null;
+  const slider = select('.js-featured-slider');
 
-  setupFeaturedSlider();
+  new Slider(slider);
 
   if (getCurrentPostsCount() < defaultPostsCount) {
     $loadMoreButton.hide();
