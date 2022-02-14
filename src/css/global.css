@@ -1,0 +1,8 @@
+.swiper-wrapper {
+  box-sizing: border-box;
+}
+
+#searchInput::placeholder {
+  color: currentColor;
+  font: 600;
+}

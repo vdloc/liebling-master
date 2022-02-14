@@ -60,3 +60,37 @@ export function remove(elem) {
     parent.removeChild(elem);
   }
 }
+
+export function bindEvent(elem = document, event, callback) {
+  elem.addEventListener(event, callback);
+}
+
+export function removeEvent(elem = document, event, callback) {
+  elem.removeEventListener(event, callback);
+}
+
+export function addClass(elem, ...classes) {
+  elem.classList.add(...classes);
+}
+
+export function removeClass(elem, ...classes) {
+  elem.classList.remove(...classes);
+}
+
+export function toggleClass(elem, flag = false, ...classes) {
+  flag ? addClass(elem, ...classes) : removeClass(elem, ...classes);
+}
+
+export function toggleBetweenClasses(
+  elem,
+  flag = false,
+  { positiveClasses = [], negativeClasses = [] } = {}
+) {
+  if (flag) {
+    addClass(elem, ...positiveClasses);
+    removeClass(elem, ...negativeClasses);
+  } else {
+    addClass(elem, ...negativeClasses);
+    removeClass(elem, ...positiveClasses);
+  }
+}

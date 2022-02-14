@@ -627,7 +627,7 @@
   margin-right: 0.5rem !important;
 }
 .l-post-content .kg-bookmark-author:after {
-  content: "\2022";
+  content: "•";
   margin: 0 0.375rem;
 }
 .l-post-content .kg-bookmark-publisher {
@@ -970,6 +970,7 @@
 }
 @media only screen and (min-width: 64rem) {
   .m-share__content {
+    position: -webkit-sticky;
     position: sticky;
     top: 6.25rem;
     flex-direction: column-reverse;

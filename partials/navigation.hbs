@@ -1,69 +1,173 @@
-{{!--
-This navigation template is shared across all the pages.
-Also it includes the big submenu.
---}}
-
+{{! Secondary Navigation }}
 {{#if isSecondary}}
-    {{#foreach navigation}}
-      <li class="nav-{{slug}}{{#if current}} nav-current{{/if}}">
-        <a href="{{url absolute="true"}}">{{label}}</a>
-      </li>
-    {{/foreach}}
+  <li
+    class="mr-2 px-4 cursor-pointer flex items-center self-center"
+    id="header-secondary-nav"
+  >
+    <span class="icon-more" aria-hidden="true"></span>
+    <div class="hidden" id="secondary-nav-template">
+      <ul>
+        {{#foreach navigation}}
+          <li
+            class="text-secondary-subtle text-base rounded-sm hover:bg-secondary-nav-hover transition-colors"
+          >
+            <a
+              href="{{url absolute=" true"}}"
+              class="py-2 px-3 block"
+            >{{label}}</a>
+          </li>
+          <li class="hidden">
+            <ul class="js-mobile-navigation-template">
+              <li>
+                <a
+                  href="{{url}}"
+                  class="px-5 py-3 flex items-center border-t border-gray-300 dark:border-transparent dark:shadow-list-dark text-lg last:border-b"
+                >
+                  {{label}}
+                </a>
+              </li>
+            </ul>
+          </li>
+        {{/foreach}}
+      </ul>
+    </div>
+  </li>
+
+  {{! Primary Navigation }}
 {{else}}
   {{#foreach navigation}}
-    <li class="nav-{{slug}}{{#if current}} nav-current{{/if}} m-nav__item js-nav-item">
-      <a class="m-nav__link" href="{{url absolute="true"}}">{{label}}</a>
-      {{!-- Submenu --}}
-      <div class="m-submenu js-submenu">
-        <div class="l-wrapper in-submenu">
-          <section class="m-recent-articles">
-            <h3 class="m-submenu-title in-recent-articles">{{t "Mới nhất"}}</h3>
-            {{#get "posts" limit="4" order="published_at desc" filter="tag:{{slug}}" as |recent|}}
+    <li
+      class="js-primary-navigation sm:first:mr-0 sm:mr-2 first:mt-0 mt-2 sm:mt-0 px-4 flex group items-center"
+    >
+      <a class="text-xl sm:font-bold" href="{{url absolute="true"}}">
+        {{label}}
+      </a>
+      <nav
+        class="sm:fixed top-header-height left-0 w-full sm:pt-8 sm:px-10 sm:pb-6 border-t border-secondary-border dark:border-dark-secondary-border backface-visible bg-transparent sm:bg-background dark:bg-dark-background lg:opacity-0 lg:invisible sm:shadow-2xl transition-all ease-default duration-300 sm:group-hover:animate-open-sub-menu"
+      >
+        <div
+          class="js-submenu-template container mx-auto lg:px-10"
+          data-slug="{{slug}}"
+        >
+          {{! Slider }}
+          <section>
+            <header
+              class="font-bold text-lg sm:text-xl mb-5 flex justify-between"
+            >
+              <h3>Mới nhất</h3>
+              <aside class="flex">
+                <button
+                  class="js-submenu-swiper-prev flex items-center justify-center w-8 h-8 text-titles dark:text-dark-titles text-sm font-normal opacity-50 cursor-default"
+                >
+                  <span class="icon-arrow-left" aria-hidden="true"></span>
+                </button>
+                <button
+                  class="js-submenu-swiper-next flex items-center justify-center w-8 h-8 ml-1 text-titles dark:text-dark-titles text-sm font-normal"
+                >
+                  <span class="icon-arrow-right" aria-hidden="true"></span>
+                </button>
+              </aside>
+            </header>
+            {{#get
+              "posts"
+              limit="7"
+              order="published_at desc"
+              filter="tag:{{slug}}"
+              as |recent|
+            }}
               {{#if recent}}
-                <div class="glide js-recent-slider">
-                  <div class="glide__track" data-glide-el="track">
-                    <div class="glide__slides">
-                      {{#foreach recent}}
-                      <div class="glide__slide">
-                        <a href="{{url}}" class="m-recent-article">
-                          <div class="m-recent-article__picture {{#unless feature_image}}no-picture{{/unless}}">
-                            {{#if feature_image}}
-                              <img src="{{img_url feature_image size="s"}}" loading="lazy" alt="">
-                            {{else}}
-                              <img src="{{asset "images/no-image.png"}}" loading="lazy" alt="">
-                            {{/if}}
-                          </div>
-                          <h3 class="m-recent-article__title js-recent-article-title" title="{{title}}">
-                            {{title}}
-                          </h3>
-                          <span class="m-recent-article__date">{{date published_at timeago="true"}}</span>
+                <div class="swiper">
+                  <!-- Additional required wrapper -->
+                  <div class="swiper-wrapper">
+                    <!-- Slides -->
+                    {{#foreach recent}}
+                      <div class="swiper-slide h-auto">
+                        <a
+                          href="{{url}}"
+                          class="flex flex-col justify-between h-full"
+                        >
+                          <header>
+                            <figure
+                              class="h-[10rem] sm:h-[8.125rem] relative overflow-hidden rounded-md"
+                            ><span
+                                style="box-sizing: border-box; display: block; overflow: hidden; width: initial; height: initial; background: none; opacity: 1; border: 0px; margin: 0px; padding: 0px; position: absolute; inset: 0px;"
+                              ><img
+                                  alt="{{title}}"
+                                  sizes="100vw"
+                                  src="{{img_url feature_image size="s"}}"
+                                  loading="lazy"
+                                  decoding="async"
+                                  class="hover:scale-110 transition-transform transition-fix ease-in-out duration-300"
+                                  style="position: absolute; inset: 0px; box-sizing: border-box; padding: 0px; border: none; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%; object-fit: cover;"
+                                /></span>
+                            </figure>
+                            <h4
+                              class="mt-2 font-lg font-bold leading-2 line-clamp-2"
+                            >
+                              {{title}}
+                            </h4>
+                          </header>
+                          <section class="mt-4 text-sm">
+                            <time datetime="{{published_at}}">{{date
+                                published_at
+                                timeago="true"
+                              }}</time>
+                          </section>
                         </a>
                       </div>
-                      {{/foreach}}
-                    </div>
+                    {{/foreach}}
                   </div>
                 </div>
               {{else}}
-                <div class="m-not-found in-recent-articles">{{t "No recent articles found :("}}</div>
+                <span class="text-sm">Không có bài viết mới nhất nào :(</span>
               {{/if}}
             {{/get}}
           </section>
-          <section class="m-tags">
-            <h3 class="m-submenu-title">{{t "Chủ đề hot"}}</h3>
-            {{#get "tags" limit="10" filter="description:{{slug}}+name:-{{slug}}"}}
-              <ul class="m-submenu__tag-list">
-                {{#foreach tags}}
-                  <li class="m-submenu__tag-item">
-                    <a class="m-submenu__tag-link" href="{{url}}">{{name}}</a>
-                  </li>
-                  {{else}}
-                    <li class="m-not-found">{{t "No tags found :("}}</li>
-                {{/foreach}}
-              </ul>
+          {{! Tags }}
+          <section class="mt-4 sm:mt-8">
+            <header class="font-bold text-lg sm:text-xl mb-5">
+              <h3>Chủ đề hot</h3>
+            </header>
+            {{#get
+              "tags"
+              limit="10"
+              filter="description:{{slug}}+name:-{{slug}}"
+              as |tags|
+            }}
+              {{#if tags}}
+                <ul class="flex flex-wrap gap-2">
+                  {{#foreach tags}}
+                    <li>
+                      <a href="{{url}}" class="touch-manipulation">
+                        <div
+                          class="flex items-center justify-center text-link text-sm font-bold bg-alter-link py-[0.1rem] px-2 rounded"
+                        >
+                          {{name}}
+                        </div>
+                      </a>
+                    </li>
+                  {{/foreach}}
+                </ul>
+              {{else}}
+                <span class="text-sm">Không có chủ đề nào :(</span>
+              {{/if}}
             {{/get}}
           </section>
         </div>
-      </div>
+      </nav>
+    </li>
+    <li class="hidden">
+      <ul class="js-mobile-navigation-template">
+        <li
+          class="js-mobile-primary-navigation px-5 py-3 flex items-center border-t border-gray-300 dark:border-transparent dark:shadow-list-dark justify-between"
+          data-slug="{{slug}}"
+          data-label="{{label}}"
+          data-url="{{url}}"
+        >
+          <span class="text-lg">{{label}}</span>
+          <span class="icon-arrow-right" aria-hidden="true"></span>
+        </li>
+      </ul>
     </li>
   {{/foreach}}
 {{/if}}
