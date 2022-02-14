@@ -585,7 +585,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "addClass": () => (/* binding */ addClass),
 /* harmony export */   "removeClass": () => (/* binding */ removeClass),
 /* harmony export */   "toggleClass": () => (/* binding */ toggleClass),
-/* harmony export */   "toggleBetweenClasses": () => (/* binding */ toggleBetweenClasses)
+/* harmony export */   "toggleBetweenClasses": () => (/* binding */ toggleBetweenClasses),
+/* harmony export */   "scrollTop": () => (/* binding */ scrollTop)
 /* harmony export */ });
 function _toConsumableArray(arr) {
   return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _unsupportedIterableToArray(arr) || _nonIterableSpread();
@@ -743,6 +744,12 @@ function toggleBetweenClasses(elem) {
     addClass.apply(void 0, [elem].concat(_toConsumableArray(negativeClasses)));
     removeClass.apply(void 0, [elem].concat(_toConsumableArray(positiveClasses)));
   }
+}
+function scrollTop() {
+  window.scrollTo({
+    behavior: 'smooth',
+    top: 0
+  });
 }
 
 /***/ }),

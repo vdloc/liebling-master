@@ -94,3 +94,7 @@ export function toggleBetweenClasses(
     removeClass(elem, ...positiveClasses);
   }
 }
+
+export function scrollTop() {
+  window.scrollTo({ behavior: 'smooth', top: 0 });
+}

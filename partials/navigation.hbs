@@ -27,6 +27,15 @@
                 </a>
               </li>
             </ul>
+            <ul class="js-footer-secondary-navigation-template">
+              <li
+                class="first:mt-0 mt-1 tracking-wider relative after:absolute after:w-full after:h-[2px] after:bottom-0 after:right-0 after:bg-link after:scale-x-0 after:origin-bottom-right after:duration-300 hover:after:scale-x-100"
+              >
+                <a href="{{url}}">
+                  {{label}}
+                </a>
+              </li>
+            </ul>
           </li>
         {{/foreach}}
       </ul>
@@ -166,6 +175,15 @@
         >
           <span class="text-lg">{{label}}</span>
           <span class="icon-arrow-right" aria-hidden="true"></span>
+        </li>
+      </ul>
+      <ul class="js-footer-primary-navigation-template">
+        <li
+          class="first:mt-0 mt-1 tracking-wider relative after:absolute after:w-full after:h-[2px] after:bottom-0 after:right-0 after:bg-link after:scale-x-0 after:origin-bottom-right after:duration-300 hover:after:scale-x-100"
+        >
+          <a href="{{url}}">
+            {{label}}
+          </a>
         </li>
       </ul>
     </li>
