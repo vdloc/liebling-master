@@ -4,11 +4,11 @@ into the {body} of the default.hbs template }}
 
 {{! Special header.hbs partial to generate the <header> tag }}
 {{> header }}
-<div class="flex justify-center items-center p-4">
+<div class="flex justify-center items-center p-4 flex-wrap-reverse -mt-10">
   {{! Form }}
-  <div class="w-[40%] p-4">
+  <div class="flex-1 md:flex-initial md:w-[40%] p-4 mt-12 md:mt-auto">
     <header>
-      <h2 class="text-[2.5rem] font-semibold">
+      <h2 class="text-[2.5rem] font-semibold text-center md:text-left">
         Liên hệ
       </h2>
     </header>
@@ -45,14 +45,14 @@ into the {body} of the default.hbs template }}
         required
       ></textarea>
       <input
-        class="self-start text-white font-semibold text-base py-2 px-[1.5625rem] outline-none border-none rounded-[0.3125rem] bg-primary-subtle transition-all ease-default duration-200 cursor-pointer button"
+        class="self-start mx-auto md:mx-0 text-white font-semibold text-base py-2 px-[1.5625rem] outline-none border-none rounded-[0.3125rem] bg-primary-subtle transition-all ease-default duration-200 cursor-pointer button"
         type="submit"
         value="Gửi"
       />
     </form>
   </div>
   {{!-- Illustration--}}
-  <div class="ml-12 p-4 w-[40%]">
+  <div class="w-[80%] md:w-[40%] md:ml-12 p-4">
     <img src="{{asset 'images/contact.svg'}}" alt="Contact" />
   </div>
 </div>
