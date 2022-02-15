@@ -384,8 +384,8 @@ var PageHeader = /*#__PURE__*/function () {
   _createClass(PageHeader, [{
     key: "init",
     value: function init() {
-      this.initPrimaryNavigation();
-      this.initSecondaryNavigation();
+      this.setupPrimaryNavigation();
+      this.setupSecondaryNavigation();
       this.observeHeader();
       new _ThemeToggler__WEBPACK_IMPORTED_MODULE_3__["default"]('#theme-control');
       new _ThemeToggler__WEBPACK_IMPORTED_MODULE_3__["default"]('#mobile-theme-control');
@@ -393,8 +393,8 @@ var PageHeader = /*#__PURE__*/function () {
       new _MobileMenu__WEBPACK_IMPORTED_MODULE_5__["default"]();
     }
   }, {
-    key: "initPrimaryNavigation",
-    value: function initPrimaryNavigation() {
+    key: "setupPrimaryNavigation",
+    value: function setupPrimaryNavigation() {
       this.primaryNavigation.forEach(function (navigation) {
         var sliderContainer = (0,_utils_dom__WEBPACK_IMPORTED_MODULE_0__.select)('.swiper', navigation);
         var sliderPrevEl = (0,_utils_dom__WEBPACK_IMPORTED_MODULE_0__.select)('.js-submenu-swiper-prev', navigation);
@@ -411,8 +411,8 @@ var PageHeader = /*#__PURE__*/function () {
       });
     }
   }, {
-    key: "initSecondaryNavigation",
-    value: function initSecondaryNavigation() {
+    key: "setupSecondaryNavigation",
+    value: function setupSecondaryNavigation() {
       var template = (0,_utils_dom__WEBPACK_IMPORTED_MODULE_0__.select)('#secondary-nav-template');
       var secondaryNavButton = (0,_utils_dom__WEBPACK_IMPORTED_MODULE_0__.select)('#header-secondary-nav');
       (0,tippy_js__WEBPACK_IMPORTED_MODULE_6__.t)(secondaryNavButton, {

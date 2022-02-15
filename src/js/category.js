@@ -1,120 +1,167 @@
 import Slider from './components/Slider';
-import $ from 'jquery';
-import moment from 'moment-timezone';
-import { select } from './utils/dom';
+import api from './utils/api';
+import {
+  addClass,
+  bindEvent,
+  getAttr,
+  onReady,
+  removeClass,
+  select,
+  selectAll,
+  toggleClass,
+} from './utils/dom';
+import { convertToTimeAgo, replateTemplateContent } from './utils/helpers';
 
-const api = new GhostContentAPI({
-  url: ghostHost.includes('http') ? ghostHost : `http:${ghostHost}`,
-  key: ghostSearchApiKey,
-  version: 'v4'
-});
-const postsPerEachLoad = 6;
-const defaultPostsCount = 7;
+const hiddenClass = 'hidden';
+class Category {
+  constructor() {
+    // DOM bindings
+    this.postContainer = select('#posts-container');
+    this.featuredPostsContainer = select(
+      '#featured-posts-container',
+      this.postContainer
+    );
+    this.loadMoreButton = select('#load-more-button');
+    this.loader = select('#posts-loader');
+    this.nonFeaturedPosts = selectAll('.js-post-card');
+    this.postTemplate = select('#post-card-template').innerHTML;
+    this.categoryInfo = select('#category-info');
+    this.categoryTag = getAttr(this.categoryInfo, 'data-tag');
 
-function getPublicTime(date) {
-  const timezone = 'Asia/Ho_Chi_Minh';
-  const timeNow = moment().tz(timezone);
+    // State
+    this.isLoading = false;
+    this.postsPerEachLoad = 9;
+    this.totalNonFeaturedPostsCount = Infinity;
+    this.nonFeaturedPostsCount = this.nonFeaturedPosts.length;
 
-  let testDateInput = Date.parse(date);
-  let dateMoment;
-
-  if (isNaN(testDateInput) === false) {
-    dateMoment = moment.parseZone(date);
-  } else {
-    dateMoment = timeNow;
+    // Events
+    this.handleLoadMorePost = this.handleLoadMorePost.bind(this);
+    this.init();
   }
 
-  dateMoment.locale('vi');
-
-  return dateMoment.tz(timezone).from(timeNow);
-}
-
-function createPostArticle(post) {
-  const { title, url, published_at, feature_image, primary_tag } = post;
-  let template = `<article class="m-article-card ${
-    feature_image ? '' : 'no-picture'
-  } ${categoryTag} post" data-aos="fade-up" data-aos-delay="300">
-      <div class="m-article-card__picture">
-        <a href="${url}" class="m-article-card__picture-link" aria-hidden="true" tabindex="-1"></a>
-        ${feature_image &&
-          `<img class="m-article-card__picture-background" src="${feature_image}" loading="lazy">`}
-      </div>
-      <div class="m-article-card__info">
-        <a href="${primary_tag?.url}" class="m-article-card__tag capitalize">${
-    primary_tag?.name
-  }</a>
-        <a href="${url}" class="m-article-card__info-link" aria-label="${title}">
-          <div>
-            <h2 class="m-article-card__title js-article-card-title ${
-              feature_image ? '' : 'js-article-card-title-no-image'
-            }" title="{{title}}">
-              ${title}
-            </h2>
-          </div>
-          <div class="m-article-card__timestamp">
-            <span>${getPublicTime(published_at)}</span>
-          </div>
-        </a>
-      </div>
-</article>`;
-
-  return $(template);
-}
-
-function getCurrentPostsCount() {
-  return $('.post').length;
-}
-
-$(() => {
-  const $loader = $('#js-loader');
-  const $loadMoreButton = $('#js-load-more-btn');
-  const $postsContainer = $('#js-posts-container');
-  let totalPosts = null;
-  const slider = select('.js-featured-slider');
-
-  new Slider(slider);
-
-  if (getCurrentPostsCount() < defaultPostsCount) {
-    $loadMoreButton.hide();
-
-    return;
+  init() {
+    this.setupFeaturedPostsSlider();
+    this.setupLoadingUI();
+    bindEvent(this.loadMoreButton, 'click', this.handleLoadMorePost);
   }
 
-  $loadMoreButton.on('click', async function() {
-    let postsCount = getCurrentPostsCount() + postsPerEachLoad;
+  setupFeaturedPostsSlider() {
+    const swiperContainer = select('.swiper', this.featuredPostsContainer);
+    const swiperNextEl = select('.js-featured-slider-next', swiperContainer);
+    const swiperPrevEl = select('.js-featured-slider-prev', swiperContainer);
+    const swiperOptions = {
+      disabledClass: 'opacity-50 cursor-default',
+      lockClass: 'hidden',
+    };
 
-    $loader.removeClass('hide');
-    $loadMoreButton.hide();
+    new Slider({
+      container: swiperContainer,
+      prevEl: swiperPrevEl,
+      nextEl: swiperNextEl,
+      options: swiperOptions,
+    });
+  }
+
+  updateLoadingUI() {
+    const isHideLoadMoreButton =
+      this.isLoading ||
+      this.nonFeaturedPostsCount >= this.totalNonFeaturedPostsCount;
+
+    toggleClass(this.loadMoreButton, isHideLoadMoreButton, hiddenClass);
+    toggleClass(this.loader, !this.isLoading, hiddenClass);
+  }
+
+  async setupLoadingUI() {
+    try {
+      const posts = await this.getPosts(1);
+      this.totalNonFeaturedPostsCount = posts.meta.pagination.total;
+      this.updateLoadingUI();
+    } catch (error) {}
+  }
+
+  async handleLoadMorePost() {
+    this.isLoading = true;
+    this.updateLoadingUI();
+
+    const postsLimit = this.nonFeaturedPostsCount + this.postsPerEachLoad;
 
     try {
-      const posts = await api.posts.browse({
-        limit: postsCount,
+      const posts = await this.getPosts(postsLimit);
+
+      // Lưu lại thông tin total post count.
+      if (this.totalNonFeaturedPostsCount === Infinity) {
+        this.totalNonFeaturedPostsCount = posts.meta.pagination.total;
+      }
+
+      // Nếu đã load tất cả post, ẩn nút load more.
+      if (this.nonFeaturedPostsCount >= this.totalNonFeaturedPostsCount) {
+        addClass(this.loadMoreButton, hiddenClass);
+      }
+      console.log(
+        'file: category.js ~ line 104 ~ this.totalNonFeaturedPostsCount',
+        this.totalNonFeaturedPostsCount,
+        postsLimit,
+        this.nonFeaturedPostsCount,
+        this.totalNonFeaturedPostsCount
+      );
+
+      // Tính số lượng post sẽ được load thêm( do response trả về có cả các post cũ).
+      const postsSlice =
+        this.totalNonFeaturedPostsCount >= postsLimit
+          ? -this.postsPerEachLoad
+          : this.nonFeaturedPostsCount - this.totalNonFeaturedPostsCount;
+      const newPosts = posts.slice(postsSlice);
+      console.log(
+        'file: category.js ~ line 107 ~ newPosts',
+        newPosts,
+        posts,
+        this
+      );
+      const newPostsHTML = newPosts.reduce(
+        (html, post) => html.concat(this.createPostHTML(post)),
+        ''
+      );
+
+      this.nonFeaturedPostsCount += newPosts.length;
+      this.postContainer.insertAdjacentHTML('beforeend', newPostsHTML);
+      this.isLoading = false;
+      this.updateLoadingUI();
+    } catch (error) {
+      console.log(error);
+    }
+  }
+
+  async getPosts(limit) {
+    try {
+      const posts = await api.getPosts({
+        limit,
         include: 'tags',
         fields: 'id, title, url, published_at, feature_image, primary_tag',
-        filter: `tag:${categoryTag}+featured:false`
+        filter: `tag:${this.categoryTag}+featured:false`,
       });
 
-      if (!totalPosts) {
-        totalPosts = posts.meta.pagination.total;
-      }
-
-      if (postsCount >= totalPosts) {
-        $loadMoreButton.hide();
-      }
-
-      let postsSlice =
-        totalPosts >= postsCount
-          ? -postsPerEachLoad
-          : getCurrentPostsCount() - totalPosts;
-
-      posts.slice(postsSlice).forEach(post => {
-        let $post = createPostArticle(post);
-        $postsContainer.append($post);
-      });
-    } catch (err) {
-      $loadMoreButton.show();
-    } finally {
-      $loader.addClass('hide');
+      return posts;
+    } catch (error) {
+      return null;
     }
-  });
+  }
+
+  createPostHTML(postData) {
+    const { title, url, published_at, feature_image, primary_tag } = postData;
+    const mappingConfig = {
+      '@url': url,
+      '@title': title,
+      '@image': feature_image,
+      '@tagURL': primary_tag.url,
+      '@tagName': primary_tag.name,
+      '@time': published_at,
+      '@ago': convertToTimeAgo(published_at),
+    };
+
+    return replateTemplateContent(this.postTemplate, mappingConfig);
+  }
+}
+
+onReady(() => {
+  new Category();
 });

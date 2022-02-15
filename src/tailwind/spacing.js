@@ -4,4 +4,5 @@ module.exports = {
   'card-height': '27rem',
   'card-height-mobile': '23rem',
   'hero-height': '30rem',
+  unset: 'unset',
 };

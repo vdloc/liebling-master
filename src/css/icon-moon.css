@@ -1,9 +1,8 @@
-/** Icons */
-
 [class^="icon-"],
 [class*=" icon-"] {
   /* use !important to prevent issues with browser extensions that change fonts */
   font-family: "icomoon" !important;
+  speak: never;
   font-style: normal;
   font-weight: normal;
   font-variant: normal;
@@ -15,56 +14,59 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-.icon-moon:before {
-  content: "\e90f";
-}
-.icon-sunny:before {
-  content: "\e910";
-}
-.icon-chevron-down:before {
+.icon-chevron-right:before {
   content: "\e900";
 }
-.icon-star:before {
+.icon-chevron-down:before {
   content: "\e901";
 }
-.icon-arrow-left:before {
+.icon-star:before {
   content: "\e902";
 }
-.icon-arrow-right:before {
+.icon-arrow-left:before {
   content: "\e903";
 }
-.icon-arrow-top:before {
+.icon-arrow-right:before {
   content: "\e904";
 }
-.icon-close:before {
+.icon-arrow-top:before {
   content: "\e905";
 }
-.icon-comments:before {
+.icon-close:before {
   content: "\e906";
 }
-.icon-facebook:before {
+.icon-comments:before {
   content: "\e907";
 }
-.icon-globe:before {
+.icon-facebook:before {
   content: "\e908";
 }
-.icon-menu:before {
+.icon-globe:before {
   content: "\e909";
 }
-.icon-more:before {
+.icon-menu:before {
   content: "\e90a";
 }
-.icon-search:before {
+.icon-more:before {
   content: "\e90b";
 }
-.icon-twitter:before {
+.icon-search:before {
   content: "\e90c";
 }
-.icon-imdb:before {
+.icon-twitter:before {
   content: "\e90d";
 }
-.icon-vk:before {
+.icon-imdb:before {
   content: "\e90e";
+}
+.icon-vk:before {
+  content: "\e90f";
+}
+.icon-moon:before {
+  content: "\e910";
+}
+.icon-sunny:before {
+  content: "\e911";
 }
 .icon-steam:before {
   content: "\e914";

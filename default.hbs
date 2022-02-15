@@ -41,36 +41,6 @@
     {{!-- Styles & Scripts --}}
     <style>
       /* These font-faces are here to make fonts work if the Ghost instance is installed in a subdirectory */
-
-      /* source-sans-pro-regular */
-      @font-face {
-        font-family: 'Be Vietnam';
-        font-style: normal;
-        font-weight: 400;
-        font-display: swap;
-        src: local('BeVietnamPro-Regular'),
-            url("{{asset 'fonts/be/BeVietnamPro-Regular.ttf'}}");
-      }
-
-      /* source-sans-pro-600 */
-      @font-face {
-        font-family: 'Be Vietnam';
-        font-style: normal;
-        font-weight: 600;
-        font-display: swap;
-        src: local('BeVietnamPro-SemiBold'),
-            url("{{asset 'fonts/be/BeVietnamPro-SemiBold.ttf'}}");
-      }
-
-      /* source-sans-pro-700 */
-      @font-face {
-        font-family: 'Be Vietnam';
-        font-style: normal;
-        font-weight: 700;
-        font-display: swap;
-        src: local('BeVietnamPro-Bold'),
-            url("{{asset 'fonts/be/BeVietnamPro-Bold.ttf'}}");
-      }
       @font-face {
         font-family: 'Nunito';
         font-style: normal;
@@ -98,14 +68,6 @@
         font-display: swap;
         src: local('Nunito-Bold'),
             url("{{asset 'fonts/nunito/Nunito-Bold.ttf'}}");
-      }
-      @font-face {
-        font-family: 'Bungee';
-        font-style: normal;
-        font-weight: 400;
-        font-display: block;
-        src: local('Bungee-Regular'),
-            url("{{asset 'fonts/bungee/Bungee-Regular.ttf'}}");
       }
 
        @font-face {
@@ -144,7 +106,7 @@
     {{ghost_head}}
 
     {{!-- This variable is used to make the search form work --}}
-    <script nonce="jlsy6dbILj">
+    <script>
       // @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&dn=expat.txt Expat
       const ghostHost = "{{@site.url}}"
       // @license-end
@@ -164,10 +126,10 @@
     {{!-- {{> "notifications"}} --}}
 
     {{!-- Common scripts shared between pages --}}
-    <script defer nonce="jlsy6dbILj" src="{{asset "js/manifest.js"}}"></script>
-    <script defer nonce="jlsy6dbILj" src="{{asset "js/vendor/content-api.min.js"}}"></script>
-    <script defer nonce="jlsy6dbILj" src="{{asset "js/vendor.js"}}"></script>
-    <script defer nonce="jlsy6dbILj" src="{{asset "js/app.js"}}"></script>
+    <script defer src="{{asset "js/manifest.js"}}"></script>
+    <script defer src="{{asset "js/vendor/content-api.min.js"}}"></script>
+    <script defer src="{{asset "js/vendor.js"}}"></script>
+    <script defer src="{{asset "js/app.js"}}"></script>
 
     {{!-- The #block helper will pull in data from the #contentFor other template files --}}
     {{{block "scripts"}}}

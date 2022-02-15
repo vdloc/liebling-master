@@ -1,0 +1,15 @@
+{{#get
+  "posts"
+  filter="featured:false+tag:{{postsTag}}"
+  include="authors,tags"
+  limit=limit
+  as |nonFeaturedPosts|
+}}
+
+  {{#if nonFeaturedPosts}}
+    {{#foreach nonFeaturedPosts}}
+      {{> common/post-card}}
+    {{/foreach}}
+  {{else}}
+  {{/if}}
+{{/get}}

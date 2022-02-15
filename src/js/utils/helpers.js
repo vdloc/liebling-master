@@ -1,3 +1,6 @@
+import { formatDistanceToNow, format } from 'date-fns';
+import vi from 'date-fns/locale/vi';
+
 export function isRTL() {
   const $html = document.querySelector('html');
   return ['ar', 'he', 'fa'].includes($html.getAttribute('lang'));
@@ -19,7 +22,7 @@ export function formatDate(date) {
     return new Date(date).toLocaleDateString(document.documentElement.lang, {
       year: 'numeric',
       month: 'long',
-      day: 'numeric'
+      day: 'numeric',
     });
   }
 
@@ -56,14 +59,10 @@ export function adjustImageGallery() {
 export function managePostImages($) {
   $('.js-post-content')
     .find('img')
-    .each(function() {
+    .each(function () {
       if (
-        !$(this)
-          .closest('figure')
-          .hasClass('kg-bookmark-card') &&
-        !$(this)
-          .parent()
-          .is('a')
+        !$(this).closest('figure').hasClass('kg-bookmark-card') &&
+        !$(this).parent().is('a')
       ) {
         $(this).addClass('js-zoomable');
       }
@@ -83,6 +82,22 @@ export function makeImagesZoomable($, mediumZoom) {
   });
 }
 
-export function scrollTop() {
-  window.scrollTo({ top: 0, behavior: 'smooth' });
+export function replateTemplateContent(template = '', mapping = {}) {
+  return Object.entries(mapping).reduce((str, entry) => {
+    const [placeholder, value] = entry;
+
+    return str.replaceAll(placeholder, value);
+  }, template);
+}
+
+export function convertToTimeAgo(time) {
+  let timeago = formatDistanceToNow(new Date(time), {
+    locale: vi,
+  });
+
+  return `${timeago} trước`;
+}
+
+export function convertToVietnameseLocale(time) {
+  return format(new Date(time), 'dd MMMM yyyy', { locale: vi });
 }

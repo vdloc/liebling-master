@@ -36,8 +36,8 @@ export default class PageHeader {
   }
 
   init() {
-    this.initPrimaryNavigation();
-    this.initSecondaryNavigation();
+    this.setupPrimaryNavigation();
+    this.setupSecondaryNavigation();
     this.observeHeader();
 
     new ThemeControl('#theme-control');
@@ -46,7 +46,7 @@ export default class PageHeader {
     new MobileMenu();
   }
 
-  initPrimaryNavigation() {
+  setupPrimaryNavigation() {
     this.primaryNavigation.forEach((navigation) => {
       const sliderContainer = select('.swiper', navigation);
       const sliderPrevEl = select('.js-submenu-swiper-prev', navigation);
@@ -63,7 +63,7 @@ export default class PageHeader {
     });
   }
 
-  initSecondaryNavigation() {
+  setupSecondaryNavigation() {
     const template = select('#secondary-nav-template');
     const secondaryNavButton = select('#header-secondary-nav');
 

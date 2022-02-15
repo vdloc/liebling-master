@@ -5,15 +5,7 @@ It can be used also as the home page or the default page.
 
 {{!-- This block preloads specific assets for the index page --}}
 {{#contentFor "preload"}}
-  <link rel="preload" href="{{asset "css/home.css"}}" as="style" />
-  <link rel="preload" href="{{asset "css/listing.css"}}" as="style" />
   <link rel="preload" href="{{asset "js/home.js"}}" as="script" />
-{{/contentFor}}
-
-{{!-- This block loads specific styles for the index page --}}
-{{#contentFor "styles"}}
-  <link rel="stylesheet" type="text/css" href="{{asset "css/home.css"}}" media="screen" />
-  <link rel="stylesheet" type="text/css" href="{{asset "css/listing.css"}}" media="screen" />
 {{/contentFor}}
 
 {{!-- The tag below means: insert everything in this file
@@ -23,17 +15,20 @@ into the {body} of the default.hbs template --}}
 {{!-- Special header.hbs partial to generate the <header> tag --}}
 {{> header background=@site.cover_image}}
 
-<main class="main-wrap hidden ">
-  <div class="l-content">
-    <div class="l-wrapper" data-aos="fade-up" data-aos-delay="300">
-      {{> home/section title="Phim" tag="phim" slugifiedTag="phim" page="movies"}}
-      {{> home/section title="Nhạc" tag="nhạc" slugifiedTag="nhac" page="musics"}}
-      {{> home/section title="Ảnh" tag="ảnh" slugifiedTag="anh" page="photos"}}
-    </div>
+
+<main class="relative z-main bg-background dark:bg-dark-background" data-aos="fade-up" data-aos-delay="300">  <div class="container mx-auto lg:px-10 mt-10">
+  <div class="container mx-auto lg:px-10 mt-10">  
+    {{> home-section title="Phim" tag="phim" tagSlug="phim" page="movies"}}
+    {{> home-section title="Nhạc" tag="nhạc" tagSlug="nhac" page="musics"}}
+    {{> home-section title="Game" tag="game" tagSlug="game" page="games"}}
+    {{> home-section title="Course" tag="course" tagSlug="course" page="courses"}}
+    {{> home-section title="Khác" tag="miscellaneous" tagSlug="miscellaneous" page="miscellaneous"}}
   </div>
 </main>
 
+
+
 {{!-- The #contentFor helper here will send everything inside it up to the matching #block helper found in default.hbs --}}
 {{#contentFor "scripts"}}
-  <script nonce="jlsy6dbILj" defer src="{{asset "js/home.js"}}"></script>
+  <script  defer src="{{asset "js/home.js"}}"></script>
 {{/contentFor}}

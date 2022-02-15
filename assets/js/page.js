@@ -43,8 +43,76 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "adjustImageGallery": () => (/* binding */ adjustImageGallery),
 /* harmony export */   "managePostImages": () => (/* binding */ managePostImages),
 /* harmony export */   "makeImagesZoomable": () => (/* binding */ makeImagesZoomable),
-/* harmony export */   "scrollTop": () => (/* binding */ scrollTop)
+/* harmony export */   "replateTemplateContent": () => (/* binding */ replateTemplateContent),
+/* harmony export */   "convertToTimeAgo": () => (/* binding */ convertToTimeAgo),
+/* harmony export */   "convertToVietnameseLocale": () => (/* binding */ convertToVietnameseLocale)
 /* harmony export */ });
+/* harmony import */ var date_fns__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! date-fns */ "./node_modules/date-fns/esm/formatDistanceToNow/index.js");
+/* harmony import */ var date_fns__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! date-fns */ "./node_modules/date-fns/esm/format/index.js");
+/* harmony import */ var date_fns_locale_vi__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! date-fns/locale/vi */ "./node_modules/date-fns/esm/locale/vi/index.js");
+function _slicedToArray(arr, i) {
+  return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest();
+}
+
+function _nonIterableRest() {
+  throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.");
+}
+
+function _unsupportedIterableToArray(o, minLen) {
+  if (!o) return;
+  if (typeof o === "string") return _arrayLikeToArray(o, minLen);
+  var n = Object.prototype.toString.call(o).slice(8, -1);
+  if (n === "Object" && o.constructor) n = o.constructor.name;
+  if (n === "Map" || n === "Set") return Array.from(o);
+  if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen);
+}
+
+function _arrayLikeToArray(arr, len) {
+  if (len == null || len > arr.length) len = arr.length;
+
+  for (var i = 0, arr2 = new Array(len); i < len; i++) {
+    arr2[i] = arr[i];
+  }
+
+  return arr2;
+}
+
+function _iterableToArrayLimit(arr, i) {
+  var _i = arr == null ? null : typeof Symbol !== "undefined" && arr[Symbol.iterator] || arr["@@iterator"];
+
+  if (_i == null) return;
+  var _arr = [];
+  var _n = true;
+  var _d = false;
+
+  var _s, _e;
+
+  try {
+    for (_i = _i.call(arr); !(_n = (_s = _i.next()).done); _n = true) {
+      _arr.push(_s.value);
+
+      if (i && _arr.length === i) break;
+    }
+  } catch (err) {
+    _d = true;
+    _e = err;
+  } finally {
+    try {
+      if (!_n && _i["return"] != null) _i["return"]();
+    } finally {
+      if (_d) throw _e;
+    }
+  }
+
+  return _arr;
+}
+
+function _arrayWithHoles(arr) {
+  if (Array.isArray(arr)) return arr;
+}
+
+
+
 function isRTL() {
   var $html = document.querySelector('html');
   return ['ar', 'he', 'fa'].includes($html.getAttribute('lang'));
@@ -107,10 +175,26 @@ function makeImagesZoomable($, mediumZoom) {
     }, 10);
   });
 }
-function scrollTop() {
-  window.scrollTo({
-    top: 0,
-    behavior: 'smooth'
+function replateTemplateContent() {
+  var template = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : '';
+  var mapping = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
+  return Object.entries(mapping).reduce(function (str, entry) {
+    var _entry = _slicedToArray(entry, 2),
+        placeholder = _entry[0],
+        value = _entry[1];
+
+    return str.replaceAll(placeholder, value);
+  }, template);
+}
+function convertToTimeAgo(time) {
+  var timeago = (0,date_fns__WEBPACK_IMPORTED_MODULE_0__["default"])(new Date(time), {
+    locale: date_fns_locale_vi__WEBPACK_IMPORTED_MODULE_1__["default"]
+  });
+  return "".concat(timeago, " tr\u01B0\u1EDBc");
+}
+function convertToVietnameseLocale(time) {
+  return (0,date_fns__WEBPACK_IMPORTED_MODULE_2__["default"])(new Date(time), 'dd MMMM yyyy', {
+    locale: date_fns_locale_vi__WEBPACK_IMPORTED_MODULE_1__["default"]
   });
 }
 
