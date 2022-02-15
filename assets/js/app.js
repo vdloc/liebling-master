@@ -11,9 +11,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_PageFooter__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./components/PageFooter */ "./js/components/PageFooter.js");
 /* harmony import */ var _components_PageHeader__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./components/PageHeader */ "./js/components/PageHeader.js");
 /* harmony import */ var _utils_dom__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./utils/dom */ "./js/utils/dom.js");
+/* harmony import */ var aos__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! aos */ "./node_modules/aos/dist/aos.js");
+/* harmony import */ var aos__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(aos__WEBPACK_IMPORTED_MODULE_3__);
 
 
 
+
+aos__WEBPACK_IMPORTED_MODULE_3___default().init();
 (0,_utils_dom__WEBPACK_IMPORTED_MODULE_2__.onFullLoad)(function () {
   new _components_PageHeader__WEBPACK_IMPORTED_MODULE_1__["default"]();
   new _components_PageFooter__WEBPACK_IMPORTED_MODULE_0__["default"]();

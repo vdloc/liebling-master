@@ -29,13 +29,15 @@ const containerComponent = {
 };
 
 const loadMoreButtonComponent = {
-  '.loadmore-btn': {
+  '.button': {
     boxShadow: `0 0.125rem 0.25rem ${buttonShadowNormal}, 0 0 0 transparent`,
+    transition: 'all .25s cubic-bezier(.02,.01,.47,1)',
     ':root.dark &': {
       boxShadow: `0 0.125rem 0.25rem ${buttonDarkShadowNormal}, 0 0 0 transparent`,
     },
     '&:hover': {
       boxShadow: `0 0.25rem 0.5rem ${buttonShadowHover}, 0 0 0 transparent`,
+      transform: 'translateY(-2px)',
     },
     ':root.dark &:hover': {
       boxShadow: `0 0.25rem 0.5rem ${buttonDarkShadowHover}, 0 0 0 transparent`,

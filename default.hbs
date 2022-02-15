@@ -114,7 +114,16 @@
   </head>
   <body class="{{body_class}}">
     {{!-- All the main content gets inserted here, index.hbs, post.hbs, etc --}}
-    {{{body}}}
+      
+    <main
+      class="relative z-main bg-background dark:bg-dark-background"
+      data-aos="fade-up"
+      data-aos-delay="300"
+    >
+      <div class="container mx-auto lg:px-10 mt-10">
+        {{{body}}}  
+      </div>
+    </main>
 
     {{!-- Search form --}}
     {{> search}}
