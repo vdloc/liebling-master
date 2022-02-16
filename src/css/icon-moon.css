@@ -1,7 +1,6 @@
-[class^="icon-"],
-[class*=" icon-"] {
+[class^="icon-"], [class*=" icon-"] {
   /* use !important to prevent issues with browser extensions that change fonts */
-  font-family: "icomoon" !important;
+  font-family: 'icomoon' !important;
   speak: never;
   font-style: normal;
   font-weight: normal;
@@ -14,8 +13,13 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-.icon-chevron-right:before {
-  content: "\e900";
+.icon-skype:before {
+  content: "\e912";
+  color: #00aff0;
+}
+.icon-gmail:before {
+  content: "\e913";
+  color: #d14836;
 }
 .icon-chevron-down:before {
   content: "\e901";
@@ -151,4 +155,10 @@
 }
 .icon-behance:before {
   content: "\e951";
+}
+.icon-chevron-right:before {
+  content: "\e900";
+}
+.icon-link:before {
+  content: "\e9cb";
 }

@@ -22,15 +22,11 @@ __webpack_require__.r(__webpack_exports__);
 
 new _components_PageHeader__WEBPACK_IMPORTED_MODULE_1__["default"]();
 new _components_PageFooter__WEBPACK_IMPORTED_MODULE_0__["default"]();
-jquery__WEBPACK_IMPORTED_MODULE_4___default()(function () {
+window.$ = (jquery__WEBPACK_IMPORTED_MODULE_4___default());
+window.jQuery = (jquery__WEBPACK_IMPORTED_MODULE_4___default());
+(0,_utils_dom__WEBPACK_IMPORTED_MODULE_2__.onReady)(function () {
   aos__WEBPACK_IMPORTED_MODULE_3___default().init();
-  document.addEventListener('aos:in', function (_ref) {
-    var detail = _ref.detail;
-    console.log('animated in', detail);
-  });
-  console.log('file: app.js ~ line 19 ~ AOS', (aos__WEBPACK_IMPORTED_MODULE_3___default()));
 });
-window.aos = (aos__WEBPACK_IMPORTED_MODULE_3___default());
 
 /***/ }),
 

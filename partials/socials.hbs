@@ -1,0 +1,120 @@
+{{! Social Buttons }}
+<div class="absolute right-[-12rem] h-full">
+  <aside
+    class="sm:sticky sm:top-[6rem] inline-flex sm:flex-col-reverse sm:items-start justify-center h-auto"
+  >
+    <div
+      class="cursor-pointer shadow-md hover:shadow-button-shadow-hover w-10 h-10 sm:w-[3.125rem] sm:h-[3.125rem] rounded-full overflow-hidden flex justify-center items-center text-sm text-link transition-shadow duration-200 ease-in-out mt-3"
+      data-label="Lấy liên kết"
+      data-clipboard-text="{{url absolute=" true"}}"
+      id="social-link-button"
+    >
+      <span class="icon-link" aria-hidden="true"></span>
+    </div>
+    {{! Telegram }}
+    <div
+      class="js-social-button shadow-md hover:shadow-button-shadow-hover w-10 h-10 sm:w-[3.125rem] sm:h-[3.125rem] rounded-full overflow-hidden flex justify-center items-center text-sm text-link transition-shadow duration-200 ease-in-out mt-3"
+      data-label="Chia sẻ với Telegram"
+    >
+      <a
+        href="https://telegram.me/share/url?url={{url
+          absolute=" true"
+        }}&text={{encode title}}"
+        class="w-full h-full flex items-center justify-center"
+        target="_blank"
+        rel="nofollow noopener"
+      >
+        <span class="icon-telegram" aria-hidden="true"></span>
+      </a>
+    </div>
+    {{! Skype }}
+    <div
+      class="js-social-button shadow-md hover:shadow-button-shadow-hover w-10 h-10 sm:w-[3.125rem] sm:h-[3.125rem] rounded-full overflow-hidden flex justify-center items-center text-sm text-link transition-shadow duration-200 ease-in-out mt-3"
+      data-label="Chia sẻ với Skype"
+    >
+      <a
+        href="https://web.skype.com/share?url={{url absolute=" true"}}"
+        class="w-full h-full flex items-center justify-center"
+        target="_blank"
+        rel="nofollow noopener"
+      >
+        <span class="icon-skype" aria-hidden="true"></span>
+      </a>
+    </div>
+    {{! Zalo }}
+    <div
+      class="js-social-button shadow-md hover:shadow-button-shadow-hover w-10 h-10 sm:w-[3.125rem] sm:h-[3.125rem] rounded-full overflow-hidden flex justify-center items-center text-sm text-link transition-shadow duration-200 ease-in-out mt-3"
+      data-label="Chia sẻ với Zalo"
+    >
+      <a
+        href="javascript:void();"
+        target="_blank"
+        rel="noopener noreferrer nofollow"
+        class="w-full h-full flex items-center justify-center"
+      >
+        <div
+          class="zalo-share-button"
+          data-href=""
+          data-oaid="579745863508352884"
+          data-layout="2"
+          data-color="white"
+          data-customize="false"
+        ></div>
+      </a>
+    </div>
+    {{! Facebook }}
+    <div
+      class="js-social-button shadow-md hover:shadow-button-shadow-hover w-10 h-10 sm:w-[3.125rem] sm:h-[3.125rem] rounded-full overflow-hidden flex justify-center items-center text-sm text-link transition-shadow duration-200 ease-in-out mt-3"
+      data-label="Chia sẻ với Facebook"
+    >
+      <a
+        href="https://www.facebook.com/sharer/sharer.php?u={{url
+          absolute=" true"
+        }}"
+        target="_blank"
+        rel="noopener noreferrer nofollow"
+        class="w-full h-full flex items-center justify-center"
+      ><span class="icon-facebook" aria-hidden="true"></span>
+      </a>
+    </div>
+    {{! Twitter }}
+    <div
+      class="js-social-button shadow-md hover:shadow-button-shadow-hover w-10 h-10 sm:w-[3.125rem] sm:h-[3.125rem] rounded-full overflow-hidden flex justify-center items-center text-sm text-link transition-shadow duration-200 ease-in-out mt-3"
+      data-label="Chia sẻ với Twitter"
+    >
+      <a
+        href="https://twitter.com/intent/tweet?text={{encode title}}&url={{url
+          absolute=" true"
+        }}"
+        target="_blank"
+        rel="noopener noreferrer nofollow"
+        class="w-full h-full flex items-center justify-center"
+      ><span class="icon-twitter" aria-hidden="true"></span>
+      </a>
+    </div>
+    {{! Scroll Top }}
+    <div
+      class="js-social-button shadow-md hover:shadow-button-shadow-hover w-10 h-10 sm:w-[3.125rem] sm:h-[3.125rem] rounded-full overflow-hidden flex justify-center items-center text-sm text-link transition-shadow duration-200 ease-in-out"
+      data-label="Lên đầu"
+      id="progress-button"
+    >
+      <div class="w-full h-full relative cursor-pointer">
+        <svg
+          aria-hidden="true"
+          class="absolute top-0 left-0 w-full h-full overflow-hidden fill-current"
+        >
+          <circle
+            class="stroke-primary-subtle origin-center -rotate-90 transition-all duration-200"
+            fill="transparent"
+            r="0"
+            id="progress-circle"
+          ></circle>
+        </svg>
+        <span
+          class="icon-arrow-top absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
+          aria-hidden="true"
+        ></span>
+      </div>
+    </div>
+  </aside>
+</div>

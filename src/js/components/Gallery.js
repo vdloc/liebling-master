@@ -8,7 +8,7 @@ export default class Gallery {
   }
 
   init() {
-    this.containers.forEach(imageContainer => {
+    this.containers.forEach((imageContainer) => {
       const image = select('img', imageContainer);
 
       if (image) {
@@ -19,11 +19,11 @@ export default class Gallery {
       }
     });
 
-    $('.js-post-content').lightGallery({
+    $('#post-content').lightGallery({
       selector: this.selector,
       thumbnail: true,
       fullScreen: true,
-      share: true
+      share: true,
     });
   }
 }

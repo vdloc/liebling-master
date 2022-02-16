@@ -828,7 +828,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "makeImagesZoomable": () => (/* binding */ makeImagesZoomable),
 /* harmony export */   "replateTemplateContent": () => (/* binding */ replateTemplateContent),
 /* harmony export */   "convertToTimeAgo": () => (/* binding */ convertToTimeAgo),
-/* harmony export */   "convertToVietnameseLocale": () => (/* binding */ convertToVietnameseLocale)
+/* harmony export */   "convertToVietnameseLocale": () => (/* binding */ convertToVietnameseLocale),
+/* harmony export */   "debounce": () => (/* binding */ debounce)
 /* harmony export */ });
 /* harmony import */ var date_fns__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! date-fns */ "./node_modules/date-fns/esm/formatDistanceToNow/index.js");
 /* harmony import */ var date_fns__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! date-fns */ "./node_modules/date-fns/esm/format/index.js");
@@ -979,6 +980,23 @@ function convertToVietnameseLocale(time) {
   return (0,date_fns__WEBPACK_IMPORTED_MODULE_2__["default"])(new Date(time), 'dd MMMM yyyy', {
     locale: date_fns_locale_vi__WEBPACK_IMPORTED_MODULE_1__["default"]
   });
+}
+function debounce(func, wait, immediate) {
+  var timeout;
+  return function executedFunction() {
+    var context = this;
+    var args = arguments;
+
+    var later = function later() {
+      timeout = null;
+      if (!immediate) func.apply(context, args);
+    };
+
+    var callNow = immediate && !timeout;
+    clearTimeout(timeout);
+    timeout = setTimeout(later, wait);
+    if (callNow) func.apply(context, args);
+  };
 }
 
 /***/ })

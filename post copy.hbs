@@ -1,32 +1,29 @@
-{{!--
-This template is used for the post page.
---}}
 
 {{!-- This block preloads specific assets for the post page --}}
 {{#contentFor "preload"}}
-  <link rel="preload" href="{{asset "css/custom-images-post.css"}}" as="style" />
+  <link rel="preload" href="{{asset "css/post.css"}}" as="style" />
   <link rel="preload" href="{{asset "js/post.js"}}" as="script" />
 {{/contentFor}}
 
 {{!-- This block loads specific styles for the post page --}}
 {{#contentFor "styles"}}
-  <link rel="stylesheet" type="text/css" href="{{asset "css/custom-images-post.css"}}" media="screen" />
+  <link rel="stylesheet" type="text/css" href="{{asset "css/post.css"}}" media="screen" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lightgallery@1.8.3/dist/css/lightgallery.min.css">
 {{/contentFor}}
+
+
 
 {{!-- The tag below means: insert everything in this file
 into the {body} of the default.hbs template --}}
 {{!< default}}
 
-{{!-- Special header.hbs partial to generate the <header> tag --}}
-{{#post}}
-  {{> header background=feature_image}}
-{{/post}}
+{{> header}}
 
 <main class="main-wrap">
-    {{#post}}
+  {{#post}}
     {{!-- Inject styles of the hero image to make it responsive --}}
-    {{!-- {{> hero background=feature_image}} --}}
-    {{!-- </section> --}}
+    {{> hero background=feature_image alt=title}}
+    </section>
     {{#if feature_image}}
       {{#if feature_image_caption}}
         <div class="l-wrapper in-caption">
@@ -37,6 +34,7 @@ into the {body} of the default.hbs template --}}
       {{/if}}
     {{/if}}
   {{/post}}
+  
   <article>
     <div class="l-content in-post">
       {{!-- Everything inside the #post tags pulls data from the post --}}
@@ -48,22 +46,35 @@ into the {body} of the default.hbs template --}}
             <header class="m-heading">
               <h1 class="m-heading__title in-post">{{title}}</h1>
               <div class="m-heading__meta">
-                {{#if primary_tag}}
-                  <a href="{{primary_tag.url}}" class="m-heading__meta__tag">{{primary_tag.name}}</a>
-                  <span class="m-heading__meta__divider" aria-hidden="true">&bull;</span>
-                {{/if}}
-                <span class="m-heading__meta__time">{{date published_at}}</span>
+               <ul class="m-heading__meta-tag-list">
+                 {{#foreach tags}} 
+                   <li class="m-heading__meta-tag-item">
+                     <a href="{{url}}" class="m-heading__meta-tag-link capitalize js-heading-meta-tag" data-color="{{accent_color}}">
+                     <span class="m-heading__meta-tag-desc js-heading-meta-tag-desc">{{description}}</span>{{name}}</a>  
+                   </li>                
+                  {{/foreach}}
+               </ul>
+                {{#foreach authors}}
+                  <p class="m-heading__meta-time">
+                    Đăng bởi {{name}} -
+                    <span class="">{{date published_at}}</span>
+                  </p>
+                {{/foreach}}
               </div>
             </header>
             <div class="pos-relative js-post-content">
               <div class="m-share">
                 <div class="m-share__content js-sticky">
+                  <a href="javascript:void();"
+                    class="m-icon-button filled in-share"  rel="noopener" aria-label="Twitter">
+                    <div class="zalo-share-button" data-href="" data-oaid="579745863508352884" data-layout="2" data-color="white" data-customize="false"></div>
+                  </a>
                   <a href="https://www.facebook.com/sharer/sharer.php?u={{url absolute='true'}}"
-                    class="m-icon-button filled in-share" target="_blank" rel="noopener" aria-label="Facebook">
+                    class="m-icon-button filled in-share"  rel="noopener" aria-label="Facebook">
                     <span class="icon-facebook" aria-hidden="true"></span>
                   </a>
                   <a href="https://twitter.com/intent/tweet?text={{encode title}}&url={{url absolute='true'}}"
-                    class="m-icon-button filled in-share" target="_blank" rel="noopener" aria-label="Twitter">
+                    class="m-icon-button filled in-share"  rel="noopener" aria-label="Twitter">
                     <span class="icon-twitter" aria-hidden="true"></span>
                   </a>
                   <button class="m-icon-button filled in-share progress js-scrolltop" aria-label="{{t "Scroll to top"}}">
@@ -74,18 +85,17 @@ into the {body} of the default.hbs template --}}
                   </button>
                 </div>
               </div>
-              {{content}}
-              <div class="post-images-container" id="js-post-images-container">                
-              </div>
-              <div class="post-pagination-container" id="js-post-pagination-container"></div>
+              <div id="post-content">
+                {{content}}                 
+              </div>       
               {{!-- List of tags  --}}
               {{#if tags}}
                 <section class="m-tags in-post">
-                  <h3 class="m-submenu-title">{{t "Tags"}}</h3>
+                  <h3 class="m-submenu-title">{{t "Thẻ"}}</h3>
                   <ul>
                     {{#foreach tags}}
                       <li>
-                        <a href="{{url}}" title="{{name}}">{{name}}</a>
+                        <a href="{{url}}" title="{{name}}" class="capitalize">{{name}}</a>
                       </li>
                     {{/foreach}}
                   </ul>
@@ -94,106 +104,45 @@ into the {body} of the default.hbs template --}}
             </div>
           </div>
         </div>
-        {{!-- Email subscribe form at the bottom of the page --}}
-        {{#if @labs.members}}
-          <section class="m-subscribe-section js-newsletter">
-            <div class="l-wrapper in-post">
-              <div class="m-subscribe-section__content">
-                <div class="m-subscribe-section__text">
-                  <h4 class="m-subscribe-section__title">{{t "Subscribe to our newsletter"}}</h4>
-                  <p class="m-subscribe-section__description">
-                    {{t "Get the latest posts delivered right to your inbox."}}
-                  </p>
-                </div>
-                <div class="m-subscribe-section__form">
-                  {{> "newsletter-form"}}
-                </div>
-              </div>
-            </div>
-          </section>
-        {{/if}}
-        <section class="m-author">
-          <div class="m-author__content">
-            <div class="m-author__picture">
-              <a href="{{primary_author.url}}" class="m-author-picture" aria-label="{{primary_author.name}}">
-                {{#if primary_author.profile_image}}
-                  <div style="background-image: url({{primary_author.profile_image}});"></div>
-                {{else}}
-                  <div style="background-image: url({{asset "images/default-avatar-square-small.jpg"}});"></div>
-                {{/if}}
-              </a>
-            </div>
-            <div class="m-author__info">
-              <h4 class="m-author__name">
-                <a href="{{primary_author.url}}">{{primary_author.name}}</a>
-              </h4>
-              {{#has author="count:>1"}}
-                <p class="m-small-text in-author-along-with">
-                  {{authors separator=", " prefix=(t "Among with no break line") from="2"}}
-                </p>
-              {{/has}}
-              {{#if primary_author.bio}}
-                <p class="m-author__bio">{{primary_author.bio}}</p>
-              {{/if}}
-              <ul class="m-author-links">
-                {{#if primary_author.website}}
-                  <li>
-                    <a href="{{primary_author.website}}" target="_blank" rel="noopener" aria-label="{{t "Website"}}">
-                      <span class="icon-globe" aria-hidden="true"></span>
-                    </a>
-                  </li>
-                {{/if}}
-                {{#if primary_author.facebook}}
-                  <li>
-                    <a href="https://facebook.com/{{primary_author.facebook}}" target="_blank" rel="noopener" aria-label="Facebook">
-                      <span class="icon-facebook" aria-hidden="true"></span>
-                    </a>
-                  </li>
-                {{/if}}
-                {{#if primary_author.twitter}}
-                  <li>
-                    <a href="https://twitter.com/{{primary_author.twitter}}" target="_blank" rel="noopener" aria-label="Twitter">
-                      <span class="icon-twitter" aria-hidden="true"></span>
-                    </a>
-                  </li>
-                {{/if}}
-              </ul>
-            </div>
-          </div>
-        </section>
+
         {{!-- If you want to embed comments, this is a good place to do it! --}}
-        {{!--
           <section class="m-comments">
             <div class="m-load-comments__iframe l-wrapper in-comments js-comments-iframe">
-              <div id="disqus_thread"></div>
-              <script>
-                var disqus_config = function () {
-                  this.page.url = "{{url absolute="true"}}";
-                  this.page.identifier = "ghost-{{comment_id}}"
-                };
+              <div id="coral_thread"></div>
+              <script type="text/javascript">
                 (function () {
-                  var d = document, s = d.createElement('script');
-                  s.src = 'https://CHANGETHIS.disqus.com/embed.js';
-                  s.setAttribute('data-timestamp', +new Date());
+                  var d = document,
+                    s = d.createElement("script");
+                  var URL = "talk.netwalker.vn";
+                  s.src = "//" + URL + "/assets/js/embed.js";
+                  s.async = false;
+                  s.defer = true;
+                  s.onload = function () {
+                    Coral.createStreamEmbed({
+                      id: "coral_thread",
+                      autoRender: true,
+                      rootURL: "//" + URL,
+                    });
+                  };
                   (d.head || d.body).appendChild(s);
                 })();
               </script>
             </div>
           </section>
-        --}}
+      
       {{/post}}
       {{!-- Related posts --}}
       {{#if post.tags.length}}
         {{#get "posts" limit="3" filter="tags:[{{post.tags}}]+id:-{{post.id}}" include="tags,authors" as |related|}}
           <section class="m-recommended">
             <div class="l-wrapper in-recommended">
-              <h3 class="m-section-title in-recommended">{{t "Recommended for you"}}</h3>
+              <h3 class="m-section-title in-recommended">{{t "Cùng chuyên mục"}}</h3>
               <div class="m-recommended-articles">
                 <div class="m-recommended-slider glide js-recommended-slider">
                   <div class="glide__track" data-glide-el="track">
                     <div class="glide__slides">
                       {{!-- The tag below iterates over all the related posts --}}
-                      {{> common/post-list}}
+                      {{> related}}
                     </div>
                   </div>
                   <div data-glide-el="controls" class="glide__arrows js-controls">
@@ -212,7 +161,7 @@ into the {body} of the default.hbs template --}}
       {{else}}
         <section class="m-recommended">
           <div class="l-wrapper in-recommended">
-            <h3 class="m-section-title in-recommended">{{t "Recommended for you"}}</h3>
+            <h3 class="m-section-title in-recommended">{{t "Cùng chuyên mục"}}</h3>
             <div class="m-recommended-articles">
               <div class="m-recommended-slider glide js-recommended-slider">
                 <div class="glide__track" data-glide-el="track">
@@ -232,13 +181,19 @@ into the {body} of the default.hbs template --}}
           </div>
         </section>
       {{/if}}
+
+      {{!-- Email subscribe form at the bottom of the page --}}
+      {{#if @labs.members}}
+        {{> common/newsletter}}
+      {{/if}}
     </div>
   </article>
 </main>
-{{!-- Pinterest --}}
-<script async defer nonce="jlsy6dbILj" data-pin-hover="true" data-pin-tall="true" data-pin-lang="vi" src="//assets.pinterest.com/js/pinit.js"></script>
+
 {{!-- The #contentFor helper here will send everything inside it up to the matching #block helper found in default.hbs --}}
 {{#contentFor "scripts"}}
-  <script defer src="{{asset "js/post.js"}}" nonce="jlsy6dbILj"></script>
-  <script defer src="{{asset "js/images.js"}}" nonce="jlsy6dbILj"></script>
+  <script async src="https://sp.zalo.me/plugins/sdk.js"></script>
+  <script defer src="{{asset "js/vendor/lightgallery-all.min.js"}}"></script>
+  <script defer src="{{asset "js/post.js"}}"></script>
+  
 {{/contentFor}}

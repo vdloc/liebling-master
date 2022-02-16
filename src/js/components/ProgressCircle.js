@@ -1,12 +1,12 @@
 import { isMobile } from '../utils/helpers';
 import { getParent, getWidth, select, setAttr } from '../utils/dom';
 
-const CIRCLE_SELECTOR = '.js-progress';
+const CIRCLE_SELECTOR = '#progress-circle';
 
 export default class ProgressCircle {
   constructor() {
     this.circle = select(CIRCLE_SELECTOR);
-    this.parent = getParent(this.circle);
+    this.svg = getParent(this.circle);
     this.lastScrollingY = window.scrollY;
     this.lastWindowHeight = 0;
     this.lastDocumentHeight = 0;
@@ -15,16 +15,13 @@ export default class ProgressCircle {
     this.onScrolling = this.onScrolling.bind(this);
     this.onResizing = this.onResizing.bind(this);
     this.updating = this.updating.bind(this);
+    this.init();
   }
 
   init() {
     this.setHeights();
     this.setCircleStyles();
     this.updating();
-
-    setTimeout(() => {
-      this.parent.style.opacity = 1;
-    }, 300);
 
     window.addEventListener('scroll', this.onScrolling, { passive: true });
     window.addEventListener('resize', this.onResizing, { passive: true });
@@ -78,11 +75,11 @@ export default class ProgressCircle {
   }
 
   setCircleStyles() {
-    const svgWidth = getWidth(this.parent);
+    const svgWidth = getWidth(this.svg);
     const radiusCircle = svgWidth / 2;
     const borderWidth = isMobile() ? 2 : 3;
 
-    setAttr(this.parent, 'viewBox', `0 0 ${svgWidth} ${svgWidth}`);
+    setAttr(this.svg, 'viewBox', `0 0 ${svgWidth} ${svgWidth}`);
     setAttr(this.circle, 'stroke-width', borderWidth);
     setAttr(this.circle, 'r', radiusCircle - (borderWidth - 1));
     setAttr(this.circle, 'cx', radiusCircle);

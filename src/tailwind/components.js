@@ -5,7 +5,6 @@ const {
   'button-shadow-hover': buttonShadowHover,
   'dark-button-shadow-normal': buttonDarkShadowNormal,
   'dark-button-shadow-hover': buttonDarkShadowHover,
-  'primary-subtle': primarySubtle,
 } = colors;
 
 const containerComponent = {

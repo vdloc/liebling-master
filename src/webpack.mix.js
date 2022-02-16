@@ -32,27 +32,7 @@ mix
   .extract()
   .setResourceRoot('/assets')
   .setPublicPath('../assets')
-  // .sass('sass/app.scss', 'css/')
-  // .sass('sass/home.scss', 'css/')
-  // .sass('sass/listing.scss', 'css/')
-  // .sass('sass/post.scss', 'css/')
-  // .sass('sass/custom-images-post.scss', 'css/')
-  // .sass('sass/newsletter.scss', 'css/')
-  // .sass('sass/tags.scss', 'css/')
-  // .sass('sass/404.scss', 'css/')
-  // .sass('sass/contact.scss', 'css/')
-  // .sass('sass/info-page.scss', 'css/')
-  // .sass('sass/talk.scss', 'css/')
-
-  // .postCss('css/app.css', 'css/', [require('tailwindcss')])
-  // .options({
-  //   processCssUrls: false,
-  // })
-  // .copy('sass/fonts/icomoon/*.*', '../assets/fonts/icomoon/')
-  // .copyDirectory(
-  //   'sass/fonts/source-sans-pro/',
-  //   '../assets/fonts/source-sans-pro/'
-  // )
+  .copy('css/post.css', '../assets/css/')
   .copy('js/vendor/content-api.min.js', '../assets/js/vendor/')
   .browserSync({
     proxy: 'localhost:2368',
