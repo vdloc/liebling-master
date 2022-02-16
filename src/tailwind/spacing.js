@@ -5,4 +5,5 @@ module.exports = {
   'card-height-mobile': '23rem',
   'hero-height': '30rem',
   unset: 'unset',
+  'viewport-width': '100vw',
 };

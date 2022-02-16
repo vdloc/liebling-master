@@ -105,7 +105,7 @@
   </header>
   {{! Fake header for intersection observer }}
   <div
-    class="w-full h-header-height-mobile sm:h-header-height absolute top-0"
+    class="w-full h-header-height-mobile sm:h-header-height absolute top-0 dark:bg-dark-background"
     id="fake-header"
   ></div>
   {{! Dummy tailwind class holder }}
@@ -114,7 +114,7 @@
   </div>
   {{! Mobile Menu }}
   <div
-    class="fixed top-0 left-0 w-full h-full bg-background dark:bg-dark-background text-titles dark:text-dark-titles flex flex-col items-stretch transition-all ease-in-out duration-300 -z-10 opacity-0 invisible"
+    class="fixed top-0 left-0 w-full h-full md:hidden bg-background dark:bg-dark-background text-titles dark:text-dark-titles flex flex-col items-stretch transition-all ease-in-out duration-300 -z-10 opacity-0 invisible"
     id="mobile-menu"
   >
     <header

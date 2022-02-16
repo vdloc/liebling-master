@@ -112,18 +112,14 @@
       // @license-end
     </script>
   </head>
-  <body class="{{body_class}}">
+  <body class="{{body_class}} bg-background dark:bg-dark-background">
     {{!-- All the main content gets inserted here, index.hbs, post.hbs, etc --}}
       
-    <main
+    <div
       class="relative z-main bg-background dark:bg-dark-background"
-      data-aos="fade-up"
-      data-aos-delay="300"
     >
-      <div class="container mx-auto lg:px-10 mt-10">
-        {{{body}}}  
-      </div>
-    </main>
+      {{{body}}}        
+    </div>
 
     {{!-- Search form --}}
     {{> search}}

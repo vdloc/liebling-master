@@ -1,0 +1,48 @@
+{{! The tag below means: insert everything in this file
+into the {body} of the default.hbs template }}
+{{!< default}}
+{{! Special header.hbs partial to generate the <header> tag }}
+{{> header }}
+
+<header
+  class="md:h-[23rem] flex justify-center items-center bg-opacity-10 bg-primary-subtle"
+>
+  <section
+    class="flex items-center lg:mr-8 pb-[2px] font-nunito font-bold tracking-wider text-3xl dark:text-dark-titles"
+  >
+    <a href="/">
+      <h1 class="logo-shadow">
+        <span class="text-5xl">Về </span>
+        <span class="mr-[-1rem]">NET</span>
+        <span
+          class="text-link -rotate-90 inline-block relative font-extrabold text-4xl top-[-2px] left-4"
+        >W</span>
+        ALKER
+      </h1>
+    </a>
+  </section>
+</header>
+<div class="container pt-4 pb-12 px-4 mt-12 flex flex-col items-center">
+  <div class="md:h-[20rem]">
+    <img src="{{asset 'images/about.svg'}}" alt="Privacy" class="max-h-full" />
+  </div>
+  <div class="mt-14 text-xl max-w-4xl leading-relaxed tracking-normal">
+    <p>
+      <strong>Net Walker</strong>
+      là một trang blog được tạo ra với mục đích chia sẻ những điều thú vị trong
+      cuộc sống. Có thể những điều thú vị mà
+      <strong>Net Walker</strong>
+      đem lại cho các bạn sẽ đi ngược lại với xu hướng và thị hiếu của đám đông.
+      Tuy nhiên mình tin chắc rằng trên không gian mạng này, sẽ có những người
+      bạn có cùng gu
+      <i>thẩm mỹ</i>, gu
+      <i>nghệ thuật</i>
+      và gu
+      <i>giải trí</i>
+      với mình và những gì mình đang và sẽ chia sẻ trên blog này. Được kết nối
+      với những người có cùng sở thích với mình, đó chẳng phải cũng là một niềm
+      hạnh phúc trong cuộc sống hay sao.
+    </p>
+    <p class="mt-12">Xin cảm ơn các bạn. <i>grazie mille</i>.</p>
+  </div>
+</div>

@@ -1,242 +1,337 @@
-{{!--
-This template is used for the tags page.
-You must first create a page called Tags in the dashboard to enable it.
---}}
-
-{{!-- This block preloads specific assets for the tags page --}}
-{{#contentFor "preload"}}
-  <link rel="preload" href="{{asset "css/info-page.css"}}" as="style" />
-{{/contentFor}}
-
-{{!-- This block loads specific styles for the tags page --}}
-{{#contentFor "styles"}}
-  <link rel="stylesheet" type="text/css" href="{{asset "css/info-page.css"}}" media="screen" />
-{{/contentFor}}
-
-{{!-- The tag below means: insert everything in this file
-into the {body} of the default.hbs template --}}
+{{! The tag below means: insert everything in this file
+into the {body} of the default.hbs template }}
 {{!< default}}
-
-{{!-- Special header.hbs partial to generate the <header> tag --}}
+{{! Special header.hbs partial to generate the <header> tag }}
 {{> header }}
-
-<div class="main-wrap">
-  <div class="l-content">
-    <div class="l-wrapper" data-aos="fade-up" data-aos-delay="300">
-      <div class="m-info-page">
-        <div class="m-info-page__banner">
-          <img src="{{asset "images/disclaimer.svg"}}" alt="Disclaimer">
-        </div>
-        <h1 class="m-info-page__title"><font style="vertical-align: inherit;"><font
-              style="vertical-align: inherit;"
-            >Tuyên bố từ chối trách nhiệm</font></font></h1>
-        <p><font style="vertical-align: inherit;"><font
-              style="vertical-align: inherit;"
-            >Cập nhật lần cuối: ngày 08 tháng 1 năm 2022</font></font></p>
-        <h1><font style="vertical-align: inherit;"><font
-              style="vertical-align: inherit;"
-            >Giải thích và Định nghĩa</font></font></h1>
-        <h2><font style="vertical-align: inherit;"><font
-              style="vertical-align: inherit;"
-            >Diễn dịch</font></font></h2>
-        <p><font style="vertical-align: inherit;"><font
-              style="vertical-align: inherit;"
-            >Những từ có chữ cái đầu tiên được viết hoa có nghĩa được xác định trong
-              các điều kiện sau.
-            </font><font style="vertical-align: inherit;">Các định nghĩa sau đây sẽ có
-              cùng ý nghĩa bất kể chúng xuất hiện ở số ít hay số nhiều.</font></font></p>
-        <h2><font style="vertical-align: inherit;"><font
-              style="vertical-align: inherit;"
-            >Các định nghĩa</font></font></h2>
-        <p><font style="vertical-align: inherit;"><font
-              style="vertical-align: inherit;"
-            >Vì mục đích của Tuyên bố từ chối trách nhiệm này:</font></font></p>
-        <ul>
-          <li><strong><font style="vertical-align: inherit;"><font
-                  style="vertical-align: inherit;"
-                >Công ty</font></font></strong><font
-              style="vertical-align: inherit;"
-            ><font style="vertical-align: inherit;">
-                (được gọi là "Công ty", "Chúng tôi", "Chúng tôi" hoặc "Của Chúng tôi"
-                trong Tuyên bố từ chối trách nhiệm này) đề cập đến Net Walker.</font></font></li>
-          <li><strong><font style="vertical-align: inherit;"><font
-                  style="vertical-align: inherit;"
-                >Dịch vụ</font></font></strong><font
-              style="vertical-align: inherit;"
-            ><font style="vertical-align: inherit;">
-                đề cập đến Trang web.</font></font></li>
-          <li><strong><font style="vertical-align: inherit;"><font
-                  style="vertical-align: inherit;"
-                >Bạn</font></font></strong><font
-              style="vertical-align: inherit;"
-            ><font style="vertical-align: inherit;">
-                có nghĩa là cá nhân truy cập Dịch vụ, hoặc công ty hoặc pháp nhân khác
-                thay mặt cho cá nhân đó đang truy cập hoặc sử dụng Dịch vụ, nếu có.</font></font></li>
-          <li><strong><font style="vertical-align: inherit;"><font
-                  style="vertical-align: inherit;"
-                >Trang web</font></font></strong><font
-              style="vertical-align: inherit;"
-            ><font style="vertical-align: inherit;">
-                đề cập đến Net Walker, có thể truy cập từ
-              </font></font><a
-              href="https://netwalker.vn"
-              rel="external nofollow noopener"
-              target="_blank"
-            ><font style="vertical-align: inherit;"><font
-                  style="vertical-align: inherit;"
-                >https://netwalker.vn</font></font></a></li>
-        </ul>
-        <h1><font style="vertical-align: inherit;"><font
-              style="vertical-align: inherit;"
-            >Tuyên bố từ chối trách nhiệm</font></font></h1>
-        <p><font style="vertical-align: inherit;"><font
-              style="vertical-align: inherit;"
-            >Thông tin có trên Dịch vụ chỉ dành cho mục đích thông tin chung.</font></font></p>
-        <p><font style="vertical-align: inherit;"><font
-              style="vertical-align: inherit;"
-            >Công ty không chịu trách nhiệm về các sai sót hoặc thiếu sót trong nội
-              dung của Dịch vụ.</font></font></p>
-        <p><font style="vertical-align: inherit;"><font
-              style="vertical-align: inherit;"
-            >Trong mọi trường hợp, Công ty sẽ không chịu trách nhiệm pháp lý đối với
-              bất kỳ thiệt hại đặc biệt, trực tiếp, gián tiếp, do hậu quả hoặc ngẫu
-              nhiên hoặc bất kỳ thiệt hại nào, cho dù trong một hành động theo hợp
-              đồng, sơ suất hoặc hành vi sai trái khác, phát sinh từ hoặc liên quan
-              đến việc sử dụng Dịch vụ hoặc nội dung của Dịch vụ.
-            </font><font style="vertical-align: inherit;">Công ty có quyền bổ sung,
-              xóa hoặc sửa đổi nội dung trên Dịch vụ bất kỳ lúc nào mà không cần thông
-              báo trước.           
-         <font
-            style="vertical-align: inherit;"
-          ><font style="vertical-align: inherit;"> .</font></font></p>
-        <p><font style="vertical-align: inherit;"><font
-              style="vertical-align: inherit;"
-            >Công ty không đảm bảo rằng Dịch vụ không có vi-rút hoặc các thành phần có
-              hại khác.</font></font></p>
-        <h1><font style="vertical-align: inherit;"><font
-              style="vertical-align: inherit;"
-            >Tuyên bố từ chối trách nhiệm về liên kết bên ngoài</font></font></h1>
-        <p><font style="vertical-align: inherit;"><font
-              style="vertical-align: inherit;"
-            >Dịch vụ có thể chứa các liên kết đến các trang web bên ngoài không được
-              cung cấp hoặc duy trì bởi hoặc theo bất kỳ cách nào được liên kết với
-              Công ty.</font></font></p>
-        <p><font style="vertical-align: inherit;"><font
-              style="vertical-align: inherit;"
-            >Xin lưu ý rằng Công ty không đảm bảo tính chính xác, liên quan, kịp thời
-              hoặc đầy đủ của bất kỳ thông tin nào trên các trang web bên ngoài này.</font></font></p>
-        <h1><font style="vertical-align: inherit;"><font
-              style="vertical-align: inherit;"
-            >Tuyên bố từ chối trách nhiệm về lỗi và thiếu sót</font></font></h1>
-        <p><font style="vertical-align: inherit;"><font
-              style="vertical-align: inherit;"
-            >Thông tin do Dịch vụ cung cấp chỉ nhằm mục đích hướng dẫn chung về các
-              vấn đề quan tâm.
-            </font><font style="vertical-align: inherit;">Ngay cả khi Công ty thực
-              hiện mọi biện pháp phòng ngừa để đảm bảo rằng nội dung của Dịch vụ là
-              mới nhất và chính xác, các sai sót vẫn có thể xảy ra.
-            </font><font style="vertical-align: inherit;">Ngoài ra, do tính chất thay
-              đổi của luật, quy tắc và quy định, có thể có sự chậm trễ, thiếu sót hoặc
-              không chính xác trong thông tin có trên Dịch vụ.</font></font></p>
-        <p><font style="vertical-align: inherit;"><font
-              style="vertical-align: inherit;"
-            >Công ty không chịu trách nhiệm về bất kỳ sai sót hoặc thiếu sót nào, hoặc
-              đối với kết quả thu được từ việc sử dụng thông tin này.</font></font></p>
-        <h1><font style="vertical-align: inherit;"><font
-              style="vertical-align: inherit;"
-            >Tuyên bố từ chối trách nhiệm sử dụng hợp pháp</font></font></h1>
-        <p><font style="vertical-align: inherit;"><font
-              style="vertical-align: inherit;"
-            >Công ty có thể sử dụng tài liệu có bản quyền mà không phải lúc nào cũng
-              được chủ sở hữu bản quyền cho phép cụ thể.
-            </font><font style="vertical-align: inherit;">Công ty đang cung cấp những
-              tài liệu đó để phê bình, bình luận, báo cáo tin tức, giảng dạy, học bổng
-              hoặc nghiên cứu.</font></font></p>
-        <p><font style="vertical-align: inherit;"><font
-              style="vertical-align: inherit;"
-            >Công ty tin rằng điều này cấu thành "việc sử dụng hợp pháp" bất kỳ tài
-              liệu có bản quyền nào như được quy định trong phần 107 của luật Bản
-              quyền Hoa Kỳ.</font></font></p>
-        <p><font style="vertical-align: inherit;"><font
-              style="vertical-align: inherit;"
-            >Nếu Bạn muốn sử dụng tài liệu có bản quyền từ Dịch vụ cho các mục đích
-              của riêng bạn ngoài mục đích sử dụng hợp pháp, Bạn phải xin phép chủ sở
-              hữu bản quyền.</font></font></p>
-        <h1><font style="vertical-align: inherit;"><font
-              style="vertical-align: inherit;"
-            >Tuyên bố từ chối trách nhiệm về lượt xem</font></font></h1>
-        <p><font style="vertical-align: inherit;"><font
-              style="vertical-align: inherit;"
-            >Dịch vụ có thể chứa các quan điểm và ý kiến ​​của các tác giả và không
-              nhất thiết phản ánh chính sách hoặc quan điểm chính thức của bất kỳ tác
-              giả, cơ quan, tổ chức, người sử dụng lao động hoặc công ty nào khác, bao
-              gồm cả Công ty.</font></font></p>
-        <p><font style="vertical-align: inherit;"><font
-              style="vertical-align: inherit;"
-            >Nhận xét do người dùng xuất bản là trách nhiệm duy nhất của họ và người
-              dùng sẽ chịu hoàn toàn trách nhiệm, trách nhiệm pháp lý và trách nhiệm
-              đối với bất kỳ sự bôi nhọ hoặc kiện tụng nào phát sinh từ nội dung được
-              viết trong hoặc do kết quả trực tiếp của nội dung được viết trong nhận
-              xét.
-            </font><font style="vertical-align: inherit;">Công ty không chịu trách
-              nhiệm về bất kỳ bình luận nào do người dùng công bố và có quyền xóa bất
-              kỳ bình luận nào vì bất kỳ lý do gì.</font></font></p>
-        <h1><font style="vertical-align: inherit;"><font
-              style="vertical-align: inherit;"
-            >Không có trách nhiệm từ chối</font></font></h1>
-        <p><font style="vertical-align: inherit;"><font
-              style="vertical-align: inherit;"
-            >Thông tin trên Dịch vụ được cung cấp với sự hiểu biết rằng Công ty ở đây
-              không tham gia vào việc cung cấp các dịch vụ và tư vấn pháp lý, kế toán,
-              thuế hoặc chuyên nghiệp khác.
-            </font><font style="vertical-align: inherit;">Do đó, nó không nên được sử
-              dụng để thay thế cho việc tham vấn với các cố vấn kế toán, thuế, pháp lý
-              chuyên nghiệp hoặc các cố vấn có thẩm quyền khác.</font></font></p>
-        <p><font style="vertical-align: inherit;"><font
-              style="vertical-align: inherit;"
-            >Trong mọi trường hợp, Công ty hoặc các nhà cung cấp của Công ty sẽ không
-              chịu trách nhiệm pháp lý đối với bất kỳ thiệt hại đặc biệt, ngẫu nhiên,
-              gián tiếp hoặc do hậu quả nào phát sinh từ hoặc liên quan đến việc bạn
-              truy cập hoặc sử dụng hoặc không có khả năng truy cập hoặc sử dụng Dịch
-              vụ.</font></font></p>
-        <h1><font style="vertical-align: inherit;"><font
-              style="vertical-align: inherit;"
-            >Tuyên bố từ chối trách nhiệm "Sử dụng với rủi ro của riêng bạn"</font></font></h1>
-        <p><font style="vertical-align: inherit;"><font
-              style="vertical-align: inherit;"
-            >Tất cả thông tin trong Dịch vụ được cung cấp "nguyên trạng", không đảm
-              bảo tính đầy đủ, chính xác, kịp thời hoặc kết quả thu được từ việc sử
-              dụng thông tin này và không có bảo đảm dưới bất kỳ hình thức nào, rõ
-              ràng hay ngụ ý, bao gồm, nhưng không giới hạn ở bảo đảm về hiệu suất,
-              khả năng buôn bán và tính phù hợp cho một mục đích cụ thể.</font></font></p>
-        <p><font style="vertical-align: inherit;"><font
-              style="vertical-align: inherit;"
-            >Công ty sẽ không chịu trách nhiệm với Bạn hoặc bất kỳ ai khác về bất kỳ
-              quyết định nào được đưa ra hoặc hành động được thực hiện dựa trên thông
-              tin do Dịch vụ cung cấp hoặc đối với bất kỳ thiệt hại do hậu quả, đặc
-              biệt hoặc tương tự, ngay cả khi được thông báo về khả năng xảy ra những
-              thiệt hại đó.</font></font></p>
-        <h1><font style="vertical-align: inherit;"><font
-              style="vertical-align: inherit;"
-            >Liên hệ chúng tôi</font></font></h1>
-        <p><font style="vertical-align: inherit;"><font
-              style="vertical-align: inherit;"
-            >Nếu bạn có bất kỳ câu hỏi nào về Tuyên bố từ chối trách nhiệm này, Bạn có
-              thể liên hệ với Chúng tôi:</font></font></p>
-        <ul>
-          <li><font style="vertical-align: inherit;"><font
-                style="vertical-align: inherit;"
-              >Bằng cách truy cập trang này trên trang web của chúng tôi:
-              </font></font><a
-              href="https://netwalker.vn/contact"
-              rel="external nofollow noopener"
-              target="_blank"
-            ><font style="vertical-align: inherit;"><font
-                  style="vertical-align: inherit;"
-                >https://netwalker.vn/contact</font></font></a></li>
-        </ul>
-      </div>
+<div class="container mx-auto lg:px-10 relative">
+  <div class="pt-4 pb-12 px-4 text-xl leading-relaxed md:leading-[1.8] mt-12">
+    <div class="md:h-[20rem]">
+      <img
+        src="{{asset 'images/disclaimer.svg'}}"
+        alt="Disclaimer"
+        class="max-h-full"
+      />
     </div>
+    <h1 class="text-[2.5rem] text-center md:text-left font-bold mt-12 mb-3">
+      <font style="vertical-align: inherit;">
+        <font style="vertical-align: inherit;">Tuyên bố từ chối trách nhiệm</font>
+      </font>
+    </h1>
+    <p class="text-md mb-6">
+      <font style="vertical-align: inherit;">
+        <font style="vertical-align: inherit;">Cập nhật lần cuối: ngày 08 tháng
+          1 năm 2022</font>
+      </font>
+    </p>
+    <h1 class="text-[2rem] my-3 font-bold">
+      <font style="vertical-align: inherit;">
+        <font style="vertical-align: inherit;">Giải thích và Định nghĩa</font>
+      </font>
+    </h1>
+    <h2 class="text-2xl my-3 font-bold">
+      <font style="vertical-align: inherit;">
+        <font style="vertical-align: inherit;">Diễn dịch</font>
+      </font>
+    </h2>
+    <p>
+      <font style="vertical-align: inherit;">
+        <font style="vertical-align: inherit;">Những từ có chữ cái đầu tiên được
+          viết hoa có nghĩa được xác định trong các điều kiện sau.
+        </font>
+        <font style="vertical-align: inherit;">Các định nghĩa sau đây sẽ có cùng
+          ý nghĩa bất kể chúng xuất hiện ở số ít hay số nhiều.</font>
+      </font>
+    </p>
+    <h2 class="text-2xl my-3 font-bold">
+      <font style="vertical-align: inherit;">
+        <font style="vertical-align: inherit;">Các định nghĩa</font>
+      </font>
+    </h2>
+    <p>
+      <font style="vertical-align: inherit;">
+        <font style="vertical-align: inherit;">Vì mục đích của Tuyên bố từ chối
+          trách nhiệm này:</font>
+      </font>
+    </p>
+    <ul class="pl-12 mt-3">
+      <li><strong>
+          <font style="vertical-align: inherit;">
+            <font style="vertical-align: inherit;">Công ty</font>
+          </font>
+        </strong>
+        <font style="vertical-align: inherit;">
+          <font style="vertical-align: inherit;">
+            (được gọi là "Công ty", "Chúng tôi", "Chúng tôi" hoặc "Của Chúng
+            tôi" trong Tuyên bố từ chối trách nhiệm này) đề cập đến Net Walker.</font>
+        </font>
+      </li>
+      <li><strong>
+          <font style="vertical-align: inherit;">
+            <font style="vertical-align: inherit;">Dịch vụ</font>
+          </font>
+        </strong>
+        <font style="vertical-align: inherit;">
+          <font style="vertical-align: inherit;">
+            đề cập đến Trang web.</font>
+        </font>
+      </li>
+      <li><strong>
+          <font style="vertical-align: inherit;">
+            <font style="vertical-align: inherit;">Bạn</font>
+          </font>
+        </strong>
+        <font style="vertical-align: inherit;">
+          <font style="vertical-align: inherit;">
+            có nghĩa là cá nhân truy cập Dịch vụ, hoặc công ty hoặc pháp nhân
+            khác thay mặt cho cá nhân đó đang truy cập hoặc sử dụng Dịch vụ, nếu
+            có.</font>
+        </font>
+      </li>
+      <li><strong>
+          <font style="vertical-align: inherit;">
+            <font style="vertical-align: inherit;">Trang web</font>
+          </font>
+        </strong>
+        <font style="vertical-align: inherit;">
+          <font style="vertical-align: inherit;">
+            đề cập đến Net Walker, có thể truy cập từ
+          </font>
+        </font><a
+          href="https://netwalker.vn"
+          rel="external nofollow noopener"
+          target="_blank"
+          class="text-link"
+        >
+          <font style="vertical-align: inherit;">
+            <font style="vertical-align: inherit;">https://netwalker.vn</font>
+          </font>
+        </a>
+      </li>
+    </ul>
+    <h1 class="text-[2rem] my-3 font-bold">
+      <font style="vertical-align: inherit;">
+        <font style="vertical-align: inherit;">Tuyên bố từ chối trách nhiệm</font>
+      </font>
+    </h1>
+    <p>
+      <font style="vertical-align: inherit;">
+        <font style="vertical-align: inherit;">Thông tin có trên Dịch vụ chỉ
+          dành cho mục đích thông tin chung.
+        </font>
+      </font>
+    </p>
+    <p>
+      <font style="vertical-align: inherit;">
+        <font style="vertical-align: inherit;">Công ty không chịu trách nhiệm về
+          các sai sót hoặc thiếu sót trong nội dung của Dịch vụ.</font>
+      </font>
+    </p>
+    <p>
+      <font style="vertical-align: inherit;">Trong mọi trường hợp, Công ty sẽ
+        không chịu trách nhiệm pháp lý đối với bất kỳ thiệt hại đặc biệt, trực
+        tiếp, gián tiếp, do hậu quả hoặc ngẫu nhiên hoặc bất kỳ thiệt hại nào,
+        cho dù trong một hành động theo hợp đồng, sơ suất hoặc hành vi sai trái
+        khác, phát sinh từ hoặc liên quan đến việc sử dụng Dịch vụ hoặc nội dung
+        của Dịch vụ.
+      </font>
+      <font style="vertical-align: inherit;">Công ty có quyền bổ sung, xóa hoặc
+        sửa đổi nội dung trên Dịch vụ bất kỳ lúc nào mà không cần thông báo
+        trước.
+      </font>
+    </p>
+    <p>
+      <font style="vertical-align: inherit;">
+        <font style="vertical-align: inherit;">Công ty không đảm bảo rằng Dịch
+          vụ không có vi-rút hoặc các thành phần có hại khác.</font>
+      </font>
+    </p>
+    <h1 class="text-[2rem] my-3 font-bold">
+      <font style="vertical-align: inherit;">
+        <font style="vertical-align: inherit;">Tuyên bố từ chối trách nhiệm về
+          liên kết bên ngoài</font>
+      </font>
+    </h1>
+    <p>
+      <font style="vertical-align: inherit;">
+        <font style="vertical-align: inherit;">Dịch vụ có thể chứa các liên kết
+          đến các trang web bên ngoài không được cung cấp hoặc duy trì bởi hoặc
+          theo bất kỳ cách nào được liên kết với Công ty.</font>
+      </font>
+    </p>
+    <p>
+      <font style="vertical-align: inherit;">
+        <font style="vertical-align: inherit;">Xin lưu ý rằng Công ty không đảm
+          bảo tính chính xác, liên quan, kịp thời hoặc đầy đủ của bất kỳ thông
+          tin nào trên các trang web bên ngoài này.</font>
+      </font>
+    </p>
+    <h1 class="text-[2rem] my-3 font-bold">
+      <font style="vertical-align: inherit;">
+        <font style="vertical-align: inherit;">Tuyên bố từ chối trách nhiệm về
+          lỗi và thiếu sót</font>
+      </font>
+    </h1>
+    <p>
+      <font style="vertical-align: inherit;">
+        <font style="vertical-align: inherit;">Thông tin do Dịch vụ cung cấp chỉ
+          nhằm mục đích hướng dẫn chung về các vấn đề quan tâm.
+        </font>
+        <font style="vertical-align: inherit;">Ngay cả khi Công ty thực hiện mọi
+          biện pháp phòng ngừa để đảm bảo rằng nội dung của Dịch vụ là mới nhất
+          và chính xác, các sai sót vẫn có thể xảy ra.
+        </font>
+        <font style="vertical-align: inherit;">Ngoài ra, do tính chất thay đổi
+          của luật, quy tắc và quy định, có thể có sự chậm trễ, thiếu sót hoặc
+          không chính xác trong thông tin có trên Dịch vụ.</font>
+      </font>
+    </p>
+    <p>
+      <font style="vertical-align: inherit;">
+        <font style="vertical-align: inherit;">Công ty không chịu trách nhiệm về
+          bất kỳ sai sót hoặc thiếu sót nào, hoặc đối với kết quả thu được từ
+          việc sử dụng thông tin này.</font>
+      </font>
+    </p>
+    <h1 class="text-[2rem] my-3 font-bold">
+      <font style="vertical-align: inherit;">
+        <font style="vertical-align: inherit;">Tuyên bố từ chối trách nhiệm sử
+          dụng hợp pháp</font>
+      </font>
+    </h1>
+    <p>
+      <font style="vertical-align: inherit;">
+        <font style="vertical-align: inherit;">Công ty có thể sử dụng tài liệu
+          có bản quyền mà không phải lúc nào cũng được chủ sở hữu bản quyền cho
+          phép cụ thể.
+        </font>
+        <font style="vertical-align: inherit;">Công ty đang cung cấp những tài
+          liệu đó để phê bình, bình luận, báo cáo tin tức, giảng dạy, học bổng
+          hoặc nghiên cứu.</font>
+      </font>
+    </p>
+    <p>
+      <font style="vertical-align: inherit;">
+        <font style="vertical-align: inherit;">Công ty tin rằng điều này cấu
+          thành "việc sử dụng hợp pháp" bất kỳ tài liệu có bản quyền nào như
+          được quy định trong phần 107 của luật Bản quyền Hoa Kỳ.</font>
+      </font>
+    </p>
+    <p>
+      <font style="vertical-align: inherit;">
+        <font style="vertical-align: inherit;">Nếu Bạn muốn sử dụng tài liệu có
+          bản quyền từ Dịch vụ cho các mục đích của riêng bạn ngoài mục đích sử
+          dụng hợp pháp, Bạn phải xin phép chủ sở hữu bản quyền.</font>
+      </font>
+    </p>
+    <h1 class="text-[2rem] my-3 font-bold">
+      <font style="vertical-align: inherit;">
+        <font style="vertical-align: inherit;">Tuyên bố từ chối trách nhiệm về
+          lượt xem</font>
+      </font>
+    </h1>
+    <p>
+      <font style="vertical-align: inherit;">
+        <font style="vertical-align: inherit;">Dịch vụ có thể chứa các quan điểm
+          và ý kiến ​​của các tác giả và không nhất thiết phản ánh chính sách
+          hoặc quan điểm chính thức của bất kỳ tác giả, cơ quan, tổ chức, người
+          sử dụng lao động hoặc công ty nào khác, bao gồm cả Công ty.</font>
+      </font>
+    </p>
+    <p>
+      <font style="vertical-align: inherit;">
+        <font style="vertical-align: inherit;">Nhận xét do người dùng xuất bản
+          là trách nhiệm duy nhất của họ và người dùng sẽ chịu hoàn toàn trách
+          nhiệm, trách nhiệm pháp lý và trách nhiệm đối với bất kỳ sự bôi nhọ
+          hoặc kiện tụng nào phát sinh từ nội dung được viết trong hoặc do kết
+          quả trực tiếp của nội dung được viết trong nhận xét.
+        </font>
+        <font style="vertical-align: inherit;">Công ty không chịu trách nhiệm về
+          bất kỳ bình luận nào do người dùng công bố và có quyền xóa bất kỳ bình
+          luận nào vì bất kỳ lý do gì.</font>
+      </font>
+    </p>
+    <h1 class="text-[2rem] my-3 font-bold">
+      <font style="vertical-align: inherit;">
+        <font style="vertical-align: inherit;">Không có trách nhiệm từ chối</font>
+      </font>
+    </h1>
+    <p>
+      <font style="vertical-align: inherit;">
+        <font style="vertical-align: inherit;">Thông tin trên Dịch vụ được cung
+          cấp với sự hiểu biết rằng Công ty ở đây không tham gia vào việc cung
+          cấp các dịch vụ và tư vấn pháp lý, kế toán, thuế hoặc chuyên nghiệp
+          khác.
+        </font>
+        <font style="vertical-align: inherit;">Do đó, nó không nên được sử dụng
+          để thay thế cho việc tham vấn với các cố vấn kế toán, thuế, pháp lý
+          chuyên nghiệp hoặc các cố vấn có thẩm quyền khác.</font>
+      </font>
+    </p>
+    <p>
+      <font style="vertical-align: inherit;">
+        <font style="vertical-align: inherit;">Trong mọi trường hợp, Công ty
+          hoặc các nhà cung cấp của Công ty sẽ không chịu trách nhiệm pháp lý
+          đối với bất kỳ thiệt hại đặc biệt, ngẫu nhiên, gián tiếp hoặc do hậu
+          quả nào phát sinh từ hoặc liên quan đến việc bạn truy cập hoặc sử dụng
+          hoặc không có khả năng truy cập hoặc sử dụng Dịch vụ.</font>
+      </font>
+    </p>
+    <h1 class="text-[2rem] my-3 font-bold">
+      <font style="vertical-align: inherit;">
+        <font style="vertical-align: inherit;">Tuyên bố từ chối trách nhiệm "Sử
+          dụng với rủi ro của riêng bạn"
+        </font>
+      </font>
+    </h1>
+    <p>
+      <font style="vertical-align: inherit;">
+        <font style="vertical-align: inherit;">Tất cả thông tin trong Dịch vụ
+          được cung cấp "nguyên trạng", không đảm bảo tính đầy đủ, chính xác,
+          kịp thời hoặc kết quả thu được từ việc sử dụng thông tin này và không
+          có bảo đảm dưới bất kỳ hình thức nào, rõ ràng hay ngụ ý, bao gồm,
+          nhưng không giới hạn ở bảo đảm về hiệu suất, khả năng buôn bán và tính
+          phù hợp cho một mục đích cụ thể.</font>
+      </font>
+    </p>
+    <p>
+      <font style="vertical-align: inherit;">
+        <font style="vertical-align: inherit;">Công ty sẽ không chịu trách nhiệm
+          với Bạn hoặc bất kỳ ai khác về bất kỳ quyết định nào được đưa ra hoặc
+          hành động được thực hiện dựa trên thông tin do Dịch vụ cung cấp hoặc
+          đối với bất kỳ thiệt hại do hậu quả, đặc biệt hoặc tương tự, ngay cả
+          khi được thông báo về khả năng xảy ra những thiệt hại đó.</font>
+      </font>
+    </p>
+    <h1 class="text-[2rem] my-3 font-bold">
+      <font style="vertical-align: inherit;">
+        <font style="vertical-align: inherit;">Liên hệ chúng tôi</font>
+      </font>
+    </h1>
+    <p>
+      <font style="vertical-align: inherit;">
+        <font style="vertical-align: inherit;">Nếu bạn có bất kỳ câu hỏi nào về
+          Tuyên bố từ chối trách nhiệm này, Bạn có thể liên hệ với Chúng tôi:</font>
+      </font>
+    </p>
+    <ul>
+      <li>
+        <font style="vertical-align: inherit;">
+          <font style="vertical-align: inherit;">Bằng cách truy cập trang này
+            trên trang web của chúng tôi:
+          </font>
+        </font><a
+          href="https://netwalker.vn/contact"
+          rel="external nofollow noopener"
+          target="_blank"
+          class="text-link"
+        >
+          <font style="vertical-align: inherit;">
+            <font
+              style="vertical-align: inherit;"
+            >https://netwalker.vn/contact</font>
+          </font>
+        </a>
+      </li>
+    </ul>
   </div>
 </div>
-

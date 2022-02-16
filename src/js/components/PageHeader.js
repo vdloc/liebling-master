@@ -39,7 +39,6 @@ export default class PageHeader {
     this.setupPrimaryNavigation();
     this.setupSecondaryNavigation();
     this.observeHeader();
-
     new ThemeControl('#theme-control');
     new ThemeControl('#mobile-theme-control');
     new Search();

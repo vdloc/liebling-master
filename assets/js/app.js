@@ -13,15 +13,24 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _utils_dom__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./utils/dom */ "./js/utils/dom.js");
 /* harmony import */ var aos__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! aos */ "./node_modules/aos/dist/aos.js");
 /* harmony import */ var aos__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(aos__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js");
+/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(jquery__WEBPACK_IMPORTED_MODULE_4__);
 
 
 
 
-aos__WEBPACK_IMPORTED_MODULE_3___default().init();
-(0,_utils_dom__WEBPACK_IMPORTED_MODULE_2__.onFullLoad)(function () {
-  new _components_PageHeader__WEBPACK_IMPORTED_MODULE_1__["default"]();
-  new _components_PageFooter__WEBPACK_IMPORTED_MODULE_0__["default"]();
+
+new _components_PageHeader__WEBPACK_IMPORTED_MODULE_1__["default"]();
+new _components_PageFooter__WEBPACK_IMPORTED_MODULE_0__["default"]();
+jquery__WEBPACK_IMPORTED_MODULE_4___default()(function () {
+  aos__WEBPACK_IMPORTED_MODULE_3___default().init();
+  document.addEventListener('aos:in', function (_ref) {
+    var detail = _ref.detail;
+    console.log('animated in', detail);
+  });
+  console.log('file: app.js ~ line 19 ~ AOS', (aos__WEBPACK_IMPORTED_MODULE_3___default()));
 });
+window.aos = (aos__WEBPACK_IMPORTED_MODULE_3___default());
 
 /***/ }),
 

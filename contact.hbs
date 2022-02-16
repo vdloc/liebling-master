@@ -4,55 +4,57 @@ into the {body} of the default.hbs template }}
 
 {{! Special header.hbs partial to generate the <header> tag }}
 {{> header }}
-<div class="flex justify-center items-center p-4 flex-wrap-reverse -mt-10">
-  {{! Form }}
-  <div class="flex-1 md:flex-initial md:w-[40%] p-4 mt-12 md:mt-auto">
-    <header>
-      <h2 class="text-[2.5rem] font-semibold text-center md:text-left">
-        Liên hệ
-      </h2>
-    </header>
-    <form
-      class="mt-12 flex flex-col"
-      action="https://getform.io/f/41a7e5dc-657f-4b30-9153-a406219c18fe"
-      method="POST"
-    >
-      <label class="font-semibold text-xl" for="full-name">Họ tên</label>
-      <input
-        class="my-4 px-2 py-3 text-primary-foreground tracking-wide leading-tight rounded-md border border-primary-border outline-none bg-background"
-        type="text"
-        name="name"
-        id="full-name"
-        placeholder="Họ tên"
-        required
-      />
-      <label class="font-semibold text-xl" for="email-address">Địa chỉ email</label>
-      <input
-        class="my-4 px-2 py-3 text-primary-foreground tracking-wide leading-tight rounded-md border border-primary-border outline-none bg-background"
-        type="email"
-        name="_replyto"
-        id="email-address"
-        placeholder="Địa chỉ email"
-        required
-      />
-      <label class="font-semibold text-xl" for="message">Thông tin phản hồi</label>
-      <textarea
-        class="my-4 px-2 py-3 text-primary-foreground tracking-wide leading-tight rounded-md border border-primary-border outline-none bg-background resize-none"
-        rows="5"
-        name="message"
-        id="message"
-        placeholder="Ý kiến của bạn"
-        required
-      ></textarea>
-      <input
-        class="self-start mx-auto md:mx-0 text-white font-semibold text-base py-2 px-[1.5625rem] outline-none border-none rounded-[0.3125rem] bg-primary-subtle transition-all ease-default duration-200 cursor-pointer button"
-        type="submit"
-        value="Gửi"
-      />
-    </form>
-  </div>
-  {{!-- Illustration--}}
-  <div class="w-[80%] md:w-[40%] md:ml-12 p-4">
-    <img src="{{asset 'images/contact.svg'}}" alt="Contact" />
+<div class="container mx-auto lg:px-10 relative">
+  <div class="flex justify-center items-center p-4 flex-wrap-reverse -mt-10">
+    {{! Form }}
+    <div class="flex-1 md:flex-initial md:w-[40%] p-4 mt-12 md:mt-auto">
+      <header>
+        <h2 class="text-[2.5rem] font-semibold text-center md:text-left">
+          Liên hệ
+        </h2>
+      </header>
+      <form
+        class="mt-12 flex flex-col"
+        action="https://getform.io/f/41a7e5dc-657f-4b30-9153-a406219c18fe"
+        method="POST"
+      >
+        <label class="font-semibold text-xl" for="full-name">Họ tên</label>
+        <input
+          class="my-4 px-2 py-3 text-primary-foreground tracking-wide leading-tight rounded-md border border-primary-border outline-none bg-background"
+          type="text"
+          name="name"
+          id="full-name"
+          placeholder="Họ tên"
+          required
+        />
+        <label class="font-semibold text-xl" for="email-address">Địa chỉ email</label>
+        <input
+          class="my-4 px-2 py-3 text-primary-foreground tracking-wide leading-tight rounded-md border border-primary-border outline-none bg-background"
+          type="email"
+          name="_replyto"
+          id="email-address"
+          placeholder="Địa chỉ email"
+          required
+        />
+        <label class="font-semibold text-xl" for="message">Thông tin phản hồi</label>
+        <textarea
+          class="my-4 px-2 py-3 text-primary-foreground tracking-wide leading-tight rounded-md border border-primary-border outline-none bg-background resize-none"
+          rows="5"
+          name="message"
+          id="message"
+          placeholder="Ý kiến của bạn"
+          required
+        ></textarea>
+        <input
+          class="self-start mx-auto md:mx-0 text-white font-semibold text-base py-2 px-[1.5625rem] outline-none border-none rounded-[0.3125rem] bg-primary-subtle transition-all ease-default duration-200 cursor-pointer button"
+          type="submit"
+          value="Gửi"
+        />
+      </form>
+    </div>
+    {{! Illustration}}
+    <div class="w-[80%] md:w-[40%] md:ml-12 p-4">
+      <img src="{{asset 'images/contact.svg'}}" alt="Contact" />
+    </div>
   </div>
 </div>
