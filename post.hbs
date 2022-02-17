@@ -87,6 +87,10 @@ into the {body} of the default.hbs template --}}
 {{> common/related-posts postTag=primary_tag.slug postID=id}}
 {{/post}}
 
+{{#if @labs.members}}
+  {{> common/newsletter}}
+{{/if}}
+
 {{!-- The #contentFor helper here will send everything inside it up to the matching #block helper found in default.hbs --}}
 {{#contentFor "scripts"}}
   <script defer src="{{asset "js/vendor/lightgallery-all.min.js"}}"></script>

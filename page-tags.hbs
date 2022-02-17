@@ -79,5 +79,8 @@ into the {body} of the default.hbs template }}
     </p>
 
   {{/get}}
-
 </div>
+
+{{#if @labs.members}}
+  {{> common/newsletter}}
+{{/if}}

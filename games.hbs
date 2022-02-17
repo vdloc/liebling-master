@@ -14,6 +14,9 @@ into the {body} of the default.hbs template --}}
   {{> category-section title="Game" tag="game" tagSlug="game" page="games"}}
 </div>
 
+{{#if @labs.members}}
+  {{> common/newsletter}}
+{{/if}}
 
 
 

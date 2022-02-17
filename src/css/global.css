@@ -6,3 +6,47 @@
   color: currentColor;
   font: 600;
 }
+
+.newsletter-success-message,
+.newsletter-invalid-message,
+.newsletter-error-message {
+  display: none;
+}
+
+#newsletter-form.success .newsletter-form-input {
+  display: none;
+}
+
+#newsletter-form.success .newsletter-success-message {
+  display: flex;
+}
+
+#newsletter-form.error .newsletter-error-message {
+  display: block;
+}
+
+#newsletter-form.invalid .newsletter-invalid-message {
+  display: block;
+}
+
+#newsletter-button {
+  overflow: hidden;
+}
+
+#newsletter-button::after {
+  content: "";
+  visibility: hidden;
+  opacity: 0;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 25%;
+  height: 2px;
+  background-color: white;
+}
+
+#newsletter-form.success #newsletter-button::after {
+  visibility: visible;
+  opacity: 1;
+  animation: button-loading 1s infinite;
+}

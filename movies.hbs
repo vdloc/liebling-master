@@ -18,6 +18,9 @@ into the {body} of the default.hbs template --}}
   {{> category-section title="Phim" tag="phim" tagSlug="phim" page="movies"}}
 </div>
 
+{{#if @labs.members}}
+  {{> common/newsletter}}
+{{/if}}
 
 
 

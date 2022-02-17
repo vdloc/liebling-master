@@ -14,6 +14,9 @@ into the {body} of the default.hbs template --}}
   {{> category-section title="Khóa học" tag="course" tagSlug="course" page="courses"}}
 </div>
 
+{{#if @labs.members}}
+  {{> common/newsletter}}
+{{/if}}
 
 
 {{!-- The #contentFor helper here will send everything inside it up to the matching #block helper found in default.hbs --}}

@@ -43,5 +43,10 @@ module.exports = {
       '0%': { transform: 'scale(1)' },
       '100%': { transform: 'scale(0)' },
     },
+    'button-loading': {
+      '0%': { transform: 'translateX(0)' },
+      '50%': { transform: 'translatex(300%)' },
+      '100%%': { transform: 'translatex(0%)' },
+    },
   },
 };
