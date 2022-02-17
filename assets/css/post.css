@@ -1,6 +1,21 @@
 .post-content {
   max-width: 51.25rem;
   margin-inline: auto;
+  padding-inline: 20px;
+}
+
+.post-content [class^="kg"] {
+  max-width: 100%;
+}
+
+@media only screen and (min-width: 48rem) {
+  .post-content {
+    padding-inline: 20px;
+  }
+
+  .post-content [class^="kg"] {
+    max-width: auto;
+  }
 }
 
 .post-content h1,
@@ -150,10 +165,7 @@
     margin-bottom: 2.5rem;
   }
 }
-.post-content figure,
-.post-content .kg-image-card {
-  margin: 0 -20px;
-}
+
 @media only screen and (min-width: 48rem) {
   .post-content figure:not(:first-child),
   .post-content .kg-image-card:not(:first-child) {

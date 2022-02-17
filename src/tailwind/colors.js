@@ -40,4 +40,7 @@ module.exports = {
   'dark-toggle-darkmode-background': 'rgba(0, 0, 0, 0.5)',
   'dark-header-menu-gradient-first': 'rgba(17, 17, 17, 0)',
   'dark-header-menu-gradient-second': 'rgba(17, 17, 17, 0.65)',
+  facebook: '#4267B2',
+  twitter: '#1DA1F2',
+  telegram: '#229ED9',
 };

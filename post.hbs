@@ -27,9 +27,9 @@ into the {body} of the default.hbs template --}}
   </span>
 </figure>
 {{! Post }}
-<article class='pt-[60px] pb-10 sm:max-w-[51.25rem] mx-auto'>
+<article class='pt-[60px] pb-10'>
   {{! Post Header }}
-  <header class='text-center font-bold text-titles'>
+  <header class='text-center font-bold text-titles sm:max-w-[51.25rem] mx-auto'>
     <h1 class='sm:pt-3 sm:mb-5 text-[2.625rem] leading-tight tracking-wide'>
       {{title}}
     </h1>
@@ -58,11 +58,18 @@ into the {body} of the default.hbs template --}}
     {{/foreach}}
   </header>
   {{! Post Content }}
-  <div class='relative sm:mt-[6rem]'>
-    {{> socials}}
-    <div id='post-content' class='post-content'>
-      {{content}}
+  <div class='sm:mt-[6rem] flex items-stretch'>
+    <div class="flex-grow-0 sm:flex-1 order-1 relative h-auto">
+      {{> socials}}
     </div>
+    <div class="flex-grow-0 sm:flex-1"></div>    
+    <div id='post-content' class='post-content'>
+      <div>
+        {{content}}
+      </div>
+    </div>
+   
+    
   </div>
 </article>
 {{/post}}
