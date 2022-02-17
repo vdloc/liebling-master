@@ -97,13 +97,6 @@ class Category {
       if (this.nonFeaturedPostsCount >= this.totalNonFeaturedPostsCount) {
         addClass(this.loadMoreButton, hiddenClass);
       }
-      console.log(
-        'file: category.js ~ line 104 ~ this.totalNonFeaturedPostsCount',
-        this.totalNonFeaturedPostsCount,
-        postsLimit,
-        this.nonFeaturedPostsCount,
-        this.totalNonFeaturedPostsCount
-      );
 
       // Tính số lượng post sẽ được load thêm( do response trả về có cả các post cũ).
       const postsSlice =
@@ -111,12 +104,6 @@ class Category {
           ? -this.postsPerEachLoad
           : this.nonFeaturedPostsCount - this.totalNonFeaturedPostsCount;
       const newPosts = posts.slice(postsSlice);
-      console.log(
-        'file: category.js ~ line 107 ~ newPosts',
-        newPosts,
-        posts,
-        this
-      );
       const newPostsHTML = newPosts.reduce(
         (html, post) => html.concat(this.createPostHTML(post)),
         ''

@@ -6,4 +6,5 @@ module.exports = {
   'hero-height': '30rem',
   unset: 'unset',
   'viewport-width': '100vw',
+  'post-content-width': '51.25rem',
 };

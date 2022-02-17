@@ -4,8 +4,10 @@
   padding-inline: 20px;
 }
 
-.post-content [class^="kg"] {
+.post-content > [class^="kg"] {
   max-width: 100%;
+  margin-left: auto !important;
+  margin-right: auto !important;
 }
 
 @media only screen and (min-width: 48rem) {
@@ -13,7 +15,7 @@
     padding-inline: 20px;
   }
 
-  .post-content [class^="kg"] {
+  .post-content > [class^="kg"] {
     max-width: auto;
   }
 }
@@ -103,24 +105,23 @@
     margin-bottom: 1.875rem;
   }
 }
+
+.post-content .kg-callout-text #rar-pass {
+  font-size: 1rem;
+  font-weight: normal;
+}
+
 .post-content p img {
   margin-bottom: 0 !important;
 }
 .post-content b,
 .post-content strong {
-  font-weight: 600;
+  font-weight: bold;
 }
 .post-content em {
   font-style: italic;
 }
-.post-content a {
-  color: #4a4a4a;
-  text-decoration: underline;
-  transition: color linear 0.2s;
-}
-.post-content a:hover {
-  color: #6667ab;
-}
+
 .post-content ul,
 .post-content ol {
   letter-spacing: 0.2px;
@@ -1625,8 +1626,19 @@
   flex: 1;
 }
 
+.kg-callout-card div.kg-callout-text p {
+  font-size: 1rem;
+  line-height: 1.5em;
+  margin-bottom: 0;
+}
+
+.kg-callout-card div.kg-callout-text p.bold,
+.kg-callout-card div.kg-callout-text p.kg-callout-title {
+  font-weight: bold;
+}
+
 .kg-callout-card + .kg-callout-card {
-  margin-top: 1em;
+  margin-top: 2.5rem !important;
 }
 .kg-file-card {
   display: flex;

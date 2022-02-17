@@ -203,13 +203,11 @@ var Category = /*#__PURE__*/function () {
 
                 if (this.nonFeaturedPostsCount >= this.totalNonFeaturedPostsCount) {
                   (0,_utils_dom__WEBPACK_IMPORTED_MODULE_3__.addClass)(this.loadMoreButton, hiddenClass);
-                }
+                } // Tính số lượng post sẽ được load thêm( do response trả về có cả các post cũ).
 
-                console.log('file: category.js ~ line 104 ~ this.totalNonFeaturedPostsCount', this.totalNonFeaturedPostsCount, postsLimit, this.nonFeaturedPostsCount, this.totalNonFeaturedPostsCount); // Tính số lượng post sẽ được load thêm( do response trả về có cả các post cũ).
 
                 postsSlice = this.totalNonFeaturedPostsCount >= postsLimit ? -this.postsPerEachLoad : this.nonFeaturedPostsCount - this.totalNonFeaturedPostsCount;
                 newPosts = posts.slice(postsSlice);
-                console.log('file: category.js ~ line 107 ~ newPosts', newPosts, posts, this);
                 newPostsHTML = newPosts.reduce(function (html, post) {
                   return html.concat(_this.createPostHTML(post));
                 }, '');
@@ -217,20 +215,20 @@ var Category = /*#__PURE__*/function () {
                 this.postContainer.insertAdjacentHTML('beforeend', newPostsHTML);
                 this.isLoading = false;
                 this.updateLoadingUI();
-                _context2.next = 23;
+                _context2.next = 21;
                 break;
 
-              case 20:
-                _context2.prev = 20;
+              case 18:
+                _context2.prev = 18;
                 _context2.t0 = _context2["catch"](3);
                 console.log(_context2.t0);
 
-              case 23:
+              case 21:
               case "end":
                 return _context2.stop();
             }
           }
-        }, _callee2, this, [[3, 20]]);
+        }, _callee2, this, [[3, 18]]);
       }));
 
       function handleLoadMorePost() {

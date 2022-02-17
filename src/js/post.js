@@ -5,6 +5,7 @@ import PasswordButton from './components/PasswordButton';
 import Gallery from './components/Gallery';
 import ScrollTopButton from './components/ScrollTopButton';
 import SocialButtons from './components/SocialButtons';
+import RelatedPosts from './components/RelatedPosts';
 
 onReady(() => {
   fitvids('#post-content');
@@ -13,4 +14,5 @@ onReady(() => {
   new Gallery();
   new ProgressCircle();
   new ScrollTopButton('#progress-button');
+  new RelatedPosts();
 });

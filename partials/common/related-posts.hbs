@@ -1,0 +1,86 @@
+<section class="container mt-40 p-5 md:p-auto">
+  <header class="text-center">
+    <h3 class="font-bold text-4xl">Cùng Chuyên Mục</h3>
+  </header>
+  <div class="mt-20 relative">
+    {{#get
+      "posts"
+      filter="tag:{{postTag}}+id:-{{postID}}"
+      include="authors,tags"
+      limit=5
+      as |relatedPosts|
+    }}
+
+      {{#if relatedPosts}}
+        <div class="swiper" id="related-posts">
+          <div class="swiper-wrapper h-auto my-10">
+            {{#foreach relatedPosts}}
+              <article
+                class="swiper-slide !h-card-height flex flex-col rounded-2xl overflow-hidden text-titles dark:text-dark-titles border border-secondary-nav-hover dark:border-dark-secondary-border shadow-article-shadow-normal hover:shadow-article-shadow-hover dark:shadow-dark-article-shadow-normal dark:hover:shadow-dark-article-shadow-hover hover:translate-y-[-7px] transition-all transition-fix ease-default duration-200"
+              >
+                {{! Feature Image }}
+                <a href="{{url}}">
+                  <figure class="relative h-[13.75rem]">
+                    <span
+                      style="box-sizing:border-box;display:block;overflow:hidden;width:initial;height:initial;background:none;opacity:1;border:0;margin:0;padding:0;position:absolute;top:0;left:0;bottom:0;right:0"
+                    ><img
+                        alt="{{title}}"
+                        sizes="100vw"
+                        src="{{img_url feature_image}}"
+                        decoding="async"
+                        class="transition-fix"
+                        style="position: absolute; inset: 0px; box-sizing: border-box; padding: 0px; border: none; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%; object-fit: cover;"
+                      /></span>
+                  </figure>
+                </a>
+                <div
+                  class="flex flex-1 flex-col justify-between p-[20px] relative transition-fix"
+                >
+                  <header class="order-1 font-semibold relative z-10">
+                    {{!  Post Tag }}
+                    <a href="{{primary_tag.url}}" class="relative z-10">
+                      <span class="text-link text-sm capitalize">
+                        {{primary_tag.name}}
+                      </span>
+                    </a>
+                    <h4 class="mt-3 text-xl">{{title}}</h4>
+                    <a
+                      href="{{url}}"
+                      class="absolute top-0 left-0 w-full h-full -z-1"
+                    ></a>
+                  </header>
+                  <footer className="order-2">
+                    <time
+                      datetime="{{published_at}}"
+                      className="text-sm sm:text-base"
+                    >
+                      {{date published_at timeago="true"}}
+                    </time>
+                  </footer>
+                  <a
+                    href="{{url}}"
+                    className="absolute top-0 left-0 w-full h-full -z-1"
+                  ></a>
+                </div>
+              </article>
+            {{/foreach}}
+          </div>
+
+        </div>
+        <div
+          class="shadow-md hover:shadow-button-shadow-hover rounded-full cursor-pointer text-xs absolute -top-10 md:top-1/2 md:-translate-y-1/2 left-[calc(50%-5rem)] md:-left-16 w-10 h-10 flex justify-center items-center text-primary-subtle"
+          id="related-posts-prev"
+        >
+          <span class="icon-arrow-left" aria-hidden="true"></span>
+        </div>
+        <div
+          class="shadow-md hover:shadow-button-shadow-hover rounded-full cursor-pointer text-xs absolute -top-10 md:top-1/2 md:-translate-y-1/2 right-[calc(50%-5rem)] md:-right-16 w-10 h-10 flex justify-center items-center text-primary-subtle"
+          id="related-posts-next"
+        >
+          <span class="icon-arrow-right" aria-hidden="true"></span>
+        </div>
+      {{else}}
+      {{/if}}
+    {{/get}}
+  </div>
+</section>
