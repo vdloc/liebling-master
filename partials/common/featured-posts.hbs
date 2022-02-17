@@ -24,8 +24,7 @@
                   <section class="flex justify-between">
                     <div>
                       {{! Author }}
-                      <a
-                        href="{{primary_author.url}}"
+                      <div
                         class="relative z-50 bg-white block rounded-full w-7 h-7 sm:w-9 sm:h-9 overflow-hidden"
                       >
                         {{#if primary_author.profile_image}}
@@ -44,7 +43,7 @@
                           ></div>
                         {{/if}}
 
-                      </a>
+                      </div>
                       {{! Tag }}
                       <a href="{{primary_tag.url}}">
                         <p class="mt-5 font-bold text-white capitalize">

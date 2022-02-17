@@ -37,7 +37,6 @@ into the {body} of the default.hbs template --}}
       {{#foreach tags}}
       <li class='first:ml-0 ml-2'>
         <a href='{{url}}'>
-
           <span
             class='flex items-center justify-center text-link text-sm font-semibold bg-alter-link py-[0.1rem] px-2 rounded'>{{name}}</span>
         </a>
@@ -47,8 +46,7 @@ into the {body} of the default.hbs template --}}
     {{#foreach authors}}
     <address class='mt-4 mb-7 text-center text-sm text-link not-italic'>
       <span class=''>
-        Đăng bởi
-        <a>{{name}}</a>
+        Đăng bởi {{name}}      
       </span>
       -
       <time datetime='{{published_at}}'>

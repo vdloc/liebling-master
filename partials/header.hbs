@@ -5,7 +5,7 @@
     id="page-header"
   >
     <div
-      class="container mx-auto lg:px-10 px-4 h-full flex justify-between items-stretch"
+      class="container mx-auto lg:px-10 px-4 md:px-0 h-full flex justify-between items-stretch"
     >
       {{! Left Menu }}
       <div class="hidden lg:flex items-stretch">
@@ -114,11 +114,11 @@
   </div>
   {{! Mobile Menu }}
   <div
-    class="fixed top-0 left-0 w-full h-full md:hidden bg-background dark:bg-dark-background text-titles dark:text-dark-titles flex flex-col items-stretch transition-all ease-in-out duration-300 -z-10 opacity-0 invisible"
+    class="fixed top-0 left-0 w-full h-full lg:hidden bg-background dark:bg-dark-background text-titles dark:text-dark-titles flex flex-col items-stretch transition-all ease-in-out duration-300 -z-10 opacity-0 invisible"
     id="mobile-menu"
   >
     <header
-      class="h-header-height-mobile px-5 flex justify-between items-center relative z-20 shadow-header dark:shadow-header-dark"
+      class="h-header-height-mobile md:px-0 flex justify-between items-center relative z-20 shadow-header dark:shadow-header-dark"
     >
       {{! Close Menu }}
       <div class="relative top-[2px] left-1" id="close-mobile-menu-button">

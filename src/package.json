@@ -21,7 +21,8 @@
     "hot": "mix watch --hot",
     "prod": "npm run production",
     "production": "mix --production",
-    "tailwind-watch": "npx tailwindcss --postcss -i ./css/app.css -o ../assets/css/app.css --watch"
+    "tailwind-watch": "npx tailwindcss --postcss -i ./css/app.css -o ../assets/css/app.css --watch",
+    "tailwind": "npx tailwindcss --postcss -i ./css/app.css -o ../assets/css/app.css --minify"
   },
   "husky": {
     "hooks": {
