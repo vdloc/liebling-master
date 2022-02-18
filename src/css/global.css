@@ -45,7 +45,7 @@
   background-color: white;
 }
 
-#newsletter-form.success #newsletter-button::after {
+#newsletter-form.loading #newsletter-button::after {
   visibility: visible;
   opacity: 1;
   animation: button-loading 1s infinite;
