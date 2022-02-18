@@ -848,14 +848,6 @@ Ensure the default browser behavior of the `hidden` attribute.
   margin-bottom: 1rem !important;
 }
 
-.\!mb-0 {
-  margin-bottom: 0px !important;
-}
-
-.ml-4 {
-  margin-left: 1rem;
-}
-
 .mt-20 {
   margin-top: 5rem;
 }
@@ -1303,6 +1295,10 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .gap-2 {
   gap: 0.5rem;
+}
+
+.gap-4 {
+  gap: 1rem;
 }
 
 .gap-3 {
@@ -1970,6 +1966,13 @@ Ensure the default browser behavior of the `hidden` attribute.
   -webkit-line-clamp: 2;
 }
 
+.line-clamp-3 {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+}
+
 .backface-visible {
   -webkit-backface-visibility: visible;
           backface-visibility: visible;
@@ -2045,6 +2048,34 @@ Ensure the default browser behavior of the `hidden` attribute.
   opacity: 1;
   -webkit-animation: button-loading 1s infinite;
           animation: button-loading 1s infinite;
+}
+
+@-webkit-keyframes button-loading {
+  0% {
+    transform: translateX(0);
+  }
+
+  50% {
+    transform: translateX(300%);
+  }
+
+  100% {
+    transform: translateX(0%);
+  }
+}
+
+@keyframes button-loading {
+  0% {
+    transform: translateX(0);
+  }
+
+  50% {
+    transform: translateX(300%);
+  }
+
+  100% {
+    transform: translateX(0%);
+  }
 }
 
 @font-face {
@@ -3656,6 +3687,10 @@ Ensure the default browser behavior of the `hidden` attribute.
     margin-top: 0.75rem;
   }
 
+  .sm\:ml-0 {
+    margin-left: 0px;
+  }
+
   .sm\:flex {
     display: flex;
   }
@@ -3674,10 +3709,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 
   .sm\:h-unset {
     height: unset;
-  }
-
-  .sm\:h-\[3\.125rem\] {
-    height: 3.125rem;
   }
 
   .sm\:h-card-height {
@@ -3704,10 +3735,6 @@ Ensure the default browser behavior of the `hidden` attribute.
     width: auto;
   }
 
-  .sm\:w-\[3\.125rem\] {
-    width: 3.125rem;
-  }
-
   .sm\:w-9 {
     width: 2.25rem;
   }
@@ -3727,6 +3754,14 @@ Ensure the default browser behavior of the `hidden` attribute.
 
   .sm\:grid-cols-2 {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .sm\:flex-row {
+    flex-direction: row;
+  }
+
+  .sm\:flex-col-reverse {
+    flex-direction: column-reverse;
   }
 
   .sm\:items-end {
@@ -3916,12 +3951,20 @@ Ensure the default browser behavior of the `hidden` attribute.
     height: 20rem;
   }
 
+  .md\:h-\[3\.125rem\] {
+    height: 3.125rem;
+  }
+
   .md\:w-\[40\%\] {
     width: 40%;
   }
 
   .md\:w-post-content-width {
     width: 51.25rem;
+  }
+
+  .md\:w-\[3\.125rem\] {
+    width: 3.125rem;
   }
 
   .md\:flex-initial {
@@ -3939,10 +3982,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 
   .md\:flex-row {
     flex-direction: row;
-  }
-
-  .md\:flex-col-reverse {
-    flex-direction: column-reverse;
   }
 
   .md\:px-0 {

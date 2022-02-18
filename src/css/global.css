@@ -50,3 +50,17 @@
   opacity: 1;
   animation: button-loading 1s infinite;
 }
+
+@keyframes button-loading {
+  0% {
+    transform: translateX(0);
+  }
+
+  50% {
+    transform: translateX(300%);
+  }
+
+  100% {
+    transform: translateX(0%);
+  }
+}

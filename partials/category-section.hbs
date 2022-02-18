@@ -1,4 +1,4 @@
-<section class="pt-10">
+<section class="pt-10 mb-10">
   <header class="relative inline-flex items-center">
     <div class="rounded-full bg-link w-[5px] h-11"></div>
     <h5
@@ -82,17 +82,17 @@
                 @tagName
               </span>
             </a>
-            <h4 class="mt-3 text-xl">@title</h4>
+            <h4 class="mt-3 text-xl line-clamp-3">@title</h4>
             <a href="@url" class="absolute top-0 left-0 w-full h-full -z-1"></a>
           </header>
-          <footer className="order-2">
-            <time datetime="@time" className="text-sm sm:text-base">
+          <footer class="order-2">
+            <time datetime="@time" class="text-sm sm:text-base">
               @ago
             </time>
           </footer>
           <a
             href="@url"
-            className="absolute top-0 left-0 w-full h-full -z-1"
+            class="absolute top-0 left-0 w-full h-full -z-1"
           ></a>
         </div>
       </article>
