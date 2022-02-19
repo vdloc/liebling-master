@@ -1,8 +1,6 @@
 {{! The tag below means: insert everything in this file
 into the {body} of the default.hbs template }}
 {{!< default}}
-{{! Special header.hbs partial to generate the <header> tag }}
-{{> header }}
 
 {{#tag}}
   <header
@@ -10,7 +8,7 @@ into the {body} of the default.hbs template }}
     data-aos="fade-down"
   >
     <section
-      class="flex flex-col justify-center items-center absolute w-full h-full top-0 left-0 lg:mr-8 pb-[2px] dark:text-dark-titles {{#if feature_image}} backdrop-brightness-125 {{/if}}"
+      class="flex flex-col justify-center items-center absolute w-full h-full top-0 left-0 lg:mr-8 pb-[2px] dark:text-dark-titles {{#if feature_image}} text-background {{/if}}"
     >
       <h1 class="text-6xl font-bold">
         {{name}}
@@ -19,7 +17,7 @@ into the {body} of the default.hbs template }}
       <p class="text-lg mt-6">{{plural ../pagination.total empty=(t "No posts") singular=(t "1 post") plural=(t "% posts")}} {{t "with this tag"}}</p>
     </section>
     {{#if feature_image}}
-      <div class="absolute w-full h-full top-0 left-0 -z-10 opacity-70">
+      <div class="absolute w-full h-full top-0 left-0 -z-10">
         <span class="responsive-img">
           <img src="{{img_url feature_image}}" alt="{{title}}" />
         </span>
@@ -70,23 +68,23 @@ into the {body} of the default.hbs template }}
                     {{../../name}}
                   </span>
                 </a>
-                <h4 class="mt-3 text-xl">{{title}}</h4>
+                <h4 class="mt-3 text-xl line-clamp-3">{{title}}</h4>
                 <a
                   href="{{url}}"
-                  class="absolute top-0 left-0 w-full h-full -z-1"
+                  class="absolute top-0 left-0 w-full h-full z-0"
                 ></a>
               </header>
-              <footer className="order-2">
+              <footer class="order-2">
                 <time
                   datetime="{{published_at}}"
-                  className="text-sm sm:text-base"
+                  class="text-sm sm:text-base"
                 >
                   {{date published_at timeago="true"}}
                 </time>
               </footer>
               <a
                 href="{{url}}"
-                className="absolute top-0 left-0 w-full h-full -z-1"
+                class="absolute top-0 left-0 w-full h-full z-0"
               ></a>
             </div>
           </article>
@@ -96,5 +94,5 @@ into the {body} of the default.hbs template }}
     {{/get}}
   </div>
 {{/tag}}
-<div class="flex justify-center">{{pagination}}</div>
+{{!-- <div class="flex justify-center">{{pagination}}</div> --}}
 

@@ -1,8 +1,6 @@
 {{! The tag below means: insert everything in this file
 into the {body} of the default.hbs template }}
 {{!< default}}
-{{! Special header.hbs partial to generate the <header> tag }}
-{{> header }}
 
 {{#post}}
   <header
@@ -12,7 +10,7 @@ into the {body} of the default.hbs template }}
     <section
       class="flex justify-center items-center absolute w-full h-full top-0 left-0 lg:mr-8 pb-[2px] font-nunito font-bold tracking-wider text-3xl dark:text-dark-titles"
     >
-      <h1 class="text-6xl">
+      <h1 class="text-6xl {{#if feature_image}}text-background {{/if}}">
         {{title}}
       </h1>
       {{#if custom_excerpt}}
@@ -41,7 +39,7 @@ into the {body} of the default.hbs template }}
         <a href="{{url}}" class="flex flex-col w-full h-full">
           {{! Background Image }}
           {{#if feature_image}}
-            <div class="absolute -z-1 w-full h-full top-0 left-0">
+            <div class="absolute -z-10 w-full h-full top-0 left-0 ">
               <span class="responsive-img">
                 <img
                   src="{{img_url feature_image}}"
@@ -57,11 +55,11 @@ into the {body} of the default.hbs template }}
             </div>
           {{/if}}
           {{!  }}
-          <div class="h-full p-4 flex flex-col items-start justify-end">
+          <div class="h-full p-4 flex flex-col items-start justify-end {{#if feature_image}} text-background {{/if}}">
             <h4 class="font-bold text-2xl mb-2">
               {{name}}
             </h4>
-            <span>
+            <span class="font-semibold">
               {{plural
                 count.posts
                 empty=(t "No posts")
@@ -81,6 +79,3 @@ into the {body} of the default.hbs template }}
   {{/get}}
 </div>
 
-{{#if @labs.members}}
-  {{> common/newsletter}}
-{{/if}}

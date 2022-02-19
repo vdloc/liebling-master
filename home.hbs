@@ -12,20 +12,14 @@ It can be used also as the home page or the default page.
 into the {body} of the default.hbs template --}}
 {{!< default}}
 
-{{!-- Special header.hbs partial to generate the <header> tag --}}
-{{> header background=@site.cover_image}}
 
-
-<main class="relative z-main bg-background dark:bg-dark-background" data-aos="fade-up" data-aos-delay="300">  <div class="container mx-auto lg:px-10 mt-10">
-  <div class="container mx-auto lg:px-10 mt-10">  
+<div class="container mx-auto lg:px-10 mt-10" data-aos-delay="300">  
     {{> home-section title="Phim" tag="phim" tagSlug="phim" page="movies"}}
     {{> home-section title="Nhạc" tag="nhạc" tagSlug="nhac" page="musics"}}
     {{> home-section title="Game" tag="game" tagSlug="game" page="games"}}
     {{> home-section title="Course" tag="course" tagSlug="course" page="courses"}}
     {{> home-section title="Khác" tag="miscellaneous" tagSlug="miscellaneous" page="miscellaneous"}}
-  </div>
-</main>
-
+</div>
 
 
 {{!-- The #contentFor helper here will send everything inside it up to the matching #block helper found in default.hbs --}}

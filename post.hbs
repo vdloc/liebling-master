@@ -17,11 +17,9 @@
 into the {body} of the default.hbs template --}}
 {{!< default}}
 
-{{> header}}
-
 {{#post}}
 {{! Post Featured Image }}
-<figure class='relative h-hero-height'>
+<figure class='relative h-mobile-hero-height md:h-hero-height'>
   <span class='responsive-img'>
     <img src='{{img_url feature_image}}' alt='{{title}}' />
   </span>
@@ -29,22 +27,19 @@ into the {body} of the default.hbs template --}}
 {{! Post }}
 <article class='pt-[60px] pb-10'>
   {{! Post Header }}
-  <header class='text-center font-bold text-titles sm:max-w-[51.25rem] mx-auto'>
-    <h1 class='sm:pt-3 sm:mb-5 text-[2.625rem] leading-tight tracking-wide'>
+  <header class='text-center font-bold text-titles dark:text-dark-titles sm:max-w-[51.25rem] mx-auto'>
+    <h1 class='sm:pt-3 sm:mb-5 text-3xl md:text-[2.625rem] leading-tight tracking-wide'>
       {{title}}
     </h1>
-    <ul class='flex justify-center mt-10'>
+    <ul class='flex justify-center mt-10 flex-wrap gap-2'>
       {{#foreach tags}}
-      <li class='first:ml-0 ml-2'>
-        <a href='{{url}}'>
-          <span
-            class='flex items-center justify-center text-link text-sm font-semibold bg-alter-link py-[0.1rem] px-2 rounded'>{{name}}</span>
-        </a>
+      <li class=>       
+        {{> common/badge }}
       </li>
       {{/foreach}}
     </ul>
     {{#foreach authors}}
-    <address class='mt-4 mb-7 text-center text-sm text-link not-italic'>
+    <address class='mt-4 mb-7 text-center text-sm text-link dark:text-dark-link not-italic'>
       <span class=''>
         Đăng bởi {{name}}      
       </span>
@@ -68,14 +63,11 @@ into the {body} of the default.hbs template --}}
     </div>  
   </div>
   <section class="md:w-post-content-width mx-auto mt-10 px-5 md:px-auto">
-    <h3 class="font-bold text-2xl">Thẻ</h3>
+    <h3 class="font-bold text-2xl dark:text-dark-titles">Thẻ</h3>
     <ul class='flex flex-wrap mt-5 gap-2'>
       {{#foreach tags}}
         <li>
-          <a href='{{url}}'>
-            <span
-              class='flex items-center justify-center text-link text-sm font-semibold bg-alter-link py-[0.1rem] px-2 rounded'>{{name}}</span>
-          </a>
+          {{>common/badge}}
         </li>
       {{/foreach}}
     </ul>

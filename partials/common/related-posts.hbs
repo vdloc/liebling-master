@@ -1,8 +1,8 @@
 <section class="container mt-40 p-5 md:p-auto">
   <header class="text-center">
-    <h3 class="font-bold text-4xl">Cùng Chuyên Mục</h3>
+    <h3 class="font-bold text-4xl dark:text-dark-titles">Cùng Chuyên Mục</h3>
   </header>
-  <div class="mt-20 relative">
+  <div class="mt-10 relative">
     {{#get
       "posts"
       filter="tag:{{postTag}}+id:-{{postID}}"
@@ -49,17 +49,17 @@
                       class="absolute top-0 left-0 w-full h-full -z-1"
                     ></a>
                   </header>
-                  <footer className="order-2">
+                  <footer class="order-2">
                     <time
                       datetime="{{published_at}}"
-                      className="text-sm sm:text-base"
+                      class="text-sm sm:text-base"
                     >
                       {{date published_at timeago="true"}}
                     </time>
                   </footer>
                   <a
                     href="{{url}}"
-                    className="absolute top-0 left-0 w-full h-full -z-1"
+                    class="absolute top-0 left-0 w-full h-full -z-1"
                   ></a>
                 </div>
               </article>
@@ -68,13 +68,13 @@
 
         </div>
         <div
-          class="shadow-md hover:shadow-button-shadow-hover rounded-full cursor-pointer text-xs absolute -top-10 md:top-1/2 md:-translate-y-1/2 left-[calc(50%-5rem)] md:-left-16 w-10 h-10 flex justify-center items-center text-primary-subtle"
+          class="shadow-md hover:shadow-button-shadow-hover rounded-full cursor-pointer text-xs absolute z-50 top-1/2 md:-translate-y-1/2 -left-5 md:-left-16 w-12 h-12 flex justify-center items-center text-primary-subtle bg-background dark:bg-dark-background"
           id="related-posts-prev"
         >
           <span class="icon-arrow-left" aria-hidden="true"></span>
         </div>
         <div
-          class="shadow-md hover:shadow-button-shadow-hover rounded-full cursor-pointer text-xs absolute -top-10 md:top-1/2 md:-translate-y-1/2 right-[calc(50%-5rem)] md:-right-16 w-10 h-10 flex justify-center items-center text-primary-subtle"
+          class="shadow-md hover:shadow-button-shadow-hover rounded-full cursor-pointer text-xs absolute z-50 top-1/2 md:-translate-y-1/2 -right-5 md:-right-16 w-12 h-12 flex justify-center items-center text-primary-subtle bg-background dark:bg-dark-background"
           id="related-posts-next"
         >
           <span class="icon-arrow-right" aria-hidden="true"></span>

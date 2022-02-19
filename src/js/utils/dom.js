@@ -10,7 +10,7 @@ export function setAttr(elem, name = '', value = '') {
   if (elem) {
     elem.setAttribute(name, value);
   } else {
-    throw new Error(`Can't set attribute on "${elem}" element.`);
+    console.log(`Can't set ${name} attribute on "${elem}" element.`);
   }
 }
 
@@ -18,14 +18,14 @@ export function getAttr(elem, name = '') {
   if (elem) {
     return elem.getAttribute(name);
   }
-  throw new Error(`Can't get attribute on "${elem}" element.`);
+  console.log(`Can't get attribute on "${elem}" element.`);
 }
 
 export function setText(elem, text = '') {
   if (elem) {
     elem.textContent = text;
   } else {
-    throw new Error(`Can't set text content on "${elem}" element.`);
+    console.log(`Can't set text content on "${elem}" element.`);
   }
 }
 
@@ -45,7 +45,7 @@ export function getWidth(elem) {
   if (elem) {
     return parseFloat(getComputedStyle(elem, null).width.replace('px', ''));
   } else {
-    throw new Error(`Can't get width of "${elem}" element.`);
+    console.log(`Can't get width of "${elem}" element.`);
   }
 }
 
