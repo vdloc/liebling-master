@@ -1,64 +1,81 @@
-{{!--
-This template is used for the tags page.
-You must first create a page called Tags in the dashboard to enable it.
---}}
-
-{{!-- This block preloads specific assets for the tags page --}}
-{{#contentFor "preload"}}
-  <link rel="preload" href="{{asset "css/tags.css"}}" as="style" />
-{{/contentFor}}
-
-{{!-- This block loads specific styles for the tags page --}}
-{{#contentFor "styles"}}
-  <link rel="stylesheet" type="text/css" href="{{asset "css/tags.css"}}" media="screen" />
-{{/contentFor}}
-
-{{!-- The tag below means: insert everything in this file
-into the {body} of the default.hbs template --}}
+{{! The tag below means: insert everything in this file
+into the {body} of the default.hbs template }}
 {{!< default}}
 
-{{!-- Special header.hbs partial to generate the <header> tag --}}
 {{#post}}
-  {{> header background=feature_image}}
-{{/post}}
-
-<main class="main-wrap">
-  {{#post}}
-    {{!-- Inject styles of the hero image to make it responsive --}}
-    {{> hero background=feature_image}}
-    <div class="m-hero__content" data-aos="fade-down">
-      <h1 class="m-hero-title bigger">{{title}}</h1>
+  <header
+    class="md:h-[23rem] flex justify-center items-center bg-opacity-5 bg-primary-subtle relative"
+    data-aos="fade-down"
+  >
+    <section
+      class="flex justify-center items-center absolute w-full h-full top-0 left-0 lg:mr-8 pb-[2px] font-nunito font-bold tracking-wider text-3xl dark:text-dark-titles"
+    >
+      <h1 class="text-6xl {{#if feature_image}}text-background {{/if}}">
+        {{title}}
+      </h1>
       {{#if custom_excerpt}}
-        <p class="m-hero-description">{{custom_excerpt}}</p>
+        <p class="mt-3">{{custom_excerpt}}</p>
       {{/if}}
-    </div>
     </section>
-  {{/post}}
-  <div class="l-content">
-    <div class="l-wrapper" data-aos="fade-up" data-aos-delay="300">
-      <div class="l-tags-container">
-        {{#get 'tags' limit='all' include='count.posts'}}
-          {{#foreach tags}}
-            <div class="m-tag-card">
-              <a href="{{url}}" class="m-tag-card__link {{#unless feature_image}}no-picture{{/unless}}" aria-label="{{name}}">
-                {{#if feature_image}}
-                  <img class="m-tag-card__picture" src="{{img_url feature_image size="m"}}" loading="lazy" alt="">
-                {{/if}}
-                <div class="m-tag-card__info {{#unless feature_image}}no-picture{{/unless}}">
-                  <h4 class="m-tag-card__name">{{name}}</h4>
-                  <span class="m-tag-card__counter">
-                    {{plural count.posts empty=(t "No posts") singular=(t "1 post") plural=(t "% posts")}}
-                  </span>
-                </div>
-              </a>
-            </div>
-            {{else}}
-              <p class="m-not-found">
-                {{t "No tags found :("}}
-              </p>
-          {{/foreach}}
-        {{/get}}
-      </div>
+    {{#if feature_image}}
+    <div class="absolute w-full h-full top-0 left-0 -z-10">
+      <span class="responsive-img">
+        <img src="{{img_url feature_image}}" alt="{{title}}">
+      </span>
     </div>
-  </div>
-</main>
+    {{/if}}
+  </header>
+{{/post}}
+<div
+  class="container pt-4 pb-12 px-4 mt-12 grid grid-cols-3 xl:gap-10 gap-[20px]"
+  data-aos="fade-up" data-aos-delay="300"
+>
+
+  {{#get "tags" limit="all" include="count.posts"}}
+    {{#foreach tags}}
+      <article
+        class="col-span-1 h-44 rounded-2xl overflow-hidden text-titles dark:text-dark-titles border border-secondary-nav-hover dark:border-dark-secondary-border shadow-article-shadow-normal hover:shadow-article-shadow-hover dark:shadow-dark-article-shadow-normal dark:hover:shadow-dark-article-shadow-hover hover:translate-y-[-7px] transition-all transition-fix ease-default duration-200 relative"
+      >
+        <a href="{{url}}" class="flex flex-col w-full h-full">
+          {{! Background Image }}
+          {{#if feature_image}}
+            <div class="absolute -z-10 w-full h-full top-0 left-0 ">
+              <span class="responsive-img">
+                <img
+                  src="{{img_url feature_image}}"
+                  loading="lazy"
+                  alt="{{name}} tag"
+                />
+              </span>
+            </div>
+          {{else}}
+            <div
+              class="absolute -z-1 w-full h-full top-0 left-0 bg-opacity-5 bg-primary-subtle"
+            >
+            </div>
+          {{/if}}
+          {{!  }}
+          <div class="h-full p-4 flex flex-col items-start justify-end {{#if feature_image}} text-background {{/if}}">
+            <h4 class="font-bold text-2xl mb-2">
+              {{name}}
+            </h4>
+            <span class="font-semibold">
+              {{plural
+                count.posts
+                empty=(t "No posts")
+                singular=(t "1 post")
+                plural=(t "% posts")
+              }}
+            </span>
+          </div>
+        </a>
+      </article>
+    {{/foreach}}
+  {{else}}
+    <p class="">
+      {{t "No tags found :("}}
+    </p>
+
+  {{/get}}
+</div>
+

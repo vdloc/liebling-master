@@ -1,0 +1,25 @@
+
+{{!-- This block preloads specific assets for the index page --}}
+{{#contentFor "preload"}}
+  <link rel="preload" href="{{asset "js/category.js"}}" as="script" />
+{{/contentFor}}
+
+{{!-- The tag below means: insert everything in this file
+into the {body} of the default.hbs template --}}
+{{!< default}}
+
+
+<div class="container mx-auto lg:px-10 relative">
+  {{> category-section title="Khóa học" tag="course" tagSlug="course" page="courses"}}
+</div>
+
+{{#if @labs.members}}
+  {{> common/newsletter}}
+{{/if}}
+
+
+{{!-- The #contentFor helper here will send everything inside it up to the matching #block helper found in default.hbs --}}
+{{#contentFor "scripts"}}
+  <script  defer src="{{asset "js/category.js"}}"></script>
+{{/contentFor}}
+

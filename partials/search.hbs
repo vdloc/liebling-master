@@ -1,26 +1,111 @@
-{{!--
-This search template is used to display the search form.
-You need to create a custom integration first to get a Content API key and then 
-follow the instructions to enable the search feature.
---}}
-
-<div class="m-search js-search" role="dialog" aria-modal="true" aria-label="Search">
-  <button class="m-icon-button outlined as-close-search js-close-search" aria-label="Close search">
-    <span class="icon-close" aria-hidden="true"></span>
-  </button>
-  <div class="m-search__content">
-    <form class="m-search__form">
-      <div class="pos-relative">
-        <span class="icon-search m-search-icon" aria-hidden="true"></span>
-        <label for="search-input" class="sr-only">
-          {{t "Type to search"}}
-        </label>
-        <input id="search-input" type="text" class="m-input in-search js-input-search" placeholder="{{t "Type to search"}}">
-      </div>
-    </form>
-    <div class="js-search-results hide"></div>
-    <p class="m-not-found align-center hide js-no-results">
-      {{t "No results for your search, try something different."}}
-    </p>
+<aside
+  class="fixed top-0 left-0 w-screen h-screen bg-search backdrop-blur transition-opacity duration-100 ease-in-out z-[-50] opacity-0 invisible"
+  id="search-modal"
+>
+  {{! Backrop }}
+  <div class="absolute top-0 left-0 w-full h-full" id="search-backdrop"></div>
+  {{! Close Button }}
+  <div
+    class="absolute top-3 sm:top-5 right-3 sm:right-10 cursor-pointer"
+    id="search-close-button"
+  >
+    <span class="icon-close text-background"></span>
   </div>
-</div>
+  {{! Search Area }}
+  <section
+    class="relative z-10 mx-auto mt-20 w-full sm:w-[40rem] bg-background dark:bg-dark-primary-subtle shadow-xl rounded-md overflow-hidden"
+  >
+    {{! Search Input }}
+    <div class="relative">
+      <label
+        for="search-input"
+        class="absolute top-1/2 right-1 -translate-y-1/2 h-10 w-10 rounded-r-md flex items-center justify-center bg-link cursor-pointer"
+        id="search-input-label"
+      >
+        <span
+          class="text-background icon-search"
+          aria-hidden="true"
+          id="search-icon"
+        ></span>
+        <span
+          class="text-background icon-close text-xs hidden"
+          aria-hidden="true"
+          id="clear-search-icon"
+        ></span>
+      </label>
+      <input
+        type="text"
+        name="search"
+        class="w-full h-12 px-4 border-b border-gray-300 dark:border-gray-500 focus-within:outline-none bg-transparent text-titles dark:text-white font-semibold"
+        id="search-input"
+        placeholder="Nhập từ khóa..."
+        autocomplete="off"
+        aria-autocomplete="off"
+      />
+    </div>
+    {{! Search Result }}
+    <section
+      class="max-h-[calc(100vh-15rem)] overflow-y-auto overscroll-contain"
+    >
+      <ul class="hidden" id="search-result-list">
+      </ul>
+      {{! Template for result item }}
+      <ul class="hidden" aria-hidden="true" id="search-result-template">
+        <li
+          class="last:border-b-0 border-b border-gray-300 dark:border-gray-500"
+        >
+          <a
+            class="w-full h-full flex justify-between items-start sm:items-center p-4 hover:bg-alter-link"
+            href="@url"
+          >
+            <span class="dark:text-background">@title</span>
+            <div
+              class="flex items-center justify-center text-link text-sm font-bold bg-alter-link py-[0.1rem] px-2 rounded capitalize dark:text-background"
+            >
+              @name
+            </div>
+          </a>
+        </li>
+      </ul>
+    </section>
+    {{! Suggestion }}
+    <section class="p-4" id="suggestion-list">
+      <header>
+        <h5 class="dark:text-background">Các chủ đề phổ biến</h5>
+      </header>
+      {{#get
+        "tags"
+        limit="15"
+        filter="visibility:public"
+        include="count.post"
+        order="count.post desc"
+        as |tags|
+      }}
+        {{#if tags}}
+          <ul class="flex flex-wrap justify-items-stretch mt-4 gap-3">
+            {{#foreach tags}}
+              <li>
+                <a href="{{url}}">
+                  <div
+                    class="flex items-center justify-center text-link text-sm font-bold bg-alter-link py-[0.1rem] px-2 rounded dark:text-background"
+                  >
+                    {{name}}
+                  </div>
+                </a>
+              </li>
+            {{/foreach}}
+          </ul>
+        {{else}}
+          <span class="text-sm">Không có chủ đề nào :(</span>
+        {{/if}}
+      {{/get}}
+
+    </section>
+    {{! No result }}
+    <section class="p-4 hidden" id="search-no-result">
+      <span>Không tìm thấy kết quả.</span>
+    </section>
+  </section>
+</aside>
+<div class="hidden z-[-50] opacity-100 visible"></div>
+<div class="hidden z-50 opacity-0 invisible"></div>

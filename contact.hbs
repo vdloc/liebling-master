@@ -1,73 +1,58 @@
-{{!--
-This template is used for the tags page.
-You must first create a page called Tags in the dashboard to enable it.
---}}
-
-{{!-- This block preloads specific assets for the tags page --}}
-{{#contentFor "preload"}}
-  <link rel="preload" href="{{asset "css/contact.css"}}" as="style" />
-{{/contentFor}}
-
-{{!-- This block loads specific styles for the tags page --}}
-{{#contentFor "styles"}}
-  <link rel="stylesheet" type="text/css" href="{{asset "css/contact.css"}}" media="screen" />
-{{/contentFor}}
-
-{{!-- The tag below means: insert everything in this file
-into the {body} of the default.hbs template --}}
+{{! The tag below means: insert everything in this file
+into the {body} of the default.hbs template }}
 {{!< default}}
 
-{{!-- Special header.hbs partial to generate the <header> tag --}}
- {{> header }}
-
-
-<main class="main-wrap">
-  <div class="l-content">
-    <div class="l-wrapper" data-aos="fade-up" data-aos-delay="300">
-      <div class="m-contact">
-        <div class="m-contact__left">
-          <header class="m-contact__header">
-            <h1 class="m-contact__title">Liên hệ</h1>
-          </header>
-          <form
-            class="m-contact__form"
-            action="https://getform.io/f/41a7e5dc-657f-4b30-9153-a406219c18fe"
-            method="POST"
-          >
-            <label for="full-name">Họ tên</label>
-            <input
-              class="m-input"
-              type="text"
-              name="name"
-              id="full-name"
-              placeholder="Họ tên"
-              required
-            />
-            <label for="email-address">Địa chỉ email</label>
-            <input
-              class="m-input"
-              type="email"
-              name="_replyto"
-              id="email-address"
-              placeholder="Địa chỉ email"
-              required
-            />
-            <label for="message">Thông tin phản hồi</label>
-            <textarea
-              class="m-input"
-              rows="5"
-              name="message"
-              id="message"
-              placeholder="Ý kiến của bạn"              
-              required
-            ></textarea>
-            <input class="m-button primary" type="submit" value="Gửi" />
-          </form>
-        </div>
-        <div class="m-contact__right">
-          <img src="{{asset "images/contact.svg"}}" alt="Contact"/>
-        </div>
-      </div>
+<div class="container mx-auto md:px-10 relative w-full">
+  <div class="flex justify-center items-center p-4 flex-wrap-reverse -mt-10">
+    {{! Form }}
+    <div class="flex-1 md:flex-initial md:w-[40%] p-4 mt-12 md:mt-auto">
+      <header>
+        <h2 class="text-5xl font-bold text-center md:text-left">
+          Liên hệ
+        </h2>
+      </header>
+      <form
+        class="mt-12 flex flex-col"
+        action="https://getform.io/f/41a7e5dc-657f-4b30-9153-a406219c18fe"
+        method="POST"
+      >
+        <label class="font-semibold text-xl" for="full-name">Họ tên</label>
+        <input
+          class="my-4 px-2 py-3 text-primary-foreground tracking-wide leading-tight rounded-md border border-primary-border outline-none bg-background"
+          type="text"
+          name="name"
+          id="full-name"
+          placeholder="Họ tên"
+          required
+        />
+        <label class="font-semibold text-xl" for="email-address">Địa chỉ email</label>
+        <input
+          class="my-4 px-2 py-3 text-primary-foreground tracking-wide leading-tight rounded-md border border-primary-border outline-none bg-background"
+          type="email"
+          name="_replyto"
+          id="email-address"
+          placeholder="Địa chỉ email"
+          required
+        />
+        <label class="font-semibold text-xl" for="message">Thông tin phản hồi</label>
+        <textarea
+          class="my-4 px-2 py-3 text-primary-foreground tracking-wide leading-tight rounded-md border border-primary-border outline-none bg-background resize-none"
+          rows="5"
+          name="message"
+          id="message"
+          placeholder="Ý kiến của bạn"
+          required
+        ></textarea>
+        <input
+          class="self-start mx-auto md:mx-0 md:mt-4 text-white font-semibold text-base py-2 px-[1.5625rem] outline-none border-none rounded-[0.3125rem] bg-primary-subtle transition-all ease-default duration-200 cursor-pointer button"
+          type="submit"
+          value="Gửi"
+        />
+      </form>
+    </div>
+    {{! Illustration}}
+    <div class="w-[80%] md:w-[40%] md:ml-12 p-4">
+      <img src="{{asset 'images/contact.svg'}}" alt="Contact" />
     </div>
   </div>
-</main>
+</div>

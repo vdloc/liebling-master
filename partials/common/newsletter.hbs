@@ -1,15 +1,11 @@
-<section class="m-subscribe-section js-newsletter">
-  <div class="l-wrapper in-post">
-    <div class="m-subscribe-section__content">
-      <div class="m-subscribe-section__text">
-        <h4 class="m-subscribe-section__title">{{t "Đăng kí nhận bản tin tại Net Walker"}}</h4>
-        <p class="m-subscribe-section__description">
-          {{t "Để được nhận những điều thú vị ngay trong inbox của bạn."}}
-        </p>
-      </div>
-      <div class="m-subscribe-section__form">
-        {{> newsletter-form}}
-      </div>
-    </div>
+<section class="mt-5 px-5 py-20 bg-primary-subtle bg-opacity-10 dark:text-dark-titles">
+  <div class="container mx-auto flex flex-col md:flex-row items-center justify-center">
+    <header class="text-center md:text-left md:mr-20">
+      <h4 class="text-2xl font-bold">Đăng kí nhận bản tin tại Net Walker</h4>
+      <p class="mt-5 text-lg font-semibold">
+        Để được nhận những điều thú vị ngay trong inbox của bạn.
+      </p>
+    </header>
+    {{> newsletter-form}}
   </div>
 </section>

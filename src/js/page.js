@@ -5,7 +5,7 @@ import {
   adjustImageGallery,
   managePostImages,
   makeImagesZoomable
-} from './helpers'
+} from './utils/helpers'
 
 $(() => {
   fitvids('.js-post-content')

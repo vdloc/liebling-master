@@ -1,203 +1,1044 @@
-{{!--
-This template is used for the tags page.
-You must first create a page called Tags in the dashboard to enable it.
---}}
-
-{{!-- This block preloads specific assets for the tags page --}}
-{{#contentFor "preload"}}
-  <link rel="preload" href="{{asset "css/disclaimer.css"}}" as="style" />
-{{/contentFor}}
-
-{{!-- This block loads specific styles for the tags page --}}
-{{#contentFor "styles"}}
-  <link rel="stylesheet" type="text/css" href="{{asset "css/privacy.css"}}" media="screen" />
-{{/contentFor}}
-
-{{!-- The tag below means: insert everything in this file
-into the {body} of the default.hbs template --}}
+{{! The tag below means: insert everything in this file
+into the {body} of the default.hbs template }}
 {{!< default}}
 
-{{!-- Special header.hbs partial to generate the <header> tag --}}
-{{> header }}
-
-<div class="main-wrap">
-  <div class="l-content">
-    <div class="l-wrapper" data-aos="fade-up" data-aos-delay="300">
-      <div class="m-privacy">
-        <div class="m-privacy__banner">
-          <img src="{{asset "images/privacy.svg"}}" alt="Privacy">
-        </div>
-        <div>
-        <h1 class="m-privacy__title"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Chính sách bảo mật</font></font></h1>
-        <p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Cập nhật lần cuối: ngày 08 tháng 1 năm 2022</font></font></p>
-        <p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Chính sách Bảo mật này mô tả các chính sách và thủ tục của Chúng tôi về việc thu thập, sử dụng và tiết lộ thông tin của Bạn khi Bạn sử dụng Dịch vụ và cho Bạn biết về các quyền riêng tư của Bạn và cách luật pháp bảo vệ Bạn.</font></font></p>
-        <p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Chúng tôi sử dụng dữ liệu Cá nhân của Bạn để cung cấp và cải thiện Dịch vụ. </font><font style="vertical-align: inherit;">Bằng việc sử dụng Dịch vụ, Bạn đồng ý với việc thu thập và sử dụng thông tin theo Chính sách Bảo mật này. </font><font style="vertical-align: inherit;">Chính sách Bảo mật này đã được tạo với sự trợ giúp của </font></font><a href="https://www.privacypolicies.com/blog/privacy-policy-template/" target="_blank"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Mẫu Chính sách Bảo mật</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"> .</font></font></p>
-        <h1><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Giải thích và Định nghĩa</font></font></h1>
-        <h2><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Diễn dịch</font></font></h2>
-        <p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Những từ có chữ cái đầu tiên được viết hoa có nghĩa được xác định trong các điều kiện sau. </font><font style="vertical-align: inherit;">Các định nghĩa sau đây sẽ có cùng ý nghĩa bất kể chúng xuất hiện ở số ít hay số nhiều.</font></font></p>
-        <h2><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Các định nghĩa</font></font></h2>
-        <p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Đối với các mục đích của Chính sách Bảo mật này:</font></font></p>
-        <ul>
+<div class="container mx-auto lg:px-10 relative">
+  <div class="pt-4 pb-12 px-4 mt-12">
+    <div class="md:h-[20rem]">
+      <img
+        src="{{asset 'images/privacy.svg'}}"
+        alt="Privacy"
+        class="max-h-full"
+      />
+    </div>
+    <div class="text-xl leading-[1.8] max-w-full">
+      <h1 class="text-[2.5rem] text-center md:text-left font-bold mt-12 mb-3">
+        <font style="vertical-align: inherit;">
+          <font style="vertical-align: inherit;">Chính sách bảo mật</font>
+        </font>
+      </h1>
+      <p class="text-md mb-10">
+        <font style="vertical-align: inherit;">
+          <font style="vertical-align: inherit;">Cập nhật lần cuối: ngày 08
+            tháng 1 năm 2022</font>
+        </font>
+      </p>
+      <p>
+        <font style="vertical-align: inherit;">
+          <font style="vertical-align: inherit;">Chính sách Bảo mật này mô tả
+            các chính sách và thủ tục của Chúng tôi về việc thu thập, sử dụng và
+            tiết lộ thông tin của Bạn khi Bạn sử dụng Dịch vụ và cho Bạn biết về
+            các quyền riêng tư của Bạn và cách luật pháp bảo vệ Bạn.</font>
+        </font>
+      </p>
+      <p>
+        <font style="vertical-align: inherit;">
+          <font style="vertical-align: inherit;">Chúng tôi sử dụng dữ liệu Cá
+            nhân của Bạn để cung cấp và cải thiện Dịch vụ.
+          </font>
+          <font style="vertical-align: inherit;">Bằng việc sử dụng Dịch vụ, Bạn
+            đồng ý với việc thu thập và sử dụng thông tin theo Chính sách Bảo
+            mật này.
+          </font>
+          <font style="vertical-align: inherit;">Chính sách Bảo mật này đã được
+            tạo với sự trợ giúp của
+          </font>
+        </font><a
+          class="text-link"
+          href="https://www.privacypolicies.com/blog/privacy-policy-template/"
+          target="_blank"
+        >
+          <font style="vertical-align: inherit;">
+            <font style="vertical-align: inherit;">Mẫu Chính sách Bảo mật</font>
+          </font>
+        </a>
+        <font style="vertical-align: inherit;">
+          <font style="vertical-align: inherit;"> .</font>
+        </font>
+      </p>
+      <h1 class="text-[2rem] font-bold my-3">
+        <font style="vertical-align: inherit;">
+          <font style="vertical-align: inherit;">Giải thích và Định nghĩa</font>
+        </font>
+      </h1>
+      <h2 class="text-2xl font-bold my-3">
+        <font style="vertical-align: inherit;">
+          <font style="vertical-align: inherit;">Diễn dịch</font>
+        </font>
+      </h2>
+      <p>
+        <font style="vertical-align: inherit;">
+          <font style="vertical-align: inherit;">Những từ có chữ cái đầu tiên
+            được viết hoa có nghĩa được xác định trong các điều kiện sau.
+          </font>
+          <font style="vertical-align: inherit;">Các định nghĩa sau đây sẽ có
+            cùng ý nghĩa bất kể chúng xuất hiện ở số ít hay số nhiều.</font>
+        </font>
+      </p>
+      <h2 class="text-2xl font-bold my-3">
+        <font style="vertical-align: inherit;">
+          <font style="vertical-align: inherit;">Các định nghĩa</font>
+        </font>
+      </h2>
+      <p class="mt-3">
+        <font style="vertical-align: inherit;">
+          <font style="vertical-align: inherit;">Đối với các mục đích của Chính
+            sách Bảo mật này:</font>
+        </font>
+      </p>
+      <ul class="pl-12 mt-3">
         <li>
-        <p><strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Tài khoản</font></font></strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"> có nghĩa là một tài khoản duy nhất được tạo để Bạn truy cập Dịch vụ của chúng tôi hoặc các phần của Dịch vụ của chúng tôi.</font></font></p>
+          <p><strong>
+              <font style="vertical-align: inherit;">
+                <font style="vertical-align: inherit;">Tài khoản</font>
+              </font>
+            </strong>
+            <font style="vertical-align: inherit;">
+              <font style="vertical-align: inherit;">
+                có nghĩa là một tài khoản duy nhất được tạo để Bạn truy cập Dịch
+                vụ của chúng tôi hoặc các phần của Dịch vụ của chúng tôi.</font>
+            </font>
+          </p>
         </li>
         <li>
-        <p><strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Công ty</font></font></strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"> (được gọi là "Công ty", "Chúng tôi", "Chúng tôi" hoặc "Của chúng tôi" trong Thỏa thuận này) đề cập đến Net Walker.</font></font></p>
+          <p><strong>
+              <font style="vertical-align: inherit;">
+                <font style="vertical-align: inherit;">Công ty</font>
+              </font>
+            </strong>
+            <font style="vertical-align: inherit;">
+              <font style="vertical-align: inherit;">
+                (được gọi là "Công ty", "Chúng tôi", "Chúng tôi" hoặc "Của chúng
+                tôi" trong Thỏa thuận này) đề cập đến Net Walker.</font>
+            </font>
+          </p>
         </li>
         <li>
-        <p><strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Cookie</font></font></strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"> là các tệp nhỏ được trang web đặt trên máy tính, thiết bị di động hoặc bất kỳ thiết bị nào khác của Bạn, chứa thông tin chi tiết về lịch sử duyệt web của Bạn trên trang web đó trong số nhiều mục đích sử dụng.</font></font></p>
+          <p><strong>
+              <font style="vertical-align: inherit;">
+                <font style="vertical-align: inherit;">Cookie</font>
+              </font>
+            </strong>
+            <font style="vertical-align: inherit;">
+              <font style="vertical-align: inherit;">
+                là các tệp nhỏ được trang web đặt trên máy tính, thiết bị di
+                động hoặc bất kỳ thiết bị nào khác của Bạn, chứa thông tin chi
+                tiết về lịch sử duyệt web của Bạn trên trang web đó trong số
+                nhiều mục đích sử dụng.</font>
+            </font>
+          </p>
         </li>
         <li>
-        <p><strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Quốc gia</font></font></strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"> đề cập đến: Việt Nam</font></font></p>
+          <p><strong>
+              <font style="vertical-align: inherit;">
+                <font style="vertical-align: inherit;">Quốc gia</font>
+              </font>
+            </strong>
+            <font style="vertical-align: inherit;">
+              <font style="vertical-align: inherit;">
+                đề cập đến: Việt Nam</font>
+            </font>
+          </p>
         </li>
         <li>
-        <p><strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Thiết bị</font></font></strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"> có nghĩa là bất kỳ thiết bị nào có thể truy cập Dịch vụ như máy tính, điện thoại di động hoặc máy tính bảng kỹ thuật số.</font></font></p>
+          <p><strong>
+              <font style="vertical-align: inherit;">
+                <font style="vertical-align: inherit;">Thiết bị</font>
+              </font>
+            </strong>
+            <font style="vertical-align: inherit;">
+              <font style="vertical-align: inherit;">
+                có nghĩa là bất kỳ thiết bị nào có thể truy cập Dịch vụ như máy
+                tính, điện thoại di động hoặc máy tính bảng kỹ thuật số.</font>
+            </font>
+          </p>
         </li>
         <li>
-        <p><strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Dữ liệu Cá nhân</font></font></strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"> là bất kỳ thông tin nào liên quan đến một cá nhân được xác định hoặc nhận dạng được.</font></font></p>
+          <p><strong>
+              <font style="vertical-align: inherit;">
+                <font style="vertical-align: inherit;">Dữ liệu Cá nhân</font>
+              </font>
+            </strong>
+            <font style="vertical-align: inherit;">
+              <font style="vertical-align: inherit;">
+                là bất kỳ thông tin nào liên quan đến một cá nhân được xác định
+                hoặc nhận dạng được.</font>
+            </font>
+          </p>
         </li>
         <li>
-        <p><strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Dịch vụ</font></font></strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"> đề cập đến Trang web.</font></font></p>
+          <p><strong>
+              <font style="vertical-align: inherit;">
+                <font style="vertical-align: inherit;">Dịch vụ</font>
+              </font>
+            </strong>
+            <font style="vertical-align: inherit;">
+              <font style="vertical-align: inherit;">
+                đề cập đến Trang web.</font>
+            </font>
+          </p>
         </li>
         <li>
-        <p><strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Nhà cung cấp dịch vụ</font></font></strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"> có nghĩa là bất kỳ thể nhân hoặc pháp nhân nào xử lý dữ liệu thay mặt cho Công ty. </font><font style="vertical-align: inherit;">Nó đề cập đến các công ty bên thứ ba hoặc cá nhân được Công ty thuê để hỗ trợ Dịch vụ, cung cấp Dịch vụ thay mặt Công ty, thực hiện các dịch vụ liên quan đến Dịch vụ hoặc hỗ trợ Công ty phân tích cách Dịch vụ được sử dụng.</font></font></p>
+          <p><strong>
+              <font style="vertical-align: inherit;">
+                <font style="vertical-align: inherit;">Nhà cung cấp dịch vụ</font>
+              </font>
+            </strong>
+            <font style="vertical-align: inherit;">
+              <font style="vertical-align: inherit;">
+                có nghĩa là bất kỳ thể nhân hoặc pháp nhân nào xử lý dữ liệu
+                thay mặt cho Công ty.
+              </font>
+              <font style="vertical-align: inherit;">Nó đề cập đến các công ty
+                bên thứ ba hoặc cá nhân được Công ty thuê để hỗ trợ Dịch vụ,
+                cung cấp Dịch vụ thay mặt Công ty, thực hiện các dịch vụ liên
+                quan đến Dịch vụ hoặc hỗ trợ Công ty phân tích cách Dịch vụ được
+                sử dụng.</font>
+            </font>
+          </p>
         </li>
         <li>
-        <p><strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Dữ liệu sử dụng</font></font></strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"> đề cập đến dữ liệu được thu thập tự động, được tạo ra bởi việc sử dụng Dịch vụ hoặc từ chính cơ sở hạ tầng Dịch vụ (ví dụ: thời lượng của một lượt truy cập trang).</font></font></p>
+          <p><strong>
+              <font style="vertical-align: inherit;">
+                <font style="vertical-align: inherit;">Dữ liệu sử dụng</font>
+              </font>
+            </strong>
+            <font style="vertical-align: inherit;">
+              <font style="vertical-align: inherit;">
+                đề cập đến dữ liệu được thu thập tự động, được tạo ra bởi việc
+                sử dụng Dịch vụ hoặc từ chính cơ sở hạ tầng Dịch vụ (ví dụ: thời
+                lượng của một lượt truy cập trang).</font>
+            </font>
+          </p>
         </li>
         <li>
-        <p><strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Trang web</font></font></strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"> đề cập đến Net Walker, có thể truy cập từ </font></font><a href="https://netwalker.vn/" rel="external nofollow noopener" target="_blank"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">https://netwalker.vn/</font></font></a></p>
+          <p><strong>
+              <font style="vertical-align: inherit;">
+                <font style="vertical-align: inherit;">Trang web</font>
+              </font>
+            </strong>
+            <font style="vertical-align: inherit;">
+              <font style="vertical-align: inherit;">
+                đề cập đến Net Walker, có thể truy cập từ
+              </font>
+            </font><a
+              class="text-link"
+              href="https://netwalker.vn/"
+              rel="external nofollow noopener"
+              target="_blank"
+            >
+              <font style="vertical-align: inherit;">
+                <font
+                  style="vertical-align: inherit;"
+                >https://netwalker.vn/</font>
+              </font>
+            </a>
+          </p>
         </li>
         <li>
-        <p><strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Bạn</font></font></strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"> có nghĩa là cá nhân truy cập hoặc sử dụng Dịch vụ, hoặc công ty hoặc pháp nhân khác thay mặt cho cá nhân đó đang truy cập hoặc sử dụng Dịch vụ, nếu có.</font></font></p>
+          <p><strong>
+              <font style="vertical-align: inherit;">
+                <font style="vertical-align: inherit;">Bạn</font>
+              </font>
+            </strong>
+            <font style="vertical-align: inherit;">
+              <font style="vertical-align: inherit;">
+                có nghĩa là cá nhân truy cập hoặc sử dụng Dịch vụ, hoặc công ty
+                hoặc pháp nhân khác thay mặt cho cá nhân đó đang truy cập hoặc
+                sử dụng Dịch vụ, nếu có.</font>
+            </font>
+          </p>
         </li>
-        </ul>
-        <h1><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Thu thập và sử dụng dữ liệu cá nhân của bạn</font></font></h1>
-        <h2><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Các loại dữ liệu được thu thập</font></font></h2>
-        <h3><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Dữ liệu cá nhân</font></font></h3>
-        <p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Trong khi sử dụng Dịch vụ của Chúng tôi, Chúng tôi có thể yêu cầu Bạn cung cấp cho Chúng tôi một số thông tin nhận dạng cá nhân nhất định có thể được sử dụng để liên hệ hoặc nhận dạng Bạn. </font><font style="vertical-align: inherit;">Thông tin nhận dạng cá nhân có thể bao gồm, nhưng không giới hạn ở:</font></font></p>
-        <ul>
+      </ul>
+      <h1 class="text-[2rem] font-bold my-3">
+        <font style="vertical-align: inherit;">
+          <font style="vertical-align: inherit;">Thu thập và sử dụng dữ liệu cá
+            nhân của bạn</font>
+        </font>
+      </h1>
+      <h2 class="text-2xl font-bold my-3">
+        <font style="vertical-align: inherit;">
+          <font style="vertical-align: inherit;">Các loại dữ liệu được thu thập</font>
+        </font>
+      </h2>
+      <h3 class="font-bold my-3">
+        <font style="vertical-align: inherit;">
+          <font style="vertical-align: inherit;">Dữ liệu cá nhân</font>
+        </font>
+      </h3>
+      <p class="mt-3">
+        <font style="vertical-align: inherit;">
+          <font style="vertical-align: inherit;">Trong khi sử dụng Dịch vụ của
+            Chúng tôi, Chúng tôi có thể yêu cầu Bạn cung cấp cho Chúng tôi một
+            số thông tin nhận dạng cá nhân nhất định có thể được sử dụng để liên
+            hệ hoặc nhận dạng Bạn.
+          </font>
+          <font style="vertical-align: inherit;">Thông tin nhận dạng cá nhân có
+            thể bao gồm, nhưng không giới hạn ở:</font>
+        </font>
+      </p>
+      <ul class="pl-12 mt-3">
         <li>
-        <p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Địa chỉ email</font></font></p>
-        </li>
-        <li>
-        <p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Tên và họ</font></font></p>
-        </li>
-        <li>
-        <p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Dữ liệu sử dụng</font></font></p>
-        </li>
-        </ul>
-        <h3><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Dữ liệu sử dụng</font></font></h3>
-        <p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Dữ liệu sử dụng được thu thập tự động khi sử dụng Dịch vụ.</font></font></p>
-        <p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Dữ liệu sử dụng có thể bao gồm thông tin như địa chỉ Giao thức Internet trên thiết bị của Bạn (ví dụ: địa chỉ IP), loại trình duyệt, phiên bản trình duyệt, các trang Dịch vụ của chúng tôi mà Bạn truy cập, ngày giờ Bạn truy cập, thời gian dành cho các trang đó, thiết bị duy nhất số nhận dạng và dữ liệu chẩn đoán khác.</font></font></p>
-        <p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Khi Bạn truy cập Dịch vụ bằng hoặc thông qua thiết bị di động, Chúng tôi có thể tự động thu thập một số thông tin nhất định, bao gồm nhưng không giới hạn ở loại thiết bị di động Bạn sử dụng, ID duy nhất trên thiết bị di động của Bạn, địa chỉ IP của thiết bị di động của Bạn, Điện thoại di động của Bạn hệ điều hành, loại trình duyệt Internet di động Bạn sử dụng, số nhận dạng thiết bị duy nhất và dữ liệu chẩn đoán khác.</font></font></p>
-        <p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Chúng tôi cũng có thể thu thập thông tin mà trình duyệt của Bạn gửi bất cứ khi nào Bạn truy cập Dịch vụ của chúng tôi hoặc khi Bạn truy cập Dịch vụ bằng hoặc thông qua thiết bị di động.</font></font></p>
-        <h3><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Theo dõi Công nghệ và Cookie</font></font></h3>
-        <p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Chúng tôi sử dụng Cookie và các công nghệ theo dõi tương tự để theo dõi hoạt động trên Dịch vụ của chúng tôi và lưu trữ một số thông tin nhất định. </font><font style="vertical-align: inherit;">Các công nghệ theo dõi được sử dụng là báo hiệu, thẻ và tập lệnh để thu thập và theo dõi thông tin cũng như để cải thiện và phân tích Dịch vụ của chúng tôi. </font><font style="vertical-align: inherit;">Các công nghệ Chúng tôi sử dụng có thể bao gồm:</font></font></p>
-        <ul>
-        <li><strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Cookie hoặc Cookie trình duyệt. </font></font></strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Cookie là một tệp nhỏ được đặt trên Thiết bị của bạn. </font><font style="vertical-align: inherit;">Bạn có thể hướng dẫn trình duyệt của mình từ chối tất cả Cookie hoặc cho biết khi nào Cookie được gửi đi. </font><font style="vertical-align: inherit;">Tuy nhiên, nếu Bạn không chấp nhận Cookie, Bạn có thể không sử dụng được một số phần của Dịch vụ của chúng tôi. </font><font style="vertical-align: inherit;">Trừ khi bạn đã điều chỉnh cài đặt trình duyệt của mình để nó sẽ từ chối Cookie, Dịch vụ của chúng tôi có thể sử dụng Cookie.</font></font></li>
-        <li><strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Cookie Flash. </font></font></strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Một số tính năng nhất định của Dịch vụ của chúng tôi có thể sử dụng các đối tượng được lưu trữ cục bộ (hoặc Flash Cookie) để thu thập và lưu trữ thông tin về tùy chọn của Bạn hoặc hoạt động của Bạn trên Dịch vụ của chúng tôi. </font><font style="vertical-align: inherit;">Cookie Flash không được quản lý bởi cài đặt trình duyệt giống như cài đặt được sử dụng cho Cookie trình duyệt. </font><font style="vertical-align: inherit;">Để biết thêm thông tin về cách Bạn có thể xóa Flash Cookie, vui lòng đọc "Tôi có thể thay đổi cài đặt để tắt hoặc xóa các đối tượng được chia sẻ cục bộ ở đâu?" </font><font style="vertical-align: inherit;">có tại </font></font><a href="https://helpx.adobe.com/flash-player/kb/disable-local-shared-objects-flash.html#main_Where_can_I_change_the_settings_for_disabling__or_deleting_local_shared_objects_" rel="external nofollow noopener" target="_blank"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">https://helpx.adobe.com/flash-player/kb/disable-local-shared-objects-flash.html#main_Where_can_I_change_the_settings_for_disabling__or_deleting_local_shared_objects_</font></font></a></li>
-        <li><strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Biểu tượng web. </font></font></strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Một số phần nhất định trong Dịch vụ của chúng tôi và email của chúng tôi có thể chứa các tệp điện tử nhỏ được gọi là báo hiệu web (còn được gọi là gif rõ ràng, thẻ pixel và gif pixel đơn) cho phép Công ty, chẳng hạn, tính người dùng đã truy cập các trang đó hoặc đã mở một email và để biết các số liệu thống kê trang web có liên quan khác (ví dụ: ghi lại mức độ phổ biến của một phần nhất định và xác minh tính toàn vẹn của hệ thống và máy chủ).</font></font></li>
-        </ul>    
-        <p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Chúng tôi sử dụng cả Cookie phiên và Cookie liên tục cho các mục đích được nêu dưới đây:</font></font></p>
-        <ul>
-        <li>
-        <p><strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Cookie cần thiết / thiết yếu</font></font></strong></p>
-        <p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Loại: Cookie phiên</font></font></p>
-        <p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Được quản lý bởi: Chúng tôi</font></font></p>
-        <p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Mục đích: Những Cookie này rất cần thiết để cung cấp cho Bạn các dịch vụ có sẵn thông qua Trang web và cho phép Bạn sử dụng một số tính năng của nó. </font><font style="vertical-align: inherit;">Chúng giúp xác thực người dùng và ngăn chặn việc sử dụng gian lận tài khoản người dùng. </font><font style="vertical-align: inherit;">Nếu không có các Cookie này, các dịch vụ mà Bạn đã yêu cầu sẽ không thể được cung cấp và Chúng tôi chỉ sử dụng các Cookie này để cung cấp cho Bạn các dịch vụ đó.</font></font></p>
-        </li>
-        <li>
-        <p><strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Chính sách Cookie / Thông báo Chấp nhận Cookie</font></font></strong></p>
-        <p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Loại: Cookie liên tục</font></font></p>
-        <p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Được quản lý bởi: Chúng tôi</font></font></p>
-        <p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Mục đích: Những Cookie này xác định xem người dùng có chấp nhận việc sử dụng cookie trên Trang web hay không.</font></font></p>
-        </li>
-        <li>
-        <p><strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Cookie chức năng</font></font></strong></p>
-        <p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Loại: Cookie liên tục</font></font></p>
-        <p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Được quản lý bởi: Chúng tôi</font></font></p>
-        <p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Mục đích: Những Cookie này cho phép chúng tôi ghi nhớ các lựa chọn Bạn đưa ra khi Bạn sử dụng Trang web, chẳng hạn như ghi nhớ chi tiết đăng nhập hoặc tùy chọn ngôn ngữ của Bạn. </font><font style="vertical-align: inherit;">Mục đích của các Cookie này là cung cấp cho Bạn trải nghiệm cá nhân hơn và để tránh Bạn phải nhập lại các tùy chọn của mình mỗi khi Bạn sử dụng Trang web.</font></font></p>
-        </li>
-        </ul>
-        <p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Để biết thêm thông tin về cookie chúng tôi sử dụng và các lựa chọn của bạn về cookie, vui lòng truy cập Chính sách Cookie của chúng tôi hoặc phần Cookie trong Chính sách Bảo mật của chúng tôi.</font></font></p>
-        <h2><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Sử dụng dữ liệu cá nhân của bạn</font></font></h2>
-        <p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Công ty có thể sử dụng Dữ liệu Cá nhân cho các mục đích sau:</font></font></p>
-        <ul>
-        <li>
-        <p><strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Để cung cấp và duy trì Dịch vụ của chúng tôi</font></font></strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"> , bao gồm cả việc giám sát việc sử dụng Dịch vụ của chúng tôi.</font></font></p>
+          <p>
+            <font style="vertical-align: inherit;">
+              <font style="vertical-align: inherit;">Địa chỉ email</font>
+            </font>
+          </p>
         </li>
         <li>
-        <p><strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Để quản lý Tài khoản của bạn:</font></font></strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"> để quản lý đăng ký của Bạn với tư cách là người dùng Dịch vụ. </font><font style="vertical-align: inherit;">Dữ liệu Cá nhân Bạn cung cấp có thể cung cấp cho Bạn quyền truy cập vào các chức năng khác nhau của Dịch vụ khả dụng cho Bạn với tư cách là người dùng đã đăng ký.</font></font></p>
+          <p>
+            <font style="vertical-align: inherit;">
+              <font style="vertical-align: inherit;">Tên và họ</font>
+            </font>
+          </p>
         </li>
         <li>
-        <p><strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Đối với việc thực hiện hợp đồng:</font></font></strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"> sự phát triển, tuân thủ và cam kết của hợp đồng mua bán các sản phẩm, mặt hàng hoặc dịch vụ mà Bạn đã mua hoặc bất kỳ hợp đồng nào khác với Chúng tôi thông qua Dịch vụ.</font></font></p>
+          <p>
+            <font style="vertical-align: inherit;">
+              <font style="vertical-align: inherit;">Dữ liệu sử dụng</font>
+            </font>
+          </p>
+        </li>
+      </ul>
+      <h3 class="font-bold my-3">
+        <font style="vertical-align: inherit;">
+          <font style="vertical-align: inherit;">Dữ liệu sử dụng</font>
+        </font>
+      </h3>
+      <p>
+        <font style="vertical-align: inherit;">
+          <font style="vertical-align: inherit;">Dữ liệu sử dụng được thu thập
+            tự động khi sử dụng Dịch vụ.</font>
+        </font>
+      </p>
+      <p>
+        <font style="vertical-align: inherit;">
+          <font style="vertical-align: inherit;">Dữ liệu sử dụng có thể bao gồm
+            thông tin như địa chỉ Giao thức Internet trên thiết bị của Bạn (ví
+            dụ: địa chỉ IP), loại trình duyệt, phiên bản trình duyệt, các trang
+            Dịch vụ của chúng tôi mà Bạn truy cập, ngày giờ Bạn truy cập, thời
+            gian dành cho các trang đó, thiết bị duy nhất số nhận dạng và dữ
+            liệu chẩn đoán khác.</font>
+        </font>
+      </p>
+      <p>
+        <font style="vertical-align: inherit;">
+          <font style="vertical-align: inherit;">Khi Bạn truy cập Dịch vụ bằng
+            hoặc thông qua thiết bị di động, Chúng tôi có thể tự động thu thập
+            một số thông tin nhất định, bao gồm nhưng không giới hạn ở loại
+            thiết bị di động Bạn sử dụng, ID duy nhất trên thiết bị di động của
+            Bạn, địa chỉ IP của thiết bị di động của Bạn, Điện thoại di động của
+            Bạn hệ điều hành, loại trình duyệt Internet di động Bạn sử dụng, số
+            nhận dạng thiết bị duy nhất và dữ liệu chẩn đoán khác.</font>
+        </font>
+      </p>
+      <p>
+        <font style="vertical-align: inherit;">
+          <font style="vertical-align: inherit;">Chúng tôi cũng có thể thu thập
+            thông tin mà trình duyệt của Bạn gửi bất cứ khi nào Bạn truy cập
+            Dịch vụ của chúng tôi hoặc khi Bạn truy cập Dịch vụ bằng hoặc thông
+            qua thiết bị di động.</font>
+        </font>
+      </p>
+      <h3 class="font-bold my-3">
+        <font style="vertical-align: inherit;">
+          <font style="vertical-align: inherit;">Theo dõi Công nghệ và Cookie</font>
+        </font>
+      </h3>
+      <p class="mt-3">
+        <font style="vertical-align: inherit;">
+          <font style="vertical-align: inherit;">Chúng tôi sử dụng Cookie và các
+            công nghệ theo dõi tương tự để theo dõi hoạt động trên Dịch vụ của
+            chúng tôi và lưu trữ một số thông tin nhất định.
+          </font>
+          <font style="vertical-align: inherit;">Các công nghệ theo dõi được sử
+            dụng là báo hiệu, thẻ và tập lệnh để thu thập và theo dõi thông tin
+            cũng như để cải thiện và phân tích Dịch vụ của chúng tôi.
+          </font>
+          <font style="vertical-align: inherit;">Các công nghệ Chúng tôi sử dụng
+            có thể bao gồm:</font>
+        </font>
+      </p>
+      <ul class="pl-12 mt-3">
+        <li><strong>
+            <font style="vertical-align: inherit;">
+              <font style="vertical-align: inherit;">Cookie hoặc Cookie trình
+                duyệt.
+              </font>
+            </font>
+          </strong>
+          <font style="vertical-align: inherit;">
+            <font style="vertical-align: inherit;">Cookie là một tệp nhỏ được
+              đặt trên Thiết bị của bạn.
+            </font>
+            <font style="vertical-align: inherit;">Bạn có thể hướng dẫn trình
+              duyệt của mình từ chối tất cả Cookie hoặc cho biết khi nào Cookie
+              được gửi đi.
+            </font>
+            <font style="vertical-align: inherit;">Tuy nhiên, nếu Bạn không chấp
+              nhận Cookie, Bạn có thể không sử dụng được một số phần của Dịch vụ
+              của chúng tôi.
+            </font>
+            <font style="vertical-align: inherit;">Trừ khi bạn đã điều chỉnh cài
+              đặt trình duyệt của mình để nó sẽ từ chối Cookie, Dịch vụ của
+              chúng tôi có thể sử dụng Cookie.</font>
+          </font>
+        </li>
+        <li><strong>
+            <font style="vertical-align: inherit;">
+              <font style="vertical-align: inherit;">Cookie Flash. </font>
+            </font>
+          </strong>
+          <font style="vertical-align: inherit;">
+            <font style="vertical-align: inherit;">Một số tính năng nhất định
+              của Dịch vụ của chúng tôi có thể sử dụng các đối tượng được lưu
+              trữ cục bộ (hoặc Flash Cookie) để thu thập và lưu trữ thông tin về
+              tùy chọn của Bạn hoặc hoạt động của Bạn trên Dịch vụ của chúng
+              tôi.
+            </font>
+            <font style="vertical-align: inherit;">Cookie Flash không được quản
+              lý bởi cài đặt trình duyệt giống như cài đặt được sử dụng cho
+              Cookie trình duyệt.
+            </font>
+            <font style="vertical-align: inherit;">Để biết thêm thông tin về
+              cách Bạn có thể xóa Flash Cookie, vui lòng đọc "Tôi có thể thay
+              đổi cài đặt để tắt hoặc xóa các đối tượng được chia sẻ cục bộ ở
+              đâu?"
+            </font>
+            <font style="vertical-align: inherit;">có tại
+            </font>
+          </font><a
+            href="https://helpx.adobe.com/flash-player/kb/disable-local-shared-objects-flash.html#main_Where_can_I_change_the_settings_for_disabling__or_deleting_local_shared_objects_"
+            rel="external nofollow noopener"
+            target="_blank"
+            class="text-link max-w-full inline-block truncate"
+          >
+            https://helpx.adobe.com/flash-player/kb/disable-local-shared-objects-flash.html#main_Where_can_I_change_the_settings_for_disabling__or_deleting_local_shared_objects_
+          </a>
+        </li>
+        <li><strong>
+            <font style="vertical-align: inherit;">
+              <font style="vertical-align: inherit;">Biểu tượng web. </font>
+            </font>
+          </strong>
+          <font style="vertical-align: inherit;">
+            <font style="vertical-align: inherit;">Một số phần nhất định trong
+              Dịch vụ của chúng tôi và email của chúng tôi có thể chứa các tệp
+              điện tử nhỏ được gọi là báo hiệu web (còn được gọi là gif rõ ràng,
+              thẻ pixel và gif pixel đơn) cho phép Công ty, chẳng hạn, tính
+              người dùng đã truy cập các trang đó hoặc đã mở một email và để
+              biết các số liệu thống kê trang web có liên quan khác (ví dụ: ghi
+              lại mức độ phổ biến của một phần nhất định và xác minh tính toàn
+              vẹn của hệ thống và máy chủ).</font>
+          </font>
+        </li>
+      </ul>
+      <p class="mt-3">
+        <font style="vertical-align: inherit;">
+          <font style="vertical-align: inherit;">Chúng tôi sử dụng cả Cookie
+            phiên và Cookie liên tục cho các mục đích được nêu dưới đây:</font>
+        </font>
+      </p>
+      <ul class="pl-12 mt-3">
+        <li>
+          <p><strong>
+              <font style="vertical-align: inherit;">
+                <font style="vertical-align: inherit;">Cookie cần thiết / thiết
+                  yếu</font>
+              </font>
+            </strong></p>
+          <p>
+            <font style="vertical-align: inherit;">
+              <font style="vertical-align: inherit;">Loại: Cookie phiên</font>
+            </font>
+          </p>
+          <p>
+            <font style="vertical-align: inherit;">
+              <font style="vertical-align: inherit;">Được quản lý bởi: Chúng tôi</font>
+            </font>
+          </p>
+          <p>
+            <font style="vertical-align: inherit;">
+              <font style="vertical-align: inherit;">Mục đích: Những Cookie này
+                rất cần thiết để cung cấp cho Bạn các dịch vụ có sẵn thông qua
+                Trang web và cho phép Bạn sử dụng một số tính năng của nó.
+              </font>
+              <font style="vertical-align: inherit;">Chúng giúp xác thực người
+                dùng và ngăn chặn việc sử dụng gian lận tài khoản người dùng.
+              </font>
+              <font style="vertical-align: inherit;">Nếu không có các Cookie
+                này, các dịch vụ mà Bạn đã yêu cầu sẽ không thể được cung cấp và
+                Chúng tôi chỉ sử dụng các Cookie này để cung cấp cho Bạn các
+                dịch vụ đó.</font>
+            </font>
+          </p>
         </li>
         <li>
-        <p><strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Để liên hệ với Bạn:</font></font></strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"> Để liên hệ với Bạn bằng email, cuộc gọi điện thoại, SMS hoặc các hình thức liên lạc điện tử tương đương khác, chẳng hạn như thông báo đẩy của ứng dụng di động về các bản cập nhật hoặc thông tin liên lạc liên quan đến các chức năng, sản phẩm hoặc dịch vụ đã ký hợp đồng, bao gồm các bản cập nhật bảo mật, khi cần thiết hoặc hợp lý để thực hiện chúng.</font></font></p>
+          <p><strong>
+              <font style="vertical-align: inherit;">
+                <font style="vertical-align: inherit;">Chính sách Cookie / Thông
+                  báo Chấp nhận Cookie</font>
+              </font>
+            </strong></p>
+          <p>
+            <font style="vertical-align: inherit;">
+              <font style="vertical-align: inherit;">Loại: Cookie liên tục</font>
+            </font>
+          </p>
+          <p>
+            <font style="vertical-align: inherit;">
+              <font style="vertical-align: inherit;">Được quản lý bởi: Chúng tôi</font>
+            </font>
+          </p>
+          <p>
+            <font style="vertical-align: inherit;">
+              <font style="vertical-align: inherit;">Mục đích: Những Cookie này
+                xác định xem người dùng có chấp nhận việc sử dụng cookie trên
+                Trang web hay không.</font>
+            </font>
+          </p>
         </li>
         <li>
-        <p><strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Để cung cấp cho Bạn</font></font></strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"> tin tức, ưu đãi đặc biệt và thông tin chung về hàng hóa, dịch vụ và sự kiện khác mà chúng tôi cung cấp tương tự như những sản phẩm mà bạn đã mua hoặc yêu cầu trừ khi Bạn đã chọn không nhận thông tin đó.</font></font></p>
+          <p><strong>
+              <feont style="vertical-align: inherit;">
+                <font style="vertical-align: inherit;">Cookie chức năng</font>
+              </feont>
+            </strong></p>
+          <p>
+            <font style="vertical-align: inherit;">
+              <font style="vertical-align: inherit;">Loại: Cookie liên tục</font>
+            </font>
+          </p>
+          <p>
+            <font style="vertical-align: inherit;">
+              <font style="vertical-align: inherit;">Được quản lý bởi: Chúng tôi</font>
+            </font>
+          </p>
+          <p>
+            <font style="vertical-align: inherit;">
+              <font style="vertical-align: inherit;">Mục đích: Những Cookie này
+                cho phép chúng tôi ghi nhớ các lựa chọn Bạn đưa ra khi Bạn sử
+                dụng Trang web, chẳng hạn như ghi nhớ chi tiết đăng nhập hoặc
+                tùy chọn ngôn ngữ của Bạn.
+              </font>
+              <font style="vertical-align: inherit;">Mục đích của các Cookie này
+                là cung cấp cho Bạn trải nghiệm cá nhân hơn và để tránh Bạn phải
+                nhập lại các tùy chọn của mình mỗi khi Bạn sử dụng Trang web.</font>
+            </font>
+          </p>
+        </li>
+      </ul>
+      <p>
+        <font style="vertical-align: inherit;">
+          <font style="vertical-align: inherit;">Để biết thêm thông tin về
+            cookie chúng tôi sử dụng và các lựa chọn của bạn về cookie, vui lòng
+            truy cập Chính sách Cookie của chúng tôi hoặc phần Cookie trong
+            Chính sách Bảo mật của chúng tôi.</font>
+        </font>
+      </p>
+      <h2 class="text-2xl font-bold my-3">
+        <font style="vertical-align: inherit;">
+          <font style="vertical-align: inherit;">Sử dụng dữ liệu cá nhân của bạn</font>
+        </font>
+      </h2>
+      <p class="mt-3">
+        <font style="vertical-align: inherit;">
+          <font style="vertical-align: inherit;">Công ty có thể sử dụng Dữ liệu
+            Cá nhân cho các mục đích sau:
+          </font>
+        </font>
+      </p>
+      <ul class="pl-12 mt-3">
+        <li>
+          <p><strong>
+              <font style="vertical-align: inherit;">
+                <font style="vertical-align: inherit;">Để cung cấp và duy trì
+                  Dịch vụ của chúng tôi</font>
+              </font>
+            </strong>
+            <font style="vertical-align: inherit;">
+              <font style="vertical-align: inherit;">
+                , bao gồm cả việc giám sát việc sử dụng Dịch vụ của chúng tôi.</font>
+            </font>
+          </p>
         </li>
         <li>
-        <p><strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Để quản lý các yêu cầu của Bạn:</font></font></strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"> Để tham dự và quản lý các yêu cầu của Bạn với Chúng tôi.</font></font></p>
+          <p><strong>
+              <font style="vertical-align: inherit;">
+                <font style="vertical-align: inherit;">Để quản lý Tài khoản của
+                  bạn:</font>
+              </font>
+            </strong>
+            <font style="vertical-align: inherit;">
+              <font style="vertical-align: inherit;">
+                để quản lý đăng ký của Bạn với tư cách là người dùng Dịch vụ.
+              </font>
+              <font style="vertical-align: inherit;">Dữ liệu Cá nhân Bạn cung
+                cấp có thể cung cấp cho Bạn quyền truy cập vào các chức năng
+                khác nhau của Dịch vụ khả dụng cho Bạn với tư cách là người dùng
+                đã đăng ký.</font>
+            </font>
+          </p>
         </li>
         <li>
-        <p><strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Đối với chuyển giao doanh nghiệp:</font></font></strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"> Chúng tôi có thể sử dụng thông tin của Bạn để đánh giá hoặc tiến hành sáp nhập, giải thể, tái cơ cấu, tổ chức lại, giải thể hoặc bán hoặc chuyển nhượng một số hoặc tất cả tài sản của Chúng tôi, cho dù là hoạt động liên tục hay là một phần của phá sản, thanh lý, hoặc thủ tục tương tự, trong đó Dữ liệu Cá nhân do Chúng tôi nắm giữ về người dùng Dịch vụ của chúng tôi nằm trong số các tài sản được chuyển giao.</font></font></p>
+          <p><strong>
+              <font style="vertical-align: inherit;">
+                <font style="vertical-align: inherit;">Đối với việc thực hiện
+                  hợp đồng:</font>
+              </font>
+            </strong>
+            <font style="vertical-align: inherit;">
+              <font style="vertical-align: inherit;">
+                sự phát triển, tuân thủ và cam kết của hợp đồng mua bán các sản
+                phẩm, mặt hàng hoặc dịch vụ mà Bạn đã mua hoặc bất kỳ hợp đồng
+                nào khác với Chúng tôi thông qua Dịch vụ.</font>
+            </font>
+          </p>
         </li>
         <li>
-        <p><strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Cho các mục đích khác</font></font></strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"> : Chúng tôi có thể sử dụng thông tin của Bạn cho các mục đích khác, chẳng hạn như phân tích dữ liệu, xác định xu hướng sử dụng, xác định hiệu quả của các chiến dịch khuyến mại và để đánh giá và cải thiện Dịch vụ của chúng tôi, sản phẩm, dịch vụ, tiếp thị và trải nghiệm của bạn.</font></font></p>
+          <p><strong>
+              <font style="vertical-align: inherit;">
+                <font style="vertical-align: inherit;">Để liên hệ với Bạn:</font>
+              </font>
+            </strong>
+            <font style="vertical-align: inherit;">
+              <font style="vertical-align: inherit;">
+                Để liên hệ với Bạn bằng email, cuộc gọi điện thoại, SMS hoặc các
+                hình thức liên lạc điện tử tương đương khác, chẳng hạn như thông
+                báo đẩy của ứng dụng di động về các bản cập nhật hoặc thông tin
+                liên lạc liên quan đến các chức năng, sản phẩm hoặc dịch vụ đã
+                ký hợp đồng, bao gồm các bản cập nhật bảo mật, khi cần thiết
+                hoặc hợp lý để thực hiện chúng.</font>
+            </font>
+          </p>
         </li>
-        </ul>
-        <p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Chúng tôi có thể chia sẻ thông tin cá nhân của Bạn trong các trường hợp sau:</font></font></p>
-        <ul>
-        <li><strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Với Nhà cung cấp dịch vụ:</font></font></strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"> Chúng tôi có thể chia sẻ thông tin cá nhân của Bạn với Nhà cung cấp dịch vụ để theo dõi và phân tích việc sử dụng Dịch vụ của chúng tôi, để liên hệ với Bạn.</font></font></li>
-        <li><strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Đối với chuyển giao kinh doanh:</font></font></strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"> Chúng tôi có thể chia sẻ hoặc chuyển thông tin cá nhân của Bạn liên quan đến, hoặc trong quá trình đàm phán, bất kỳ việc sáp nhập, bán tài sản của Công ty, tài trợ hoặc mua lại toàn bộ hoặc một phần hoạt động kinh doanh của Chúng tôi cho một công ty khác.</font></font></li>
-        <li><strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Với các Chi nhánh:</font></font></strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"> Chúng tôi có thể chia sẻ thông tin của Bạn với các chi nhánh của Chúng tôi, trong trường hợp đó, chúng tôi sẽ yêu cầu các chi nhánh đó tuân theo Chính sách Bảo mật này. </font><font style="vertical-align: inherit;">Các chi nhánh bao gồm công ty mẹ của Chúng tôi và bất kỳ công ty con nào khác, các đối tác liên doanh hoặc các công ty khác mà Chúng tôi kiểm soát hoặc nằm dưới sự kiểm soát chung của Chúng tôi.</font></font></li>
-        <li><strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Với các đối tác kinh doanh:</font></font></strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"> Chúng tôi có thể chia sẻ thông tin của Bạn với các đối tác kinh doanh của Chúng tôi để cung cấp cho Bạn các sản phẩm, dịch vụ hoặc chương trình khuyến mãi nhất định.</font></font></li>
-        <li><strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Với những người dùng khác:</font></font></strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"> khi Bạn chia sẻ thông tin cá nhân hoặc tương tác ở các khu vực công cộng với những người dùng khác, những thông tin đó có thể được tất cả người dùng xem và có thể được phân phối công khai ra bên ngoài.</font></font></li>
-        <li><strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Với sự đồng ý của Bạn</font></font></strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"> : Chúng tôi có thể tiết lộ thông tin cá nhân của Bạn cho bất kỳ mục đích nào khác với sự đồng ý của Bạn.</font></font></li>
-        </ul>
-        <h2><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Lưu giữ dữ liệu cá nhân của bạn</font></font></h2>
-        <p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Công ty sẽ chỉ lưu giữ Dữ liệu Cá nhân của Bạn chừng nào cần thiết cho các mục đích được nêu trong Chính sách Bảo mật này. </font><font style="vertical-align: inherit;">Chúng tôi sẽ lưu giữ và sử dụng Dữ liệu Cá nhân của Bạn trong phạm vi cần thiết để tuân thủ các nghĩa vụ pháp lý của chúng tôi (ví dụ: nếu chúng tôi được yêu cầu giữ lại dữ liệu của bạn để tuân thủ luật hiện hành), giải quyết tranh chấp và thực thi các thỏa thuận và chính sách pháp lý của chúng tôi.</font></font></p>
-        <p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Công ty cũng sẽ giữ lại Dữ liệu sử dụng cho các mục đích phân tích nội bộ. </font><font style="vertical-align: inherit;">Dữ liệu sử dụng thường được lưu giữ trong một khoảng thời gian ngắn hơn, ngoại trừ khi dữ liệu này được sử dụng để tăng cường bảo mật hoặc để cải thiện chức năng của Dịch vụ của chúng tôi hoặc Chúng tôi có nghĩa vụ pháp lý phải lưu giữ dữ liệu này trong khoảng thời gian dài hơn.</font></font></p>
-        <h2><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Chuyển dữ liệu cá nhân của bạn</font></font></h2>
-        <p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Thông tin của bạn, bao gồm cả Dữ liệu Cá nhân, được xử lý tại các văn phòng điều hành của Công ty và ở bất kỳ nơi nào khác có trụ sở của các bên liên quan đến việc xử lý. </font><font style="vertical-align: inherit;">Điều đó có nghĩa là thông tin này có thể được chuyển đến - và duy trì trên - các máy tính nằm bên ngoài tiểu bang, tỉnh, quốc gia của Bạn hoặc các khu vực pháp lý khác của chính phủ, nơi luật bảo vệ dữ liệu có thể khác với các luật trong khu vực tài phán của Bạn.</font></font></p>
-        <p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Sự đồng ý của Bạn đối với Chính sách Bảo mật này, sau đó là việc Bạn gửi thông tin đó thể hiện sự đồng ý của Bạn đối với việc chuyển giao đó.</font></font></p>
-        <p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Công ty sẽ thực hiện tất cả các bước cần thiết một cách hợp lý để đảm bảo rằng dữ liệu của Bạn được xử lý an toàn và phù hợp với Chính sách quyền riêng tư này và sẽ không có việc chuyển Dữ liệu Cá nhân của Bạn cho một tổ chức hoặc một quốc gia trừ khi có các biện pháp kiểm soát thích hợp bao gồm cả bảo mật của Dữ liệu của bạn và thông tin cá nhân khác.</font></font></p>
-        <h2><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Tiết lộ dữ liệu cá nhân của bạn</font></font></h2>
-        <h3><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Giao dịch kinh doanh</font></font></h3>
-        <p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Nếu Công ty tham gia vào việc sáp nhập, mua lại hoặc bán tài sản, Dữ liệu Cá nhân của Bạn có thể được chuyển giao. </font><font style="vertical-align: inherit;">Chúng tôi sẽ cung cấp thông báo trước khi Dữ liệu Cá nhân của Bạn được chuyển giao và trở thành đối tượng của Chính sách Bảo mật khác.</font></font></p>
-        <h3><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Thực thi pháp luật</font></font></h3>
-        <p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Trong một số trường hợp nhất định, Công ty có thể được yêu cầu tiết lộ Dữ liệu Cá nhân của Bạn nếu pháp luật yêu cầu làm như vậy hoặc theo yêu cầu hợp lệ của cơ quan công quyền (ví dụ: tòa án hoặc cơ quan chính phủ).</font></font></p>
-        <h3><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Các yêu cầu pháp lý khác</font></font></h3>
-        <p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Công ty có thể tiết lộ Dữ liệu Cá nhân của Bạn với thiện chí tin rằng hành động đó là cần thiết để:</font></font></p>
-        <ul>
-        <li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Tuân thủ nghĩa vụ pháp lý</font></font></li>
-        <li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Bảo vệ quyền lợi của Công ty</font></font></li>
-        <li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Ngăn chặn hoặc điều tra hành vi sai trái có thể xảy ra liên quan đến Dịch vụ</font></font></li>
-        <li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Bảo vệ sự an toàn cá nhân của Người dùng Dịch vụ hoặc công chúng</font></font></li>
-        <li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Bảo vệ khỏi trách nhiệm pháp lý</font></font></li>
-        </ul>
-        <h2><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Bảo mật dữ liệu cá nhân của bạn</font></font></h2>
-        <p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Sự bảo mật của Dữ liệu Cá nhân của Bạn là quan trọng đối với Chúng tôi, nhưng hãy nhớ rằng không có phương thức truyền tải nào qua Internet hoặc phương pháp lưu trữ điện tử là an toàn 100%. </font><font style="vertical-align: inherit;">Trong khi Chúng tôi cố gắng sử dụng các phương tiện được chấp nhận về mặt thương mại để bảo vệ Dữ liệu Cá nhân của Bạn, Chúng tôi không thể đảm bảo tính bảo mật tuyệt đối của Dữ liệu đó.</font></font></p>
-        <h1><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Quyền riêng tư của trẻ em</font></font></h1>
-        <p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Dịch vụ của chúng tôi không giải quyết bất kỳ ai dưới 13 tuổi. Chúng tôi không cố ý thu thập thông tin nhận dạng cá nhân từ bất kỳ ai dưới 13 tuổi. Nếu Bạn là cha mẹ hoặc người giám hộ và Bạn biết rằng con Bạn đã cung cấp Dữ liệu Cá nhân cho Chúng tôi, vui lòng liên hệ chúng tôi. </font><font style="vertical-align: inherit;">Nếu Chúng tôi biết rằng Chúng tôi đã thu thập Dữ liệu Cá nhân từ bất kỳ ai dưới 13 tuổi mà không có sự xác minh của sự đồng ý của cha mẹ, Chúng tôi sẽ thực hiện các bước để xóa thông tin đó khỏi máy chủ của Chúng tôi.</font></font></p>
-        <p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Nếu Chúng tôi cần dựa trên sự đồng ý làm cơ sở pháp lý để xử lý thông tin của Bạn và Quốc gia của Bạn yêu cầu sự đồng ý từ cha mẹ, Chúng tôi có thể yêu cầu sự đồng ý của cha mẹ Bạn trước khi Chúng tôi thu thập và sử dụng thông tin đó.</font></font></p>
-        <h1><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Liên kết đến các trang web khác</font></font></h1>
-        <p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Dịch vụ của Chúng tôi có thể chứa các liên kết đến các trang web khác không do Chúng tôi điều hành. </font><font style="vertical-align: inherit;">Nếu Bạn nhấp vào liên kết của bên thứ ba, Bạn sẽ được dẫn đến trang web của bên thứ ba đó. </font><font style="vertical-align: inherit;">Chúng tôi đặc biệt khuyên Bạn nên xem lại Chính sách Bảo mật của mọi trang web Bạn truy cập.</font></font></p>
-        <p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Chúng tôi không kiểm soát và không chịu trách nhiệm về nội dung, chính sách bảo mật hoặc thông lệ của bất kỳ trang web hoặc dịch vụ nào của bên thứ ba.</font></font></p>
-        <h1><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Các thay đổi đối với Chính sách quyền riêng tư này</font></font></h1>
-        <p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Chúng tôi có thể cập nhật Chính sách Bảo mật của chúng tôi theo thời gian. </font><font style="vertical-align: inherit;">Chúng tôi sẽ thông báo cho Bạn về bất kỳ thay đổi nào bằng cách đăng Chính sách Bảo mật mới trên trang này.</font></font></p>
-        <p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Chúng tôi sẽ cho Bạn biết qua email và / hoặc một thông báo nổi bật trên Dịch vụ của Chúng tôi, trước khi thay đổi có hiệu lực và cập nhật ngày "Cập nhật lần cuối" ở đầu Chính sách Bảo mật này.</font></font></p>
-        <p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Bạn nên xem lại Chính sách Bảo mật này định kỳ để biết bất kỳ thay đổi nào. </font><font style="vertical-align: inherit;">Các thay đổi đối với Chính sách Bảo mật này có hiệu lực khi chúng được đăng trên trang này.</font></font></p>
-        <h1><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Liên hệ chúng tôi</font></font></h1>
-        <p><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Nếu bạn có bất kỳ câu hỏi nào về Chính sách Bảo mật này, Bạn có thể liên hệ với chúng tôi:</font></font></p>
-        <ul>
-        <li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Bằng cách truy cập trang này trên trang web của chúng tôi: </font></font><a href="https://netwalker.vn/contact/" rel="external nofollow noopener" target="_blank"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">https://netwalker.vn/contact/</font></font></a></li>
-        </ul>
-        </div>
-      </div>
+        <li>
+          <p><strong>
+              <font style="vertical-align: inherit;">
+                <font style="vertical-align: inherit;">Để cung cấp cho Bạn</font>
+              </font>
+            </strong>
+            <font style="vertical-align: inherit;">
+              <font style="vertical-align: inherit;">
+                tin tức, ưu đãi đặc biệt và thông tin chung về hàng hóa, dịch vụ
+                và sự kiện khác mà chúng tôi cung cấp tương tự như những sản
+                phẩm mà bạn đã mua hoặc yêu cầu trừ khi Bạn đã chọn không nhận
+                thông tin đó.</font>
+            </font>
+          </p>
+        </li>
+        <li>
+          <p><strong>
+              <font style="vertical-align: inherit;">
+                <font style="vertical-align: inherit;">Để quản lý các yêu cầu
+                  của Bạn:</font>
+              </font>
+            </strong>
+            <font style="vertical-align: inherit;">
+              <font style="vertical-align: inherit;">
+                Để tham dự và quản lý các yêu cầu của Bạn với Chúng tôi.</font>
+            </font>
+          </p>
+        </li>
+        <li>
+          <p><strong>
+              <font style="vertical-align: inherit;">
+                <font style="vertical-align: inherit;">Đối với chuyển giao doanh
+                  nghiệp:</font>
+              </font>
+            </strong>
+            <font style="vertical-align: inherit;">
+              <font style="vertical-align: inherit;">
+                Chúng tôi có thể sử dụng thông tin của Bạn để đánh giá hoặc tiến
+                hành sáp nhập, giải thể, tái cơ cấu, tổ chức lại, giải thể hoặc
+                bán hoặc chuyển nhượng một số hoặc tất cả tài sản của Chúng tôi,
+                cho dù là hoạt động liên tục hay là một phần của phá sản, thanh
+                lý, hoặc thủ tục tương tự, trong đó Dữ liệu Cá nhân do Chúng tôi
+                nắm giữ về người dùng Dịch vụ của chúng tôi nằm trong số các tài
+                sản được chuyển giao.</font>
+            </font>
+          </p>
+        </li>
+        <li>
+          <p><strong>
+              <font style="vertical-align: inherit;">
+                <font style="vertical-align: inherit;">Cho các mục đích khác</font>
+              </font>
+            </strong>
+            <font style="vertical-align: inherit;">
+              <font style="vertical-align: inherit;">
+                : Chúng tôi có thể sử dụng thông tin của Bạn cho các mục đích
+                khác, chẳng hạn như phân tích dữ liệu, xác định xu hướng sử
+                dụng, xác định hiệu quả của các chiến dịch khuyến mại và để đánh
+                giá và cải thiện Dịch vụ của chúng tôi, sản phẩm, dịch vụ, tiếp
+                thị và trải nghiệm của bạn.</font>
+            </font>
+          </p>
+        </li>
+      </ul>
+      <p class="mt-3">
+        <font style="vertical-align: inherit;">
+          <font style="vertical-align: inherit;">Chúng tôi có thể chia sẻ thông
+            tin cá nhân của Bạn trong các trường hợp sau:</font>
+        </font>
+      </p>
+      <ul class="pl-12 mt-3">
+        <li><strong>
+            <font style="vertical-align: inherit;">
+              <font style="vertical-align: inherit;">Với Nhà cung cấp dịch vụ:</font>
+            </font>
+          </strong>
+          <font style="vertical-align: inherit;">
+            <font style="vertical-align: inherit;">
+              Chúng tôi có thể chia sẻ thông tin cá nhân của Bạn với Nhà cung
+              cấp dịch vụ để theo dõi và phân tích việc sử dụng Dịch vụ của
+              chúng tôi, để liên hệ với Bạn.</font>
+          </font>
+        </li>
+        <li><strong>
+            <font style="vertical-align: inherit;">
+              <font style="vertical-align: inherit;">Đối với chuyển giao kinh
+                doanh:</font>
+            </font>
+          </strong>
+          <font style="vertical-align: inherit;">
+            <font style="vertical-align: inherit;">
+              Chúng tôi có thể chia sẻ hoặc chuyển thông tin cá nhân của Bạn
+              liên quan đến, hoặc trong quá trình đàm phán, bất kỳ việc sáp
+              nhập, bán tài sản của Công ty, tài trợ hoặc mua lại toàn bộ hoặc
+              một phần hoạt động kinh doanh của Chúng tôi cho một công ty khác.</font>
+          </font>
+        </li>
+        <li><strong>
+            <font style="vertical-align: inherit;">
+              <font style="vertical-align: inherit;">Với các Chi nhánh:</font>
+            </font>
+          </strong>
+          <font style="vertical-align: inherit;">
+            <font style="vertical-align: inherit;">
+              Chúng tôi có thể chia sẻ thông tin của Bạn với các chi nhánh của
+              Chúng tôi, trong trường hợp đó, chúng tôi sẽ yêu cầu các chi nhánh
+              đó tuân theo Chính sách Bảo mật này.
+            </font>
+            <font style="vertical-align: inherit;">Các chi nhánh bao gồm công ty
+              mẹ của Chúng tôi và bất kỳ công ty con nào khác, các đối tác liên
+              doanh hoặc các công ty khác mà Chúng tôi kiểm soát hoặc nằm dưới
+              sự kiểm soát chung của Chúng tôi.</font>
+          </font>
+        </li>
+        <li><strong>
+            <font style="vertical-align: inherit;">
+              <font style="vertical-align: inherit;">Với các đối tác kinh doanh:</font>
+            </font>
+          </strong>
+          <font style="vertical-align: inherit;">
+            <font style="vertical-align: inherit;">
+              Chúng tôi có thể chia sẻ thông tin của Bạn với các đối tác kinh
+              doanh của Chúng tôi để cung cấp cho Bạn các sản phẩm, dịch vụ hoặc
+              chương trình khuyến mãi nhất định.</font>
+          </font>
+        </li>
+        <li><strong>
+            <font style="vertical-align: inherit;">
+              <font style="vertical-align: inherit;">Với những người dùng khác:</font>
+            </font>
+          </strong>
+          <font style="vertical-align: inherit;">
+            <font style="vertical-align: inherit;">
+              khi Bạn chia sẻ thông tin cá nhân hoặc tương tác ở các khu vực
+              công cộng với những người dùng khác, những thông tin đó có thể
+              được tất cả người dùng xem và có thể được phân phối công khai ra
+              bên ngoài.</font>
+          </font>
+        </li>
+        <li><strong>
+            <font style="vertical-align: inherit;">
+              <font style="vertical-align: inherit;">Với sự đồng ý của Bạn</font>
+            </font>
+          </strong>
+          <font style="vertical-align: inherit;">
+            <font style="vertical-align: inherit;">
+              : Chúng tôi có thể tiết lộ thông tin cá nhân của Bạn cho bất kỳ
+              mục đích nào khác với sự đồng ý của Bạn.</font>
+          </font>
+        </li>
+      </ul>
+      <h2 class="text-2xl font-bold my-3">
+        <font style="vertical-align: inherit;">
+          <font style="vertical-align: inherit;">Lưu giữ dữ liệu cá nhân của bạn</font>
+        </font>
+      </h2>
+      <p>
+        <font style="vertical-align: inherit;">
+          <font style="vertical-align: inherit;">Công ty sẽ chỉ lưu giữ Dữ liệu
+            Cá nhân của Bạn chừng nào cần thiết cho các mục đích được nêu trong
+            Chính sách Bảo mật này.
+          </font>
+          <font style="vertical-align: inherit;">Chúng tôi sẽ lưu giữ và sử dụng
+            Dữ liệu Cá nhân của Bạn trong phạm vi cần thiết để tuân thủ các
+            nghĩa vụ pháp lý của chúng tôi (ví dụ: nếu chúng tôi được yêu cầu
+            giữ lại dữ liệu của bạn để tuân thủ luật hiện hành), giải quyết
+            tranh chấp và thực thi các thỏa thuận và chính sách pháp lý của
+            chúng tôi.</font>
+        </font>
+      </p>
+      <p>
+        <font style="vertical-align: inherit;">
+          <font style="vertical-align: inherit;">Công ty cũng sẽ giữ lại Dữ liệu
+            sử dụng cho các mục đích phân tích nội bộ.
+          </font>
+          <font style="vertical-align: inherit;">Dữ liệu sử dụng thường được lưu
+            giữ trong một khoảng thời gian ngắn hơn, ngoại trừ khi dữ liệu này
+            được sử dụng để tăng cường bảo mật hoặc để cải thiện chức năng của
+            Dịch vụ của chúng tôi hoặc Chúng tôi có nghĩa vụ pháp lý phải lưu
+            giữ dữ liệu này trong khoảng thời gian dài hơn.</font>
+        </font>
+      </p>
+      <h2 class="text-2xl font-bold my-3">
+        <font style="vertical-align: inherit;">
+          <font style="vertical-align: inherit;">Chuyển dữ liệu cá nhân của bạn</font>
+        </font>
+      </h2>
+      <p>
+        <font style="vertical-align: inherit;">
+          <font style="vertical-align: inherit;">Thông tin của bạn, bao gồm cả
+            Dữ liệu Cá nhân, được xử lý tại các văn phòng điều hành của Công ty
+            và ở bất kỳ nơi nào khác có trụ sở của các bên liên quan đến việc xử
+            lý.
+          </font>
+          <font style="vertical-align: inherit;">Điều đó có nghĩa là thông tin
+            này có thể được chuyển đến - và duy trì trên - các máy tính nằm bên
+            ngoài tiểu bang, tỉnh, quốc gia của Bạn hoặc các khu vực pháp lý
+            khác của chính phủ, nơi luật bảo vệ dữ liệu có thể khác với các luật
+            trong khu vực tài phán của Bạn.</font>
+        </font>
+      </p>
+      <p>
+        <font style="vertical-align: inherit;">
+          <font style="vertical-align: inherit;">Sự đồng ý của Bạn đối với Chính
+            sách Bảo mật này, sau đó là việc Bạn gửi thông tin đó thể hiện sự
+            đồng ý của Bạn đối với việc chuyển giao đó.</font>
+        </font>
+      </p>
+      <p>
+        <font style="vertical-align: inherit;">
+          <font style="vertical-align: inherit;">Công ty sẽ thực hiện tất cả các
+            bước cần thiết một cách hợp lý để đảm bảo rằng dữ liệu của Bạn được
+            xử lý an toàn và phù hợp với Chính sách quyền riêng tư này và sẽ
+            không có việc chuyển Dữ liệu Cá nhân của Bạn cho một tổ chức hoặc
+            một quốc gia trừ khi có các biện pháp kiểm soát thích hợp bao gồm cả
+            bảo mật của Dữ liệu của bạn và thông tin cá nhân khác.</font>
+        </font>
+      </p>
+      <h2 class="text-2xl font-bold my-3">
+        <font style="vertical-align: inherit;">
+          <font style="vertical-align: inherit;">Tiết lộ dữ liệu cá nhân của bạn</font>
+        </font>
+      </h2>
+      <h3 class="font-bold my-3">
+        <font style="vertical-align: inherit;">
+          <font style="vertical-align: inherit;">Giao dịch kinh doanh</font>
+        </font>
+      </h3>
+      <p>
+        <font style="vertical-align: inherit;">
+          <font style="vertical-align: inherit;">Nếu Công ty tham gia vào việc
+            sáp nhập, mua lại hoặc bán tài sản, Dữ liệu Cá nhân của Bạn có thể
+            được chuyển giao.
+          </font>
+          <font style="vertical-align: inherit;">Chúng tôi sẽ cung cấp thông báo
+            trước khi Dữ liệu Cá nhân của Bạn được chuyển giao và trở thành đối
+            tượng của Chính sách Bảo mật khác.</font>
+        </font>
+      </p>
+      <h3 class="font-bold my-3">
+        <font style="vertical-align: inherit;">
+          <font style="vertical-align: inherit;">Thực thi pháp luật</font>
+        </font>
+      </h3>
+      <p>
+        <font style="vertical-align: inherit;">
+          <font style="vertical-align: inherit;">Trong một số trường hợp nhất
+            định, Công ty có thể được yêu cầu tiết lộ Dữ liệu Cá nhân của Bạn
+            nếu pháp luật yêu cầu làm như vậy hoặc theo yêu cầu hợp lệ của cơ
+            quan công quyền (ví dụ: tòa án hoặc cơ quan chính phủ).</font>
+        </font>
+      </p>
+      <h3 class="font-bold my-3">
+        <font style="vertical-align: inherit;">
+          <font style="vertical-align: inherit;">Các yêu cầu pháp lý khác</font>
+        </font>
+      </h3>
+      <p class="mt-3">
+        <font style="vertical-align: inherit;">
+          <font style="vertical-align: inherit;">Công ty có thể tiết lộ Dữ liệu
+            Cá nhân của Bạn với thiện chí tin rằng hành động đó là cần thiết để:</font>
+        </font>
+      </p>
+      <ul class="pl-12 mt-3">
+        <li>
+          <font style="vertical-align: inherit;">
+            <font style="vertical-align: inherit;">Tuân thủ nghĩa vụ pháp lý</font>
+          </font>
+        </li>
+        <li>
+          <font style="vertical-align: inherit;">
+            <font style="vertical-align: inherit;">Bảo vệ quyền lợi của Công ty</font>
+          </font>
+        </li>
+        <li>
+          <font style="vertical-align: inherit;">
+            <font style="vertical-align: inherit;">Ngăn chặn hoặc điều tra hành
+              vi sai trái có thể xảy ra liên quan đến Dịch vụ</font>
+          </font>
+        </li>
+        <li>
+          <font style="vertical-align: inherit;">
+            <font style="vertical-align: inherit;">Bảo vệ sự an toàn cá nhân của
+              Người dùng Dịch vụ hoặc công chúng</font>
+          </font>
+        </li>
+        <li>
+          <font style="vertical-align: inherit;">
+            <font style="vertical-align: inherit;">Bảo vệ khỏi trách nhiệm pháp
+              lý</font>
+          </font>
+        </li>
+      </ul>
+      <h2 class="text-2xl font-bold my-3">
+        <font style="vertical-align: inherit;">
+          <font style="vertical-align: inherit;">Bảo mật dữ liệu cá nhân của bạn</font>
+        </font>
+      </h2>
+      <p>
+        <font style="vertical-align: inherit;">
+          <font style="vertical-align: inherit;">Sự bảo mật của Dữ liệu Cá nhân
+            của Bạn là quan trọng đối với Chúng tôi, nhưng hãy nhớ rằng không có
+            phương thức truyền tải nào qua Internet hoặc phương pháp lưu trữ
+            điện tử là an toàn 100%.
+          </font>
+          <font style="vertical-align: inherit;">Trong khi Chúng tôi cố gắng sử
+            dụng các phương tiện được chấp nhận về mặt thương mại để bảo vệ Dữ
+            liệu Cá nhân của Bạn, Chúng tôi không thể đảm bảo tính bảo mật tuyệt
+            đối của Dữ liệu đó.</font>
+        </font>
+      </p>
+      <h1 class="text-[2rem] font-bold my-3">
+        <font style="vertical-align: inherit;">
+          <font style="vertical-align: inherit;">Quyền riêng tư của trẻ em</font>
+        </font>
+      </h1>
+      <p>
+        <font style="vertical-align: inherit;">
+          <font style="vertical-align: inherit;">Dịch vụ của chúng tôi không
+            giải quyết bất kỳ ai dưới 13 tuổi. Chúng tôi không cố ý thu thập
+            thông tin nhận dạng cá nhân từ bất kỳ ai dưới 13 tuổi. Nếu Bạn là
+            cha mẹ hoặc người giám hộ và Bạn biết rằng con Bạn đã cung cấp Dữ
+            liệu Cá nhân cho Chúng tôi, vui lòng liên hệ chúng tôi.
+          </font>
+          <font style="vertical-align: inherit;">Nếu Chúng tôi biết rằng Chúng
+            tôi đã thu thập Dữ liệu Cá nhân từ bất kỳ ai dưới 13 tuổi mà không
+            có sự xác minh của sự đồng ý của cha mẹ, Chúng tôi sẽ thực hiện các
+            bước để xóa thông tin đó khỏi máy chủ của Chúng tôi.</font>
+        </font>
+      </p>
+      <p>
+        <font style="vertical-align: inherit;">
+          <font style="vertical-align: inherit;">Nếu Chúng tôi cần dựa trên sự
+            đồng ý làm cơ sở pháp lý để xử lý thông tin của Bạn và Quốc gia của
+            Bạn yêu cầu sự đồng ý từ cha mẹ, Chúng tôi có thể yêu cầu sự đồng ý
+            của cha mẹ Bạn trước khi Chúng tôi thu thập và sử dụng thông tin đó.</font>
+        </font>
+      </p>
+      <h1 class="text-[2rem] font-bold my-3">
+        <font style="vertical-align: inherit;">
+          <font style="vertical-align: inherit;">Liên kết đến các trang web khác</font>
+        </font>
+      </h1>
+      <p>
+        <font style="vertical-align: inherit;">
+          <font style="vertical-align: inherit;">Dịch vụ của Chúng tôi có thể
+            chứa các liên kết đến các trang web khác không do Chúng tôi điều
+            hành.
+          </font>
+          <font style="vertical-align: inherit;">Nếu Bạn nhấp vào liên kết của
+            bên thứ ba, Bạn sẽ được dẫn đến trang web của bên thứ ba đó.
+          </font>
+          <font style="vertical-align: inherit;">Chúng tôi đặc biệt khuyên Bạn
+            nên xem lại Chính sách Bảo mật của mọi trang web Bạn truy cập.</font>
+        </font>
+      </p>
+      <p>
+        <font style="vertical-align: inherit;">
+          <font style="vertical-align: inherit;">Chúng tôi không kiểm soát và
+            không chịu trách nhiệm về nội dung, chính sách bảo mật hoặc thông lệ
+            của bất kỳ trang web hoặc dịch vụ nào của bên thứ ba.</font>
+        </font>
+      </p>
+      <h1 class="text-[2rem] font-bold my-3">
+        <font style="vertical-align: inherit;">
+          <font style="vertical-align: inherit;">Các thay đổi đối với Chính sách
+            quyền riêng tư này</font>
+        </font>
+      </h1>
+      <p>
+        <font style="vertical-align: inherit;">
+          <font style="vertical-align: inherit;">Chúng tôi có thể cập nhật Chính
+            sách Bảo mật của chúng tôi theo thời gian.
+          </font>
+          <font style="vertical-align: inherit;">Chúng tôi sẽ thông báo cho Bạn
+            về bất kỳ thay đổi nào bằng cách đăng Chính sách Bảo mật mới trên
+            trang này.</font>
+        </font>
+      </p>
+      <p>
+        <font style="vertical-align: inherit;">
+          <font style="vertical-align: inherit;">Chúng tôi sẽ cho Bạn biết qua
+            email và / hoặc một thông báo nổi bật trên Dịch vụ của Chúng tôi,
+            trước khi thay đổi có hiệu lực và cập nhật ngày "Cập nhật lần cuối"
+            ở đầu Chính sách Bảo mật này.</font>
+        </font>
+      </p>
+      <p>
+        <font style="vertical-align: inherit;">
+          <font style="vertical-align: inherit;">Bạn nên xem lại Chính sách Bảo
+            mật này định kỳ để biết bất kỳ thay đổi nào.
+          </font>
+          <font style="vertical-align: inherit;">Các thay đổi đối với Chính sách
+            Bảo mật này có hiệu lực khi chúng được đăng trên trang này.</font>
+        </font>
+      </p>
+      <h1 class="text-[2rem] font-bold my-3">
+        <font style="vertical-align: inherit;">
+          <font style="vertical-align: inherit;">Liên hệ chúng tôi</font>
+        </font>
+      </h1>
+      <p>
+        <font style="vertical-align: inherit;">
+          <font style="vertical-align: inherit;">Nếu bạn có bất kỳ câu hỏi nào
+            về Chính sách Bảo mật này, Bạn có thể liên hệ với chúng tôi:</font>
+        </font>
+      </p>
+      <ul>
+        <li>
+          <font style="vertical-align: inherit;">
+            <font style="vertical-align: inherit;">Bằng cách truy cập trang này
+              trên trang web của chúng tôi:
+            </font>
+          </font><a
+            href="https://netwalker.vn/contact/"
+            rel="external nofollow noopener"
+            target="_blank"
+            class="text-link"
+          >
+            <font style="vertical-align: inherit;">
+              <font
+                style="vertical-align: inherit;"
+              >https://netwalker.vn/contact/</font>
+            </font>
+          </a>
+        </li>
+      </ul>
     </div>
   </div>
 </div>

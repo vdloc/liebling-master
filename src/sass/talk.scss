@@ -1,0 +1,112 @@
+@font-face {
+  font-family: "Be Vietnam";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: local("BeVietnamPro-Regular"),
+    url("/assets/fonts/be/BeVietnamPro-Regular.ttf");
+}
+
+@font-face {
+  font-family: "Be Vietnam";
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: local("BeVietnamPro-SemiBold"),
+    url("/assets/fonts/be/BeVietnamPro-SemiBold.ttf");
+}
+
+@font-face {
+  font-family: "Be Vietnam";
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: local("BeVietnamPro-Bold"), url("/assets/fonts/be/BeVietnamPro-Bold.ttf");
+}
+
+.coral {
+  --font-family-primary: "Be Vietnam", -apple-system, BlinkMacSystemFont,
+    "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue",
+    sans-serif;
+  --font-family-secondary: "Be Vietnam", -apple-system, BlinkMacSystemFont,
+    "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue",
+    sans-serif;
+  --font-weight-primary-regular: 400;
+  --font-weight-secondary-regular: 400;
+
+  --main-theme: #8367c7;
+  --alter-link-color: #b6b7f673;
+  --link-color: #8367c7;
+  --font-size-1: 0.875rem;
+  --font-size-2: 0.95rem;
+  --black-pink: #291d2f;
+
+  button {
+    &:hover,
+    &:focus,
+    &:active {
+      outline: 0;
+    }
+  }
+
+  &-commentForm {
+    border-color: var(--main-theme);
+    box-shadow: 0px 0px 2px 2px #dad1ee;
+    width: calc(100% - 8px);
+    margin: 0 auto;
+
+    button,
+    label {
+      color: var(--black-pink);
+    }
+  }
+
+  &-authenticated {
+    & > div:first-child {
+      padding-left: 4px;
+      padding-right: 4px;
+    }
+  }
+
+  &-viewerBox {
+    display: flex;
+    align-items: center;
+
+    & > div {
+      align-items: center;
+    }
+  }
+
+  &-viewerBox-username {
+    margin: 0 4px 3px;
+    display: inline-flex;
+    align-items: center;
+    padding: 0.2rem 0.4em 0.4rem;
+    background-color: var(--alter-link-color);
+    color: var(--main-theme);
+    line-height: 1;
+    border-radius: 4px;
+
+    & + span button:not(:disabled) {
+      vertical-align: middle;
+      color: var(--link-color) !important;
+    }
+  }
+
+  #coral-comments-postComment-gifSearch {
+    border-color: var(--black-pink);
+
+    &:focus {
+      border-color: var(--black-pink);
+      box-shadow: inset 0 0 0 1px var(--black-pink);
+    }
+
+    & + div button {
+      background-color: var(--black-pink) !important;
+
+      & i {
+        color: white;
+      }
+    }
+  }
+}

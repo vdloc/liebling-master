@@ -40,6 +40,10 @@
   @include respond-to("medium") {
     padding: 0;
     min-height: 0;
+
+    & .l-wrapper {
+      height: 100%;
+    }
   }
 }
 

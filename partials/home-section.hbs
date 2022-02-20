@@ -1,0 +1,46 @@
+<section class="pt-10">
+  <a href="/{{page}}">
+    <header class="relative inline-flex items-center">
+      <div class="rounded-full bg-link w-[5px] h-11"></div>
+      <h5
+        class="ml-2 font-nunito text-4xl sm:text-5xl font-bold text-primary-foreground dark:text-dark-primary-foreground"
+      >
+        {{title}}
+      </h5>
+      {{#get
+        "tags"
+        limit="all"
+        include="count.posts"
+        filter="name:{{tag}}"
+        as |tags|
+      }}
+        {{#foreach tags}}
+          <span class="ml-3 font-extralight">{{count.posts}}</span>
+        {{/foreach}}
+      {{/get}}
+      <span class="ml-1 text-link">
+        <span class="icon-chevron-right" aria-hidden="true"></span>
+      </span>
+    </header>
+  </a>
+  {{!-- Posts --}}
+  <div class="mt-12 grid xs:grid-cols-2 lg:!grid-cols-3 gap-[20px] xl:gap-10">
+    <section
+      class="js-category-section xs:col-span-2 sm:rounded-2xl overflow-hidden mb-[10px] lg:mb-0 shadow-article-shadow-normal hover:shadow-article-shadow-hover hover:translate-y-[-7px] transition-all transition-fix ease-default duration-200"
+    >
+      {{! prettier-ignore }}
+      {{> common/featured-posts postsTag=tagSlug }}     
+    </section>
+    {{> common/non-featured-posts postsTag=tagSlug limit="4"}}
+  </div>
+  {{!-- Load more button --}}
+   <section class="mt-12 sm:mt-20 flex justify-center">
+      <a href="/{{page}}">
+        <button
+          class="text-white font-semibold text-base py-2 px-[1.5625rem] outline-none border-none rounded-[0.3125rem] bg-primary-subtle transition-all ease-default duration-200 cursor-pointer button"
+        >
+          Xem thêm
+        </button>
+      </a>
+    </section>
+</section>

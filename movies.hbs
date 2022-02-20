@@ -5,33 +5,25 @@ It can be used also as the home page or the default page.
 
 {{!-- This block preloads specific assets for the index page --}}
 {{#contentFor "preload"}}
-  <link rel="preload" href="{{asset "css/home.css"}}" as="style" />
-  <link rel="preload" href="{{asset "css/listing.css"}}" as="style" />
-  <link rel="preload" href="{{asset "js/home.js"}}" as="script" />
-{{/contentFor}}
-
-{{!-- This block loads specific styles for the index page --}}
-{{#contentFor "styles"}}
-  <link rel="stylesheet" type="text/css" href="{{asset "css/home.css"}}" media="screen" />
-  <link rel="stylesheet" type="text/css" href="{{asset "css/listing.css"}}" media="screen" />
+  <link rel="preload" href="{{asset "js/category.js"}}" as="script" />
 {{/contentFor}}
 
 {{!-- The tag below means: insert everything in this file
 into the {body} of the default.hbs template --}}
 {{!< default}}
 
-{{!-- Special header.hbs partial to generate the <header> tag --}}
-{{> header background=@site.cover_image}}
+<div class="container mx-auto lg:px-10 relative">
+  {{> category-section title="Phim" tag="phim" tagSlug="phim" page="movies"}}
+</div>
 
-<main class="main-wrap">
-  <div class="l-content">
-    <div class="l-wrapper" data-aos="fade-up" data-aos-delay="300">
-      {{> page/section title="Phim" tag="phim" slugifiedTag="phim"}}
-    </div>
-  </div>
-</main>
+{{#if @labs.members}}
+  {{> common/newsletter}}
+{{/if}}
+
+
+
 
 {{!-- The #contentFor helper here will send everything inside it up to the matching #block helper found in default.hbs --}}
 {{#contentFor "scripts"}}
-  <script nonce="jlsy6dbILj" defer src="{{asset "js/home.js"}}"></script>
+  <script  defer src="{{asset "js/category.js"}}"></script>
 {{/contentFor}}

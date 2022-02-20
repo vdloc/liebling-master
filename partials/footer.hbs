@@ -1,19 +1,63 @@
-<footer class="m-footer js-footer                                                                                                                    ">
-  <div class="l-wrapper">
-    <header class="m-footer__header">
-      <h2 class="m-footer__logo">
-        <a href="{{@site.url}}">
-          {{@site.title}}
-        </a>
-      </h2>
-    </header>
-    <div class="m-footer__content">
-      <ul class="m-footer__nav-list" role="menu">
-        {{navigation}}
-      </ul>
-      <ul class="m-footer__nav-list" role="menu">
-        {{navigation type="secondary"}}
-      </ul>
+<footer
+  class="mt-20 px-5 py-10 sm:py-20 lg:py-28 bg-footer-background dark:bg-dark-background"
+>
+  <div class="container mx-auto lg:px-10 sm:flex justify-between">
+    <div class="sm:w-1/2">
+      <div class="pb-4 sm:pb-7 border-b-2 border-link">
+        <section
+          class="flex items-center lg:mr-8 pb-[2px] font-nunito font-bold tracking-wider text-4xl dark:text-dark-titles"
+        >
+          <a href="/">
+            <h1 class="logo-shadow">
+              <span class="mr-[-1rem]">NET</span>
+              <span
+                class="text-link -rotate-90 inline-block relative font-extrabold text-4xl top-[-2px] left-4"
+              >W</span>
+              ALKER
+            </h1>
+          </a>
+        </section>
+      </div>
+      <div
+        class="sm:flex justify-between pt-8 text-lg font-semibold text-black dark:text-dark-titles"
+      >
+        <h5 class="sm:w-1/2 leading-relaxed">
+          "Indie" blog nơi thường xuyên chia sẻ và cập nhật các nội dung thú vị
+          có trên mạng Internet.
+        </h5>
+        <div class="flex flex-1 sm:justify-end sm:pl-5 mt-8 sm:mt-0">
+          <ul class="flex flex-col sm:items-end" id="footer-primary-navigation">
+
+          </ul>
+        </div>
+      </div>
     </div>
+    <div class="sm:w-1/4 mt-10 sm:mt-0">
+      <div class="pb-4 sm:pb-7 border-b-2 border-link">
+        <div
+          class="flex sm:justify-between cursor-pointer"
+          id="footer-scroll-top"
+        >
+          <span class="text-4xl font-bold dark:text-dark-titles order-1 ml-5">
+            <span class="sm:hidden lg:inline">is the</span>
+            top.
+          </span>
+          <div class="rotate-45">
+            <span
+              class="icon-arrow-top text-3xl dark:text-dark-titles order-1"
+              aria-hidden="true"
+            ></span>
+          </div>
+        </div>
+      </div>
+      <div
+        class="pt-8 text-lg font-semibold text-black dark:text-dark-titles tracking-wider"
+      >
+        <ul class="flex flex-col sm:items-end" id="footer-secondary-navigation">
+
+        </ul>
+      </div>
+    </div>
+
   </div>
 </footer>

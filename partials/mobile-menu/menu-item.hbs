@@ -1,0 +1,19 @@
+{{#if isPrimary}}
+  <li
+    class="js-mobile-primary-navigation px-5 py-3 flex items-center border-t border-gray-300 dark:border-transparent dark:shadow-list-dark justify-between"
+    data-slug="{{slug}}"
+    data-label="{{label}}"
+    data-url="{{url}}"
+  >
+    <span class="text-lg">{{label}}</span>
+    <span class="icon-arrow-right" aria-hidden="true"></span>
+  </li>
+{{else}}
+  <li>
+    <a
+      href="{{href}}"
+      rel="{{rel}}"
+      class="px-5 py-3 flex items-center border-t border-gray-300 dark:border-transparent dark:shadow-list-dark text-lg"
+    >{{title}}</a>
+  </li>
+{{/if}}
