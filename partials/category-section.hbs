@@ -1,11 +1,14 @@
 <section class="pt-10 pb-24">
+  <!-- Category Header -->
   <header class="relative inline-flex items-center">
     <div class="rounded-full bg-link w-[5px] h-11"></div>
+    <!-- Category Title -->
     <h5
       class="ml-2 font-nunito text-4xl sm:text-5xl font-bold text-primary-foreground dark:text-dark-primary-foreground"
     >
       {{title}}
     </h5>
+    {{!-- Posts Count --}}
     {{#get
       "tags"
       limit="all"
@@ -25,21 +28,23 @@
       <span class="icon-chevron-right" aria-hidden="true"></span>
     </span>
   </header>
-  {{! Posts }}
+  <!-- Posts -->
   <div
     class="mt-12 grid xs:grid-cols-2 lg:!grid-cols-3 gap-[20px] xl:gap-10"
     id="posts-container"
   >
+    <!-- Featured Posts -->
     <section
-      class="xs:col-span-2 sm:rounded-2xl overflow-hidden mb-[10px] lg:mb-0 shadow-article-shadow-normal hover:shadow-article-shadow-hover hover:translate-y-[-7px] transition-all transition-fix ease-default duration-200"
+      class="xs:col-span-2 sm:rounded-2xl overflow-hidden shadow-article-shadow-normal hover:shadow-article-shadow-hover hover:translate-y-[-7px] transition-all transition-fix ease-default duration-200"
       id="featured-posts-container"
     >
       {{! prettier-ignore }}
       {{> common/featured-posts postsTag=tagSlug }}     
     </section>
+    <!-- Non Featured Posts -->
     {{> common/non-featured-posts postsTag=tagSlug limit="10"}}
   </div>
-  {{! Load more button }}
+  <!-- Load more posts button -->
   <section class="mt-12 sm:mt-20 flex justify-center">
     <button
       class="text-white font-semibold text-base py-2 px-[1.5625rem] outline-none border-none rounded-[0.3125rem] bg-primary-subtle transition-all ease-default duration-200 cursor-pointer button"
@@ -53,7 +58,7 @@
       <div class="animate-loader-2 absolute left-[32px] w-[13px] h-[13px] rounded-half bg-primary-subtle dark:bg-dark-primary-subtle"></div>
       <div class="animate-loader-3 absolute left-[56px] w-[13px] h-[13px] rounded-half bg-primary-subtle dark:bg-dark-primary-subtle"></div>
     </div>
-    <div class="hidden" id="post-card-template">
+    <div class="hidden" id="post-card-template" aria-hidden="true">
       <article
         class="col-span-1 justify-self-stretch flex flex-col h-card-height mx-[20px] md:!mx-unset xs:odd:ml-0 xs:even:mr-0 rounded-2xl overflow-hidden text-titles dark:text-dark-titles border border-secondary-nav-hover dark:border-dark-secondary-border shadow-article-shadow-normal hover:shadow-article-shadow-hover dark:shadow-dark-article-shadow-normal dark:hover:shadow-dark-article-shadow-hover hover:translate-y-[-7px] transition-all transition-fix ease-default duration-200"
       >

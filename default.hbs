@@ -114,27 +114,19 @@
   </head>
   <body class="{{body_class}} bg-background dark:bg-dark-background">
    <div class="flex flex-col justify-between min-h-screen">
-      {{!-- All the main content gets inserted here, index.hbs, post.hbs, etc --}}
+    <!-- Header -->
     {{> header}}
-
+    <!-- Body -->
     <div
       class="relative z-main bg-background dark:bg-dark-background"
     >
       {{{body}}}        
     </div>
-
-    {{!-- The footer --}}
+    <!-- Footer -->
     {{> footer }}
-
-
-    {{!-- Search form --}}
+    <!-- Search form -->
     {{> search}}
    </div>
-
-  
-
-    {{!-- {{> "notifications"}} --}}
-
     {{!-- Common scripts shared between pages --}}
     <script defer src="{{asset "js/manifest.js"}}"></script>
     <script defer src="{{asset "js/vendor/content-api.min.js"}}"></script>

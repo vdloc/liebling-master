@@ -756,6 +756,11 @@ Ensure the default browser behavior of the `hidden` attribute.
   margin-bottom: 2.5rem;
 }
 
+.mx-5 {
+  margin-left: 1.25rem;
+  margin-right: 1.25rem;
+}
+
 .mr-\[-1rem\] {
   margin-right: -1rem;
 }
@@ -4019,6 +4024,11 @@ Ensure the default browser behavior of the `hidden` attribute.
     visibility: hidden;
   }
 
+  .lg\:mx-unset {
+    margin-left: unset;
+    margin-right: unset;
+  }
+
   .lg\:mr-8 {
     margin-right: 2rem;
   }
@@ -4083,6 +4093,16 @@ Ensure the default browser behavior of the `hidden` attribute.
 @media (min-width: 500px) {
   .xs\:col-span-2 {
     grid-column: span 2 / span 2;
+  }
+
+  .xs\:mx-unset {
+    margin-left: unset;
+    margin-right: unset;
+  }
+
+  .xs\:mx-0 {
+    margin-left: 0px;
+    margin-right: 0px;
   }
 
   .xs\:grid-cols-2 {
