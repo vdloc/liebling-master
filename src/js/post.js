@@ -6,6 +6,7 @@ import Gallery from './components/Gallery';
 import ScrollTopButton from './components/ScrollTopButton';
 import SocialButtons from './components/SocialButtons';
 import RelatedPosts from './components/RelatedPosts';
+import 'applause-button';
 
 onReady(() => {
   fitvids('#post-content');

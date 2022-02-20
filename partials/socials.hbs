@@ -1,11 +1,11 @@
 {{! Social Buttons }}
 <div class="flex justify-center h-full items-start">
   <aside
-    class="fixed z-[9999] sm:!z-0 h-[45px] sm:h-unset bottom-[-1px] sm:bottom-auto left-0 sm:left-auto bg-background dark:bg-dark-background sm:bg-transparent w-viewport-width sm:w-auto sm:sticky sm:top-1/2 sm:-translate-y-1/2 flex flex-row-reverse sm:flex-col-reverse items-center justify-center sm:justify-end"
+    class="fixed z-[9999] sm:!z-0 h-[50px] sm:h-unset bottom-[-1px] sm:bottom-auto left-0 sm:left-auto bg-background dark:bg-dark-background sm:bg-transparent w-viewport-width sm:w-auto sm:sticky sm:top-1/2 sm:-translate-y-1/2 flex flex-row-reverse sm:flex-col-reverse items-center justify-center sm:justify-end gap-3"
   >
     {{! Get Link }}
     <div
-      class="cursor-pointer shadow-md hover:shadow-button-shadow-hover w-8 h-8 md:w-[3.125rem] md:h-[3.125rem] rounded-full overflow-hidden flex justify-center items-center text-sm text-link transition-shadow duration-200 ease-in-out sm:mt-3 ml-2 sm:ml-0"
+      class="cursor-pointer shadow-md hover:shadow-button-shadow-hover w-8 h-8 md:w-[3.125rem] md:h-[3.125rem] rounded-full overflow-hidden flex justify-center items-center text-sm text-link transition-shadow duration-200 ease-in-out"
       data-label="Lấy liên kết"
       data-clipboard-text="{{url absolute=" true"}}"
       id="social-link-button"
@@ -14,7 +14,7 @@
     </div>
     {{! Telegram }}
     <div
-      class="js-social-button text-telegram shadow-md hover:shadow-button-shadow-hover w-8 h-8 md:w-[3.125rem] md:h-[3.125rem] rounded-full overflow-hidden flex justify-center items-center text-sm transition-shadow duration-200 ease-in-out sm:mt-3 ml-2 sm:ml-0"
+      class="js-social-button text-telegram shadow-md hover:shadow-button-shadow-hover w-8 h-8 md:w-[3.125rem] md:h-[3.125rem] rounded-full overflow-hidden flex justify-center items-center text-sm transition-shadow duration-200 ease-in-out"
       data-label="Chia sẻ với Telegram"
     >
       <a
@@ -30,7 +30,7 @@
     </div>
     {{! Skype }}
     <div
-      class="js-social-button shadow-md hover:shadow-button-shadow-hover w-8 h-8 md:w-[3.125rem] md:h-[3.125rem] rounded-full overflow-hidden flex justify-center items-center text-sm text-link transition-shadow duration-200 ease-in-out sm:mt-3 ml-2 sm:ml-0"
+      class="js-social-button shadow-md hover:shadow-button-shadow-hover w-8 h-8 md:w-[3.125rem] md:h-[3.125rem] rounded-full overflow-hidden flex justify-center items-center text-sm text-link transition-shadow duration-200 ease-in-out"
       data-label="Chia sẻ với Skype"
     >
       <a
@@ -44,7 +44,7 @@
     </div>
     {{! Zalo }}
     <div
-      class="js-social-button shadow-md hover:shadow-button-shadow-hover w-8 h-8 md:w-[3.125rem] md:h-[3.125rem] rounded-full overflow-hidden flex justify-center items-center text-sm text-link transition-shadow duration-200 ease-in-out sm:mt-3 ml-2 sm:ml-0"
+      class="js-social-button shadow-md hover:shadow-button-shadow-hover w-8 h-8 md:w-[3.125rem] md:h-[3.125rem] rounded-full overflow-hidden flex justify-center items-center text-sm text-link transition-shadow duration-200 ease-in-out"
       data-label="Chia sẻ với Zalo"
     >
       <a
@@ -65,7 +65,7 @@
     </div>
     {{! Facebook }}
     <div
-      class="js-social-button text-facebook shadow-md hover:shadow-button-shadow-hover w-8 h-8 md:w-[3.125rem] md:h-[3.125rem] rounded-full overflow-hidden flex justify-center items-center text-sm transition-shadow duration-200 ease-in-out sm:mt-3 ml-2 sm:ml-0"
+      class="js-social-button text-facebook shadow-md hover:shadow-button-shadow-hover w-8 h-8 md:w-[3.125rem] md:h-[3.125rem] rounded-full overflow-hidden flex justify-center items-center text-sm transition-shadow duration-200 ease-in-out"
       data-label="Chia sẻ với Facebook"
     >
       <a
@@ -80,7 +80,7 @@
     </div>
     {{! Twitter }}
     <div
-      class="js-social-button text-twitter shadow-md hover:shadow-button-shadow-hover w-8 h-8 md:w-[3.125rem] md:h-[3.125rem] rounded-full overflow-hidden flex justify-center items-center text-sm transition-shadow duration-200 ease-in-out sm:mt-3 ml-2 sm:ml-0"
+      class="js-social-button text-twitter shadow-md hover:shadow-button-shadow-hover w-8 h-8 md:w-[3.125rem] md:h-[3.125rem] rounded-full overflow-hidden flex justify-center items-center text-sm transition-shadow duration-200 ease-in-out"
       data-label="Chia sẻ với Twitter"
     >
       <a
@@ -105,7 +105,7 @@
           class="absolute top-0 left-0 w-full h-full overflow-hidden fill-current"
         >
           <circle
-            class="stroke-primary-subtle dark:stroke-dark-primary-subtle  origin-center -rotate-90 transition-all duration-200"
+            class="stroke-primary-subtle dark:stroke-dark-primary-subtle origin-center -rotate-90 transition-all duration-200"
             fill="transparent"
             r="0"
             id="progress-circle"
@@ -117,5 +117,11 @@
         ></span>
       </div>
     </div>
+    <applause-button
+      multiclap="true"
+      data-label="Like"
+      class="js-social-button shadow-md hover:shadow-button-shadow-hover w-8 h-8 md:w-[3.125rem] md:h-[3.125rem] rounded-full flex justify-center items-center text-sm text-link dark:text-dark-link transition-shadow duration-200 ease-in-out relative overflow-visible cursor-pointer"
+    >
+    </applause-button>
   </aside>
 </div>

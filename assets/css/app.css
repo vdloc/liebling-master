@@ -1017,6 +1017,10 @@ Ensure the default browser behavior of the `hidden` attribute.
   height: 0.25rem;
 }
 
+.h-\[50px\] {
+  height: 50px;
+}
+
 .max-h-full {
   max-height: 100%;
 }
@@ -1336,6 +1340,10 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .overflow-hidden {
   overflow: hidden;
+}
+
+.overflow-visible {
+  overflow: visible;
 }
 
 .overflow-y-auto {
@@ -3681,14 +3689,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 
   .sm\:mt-8 {
     margin-top: 2rem;
-  }
-
-  .sm\:mt-3 {
-    margin-top: 0.75rem;
-  }
-
-  .sm\:ml-0 {
-    margin-left: 0px;
   }
 
   .sm\:flex {

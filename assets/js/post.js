@@ -685,6 +685,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_ScrollTopButton__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./components/ScrollTopButton */ "./js/components/ScrollTopButton.js");
 /* harmony import */ var _components_SocialButtons__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./components/SocialButtons */ "./js/components/SocialButtons.js");
 /* harmony import */ var _components_RelatedPosts__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./components/RelatedPosts */ "./js/components/RelatedPosts.js");
+/* harmony import */ var applause_button__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! applause-button */ "./node_modules/applause-button/dist/applause-button.js");
+/* harmony import */ var applause_button__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(applause_button__WEBPACK_IMPORTED_MODULE_8__);
+
 
 
 
