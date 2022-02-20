@@ -1,5 +1,5 @@
 <div class="relative h-header-height-mobile sm:h-header-height">
-  {{! Desktop Header }}
+  <!-- Desktop Header -->
   <header
     class="fixed top-0 left-0 z-header w-full h-header-height-mobile sm:h-header-height bg-background dark:bg-dark-background text-titles dark:text-dark-titles will-change-transform transition-all shadow-header dark:shadow-header-dark translate-y-0 duration-300 ease-header"
     id="page-header"
@@ -7,9 +7,9 @@
     <div
       class="container mx-auto lg:px-10 px-4 md:px-0 h-full flex justify-between items-stretch"
     >
-      {{! Left Menu }}
+      <!-- Left Menu -->
       <div class="hidden lg:flex items-stretch">
-        {{! Logo }}
+        <!-- Logo -->
         <section
           class="flex items-center lg:mr-8 pb-[2px] font-nunito font-bold tracking-wider text-xl"
         >
@@ -25,7 +25,7 @@
             </h1>
           </a>
         </section>
-        {{! Navigation }}
+        <!-- Navigation -->
         <ul class="flex items-stretch">
           {{#if @site.navigation}}
             {{navigation}}
@@ -35,9 +35,9 @@
           {{/if}}
         </ul>
       </div>
-      {{! Right Menu }}
+      <!-- Right Menu -->
       <div class="hidden lg:flex items-center flex-row-reverse">
-        {{! Toggle Theme Button }}
+        <!-- Toggle Theme Button -->
         <div tabIndex="0" class="ml-5" id="theme-control">
           <span
             class="flex items-center justify-center w-7 h-7 rounded-half overflow-hidden bg-toggle-darkmode-background cursor-pointer"
@@ -46,7 +46,7 @@
             <span class="icon-moon" aria-hidden="true"></span>
           </span>
         </div>
-        {{! Search Button }}
+        <!-- Search Button -->
         <button
           class="flex items-center justify-center w-8 h-8 ml-7 text-lg cursor-pointer"
           aria-label="Tìm kiếm"
@@ -54,7 +54,7 @@
         >
           <span class="icon-search" aria-hidden="true"></span>
         </button>
-        {{! Sign in/ Sign up }}
+        <!-- Sign in/ Sign up -->
         <ul class="flex text-xl sm:font-bold">
           {{#if @member}}
             <li>
@@ -67,7 +67,7 @@
           {{/if}}
         </ul>
       </div>
-      {{! Hamburger Icon }}
+      <!-- Hamburger Icon -->
       <div
         class="w-5 flex items-center justify-center lg:hidden"
         id="hamburger-button"
@@ -77,7 +77,7 @@
           aria-hidden="true"
         ></span>
       </div>
-      {{! Mobile Logo }}
+      <!-- Mobile Logo -->
       <section
         class="flex items-center mr-0 lg:mr-8 lg:hidden pb-[2px] font-nunito font-bold tracking-wider text-xl"
       >
@@ -93,7 +93,7 @@
           </h1>
         </a>
       </section>
-      {{! Search Button }}
+      <!-- Search Button -->
       <button
         class="flex items-center justify-center w-8 h-8 text-lg cursor-pointer ml-0 self-center lg:hidden"
         aria-label="Tìm kiếm"
@@ -103,16 +103,16 @@
       </button>
     </div>
   </header>
-  {{! Fake header for intersection observer }}
+  <!-- Fake header for intersection observer -->
   <div
     class="w-full h-header-height-mobile sm:h-header-height absolute top-0 bg-transparent"
     id="fake-header"
   ></div>
-  {{! Dummy tailwind class holder }}
+  <!-- Dummy tailwind class holder -->
   <div class="translate-y-0 hidden" aria-hidden="true">
     <div class="-translate-y-header-height"></div>
   </div>
-  {{! Mobile Menu }}
+  <!-- Mobile Menu -->
   <div
     class="fixed top-0 left-0 w-full h-full lg:hidden bg-background dark:bg-dark-background text-titles dark:text-dark-titles flex flex-col items-stretch transition-all ease-in-out duration-300 -z-10 opacity-0 invisible"
     id="mobile-menu"
@@ -120,11 +120,11 @@
     <header
       class="h-header-height-mobile px-4 md:px-0 flex justify-between items-center relative z-20 shadow-header dark:shadow-header-dark"
     >
-      {{! Close Menu }}
+      <!-- Close Menu -->
       <div class="relative top-[2px] left-1" id="close-mobile-menu-button">
         <span class="icon-close"></span>
       </div>
-      {{! Logo }}
+      <!-- Logo -->
       <section
         class="flex items-center lg:mr-8 pb-[2px] font-nunito font-bold tracking-wider text-xl"
       >
@@ -139,7 +139,7 @@
           </h1>
         </a>
       </section>
-      {{! Mobile Theme Control}}
+      <!-- Mobile Theme Control-->
       <div tabindex="0" id="mobile-theme-control">
         <div
           class="flex items-center justify-center w-7 h-7 rounded-half overflow-hidden bg-toggle-darkmode-background cursor-pointer"
@@ -150,27 +150,25 @@
       </div>
     </header>
     <nav class="relative flex-1 z-10">
-      {{! Navigation }}
+      <!-- Navigation -->
       <ul
-        class="absolute w-full h-full z-10 overflow-auto"
+        class="absolute w-full h-full z-10 overflow-auto font-bold"
         id="mobile-navigation"
       >
-        <li>
-          <a
-            href="/"
-            class="px-5 py-3 flex items-center border-t border-gray-300 dark:border-transparent dark:shadow-list-dark text-lg"
-          >
-            Trang chủ
-          </a>
-        </li>
+        {{>mobile-menu/menu-item href="/" title="Trang chủ"}}
+        {{#if @member}}
+          {{>mobile-menu/menu-item href="#/portal/account" rel="nofollow ugc" title="Tài khoản"}}
+        {{else}}
+          {{>mobile-menu/menu-item href="#/portal/signin" rel="nofollow ugc" title="Đăng nhập"}}
+        {{/if}}
 
       </ul>
-      {{! Category Menu }}
+      <!-- Category Menu -->
       <div
         class="absolute z-20 w-full h-full bg-background dark:bg-dark-background transition-all transition-fix ease-default duration-200 text-titles dark:text-dark-titles opacity-0 invisible"
         id="mobile-category-menu"
       >
-        {{! Back Button }}
+        <!-- Back Button -->
         <div
           class="px-5 py-3 flex items-center border-b dark:border-0 bg-purple-100 dark:bg-gray-900"
           id="mobile-category-menu-back-button"
@@ -180,14 +178,14 @@
             Quay lại
           </span>
         </div>
-        {{! Header }}
+        <!-- Header -->
         <header
           class="px-5 py-3 flex justify-between items-center transition-fix"
           id="mobile-category-menu-header"
         >
 
         </header>
-        <div class="hidden" id="mobile-category-menu-header-template">
+        <div class="hidden" id="mobile-category-menu-header-template" aria-hidden="true">
           <a href="@url">
             <h5 class="text-xl font-bold">@label</h5>
           </a>
@@ -195,7 +193,7 @@
             <span class="text-lg underline">Xem tất cả</span>
           </a>
         </div>
-        {{! Sub Menu }}
+        <!-- Sub Menu -->
         <div class="px-8 py-4" id="mobile-category-submenu">
 
         </div>

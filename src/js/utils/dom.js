@@ -70,11 +70,13 @@ export function removeEvent(elem = document, event, callback) {
 }
 
 export function addClass(elem, ...classes) {
-  elem.classList.add(...classes);
+  let addingClasses = classes.flatMap((cls) => cls.split(' '));
+  elem.classList.add(...addingClasses);
 }
 
 export function removeClass(elem, ...classes) {
-  elem.classList.remove(...classes);
+  let addingClasses = classes.flatMap((cls) => cls.split(' '));
+  elem.classList.remove(...addingClasses);
 }
 
 export function toggleClass(elem, flag = false, ...classes) {
@@ -84,14 +86,14 @@ export function toggleClass(elem, flag = false, ...classes) {
 export function toggleBetweenClasses(
   elem,
   flag = false,
-  { positiveClasses = [], negativeClasses = [] } = {}
+  { positiveClasses, negativeClasses } = {}
 ) {
   if (flag) {
-    addClass(elem, ...positiveClasses);
-    removeClass(elem, ...negativeClasses);
+    addClass(elem, positiveClasses);
+    removeClass(elem, negativeClasses);
   } else {
-    addClass(elem, ...negativeClasses);
-    removeClass(elem, ...positiveClasses);
+    addClass(elem, negativeClasses);
+    removeClass(elem, positiveClasses);
   }
 }
 

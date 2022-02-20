@@ -5,7 +5,7 @@
     id="header-secondary-nav"
   >
     <span class="icon-more" aria-hidden="true"></span>
-    <div class="hidden" id="secondary-nav-template">
+    <div class="hidden" id="secondary-nav-template" aria-hidden="true">
       <ul>
         {{#foreach navigation}}
           <li
@@ -161,15 +161,7 @@
     </li>
     <li class="hidden">
       <ul class="js-mobile-navigation-template">
-        <li
-          class="js-mobile-primary-navigation px-5 py-3 flex items-center border-t border-gray-300 dark:border-transparent dark:shadow-list-dark justify-between"
-          data-slug="{{slug}}"
-          data-label="{{label}}"
-          data-url="{{url}}"
-        >
-          <span class="text-lg">{{label}}</span>
-          <span class="icon-arrow-right" aria-hidden="true"></span>
-        </li>
+        {{>mobile-menu/menu-item isPrimary="true"}}
       </ul>
       <ul class="js-footer-primary-navigation-template">
         <li

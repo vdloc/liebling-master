@@ -11,8 +11,8 @@ import GhostClient from '../utils/api';
 import Fuse from 'fuse.js';
 
 const hiddenClass = 'hidden';
-const visibleModalClasses = ['z-50', 'opacity-100', 'visible'];
-const invisibleModalClasses = ['z-[-50]', 'opacity-0', 'invisible'];
+const visibleModalClasses = 'z-50 opacity-100 visible';
+const invisibleModalClasses = 'z-[-50] opacity-0 invisible';
 const fuseOptions = {
   shouldSort: true,
   includeScore: true,

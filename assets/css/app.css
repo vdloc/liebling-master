@@ -751,14 +751,14 @@ Ensure the default browser behavior of the `hidden` attribute.
   margin-right: 20px;
 }
 
-.my-10 {
-  margin-top: 2.5rem;
-  margin-bottom: 2.5rem;
-}
-
 .mx-5 {
   margin-left: 1.25rem;
   margin-right: 1.25rem;
+}
+
+.my-10 {
+  margin-top: 2.5rem;
+  margin-bottom: 2.5rem;
 }
 
 .mr-\[-1rem\] {
@@ -833,10 +833,6 @@ Ensure the default browser behavior of the `hidden` attribute.
   margin-left: 0.25rem;
 }
 
-.mb-\[10px\] {
-  margin-bottom: 10px;
-}
-
 .mb-4 {
   margin-bottom: 1rem;
 }
@@ -879,6 +875,10 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .ml-0 {
   margin-left: 0px;
+}
+
+.mb-\[10px\] {
+  margin-bottom: 10px;
 }
 
 .mr-2 {
@@ -1023,6 +1023,10 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .max-h-\[calc\(100vh-15rem\)\] {
   max-height: calc(100vh - 15rem);
+}
+
+.max-h-screen {
+  max-height: 100vh;
 }
 
 .min-h-screen {
@@ -1390,12 +1394,12 @@ Ensure the default browser behavior of the `hidden` attribute.
   border-bottom-width: 2px;
 }
 
-.border-t {
-  border-top-width: 1px;
-}
-
 .border-b {
   border-bottom-width: 1px;
+}
+
+.border-t {
+  border-top-width: 1px;
 }
 
 .border-none {
@@ -3477,14 +3481,6 @@ Ensure the default browser behavior of the `hidden` attribute.
   border-bottom-width: 0px;
 }
 
-.odd\:mr-5:nth-child(odd) {
-  margin-right: 1.25rem;
-}
-
-.even\:ml-5:nth-child(even) {
-  margin-left: 1.25rem;
-}
-
 .focus-within\:outline-none:focus-within {
   outline: 2px solid transparent;
   outline-offset: 2px;
@@ -3831,10 +3827,6 @@ Ensure the default browser behavior of the `hidden` attribute.
     padding-bottom: 1.5rem;
   }
 
-  .sm\:text-left {
-    text-align: left;
-  }
-
   .sm\:text-base {
     font-size: 1rem;
     line-height: 1.5rem;
@@ -3920,11 +3912,6 @@ Ensure the default browser behavior of the `hidden` attribute.
   .md\:\!mx-unset {
     margin-left: unset !important;
     margin-right: unset !important;
-  }
-
-  .md\:mx-auto {
-    margin-left: auto;
-    margin-right: auto;
   }
 
   .md\:mt-auto {
@@ -4024,11 +4011,6 @@ Ensure the default browser behavior of the `hidden` attribute.
     visibility: hidden;
   }
 
-  .lg\:mx-unset {
-    margin-left: unset;
-    margin-right: unset;
-  }
-
   .lg\:mr-8 {
     margin-right: 2rem;
   }
@@ -4066,22 +4048,6 @@ Ensure the default browser behavior of the `hidden` attribute.
   .lg\:opacity-0 {
     opacity: 0;
   }
-
-  .odd\:lg\:mr-auto:nth-child(odd) {
-    margin-right: auto;
-  }
-
-  .odd\:lg\:mr-unset:nth-child(odd) {
-    margin-right: unset;
-  }
-
-  .even\:lg\:ml-auto:nth-child(even) {
-    margin-left: auto;
-  }
-
-  .even\:lg\:ml-unset:nth-child(even) {
-    margin-left: unset;
-  }
 }
 
 @media (min-width: 1200px) {
@@ -4093,11 +4059,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 @media (min-width: 500px) {
   .xs\:col-span-2 {
     grid-column: span 2 / span 2;
-  }
-
-  .xs\:mx-unset {
-    margin-left: unset;
-    margin-right: unset;
   }
 
   .xs\:mx-0 {
@@ -4113,15 +4074,7 @@ Ensure the default browser behavior of the `hidden` attribute.
     margin-left: 0px;
   }
 
-  .odd\:xs\:mr-5:nth-child(odd) {
-    margin-right: 1.25rem;
-  }
-
   .xs\:even\:mr-0:nth-child(even) {
     margin-right: 0px;
-  }
-
-  .even\:xs\:ml-5:nth-child(even) {
-    margin-left: 1.25rem;
   }
 }

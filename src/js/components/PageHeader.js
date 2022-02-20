@@ -78,8 +78,8 @@ export default class PageHeader {
     const observer = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
         toggleBetweenClasses(this.header, entry.isIntersecting, {
-          positiveClasses: [headerClass.visible],
-          negativeClasses: [headerClass.invisible],
+          positiveClasses: headerClass.visible,
+          negativeClasses: headerClass.invisible,
         });
       });
     });

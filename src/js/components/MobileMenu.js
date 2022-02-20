@@ -9,18 +9,21 @@ import {
 import Slider from './Slider';
 
 const mobileMenuClass = {
-  visible: 'z-modal opacity-100 visible'.split(' '),
-  invisible: '-z-10 opacity-0 invisible'.split(' '),
+  visible: 'z-modal opacity-100 visible',
+  invisible: '-z-10 opacity-0 invisible',
 };
 
 const categoryMenuClass = {
-  visible: 'opacity-100 visible'.split(' '),
-  invisible: 'opacity-0 invisible'.split(' '),
+  visible: 'opacity-100 visible',
+  invisible: 'opacity-0 invisible',
 };
+
+const bodyHideOverflowClass = 'overflow-hidden max-h-screen';
 
 export default class MobileMenu {
   constructor(subMenuSliderOptions) {
     this.subMenuSliderOptions = subMenuSliderOptions;
+    this.body = document.body;
     this.openMobileMenuButton = select('#hamburger-button', this.header);
     this.mobileMenu = select('#mobile-menu');
     this.closeMobileMenuButton = select(
@@ -64,13 +67,15 @@ export default class MobileMenu {
   }
 
   openMobileMenu() {
-    addClass(this.mobileMenu, ...mobileMenuClass.visible);
-    removeClass(this.mobileMenu, ...mobileMenuClass.invisible);
+    addClass(this.body, bodyHideOverflowClass);
+    addClass(this.mobileMenu, mobileMenuClass.visible);
+    removeClass(this.mobileMenu, mobileMenuClass.invisible);
   }
 
   closeMobileMenu() {
-    removeClass(this.mobileMenu, ...mobileMenuClass.visible);
-    addClass(this.mobileMenu, ...mobileMenuClass.invisible);
+    removeClass(this.body, bodyHideOverflowClass);
+    removeClass(this.mobileMenu, mobileMenuClass.visible);
+    addClass(this.mobileMenu, mobileMenuClass.invisible);
     this.closeCategoryMenu();
   }
 
@@ -86,13 +91,13 @@ export default class MobileMenu {
   }
 
   openCategoryMenu() {
-    addClass(this.mobileCategoryMenu, ...categoryMenuClass.visible);
-    removeClass(this.mobileCategoryMenu, ...categoryMenuClass.invisible);
+    addClass(this.mobileCategoryMenu, categoryMenuClass.visible);
+    removeClass(this.mobileCategoryMenu, categoryMenuClass.invisible);
   }
 
   closeCategoryMenu() {
-    removeClass(this.mobileCategoryMenu, ...categoryMenuClass.visible);
-    addClass(this.mobileCategoryMenu, ...categoryMenuClass.invisible);
+    removeClass(this.mobileCategoryMenu, categoryMenuClass.visible);
+    addClass(this.mobileCategoryMenu, categoryMenuClass.invisible);
   }
 
   setupPrimaryNavigation() {
