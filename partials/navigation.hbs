@@ -139,8 +139,10 @@
             </header>
             {{#get
               "tags"
-              limit="10"
+              limit="15"
               filter="description:{{slug}}+name:-{{slug}}"
+              include="count.posts"
+              order="count.posts desc"
               as |tags|
             }}
               {{#if tags}}

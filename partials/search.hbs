@@ -76,9 +76,8 @@
       {{#get
         "tags"
         limit="15"
-        filter="visibility:public"
-        include="count.post"
-        order="count.post desc"
+        include="count.posts"
+        order="count.posts desc"
         as |tags|
       }}
         {{#if tags}}

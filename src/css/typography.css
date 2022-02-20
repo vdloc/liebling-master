@@ -24,33 +24,6 @@
   src: local("Nunito-Bold"), url(/assets/fonts/nunito/Nunito-Bold.ttf);
 }
 
-@font-face {
-  font-family: "WorkSans";
-  font-style: normal;
-  font-weight: 600;
-  font-display: block;
-  src: local("WorkSans-SemiBold"),
-    url(/assets/fonts/work_sans/WorkSans-SemiBold.ttf);
-}
-
-@font-face {
-  font-family: "WorkSans";
-  font-style: normal;
-  font-weight: 900;
-  font-display: block;
-  src: local("WorkSans-ExtraBold"),
-    url(/assets/fonts/work_sans/WorkSans-ExtraBold.ttf);
-}
-
-@font-face {
-  font-family: "Paytone One";
-  font-style: normal;
-  font-weight: 400;
-  font-display: block;
-  src: local("PaytoneOne-Regular"),
-    url(/assets/fonts/paytone_one/PaytoneOne-Regular.ttf);
-}
-
 /* iconmoon */
 @font-face {
   font-family: "icomoon";

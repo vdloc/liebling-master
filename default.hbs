@@ -24,74 +24,15 @@
     <meta name="theme-color" content="#ffffff">
     {{!-- Preload assets --}}
     <link rel="preload" href="{{asset "css/app.css"}}" as="style" />
-    <link rel="preload" href="{{asset "js/manifest.js"}}" as="script" />
     <link rel="preload" href="{{asset "js/vendor/content-api.min.js"}}" as="script" />
     <link rel="preload" href="{{asset "js/vendor.js"}}" as="script" />
     <link rel="preload" href="{{asset "js/app.js"}}" as="script" />
-    <link rel="preload" href="{{asset "fonts/bungee/Bungee-Regular.ttf"}}" as="font" type="font/ttf" crossorigin/>
     <link rel="preload" href="{{asset "fonts/nunito/Nunito-Regular.ttf"}}" as="font" type="font/ttf" crossorigin/>
     <link rel="preload" href="{{asset "fonts/nunito/Nunito-Bold.ttf"}}" as="font" type="font/ttf" crossorigin/>
-    <link rel="preload" href="{{asset "fonts/nunito/Nunito-SemiBold.ttf"}}" as="font" type="font/ttf" crossorigin/>
-    
-
+    <link rel="preload" href="{{asset "fonts/nunito/Nunito-SemiBold.ttf"}}" as="font" type="font/ttf" crossorigin/>    
 
     {{!-- This #block helper will try to preload page-specific assets --}}
     {{{block "preload"}}}
-
-    {{!-- Styles & Scripts --}}
-    <style>
-      /* These font-faces are here to make fonts work if the Ghost instance is installed in a subdirectory */
-      @font-face {
-        font-family: 'Nunito';
-        font-style: normal;
-        font-weight: 400;
-        font-display: swap;
-        src: local('Nunito-Regular'),
-            url("{{asset 'fonts/nunito/Nunito-Regular.ttf'}}");
-      }
-
-      /* source-sans-pro-600 */
-      @font-face {
-        font-family: 'Nunito';
-        font-style: normal;
-        font-weight: 600;
-        font-display: swap;
-        src: local('Nunito-SemiBold'),
-            url("{{asset 'fonts/nunito/Nunito-SemiBold.ttf'}}");
-      }
-
-      /* source-sans-pro-700 */
-      @font-face {
-        font-family: 'Nunito';
-        font-style: normal;
-        font-weight: 700;
-        font-display: swap;
-        src: local('Nunito-Bold'),
-            url("{{asset 'fonts/nunito/Nunito-Bold.ttf'}}");
-      }
-
-       @font-face {
-        font-family: 'Paytone One';
-        font-style: normal;
-        font-weight: 400;
-        font-display: block;
-        src: local('PaytoneOne-Regular'),
-            url("{{asset 'fonts/paytone_one/PaytoneOne-Regular.ttf'}}");
-      }
-
-      /* iconmoon */
-      @font-face {
-        font-family: 'icomoon';
-        font-weight: normal;
-        font-style: normal;
-        font-display: swap;
-        src: url("{{asset 'fonts/icomoon/icomoon.eot?101fc3'}}");
-        src: url("{{asset 'fonts/icomoon/icomoon.eot?101fc3#iefix'}}") format('embedded-opentype'),
-        url("{{asset 'fonts/icomoon/icomoon.ttf?101fc3'}}") format('truetype'),
-        url("{{asset 'fonts/icomoon/icomoon.woff?101fc3'}}") format('woff'),
-        url("{{asset 'fonts/icomoon/icomoon.svg?101fc3#icomoon'}}") format('svg');
-      }
-    </style>
 
     <link rel="stylesheet" type="text/css" href="{{asset "css/app.css"}}" media="screen" />
 
