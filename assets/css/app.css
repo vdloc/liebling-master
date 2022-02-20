@@ -4093,7 +4093,15 @@ Ensure the default browser behavior of the `hidden` attribute.
     margin-left: 0px;
   }
 
+  .odd\:xs\:mr-5:nth-child(odd) {
+    margin-right: 1.25rem;
+  }
+
   .xs\:even\:mr-0:nth-child(even) {
     margin-right: 0px;
+  }
+
+  .even\:xs\:ml-5:nth-child(even) {
+    margin-left: 1.25rem;
   }
 }
