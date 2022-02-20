@@ -3472,6 +3472,14 @@ Ensure the default browser behavior of the `hidden` attribute.
   border-bottom-width: 0px;
 }
 
+.odd\:mr-5:nth-child(odd) {
+  margin-right: 1.25rem;
+}
+
+.even\:ml-5:nth-child(even) {
+  margin-left: 1.25rem;
+}
+
 .focus-within\:outline-none:focus-within {
   outline: 2px solid transparent;
   outline-offset: 2px;
@@ -4047,6 +4055,14 @@ Ensure the default browser behavior of the `hidden` attribute.
 
   .lg\:opacity-0 {
     opacity: 0;
+  }
+
+  .odd\:lg\:mr-auto:nth-child(odd) {
+    margin-right: auto;
+  }
+
+  .even\:lg\:ml-auto:nth-child(even) {
+    margin-left: auto;
   }
 }
 
