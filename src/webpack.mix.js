@@ -33,6 +33,7 @@ mix
   .setResourceRoot('/assets')
   .setPublicPath('../assets')
   .copy('css/post.css', '../assets/css/')
+  .copy('css/comment.css', '../assets/css/')
   .copy('js/vendor/content-api.min.js', '../assets/js/vendor/')
   .browserSync({
     proxy: 'localhost:2368',

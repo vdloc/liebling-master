@@ -5,10 +5,10 @@ import {
   removeEvent,
   select,
   toggleBetweenClasses,
-  selectAll,
 } from '../utils/dom';
 import GhostClient from '../utils/api';
 import Fuse from 'fuse.js';
+import tippy from 'tippy.js';
 
 const hiddenClass = 'hidden';
 const visibleModalClasses = 'z-50 opacity-100 visible';
@@ -30,7 +30,8 @@ export default class Search {
     this.modalBackdrop = select('#search-backdrop', this.modal);
     this.input = select('#search-input', this.modal);
     this.inputLabel = select('#search-input-label', this.modal);
-    this.openButtons = selectAll('#search-button, #search-button-mobile');
+    this.openSearchButton = select('#search-button');
+    this.openSearchMobileButton = select('#search-button-mobile');
     this.closeButton = select('#search-close-button', this.modal);
     this.searchIcon = select('#search-icon', this.modal);
     this.clearSearchIcon = select('#clear-search-icon', this.modal);
@@ -59,9 +60,10 @@ export default class Search {
   }
 
   init() {
-    this.openButtons.forEach((button) => {
+    [this.openSearchButton, this.openSearchMobileButton].forEach((button) => {
       bindEvent(button, 'click', this.openModal);
     });
+    tippy(this.openSearchButton, { content: 'Tìm kiếm' });
     bindEvent(this.closeButton, 'click', this.closeModal);
     bindEvent(this.modalBackdrop, 'click', this.closeModal);
     bindEvent(this.input, 'input', this.handleInput);

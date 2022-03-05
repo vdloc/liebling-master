@@ -2,7 +2,7 @@ import tippy from 'tippy.js';
 import { select, selectAll, toggleBetweenClasses } from '../utils/dom';
 import Slider from './Slider';
 import 'tippy.js/dist/tippy.css';
-import ThemeControl from './ThemeToggler';
+import ThemeButton from './ThemeButton';
 import Search from './Search';
 import MobileMenu from './MobileMenu';
 
@@ -39,8 +39,8 @@ export default class PageHeader {
     this.setupPrimaryNavigation();
     this.setupSecondaryNavigation();
     this.observeHeader();
-    new ThemeControl('#theme-control');
-    new ThemeControl('#mobile-theme-control');
+    new ThemeButton('#theme-control', true);
+    new ThemeButton('#mobile-theme-control');
     new Search();
     new MobileMenu();
   }
