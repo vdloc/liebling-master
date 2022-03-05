@@ -55,7 +55,21 @@ into the {body} of the default.hbs template --}}
     <div class="flex-grow-0 sm:flex-1 order-1 relative h-auto">
       {{> socials}}
     </div>
-    <div class="flex-grow-0 sm:flex-1"></div>    
+    <aside class="flex-grow-0 sm:flex-1 flex flex-col items-center">
+     <div class="sticky sm:top-8">
+        {{!-- Ads --}}
+      <script type="text/javascript">
+        atOptions = {
+          'key' : '61c49c1c9f50559a70788108d30d600a',
+          'format' : 'iframe',
+          'height' : 600,
+          'width' : 160,
+          'params' : {}
+        };
+	      document.write('<scr' + 'ipt type="text/javascript" src="http' + (location.protocol === 'https:' ? 's' : '') + '://www.effectivedisplaycontent.com/61c49c1c9f50559a70788108d30d600a/invoke.js"></scr' + 'ipt>');
+      </script>
+     </div>
+    </aside>    
     <div class='post-content'>
       <div id='post-content' class='post-content dark:text-dark-titles'>
         {{content}}
@@ -80,10 +94,13 @@ into the {body} of the default.hbs template --}}
 {{#if @labs.members}}
   {{> common/newsletter}}
 {{/if}}
+<div id="container-11b95e0363ac678ff2623ebfb92ec3fe" class="my-10"></div>
 
 {{!-- The #contentFor helper here will send everything inside it up to the matching #block helper found in default.hbs --}}
 {{#contentFor "scripts"}}
   <script defer src="{{asset "js/vendor/lightgallery-all.min.js"}}"></script>
   <script defer src="{{asset "js/post.js"}}"></script>
   <script async src="https://sp.zalo.me/plugins/sdk.js"></script>
+  {{!-- Ads --}}
+  <script async="async" data-cfasync="false" src="//pl17048196.trustedcpmrevenue.com/11b95e0363ac678ff2623ebfb92ec3fe/invoke.js"></script>
 {{/contentFor}}

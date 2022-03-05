@@ -13,16 +13,20 @@ into the {body} of the default.hbs template --}}
 {{!< default}}
 
 
-<div class="container mx-auto lg:px-10 mt-10" data-aos-delay="300">  
+<div class="container mx-auto lg:px-10 mt-10 my-28" data-aos-delay="300">  
     {{> home-section title="Phim" tag="phim" tagSlug="phim" page="movies"}}
     {{> home-section title="Nhạc" tag="nhạc" tagSlug="nhac" page="musics"}}
-    {{> home-section title="Trò chơi" tag="game" tagSlug="game" page="games"}}
     {{> home-section title="Phần mềm" tag="software" tagSlug="software" page="softwares"}}
-    {{> home-section title="Khóa học" tag="course" tagSlug="course" page="courses"}}    
 </div>
 
+<div id="container-11b95e0363ac678ff2623ebfb92ec3fe"></div>
+{{#if @labs.members}}
+  {{> common/newsletter}}
+{{/if}}
 
+<div id="container-11b95e0363ac678ff2623ebfb92ec3fe"></div>
 {{!-- The #contentFor helper here will send everything inside it up to the matching #block helper found in default.hbs --}}
 {{#contentFor "scripts"}}
   <script  defer src="{{asset "js/home.js"}}"></script>
+  <script async="async" data-cfasync="false" src="//pl17048196.trustedcpmrevenue.com/11b95e0363ac678ff2623ebfb92ec3fe/invoke.js"></script>
 {{/contentFor}}

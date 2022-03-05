@@ -16,7 +16,7 @@ const invisibleModalClasses = 'z-[-50] opacity-0 invisible';
 const fuseOptions = {
   shouldSort: true,
   includeScore: true,
-  minMatchCharLength: 4,
+  minMatchCharLength: 2,
   threshold: 0.45,
   useExtendedSearch: true,
   includeMatches: true,
@@ -135,7 +135,7 @@ export default class Search {
     if (value) {
       const trimmedValue = value.trim();
       const searchResults = this.fuse.search(trimmedValue);
-      const bestResult = searchResults.filter((result) => result.score <= 0.5);
+      const bestResult = searchResults.filter((result) => result.score <= 0.6);
 
       this.results = bestResult;
       this.showResults();

@@ -511,7 +511,7 @@ var invisibleModalClasses = 'z-[-50] opacity-0 invisible';
 var fuseOptions = {
   shouldSort: true,
   includeScore: true,
-  minMatchCharLength: 4,
+  minMatchCharLength: 2,
   threshold: 0.45,
   useExtendedSearch: true,
   includeMatches: true,
@@ -640,8 +640,9 @@ var Search = /*#__PURE__*/function () {
         var trimmedValue = value.trim();
         var searchResults = this.fuse.search(trimmedValue);
         var bestResult = searchResults.filter(function (result) {
-          return result.score <= 0.5;
+          return result.score <= 0.6;
         });
+        console.log('file: Search.js ~ line 140 ~ bestResult', bestResult);
         this.results = bestResult;
         this.showResults();
         this.showClearSearchIcon();

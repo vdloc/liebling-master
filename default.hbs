@@ -52,6 +52,7 @@
       const ghostHost = "{{@site.url}}"
       // @license-end
     </script>
+    
   </head>
   <body class="{{body_class}} bg-background dark:bg-dark-background">
    <div class="flex flex-col justify-between min-h-screen">
@@ -73,6 +74,9 @@
     <script defer src="{{asset "js/vendor/content-api.min.js"}}"></script>
     <script defer src="{{asset "js/vendor.js"}}"></script>
     <script defer src="{{asset "js/app.js"}}"></script>
+    {{!-- Ads --}}
+    <script async="async" data-cfasync="false" src="//pl17048196.trustedcpmrevenue.com/11b95e0363ac678ff2623ebfb92ec3fe/invoke.js"></script>
+    
 
     {{!-- The #block helper will pull in data from the #contentFor other template files --}}
     {{{block "scripts"}}}
