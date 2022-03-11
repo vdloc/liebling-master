@@ -548,20 +548,17 @@ applause-button.clap .count {
   }
 }
 .post-content code {
+  font-family: inherit;
   display: inline-block;
   color: #6667ab;
   font-size: 0.9rem;
-  font-family: Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
   padding: 0 0.3125rem;
   border-radius: 0.3125rem;
-  background-color: #f4f8fd;
 }
 .post-content pre {
-  font-family: Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
   margin: 0 0 1.5625rem;
   overflow-x: auto;
   border-radius: 0.3125rem;
-  background-color: #f4f8fd;
   white-space: pre;
   word-spacing: normal;
   word-break: normal;

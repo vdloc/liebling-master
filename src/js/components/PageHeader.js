@@ -1,5 +1,10 @@
 import tippy from 'tippy.js';
-import { select, selectAll, toggleBetweenClasses } from '../utils/dom';
+import {
+  addClass,
+  select,
+  selectAll,
+  toggleBetweenClasses,
+} from '../utils/dom';
 import Slider from './Slider';
 import 'tippy.js/dist/tippy.css';
 import ThemeButton from './ThemeButton';
@@ -47,6 +52,7 @@ export default class PageHeader {
 
   setupPrimaryNavigation() {
     this.primaryNavigation.forEach((navigation) => {
+      const subMenu = select('.js-submenu', navigation);
       const sliderContainer = select('.swiper', navigation);
       const sliderPrevEl = select('.js-submenu-swiper-prev', navigation);
       const sliderNextEl = select('.js-submenu-swiper-next', navigation);
@@ -56,7 +62,14 @@ export default class PageHeader {
           container: sliderContainer,
           prevEl: sliderPrevEl,
           nextEl: sliderNextEl,
-          options: sliderOptions,
+          options: {
+            ...sliderOptions,
+            on: {
+              init: () => {
+                addClass(subMenu, 'sm:group-hover:animate-open-sub-menu');
+              },
+            },
+          },
         });
       }
     });

@@ -27,9 +27,7 @@
     <link rel="preload" href="{{asset "js/vendor/content-api.min.js"}}" as="script" />
     <link rel="preload" href="{{asset "js/vendor.js"}}" as="script" />
     <link rel="preload" href="{{asset "js/app.js"}}" as="script" />
-    <link rel="preload" href="{{asset "fonts/nunito/Nunito-Regular.ttf"}}" as="font" type="font/ttf" crossorigin/>
-    <link rel="preload" href="{{asset "fonts/nunito/Nunito-Bold.ttf"}}" as="font" type="font/ttf" crossorigin/>
-    <link rel="preload" href="{{asset "fonts/nunito/Nunito-SemiBold.ttf"}}" as="font" type="font/ttf" crossorigin/>    
+    
 
     {{!-- This #block helper will try to preload page-specific assets --}}
     {{{block "preload"}}}
@@ -52,6 +50,8 @@
       const ghostHost = "{{@site.url}}"
       // @license-end
     </script>
+    {{!-- Crisp chat bubble --}}
+    <script type="text/javascript">window.$crisp=[];window.CRISP_WEBSITE_ID="8317fc46-5799-4eb9-b439-0f7347be081c";(function(){d=document;s=d.createElement("script");s.src="https://client.crisp.chat/l.js";s.async=1;d.getElementsByTagName("head")[0].appendChild(s);})();</script>
     
   </head>
   <body class="{{body_class}} bg-background dark:bg-dark-background">

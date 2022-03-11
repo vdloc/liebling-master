@@ -57,7 +57,7 @@
                         class="flex items-center h-6 px-2 rounded-2xl bg-white font-bold text-sm"
                       >
                         <span class="icon-star"></span>
-                        <span class="ml-1">Nổi bật</span>
+                        <span class="ml-1">Editor's Pick</span>
                       </div>
                     </a>
                   </section>
@@ -83,7 +83,9 @@
               </article>
               {{! Background Image }}
               <section class="absolute top-0 left-0 -z-5 w-full h-full">
-                <figure class="relative w-full h-full transition-fix">
+                <figure
+                  class="relative w-full h-full transition-fix backdrop-blur-sm"
+                >
                   <span class="responsive-img">
                     <img
                       alt="{{title}}"

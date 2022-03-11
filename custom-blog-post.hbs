@@ -50,37 +50,12 @@ into the {body} of the default.hbs template --}}
     </address>
     {{/foreach}}
   </header>
-  <div class="md:hidden flex justify-center">
-    <script type="text/javascript">
-      atOptions = {
-        'key' : 'bbf4624dd597e0fcfe09c60a505b3de9',
-        'format' : 'iframe',
-        'height' : 50,
-        'width' : 320,
-        'params' : {}
-      };
-      document.write('<scr' + 'ipt type="text/javascript" src="http' + (location.protocol === 'https:' ? 's' : '') + '://persistarcticthese.com/bbf4624dd597e0fcfe09c60a505b3de9/invoke.js"></scr' + 'ipt>');
-    </script>
-  </div>
   {{! Post Content }}
   <div class='sm:mt-[3rem] flex items-stretch'>
     <div class="flex-grow-0 sm:flex-1 order-1 relative h-auto">
       {{> socials}}
     </div>
     <aside class="flex-grow-0 sm:flex-1 flex flex-col items-center">
-     <div class="hidden md:block md:sticky md:top-8">
-        {{!-- Ads --}}
-      <script type="text/javascript">
-        atOptions = {
-          'key' : '61c49c1c9f50559a70788108d30d600a',
-          'format' : 'iframe',
-          'height' : 600,
-          'width' : 160,
-          'params' : {}
-        };
-	      document.write('<scr' + 'ipt type="text/javascript" src="http' + (location.protocol === 'https:' ? 's' : '') + '://www.effectivedisplaycontent.com/61c49c1c9f50559a70788108d30d600a/invoke.js"></scr' + 'ipt>');
-      </script>
-     </div>    
     </aside>    
     <div class='post-content'>
       <div id='post-content' class='post-content dark:text-dark-titles mt-3'>
@@ -88,19 +63,6 @@ into the {body} of the default.hbs template --}}
       </div>      
     </div>  
   </div>  
-  {{!-- Ads --}}
-  <div class="hidden md:flex justify-center mb-6">
-    <script type="text/javascript">
-      atOptions = {
-        'key' : '37bd3e9f28c0d7e0b6e6db9bc25aae01',
-        'format' : 'iframe',
-        'height' : 90,
-        'width' : 728,
-        'params' : {}
-      };
-      document.write('<scr' + 'ipt type="text/javascript" src="http' + (location.protocol === 'https:' ? 's' : '') + '://persistarcticthese.com/37bd3e9f28c0d7e0b6e6db9bc25aae01/invoke.js"></scr' + 'ipt>');
-    </script>
-  </div>
   {{!-- Tags Section --}}
   <section class="md:w-post-content-width mx-auto mt-10 px-5 md:px-auto">
     <h3 class="font-bold text-2xl dark:text-dark-titles">Thẻ</h3>
@@ -112,19 +74,6 @@ into the {body} of the default.hbs template --}}
       {{/foreach}}
     </ul>
   </section>
-  {{!-- Ads --}}
-  <div class="md:hidden mt-6 flex justify-center">
-    <script type="text/javascript">
-      atOptions = {
-        'key' : '6c1e9dcefc3e295911dbf168f19c2d58',
-        'format' : 'iframe',
-        'height' : 250,
-        'width' : 300,
-        'params' : {}
-      };
-	    document.write('<scr' + 'ipt type="text/javascript" src="http' + (location.protocol === 'https:' ? 's' : '') + '://persistarcticthese.com/6c1e9dcefc3e295911dbf168f19c2d58/invoke.js"></scr' + 'ipt>');
-    </script>
-  </div>    
   {{!-- Comment Section --}} 
   <section class="md:w-post-content-width mx-auto mt-20 px-5 md:px-auto">
     <h3 class="font-bold text-2xl dark:text-dark-titles">Bình luận</h3>
@@ -141,14 +90,10 @@ into the {body} of the default.hbs template --}}
   {{> common/newsletter}}
 {{/if}}
 
-{{!-- Ads Banner --}}
-<div id="container-11b95e0363ac678ff2623ebfb92ec3fe" class="my-10"></div>
 
 {{!-- The #contentFor helper here will send everything inside it up to the matching #block helper found in default.hbs --}}
 {{#contentFor "scripts"}}
   <script defer src="{{asset "js/vendor/lightgallery-all.min.js"}}"></script>
   <script defer src="{{asset "js/post.js"}}"></script>
   <script async src="https://sp.zalo.me/plugins/sdk.js"></script>
-  {{!-- Ads --}}
-  <script async="async" data-cfasync="false" src="//pl17048196.trustedcpmrevenue.com/11b95e0363ac678ff2623ebfb92ec3fe/invoke.js"></script>
 {{/contentFor}}
