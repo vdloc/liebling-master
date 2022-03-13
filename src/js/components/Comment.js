@@ -5,7 +5,7 @@ export default class Comment {
     console.warn(themeController.theme);
     this.remark_config = {
       host: 'https://remark42.netwalker.vn',
-      site_id: 'remark42.netwalker.vn',
+      site_id: 'netwalker.vn',
       theme: themeController.theme,
       locale: 'vi',
     };
