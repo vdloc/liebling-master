@@ -8,7 +8,7 @@
 
   {{#if nonFeaturedPosts}}
     {{#foreach nonFeaturedPosts}}
-      {{> common/post-card}}
+      {{> common/post-card index=@index}}
     {{/foreach}}
   {{else}}
   {{/if}}

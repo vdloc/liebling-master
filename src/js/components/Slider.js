@@ -1,6 +1,4 @@
 import Swiper, { Navigation } from 'swiper';
-import 'swiper/css';
-import 'swiper/css/navigation';
 
 const navigationClass = {
   disabledClass: 'opacity-50 cursor-default',
@@ -8,9 +6,10 @@ const navigationClass = {
 };
 
 export default class Slider {
-  constructor({ container, prevEl, nextEl, options }) {
+  constructor({ container, prevEl, nextEl, options, modules = [] }) {
     this.container = container;
     this.options = options;
+    this.modules = modules;
     this.prevEl = prevEl;
     this.nextEl = nextEl;
     this.swiper = null;
@@ -19,7 +18,7 @@ export default class Slider {
 
   init() {
     const options = {
-      modules: [Navigation],
+      modules: [Navigation, ...this.modules],
       navigation: {
         ...navigationClass,
         nextEl: this.nextEl,

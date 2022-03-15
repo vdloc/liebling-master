@@ -52,7 +52,11 @@
                       </a>
                     </div>
                     {{! Featured Badge }}
-                    <a href="{{url}}" class="flex flex-1 justify-end">
+                    <a
+                      href="{{url}}"
+                      class="flex flex-1 justify-end"
+                      aria-label="{{title}}"
+                    >
                       <div
                         class="flex items-center h-6 px-2 rounded-2xl bg-white font-bold text-sm"
                       >
@@ -72,7 +76,11 @@
                   </a>
                 </header>
                 {{! Time }}
-                <a href="{{url}}" class="flex flex-1 items-end">
+                <a
+                  href="{{url}}"
+                  class="flex flex-1 items-end"
+                  aria-label="{{title}}"
+                >
                   <footer>
                     <time
                       datetime="{{published_at}}"
@@ -87,18 +95,27 @@
                   class="relative w-full h-full transition-fix backdrop-blur-sm"
                 >
                   <span class="responsive-img">
-                    <img
-                      alt="{{title}}"
-                      sizes="100vw"
-                      src="{{img_url feature_image}}"
-                      decoding="async"
-                      loading="lazy"
-                    />
+                    {{#has index="0"}}
+                      <img
+                        alt="{{title}}"
+                        sizes="100vw"
+                        src="{{img_url feature_image}}"
+                        decoding="async"
+                      />
+                    {{else}}
+                      <img
+                        alt="{{title}}"
+                        sizes="100vw"
+                        src="{{img_url feature_image}}"
+                        decoding="async"
+                        loading="lazy"
+                      />
+                    {{/has}}
                   </span>
                 </figure>
               </section>
               {{! Backdrop }}
-              <a href="{{url}}">
+              <a href="{{url}}" aria-label="{{title}}">
                 <div
                   class="absolute top-0 left-0 -z-4 w-full h-full backdrop-brightness-75"
                 >
@@ -110,11 +127,13 @@
       </div>
       <button
         class="js-featured-slider-prev absolute bottom-2 sm:bottom-10 right-16 sm:right-20 z-20 flex items-center justify-center w-10 h-10 rounded-full focus:shadow-sm transition-shadow transition-fix text-white text-sm font-normal"
+        aria-label="Bài viết trước"
       >
         <span class="icon-arrow-left" aria-hidden="true"></span>
       </button>
       <button
         class="js-featured-slider-next absolute bottom-2 sm:bottom-10 right-5 sm:right-10 z-20 flex items-center justify-center w-10 h-10 rounded-full focus:shadow-sm transition-shadow transition-fix text-white text-sm font-normal"
+        aria-label="Bài viết tiếp theo"
       >
         <span class="icon-arrow-right" aria-hidden="true"></span>
       </button>

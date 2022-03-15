@@ -68,39 +68,16 @@ into the {body} of the default.hbs template --}}
       {{> socials}}
     </div>
     <aside class="flex-grow-0 sm:flex-1 flex flex-col items-center">
-     <div class="hidden md:block md:sticky md:top-8">
-        {{!-- Ads --}}
-      <script type="text/javascript">
-        atOptions = {
-          'key' : '61c49c1c9f50559a70788108d30d600a',
-          'format' : 'iframe',
-          'height' : 600,
-          'width' : 160,
-          'params' : {}
-        };
-	      document.write('<scr' + 'ipt type="text/javascript" src="http' + (location.protocol === 'https:' ? 's' : '') + '://www.effectivedisplaycontent.com/61c49c1c9f50559a70788108d30d600a/invoke.js"></scr' + 'ipt>');
-      </script>
-     </div>    
+       {{> ads/adsterra/vertical-banner}}
     </aside>    
     <div class='post-content'>
-      <div id='post-content' class='post-content dark:text-dark-titles mt-3'>
+      <div id='post-content' class='post-content lg:w-post-content-width dark:text-dark-titles mt-3'>
         {{content}}
       </div>      
     </div>  
   </div>  
   {{!-- Ads --}}
-  <div class="hidden md:flex justify-center mb-6">
-    <script type="text/javascript">
-      atOptions = {
-        'key' : '37bd3e9f28c0d7e0b6e6db9bc25aae01',
-        'format' : 'iframe',
-        'height' : 90,
-        'width' : 728,
-        'params' : {}
-      };
-      document.write('<scr' + 'ipt type="text/javascript" src="http' + (location.protocol === 'https:' ? 's' : '') + '://persistarcticthese.com/37bd3e9f28c0d7e0b6e6db9bc25aae01/invoke.js"></scr' + 'ipt>');
-    </script>
-  </div>
+  {{> ads/adsterra/horizontal-banner}}
   {{!-- Tags Section --}}
   <section class="md:w-post-content-width mx-auto mt-10 px-5 md:px-auto">
     <h3 class="font-bold text-2xl dark:text-dark-titles">Thẻ</h3>
@@ -113,20 +90,10 @@ into the {body} of the default.hbs template --}}
     </ul>
   </section>
   {{!-- Ads --}}
-  <div class="md:hidden mt-6 flex justify-center">
-    <script type="text/javascript">
-      atOptions = {
-        'key' : '6c1e9dcefc3e295911dbf168f19c2d58',
-        'format' : 'iframe',
-        'height' : 250,
-        'width' : 300,
-        'params' : {}
-      };
-	    document.write('<scr' + 'ipt type="text/javascript" src="http' + (location.protocol === 'https:' ? 's' : '') + '://persistarcticthese.com/6c1e9dcefc3e295911dbf168f19c2d58/invoke.js"></scr' + 'ipt>');
-    </script>
+  {{> ads/adsterra/mobile-native-banner}}
   </div>    
   {{!-- Comment Section --}} 
-  <section class="md:w-post-content-width mx-auto mt-20 px-5 md:px-auto">
+  <section class="md:w-post-content-width mx-auto mt-20 px-5 md:px-auto" id="comment-section">
     <h3 class="font-bold text-2xl dark:text-dark-titles">Bình luận</h3>
     <div id="remark42" class="mt-5"></div>
   </section>
@@ -137,18 +104,23 @@ into the {body} of the default.hbs template --}}
 {{/post}}
 
 {{!-- Newsletter form --}}
-{{#if @labs.members}}
-  {{> common/newsletter}}
-{{/if}}
+<div class="mt-10 mb-20">
+  <div class="container px-5">
+    {{> common/newsletter}}
+  </div>
+</div>
+
 
 {{!-- Ads Banner --}}
-<div id="container-11b95e0363ac678ff2623ebfb92ec3fe" class="my-10"></div>
-
+<div class="container w-full mb-20">
+  <div align="center">
+  {{> ads/adsense/grid}}  
+  </div>
+</div>
 {{!-- The #contentFor helper here will send everything inside it up to the matching #block helper found in default.hbs --}}
 {{#contentFor "scripts"}}
-  <script defer src="{{asset "js/vendor/lightgallery-all.min.js"}}"></script>
   <script defer src="{{asset "js/post.js"}}"></script>
-  <script async src="https://sp.zalo.me/plugins/sdk.js"></script>
+  <script defer src="{{asset "js/vendor/lightgallery-all.min.js"}}"></script>
   {{!-- Ads --}}
   <script async="async" data-cfasync="false" src="//pl17048196.trustedcpmrevenue.com/11b95e0363ac678ff2623ebfb92ec3fe/invoke.js"></script>
 {{/contentFor}}

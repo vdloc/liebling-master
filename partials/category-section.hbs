@@ -1,32 +1,37 @@
 <section class="pt-10 pb-24">
   <!-- Category Header -->
-  <header class="relative inline-flex items-center">
-    <div class="rounded-full bg-link w-[5px] h-11"></div>
-    <!-- Category Title -->
-    <h5
-      class="ml-2 font-nunito text-4xl sm:text-5xl font-bold text-primary-foreground dark:text-dark-primary-foreground"
-    >
-      {{title}}
-    </h5>
-    {{!-- Posts Count --}}
-    {{#get
-      "tags"
-      limit="all"
-      include="count.posts"
-      filter="name:{{tag}}"
-      as |tags|
-    }}
-      {{#foreach tags}}
-        <span
-          class="ml-3 font-extralight"
-          id="category-info"
-          data-tag="{{slug}}"
-        >{{count.posts}}</span>
-      {{/foreach}}
-    {{/get}}
-    <span class="ml-1 text-link">
-      <span class="icon-chevron-right" aria-hidden="true"></span>
-    </span>
+  <header class="flex items-center justify-between">
+    {{!-- Title --}}
+    <div class="relative inline-flex">
+      <div class="rounded-full bg-link w-[5px] h-11"></div>
+      <!-- Category Title -->
+      <h2
+        class="ml-2 font-nunito text-4xl sm:text-5xl font-bold text-primary-foreground dark:text-dark-primary-foreground"
+      >
+        {{title}}
+      </h2>
+      {{! Posts Count }}
+      {{#get
+        "tags"
+        limit="all"
+        include="count.posts"
+        filter="name:{{tag}}"
+        as |tags|
+      }}
+        {{#foreach tags}}
+          <span
+            class="ml-3 font-extralight"
+            id="category-info"
+            data-tag="{{slug}}"
+          >{{count.posts}}</span>
+        {{/foreach}}
+      {{/get}}
+      <span class="ml-1 text-link">
+        <span class="icon-chevron-right" aria-hidden="true"></span>
+      </span>
+    </div>
+    {{!-- Ads --}}
+    {{> ads/adsense/horizontal}}
   </header>
   <!-- Posts -->
   <div
@@ -53,10 +58,18 @@
       Xem thêm
     </button>
     <div class="loader hidden items-center relative w-[80px]" id="posts-loader">
-      <div class="animate-loader-1 absolute left-[8px] w-[13px] h-[13px] rounded-half bg-primary-subtle dark:bg-dark-primary-subtle"></div>
-      <div class="animate-loader-2 absolute left-[8px] w-[13px] h-[13px] rounded-half bg-primary-subtle dark:bg-dark-primary-subtle"></div>
-      <div class="animate-loader-2 absolute left-[32px] w-[13px] h-[13px] rounded-half bg-primary-subtle dark:bg-dark-primary-subtle"></div>
-      <div class="animate-loader-3 absolute left-[56px] w-[13px] h-[13px] rounded-half bg-primary-subtle dark:bg-dark-primary-subtle"></div>
+      <div
+        class="animate-loader-1 absolute left-[8px] w-[13px] h-[13px] rounded-half bg-primary-subtle dark:bg-dark-primary-subtle"
+      ></div>
+      <div
+        class="animate-loader-2 absolute left-[8px] w-[13px] h-[13px] rounded-half bg-primary-subtle dark:bg-dark-primary-subtle"
+      ></div>
+      <div
+        class="animate-loader-2 absolute left-[32px] w-[13px] h-[13px] rounded-half bg-primary-subtle dark:bg-dark-primary-subtle"
+      ></div>
+      <div
+        class="animate-loader-3 absolute left-[56px] w-[13px] h-[13px] rounded-half bg-primary-subtle dark:bg-dark-primary-subtle"
+      ></div>
     </div>
     <div class="hidden" id="post-card-template" aria-hidden="true">
       <article
@@ -70,6 +83,7 @@
             ><img
                 alt="@title"
                 sizes="100vw"
+                loading="lazy"
                 src="@image"
                 decoding="async"
                 class="transition-fix"
@@ -95,10 +109,7 @@
               @ago
             </time>
           </footer>
-          <a
-            href="@url"
-            class="absolute top-0 left-0 w-full h-full -z-1"
-          ></a>
+          <a href="@url" class="absolute top-0 left-0 w-full h-full -z-1"></a>
         </div>
       </article>
     </div>

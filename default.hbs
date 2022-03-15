@@ -29,12 +29,13 @@
     <link rel="preload" href="{{asset "js/vendor/content-api.min.js"}}" as="script" />
     <link rel="preload" href="{{asset "js/vendor.js"}}" as="script" />
     <link rel="preload" href="{{asset "js/app.js"}}" as="script" />
-    
+    <link rel="preload" href="{{asset "css/swiper.css"}}" as="style" />
 
     {{!-- This #block helper will try to preload page-specific assets --}}
     {{{block "preload"}}}
 
     <link rel="stylesheet" type="text/css" href="{{asset "css/app.css"}}" media="screen" />
+    <link rel="stylesheet" type="text/css" href="{{asset "css/swiper.css"}}" media="screen" />
 
     {{!-- This #block helper will inject a stylesheet for a specific page --}}
     {{{block "styles"}}}

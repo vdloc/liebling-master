@@ -11,6 +11,7 @@ class GhostClient {
     }
     this.init();
   }
+  
   init() {
     if (this.apiKey && this.apiURL) {
       this.ghostClient = new window.GhostContentAPI({

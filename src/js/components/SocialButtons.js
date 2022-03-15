@@ -1,12 +1,14 @@
 import tippy from 'tippy.js';
 import ClipboardJS from 'clipboard';
-import { getAttr, select, selectAll } from '../utils/dom';
+import { bindEvent, getAttr, select, selectAll } from '../utils/dom';
 import { debounce } from '../utils/helpers';
 
 export default class SocialButtons {
   constructor() {
     this.buttons = selectAll('.js-social-button');
     this.getLinkButton = select('#social-link-button');
+    this.commentButton = select('#social-comment-button');
+    this.commentSection = select('#comment-section');
     this.init();
   }
 
@@ -19,6 +21,7 @@ export default class SocialButtons {
       });
     });
     this.setupGetLinkButton();
+    this.setupCommentButton();
   }
 
   setupGetLinkButton() {
@@ -38,6 +41,12 @@ export default class SocialButtons {
       }, 1000);
 
       restoreLabel();
+    });
+  }
+
+  setupCommentButton() {
+    bindEvent(this.commentButton, 'click', () => {
+      this.commentSection.scrollIntoView({ behavior: 'smooth' });
     });
   }
 }

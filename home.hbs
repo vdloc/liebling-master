@@ -13,32 +13,20 @@ into the {body} of the default.hbs template --}}
 {{!< default}}
 
 
-<div class="container mx-auto lg:px-10 mt-10 my-28" data-aos-delay="300"> 
-    <div class="flex justify-center mb-6">
-      <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5487651308060862"
-     crossorigin="anonymous"></script>
-    <!-- Vertical Ads -->
-    <ins class="adsbygoogle"
-        style="display:block"
-        data-ad-client="ca-pub-5487651308060862"
-        data-ad-slot="8546177032"
-        data-ad-format="auto"
-        data-full-width-responsive="true"></ins>
-    <script>
-        (adsbygoogle = window.adsbygoogle || []).push({});
-    </script>
-    </div> 
+<div class="container mx-auto lg:px-10 mt-10 my-28"> 
     {{> home-section title="Phim" tag="phim" tagSlug="phim" page="movies"}}
     {{> home-section title="Nhạc" tag="nhạc" tagSlug="nhac" page="musics"}}
     {{> home-section title="Phần mềm" tag="software" tagSlug="software" page="softwares"}}
+    <div class="mb-20 mt-20 lg:mt-40 ">
+      {{> common/newsletter}}
+    </div>
+    <div align="center" class="my-20">
+      {{> ads/adsense/grid}}  
+  </div>
 </div>
 
-<div id="container-11b95e0363ac678ff2623ebfb92ec3fe"></div>
-{{#if @labs.members}}
-  {{> common/newsletter}}
-{{/if}}
 
-<div id="container-11b95e0363ac678ff2623ebfb92ec3fe"></div>
+
 {{!-- The #contentFor helper here will send everything inside it up to the matching #block helper found in default.hbs --}}
 {{#contentFor "scripts"}}
   <script  defer src="{{asset "js/home.js"}}"></script>

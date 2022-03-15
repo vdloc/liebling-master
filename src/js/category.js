@@ -1,11 +1,11 @@
 import Slider from './components/Slider';
+import { Autoplay, EffectFade } from 'swiper';
 import api from './utils/api';
 import {
   addClass,
   bindEvent,
   getAttr,
   onReady,
-  removeClass,
   select,
   selectAll,
   toggleClass,
@@ -52,6 +52,15 @@ class Category {
     const swiperOptions = {
       disabledClass: 'opacity-50 cursor-default',
       lockClass: 'hidden',
+      autoplay: {
+        delay: 3000,
+      },
+      speed: 400,
+      loop: true,
+      effect: 'fade',
+      fadeEffect: {
+        crossFade: true,
+      },
     };
 
     new Slider({
@@ -59,6 +68,7 @@ class Category {
       prevEl: swiperPrevEl,
       nextEl: swiperNextEl,
       options: swiperOptions,
+      modules: [Autoplay, EffectFade],
     });
   }
 

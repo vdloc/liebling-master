@@ -10,13 +10,12 @@ into the {body} of the default.hbs template --}}
 
 <div class="container mx-auto lg:px-10 relative">
   {{> category-section title="Nhạc" tag="nhạc" tagSlug="nhac" page="musics"}}        
+  {{> common/newsletter}}
+  <div align="center" class="my-20">
+    {{> ads/adsense/grid}}  
+  </div>
 </div>
 
-
-<div id="container-11b95e0363ac678ff2623ebfb92ec3fe" class="my-10"></div>
-{{#if @labs.members}}
-  {{> common/newsletter}}
-{{/if}}
 
 
 

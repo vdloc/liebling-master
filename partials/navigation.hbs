@@ -46,7 +46,7 @@
 {{else}}
   {{#foreach navigation}}
     <li
-      class="js-primary-navigation sm:first:mr-0 sm:mr-2 first:mt-0 mt-2 sm:mt-0 px-4 flex group items-center"
+      class="js-primary-navigation sm:mx-4 first:mt-0 mt-2 sm:mt-0 flex group items-center"
     >
       <a class="text-xl sm:font-bold" href="{{url absolute="true"}}">
         {{label}}
@@ -68,11 +68,13 @@
               <aside class="flex">
                 <button
                   class="js-submenu-swiper-prev flex items-center justify-center w-8 h-8 text-titles dark:text-dark-titles text-sm font-normal opacity-50 cursor-default"
+                  aria-label="Bài viết trước"
                 >
                   <span class="icon-arrow-left" aria-hidden="true"></span>
                 </button>
                 <button
                   class="js-submenu-swiper-next flex items-center justify-center w-8 h-8 ml-1 text-titles dark:text-dark-titles text-sm font-normal"
+                  aria-label="Bài viết tiếp theo"
                 >
                   <span class="icon-arrow-right" aria-hidden="true"></span>
                 </button>
@@ -108,7 +110,7 @@
             </header>
             {{#get
               "tags"
-              limit="15"
+              limit="all"
               filter="description:{{slug}}+name:-{{slug}}"
               include="count.posts"
               order="count.posts desc"
@@ -116,7 +118,7 @@
             }}
               {{#if tags}}
                 <ul class="flex flex-wrap gap-2">
-                  {{#foreach tags}}
+                  {{#foreach tags limit="15"}}
                     <li>
                       {{>common/badge}}
                     </li>
