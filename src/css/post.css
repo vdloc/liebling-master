@@ -1793,6 +1793,12 @@ applause-button.clap .count {
   color: #fff;
   text-decoration: underline;
 }
+
+.kg-callout-card .kg-callout-text a {
+  color: #6667ab;
+  text-decoration: underline;
+}
+
 .kg-callout-card div.kg-callout-emoji {
   padding-right: 0.8em;
   line-height: 1.25em;

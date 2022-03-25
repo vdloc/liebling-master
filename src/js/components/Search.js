@@ -2,7 +2,6 @@ import {
   addClass,
   bindEvent,
   removeClass,
-  removeEvent,
   select,
   toggleBetweenClasses,
 } from '../utils/dom';
@@ -63,12 +62,12 @@ export default class Search {
     [this.openSearchButton, this.openSearchMobileButton].forEach((button) => {
       bindEvent(button, 'click', this.openModal);
     });
-    tippy(this.openSearchButton, { content: 'Tìm kiếm' });
+    tippy(this.openSearchButton, { content: 'Tìm kiếm (Ctrl+Shift+F)' });
     bindEvent(this.closeButton, 'click', this.closeModal);
     bindEvent(this.modalBackdrop, 'click', this.closeModal);
     bindEvent(this.input, 'input', this.handleInput);
     bindEvent(this.inputLabel, 'click', this.clearSearch);
-
+    bindEvent(document, 'keyup', this.handleKeyup);
     this.setupFuse();
   }
 
@@ -77,8 +76,8 @@ export default class Search {
       positiveClasses: visibleModalClasses,
       negativeClasses: invisibleModalClasses,
     });
+    this.isOpen = true;
     this.input.focus();
-    bindEvent(document, 'keyup', this.handleKeyup);
   }
 
   closeModal() {
@@ -86,7 +85,7 @@ export default class Search {
       positiveClasses: visibleModalClasses,
       negativeClasses: invisibleModalClasses,
     });
-    removeEvent(document, 'keyup', this.handleKeyup);
+    this.isOpen = false;
     this.clearSearch();
   }
 
@@ -150,8 +149,17 @@ export default class Search {
   }
 
   handleKeyup(event) {
-    if (event.code === 'Escape') {
+    if (event.code === 'Escape' && this.isOpen) {
       this.closeModal();
+    }
+
+    if (
+      event.shiftKey &&
+      event.ctrlKey &&
+      event.code === 'KeyF' &&
+      !this.isOpen
+    ) {
+      this.openModal();
     }
   }
 

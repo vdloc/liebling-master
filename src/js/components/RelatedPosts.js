@@ -1,5 +1,6 @@
 import { select } from '../utils/dom';
 import Slider from './Slider';
+import { Autoplay } from 'swiper';
 
 const sliderOptions = {
   slidesPerView: 1,
@@ -15,6 +16,11 @@ const sliderOptions = {
     },
     992: { slidesPerView: 3, spaceBetween: 30 },
   },
+  autoplay: {
+    delay: 3000,
+  },
+  speed: 400,
+  loop: true,
 };
 
 export default class RelatedPosts {
@@ -31,6 +37,7 @@ export default class RelatedPosts {
       prevEl: this.prevEl,
       nextEl: this.nextEl,
       options: sliderOptions,
+      modules: [Autoplay],
     });
   }
 }

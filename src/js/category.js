@@ -3,11 +3,13 @@ import { Autoplay, EffectFade } from 'swiper';
 import api from './utils/api';
 import {
   addClass,
-  bindEvent,
   getAttr,
+  getURLParam,
   onReady,
+  removeClass,
   select,
   selectAll,
+  setURLParam,
   toggleClass,
 } from './utils/dom';
 import { convertToTimeAgo, replateTemplateContent } from './utils/helpers';
@@ -23,16 +25,17 @@ class Category {
     );
     this.loadMoreButton = select('#load-more-button');
     this.loader = select('#posts-loader');
-    this.nonFeaturedPosts = selectAll('.js-post-card');
+    this.nonFeaturedPosts = selectAll('.js-post-card', this.postContainer);
     this.postTemplate = select('#post-card-template').innerHTML;
     this.categoryInfo = select('#category-info');
     this.categoryTag = getAttr(this.categoryInfo, 'data-tag');
 
     // State
-    this.isLoading = false;
     this.postsPerEachLoad = 9;
+    this.page = 0;
     this.totalNonFeaturedPostsCount = Infinity;
     this.nonFeaturedPostsCount = this.nonFeaturedPosts.length;
+    this.lastFeaturedPost = this.postContainer.lastElementChild;
 
     // Events
     this.handleLoadMorePost = this.handleLoadMorePost.bind(this);
@@ -40,9 +43,9 @@ class Category {
   }
 
   init() {
+    this.setupObserver();
     this.setupFeaturedPostsSlider();
-    this.setupLoadingUI();
-    bindEvent(this.loadMoreButton, 'click', this.handleLoadMorePost);
+    this.setupNonFeaturedPosts();
   }
 
   setupFeaturedPostsSlider() {
@@ -72,28 +75,47 @@ class Category {
     });
   }
 
-  updateLoadingUI() {
-    const isHideLoadMoreButton =
-      this.isLoading ||
-      this.nonFeaturedPostsCount >= this.totalNonFeaturedPostsCount;
+  setupObserver() {
+    this.observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            this.handleLoadMorePost();
+          }
+        });
+      },
+      { threshold: 0.8 }
+    );
 
-    toggleClass(this.loadMoreButton, isHideLoadMoreButton, hiddenClass);
-    toggleClass(this.loader, !this.isLoading, hiddenClass);
+    this.lastFeaturedPost && this.observer.observe(this.lastFeaturedPost);
   }
 
-  async setupLoadingUI() {
-    try {
-      const posts = await this.getPosts(1);
-      this.totalNonFeaturedPostsCount = posts.meta.pagination.total;
-      this.updateLoadingUI();
-    } catch (error) {}
+  setupNonFeaturedPosts() {
+    const page = getURLParam('page');
+    const pageNumber = Number(page);
+
+    if (Number.isNaN(pageNumber) || !pageNumber) return;
+
+    const postsLimit =
+      this.nonFeaturedPostsCount + pageNumber * this.postsPerEachLoad;
+    this.page = pageNumber;
+    this.handleLoadMorePost(postsLimit);
   }
 
-  async handleLoadMorePost() {
-    this.isLoading = true;
-    this.updateLoadingUI();
+  toggleLoader(visible) {
+    toggleClass(this.loader, !visible, hiddenClass);
+  }
 
-    const postsLimit = this.nonFeaturedPostsCount + this.postsPerEachLoad;
+  async handleLoadMorePost(customLimit) {
+    // Nếu đã load tất cả post, ẩn nút load more.
+    if (this.nonFeaturedPostsCount >= this.totalNonFeaturedPostsCount) {
+      return addClass(this.loader, hiddenClass);
+    } else {
+      removeClass(this.loader, hiddenClass);
+    }
+
+    const postsLimit =
+      customLimit || this.nonFeaturedPostsCount + this.postsPerEachLoad;
 
     try {
       const posts = await this.getPosts(postsLimit);
@@ -101,11 +123,6 @@ class Category {
       // Lưu lại thông tin total post count.
       if (this.totalNonFeaturedPostsCount === Infinity) {
         this.totalNonFeaturedPostsCount = posts.meta.pagination.total;
-      }
-
-      // Nếu đã load tất cả post, ẩn nút load more.
-      if (this.nonFeaturedPostsCount >= this.totalNonFeaturedPostsCount) {
-        addClass(this.loadMoreButton, hiddenClass);
       }
 
       // Tính số lượng post sẽ được load thêm( do response trả về có cả các post cũ).
@@ -121,8 +138,18 @@ class Category {
 
       this.nonFeaturedPostsCount += newPosts.length;
       this.postContainer.insertAdjacentHTML('beforeend', newPostsHTML);
-      this.isLoading = false;
-      this.updateLoadingUI();
+
+      // Cập nhật element observe.
+      this.observer.unobserve(this.lastFeaturedPost);
+      this.lastFeaturedPost = this.postContainer.lastElementChild;
+      this.observer.observe(this.lastFeaturedPost);
+      addClass(this.loader, hiddenClass);
+
+      // Tăng số thứ tự page khi người dùng scroll/ không phải lúc load trang.
+      if (!customLimit) {
+        this.page++;
+        setURLParam('page', this.page);
+      }
     } catch (error) {
       console.log(error);
     }

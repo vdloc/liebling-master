@@ -100,3 +100,15 @@ export function toggleBetweenClasses(
 export function scrollTop() {
   window.scrollTo({ behavior: 'smooth', top: 0 });
 }
+
+export function getURLParam(param) {
+  const urlParams = new URLSearchParams(window.location.search);
+  return urlParams.get(param);
+}
+
+export function setURLParam(param, value) {
+  const url = new URL(window.location);
+
+  url.searchParams.set(param, value);
+  window.history.pushState(null, '', url.toString());
+}

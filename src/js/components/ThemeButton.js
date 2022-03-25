@@ -1,5 +1,12 @@
 import tippy from 'tippy.js';
-import { addClass, removeClass, select, bindEvent } from '../utils/dom';
+import {
+  addClass,
+  removeClass,
+  select,
+  bindEvent,
+  toggleBetweenClasses,
+  toggleClass,
+} from '../utils/dom';
 import storage from '../utils/localStorage';
 
 const themeMessages = {
@@ -35,9 +42,7 @@ class ThemeController {
     this.isDarkTheme = !this.isDarkTheme;
     this.storage.isDarkTheme = this.isDarkTheme;
     this.onChangeCallbacks.forEach((callback) => {
-      if (typeof callback === 'function') {
-        callback(this.isDarkTheme);
-      }
+      typeof callback === 'function' && callback(this.isDarkTheme);
     });
   }
 
@@ -78,17 +83,19 @@ export default class ThemeButton {
       });
     }
 
+    this.setMessage();
+    this.setClass();
+    this.setIcon();
+
     bindEvent(this.button, 'click', this.handleClick);
   }
 
   setClass() {
-    if (this.controller.isDarkTheme) {
-      addClass(document.documentElement, 'dark');
-      removeClass(document.documentElement, 'light');
-    } else {
-      addClass(document.documentElement, 'light');
-      removeClass(document.documentElement, 'dark');
-    }
+    toggleBetweenClasses(
+      document.documentElement,
+      this.controller.isDarkTheme,
+      { positiveClasses: 'dark', negativeClasses: 'light' }
+    );
   }
 
   getMessage() {
@@ -96,17 +103,12 @@ export default class ThemeButton {
   }
 
   setMessage() {
-    this.tippy.setContent(this.getMessage());
+    this.tippy && this.tippy.setContent(this.getMessage());
   }
 
   setIcon() {
-    if (this.controller.isDarkTheme) {
-      removeClass(this.sunnyIcon, iconHiddenClass);
-      addClass(this.moonIcon, iconHiddenClass);
-    } else {
-      removeClass(this.moonIcon, iconHiddenClass);
-      addClass(this.sunnyIcon, iconHiddenClass);
-    }
+    toggleClass(this.sunnyIcon, !this.controller.isDarkTheme, iconHiddenClass);
+    toggleClass(this.moonIcon, this.controller.isDarkTheme, iconHiddenClass);
   }
 
   handleClick() {
